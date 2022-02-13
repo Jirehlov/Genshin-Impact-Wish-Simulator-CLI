@@ -1,6 +1,6 @@
 ﻿#pragma once
 #ifndef CN_H
-#define S_1 "原神祈愿模拟器（命令行）V2.5.1"
+#define S_1 "原神祈愿模拟器（命令行）V2.5.2"
 #define S_2 "作者: Jirehlov Research"
 #define S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define S_4 "GPL-3.0 License"

@@ -1270,7 +1270,7 @@ enter_wishes_number:
                     std::cin >> d_item_n[ij];
                     if (cin.fail()) { d_item_n[ij] = 0; cin_error_by() goto enter_d_item; }
                     if (d_item_n[ij] > 0) { zero_input_recheck = false; }
-                    if ((countx < 1 && zero_input_recheck) || d_item_n[ij] > sizeof(wishes_number)) { std::cout << endl << S_72 << endl; goto enter_d_item; }
+                    if ((countx < 1 && zero_input_recheck) || d_item_n[ij] > LLONG_MAX) { std::cout << endl << S_72 << endl; goto enter_d_item; }
                     std::cout << endl;
                 }
                 else { ij = 0; std::cout << S_72 << endl; goto enter_ij; }
