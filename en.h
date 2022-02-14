@@ -1,6 +1,6 @@
 ﻿#pragma once
 #ifndef EN_H
-#define S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.2"
+#define S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.3"
 #define S_2 "by Jirehlov Research"
 #define S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define S_4 "GPL-3.0 License"
@@ -153,8 +153,8 @@
 #define S_151 "26: Everbloom Violet_20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)"
 #define S_152 "25: Epitome Invocation_20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)"
 #define S_153 "(test) 27: Reign of Serenity_20220308-20220329 (Raiden Shogun, , , )"
-#define S_154 "(test)4: Drifting Luminescence_20220308-20220329 (Sangonomiya Kokomi, , , )"
-#define S_155 "(test)26: Epitome Invocation_20220308-20220329 (, , , , , , )"
+#define S_154 "(test) 4: Drifting Luminescence_20220308-20220329 (Sangonomiya Kokomi, , , )"
+#define S_155 "(test) 26: Epitome Invocation_20220308-20220329 (, , , , , , )"
 #define C_0 "\"Driving Thunder\" Keqing (Electro)"
 #define C_1 "\"Astral Reflection\" Mona (Hydro)"
 #define C_2 "\"Icy Resurrection\" Qiqi (Cryo)"
