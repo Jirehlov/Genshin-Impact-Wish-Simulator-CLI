@@ -1264,8 +1264,8 @@ enter_wishes_number:
                 else if (ij == -1) { ij = 0; std::cout << endl << S_85 << endl << endl; goto core_core_loop; }
                 else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 108; qi++) d_item_n[qi] = 0; std::cout << endl; goto enter_wishes_number; }
                 else if (ij > -1) {
-                    zero_input_check = false;
                     if (ij > 127 || d_item[ij] == 0) { ij = 0; std::cout << endl << S_122 << endl << endl; goto enter_ij; }
+                    zero_input_check = false;
                 enter_d_item:
                     std::cout << endl << S_115 << pnameshort[ij] << S_124 << endl << endl;
                     std::cin >> d_item_n[ij];
