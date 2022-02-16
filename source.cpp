@@ -325,9 +325,9 @@ enter_chosen_banner:
     min_fivecount = 1;
     size_t d_item[128] = { 0 },
         d_item_n[128] = { 0 },
-        up_five_g[32] = { 0 },
-        up_four_g[64] = { 0 },
-        nup_four_c[64] = { 0 },
+        up_five_g[2] = { 0 },
+        up_four_g[16] = { 0 },
+        nup_four_c[32] = { 0 },
         luckkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
         luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 },
         luckiestkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
@@ -390,13 +390,11 @@ enter_chosen_event:
     case -1: goto full_quit;
     case 1: {
         chosen_event = 0;
-        char* banner_1 = new char[65535]{'\0'};
-        strcpy(banner_1, "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_14 "\n" S_15 "\n" S_16 "\n" S_17 "\n" S_18 "\n"
+        static const char* banner_1 = "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_14 "\n" S_15 "\n" S_16 "\n" S_17 "\n" S_18 "\n"
              S_19 "\n" S_20 "\n" S_21 "\n" S_22 "\n" S_23 "\n" S_24 "\n" S_25 "\n" S_26 "\n"
              S_27 "\n" S_28 "\n" S_29 "\n" S_30 "\n" S_94 "\n" S_95 "\n" S_100 "\n" S_101 "\n"
-             S_102 "\n" S_103 "\n" S_144 "\n" S_145 "\n" S_151 "\n" S_153 "\n\n");
+             S_102 "\n" S_103 "\n" S_144 "\n" S_145 "\n" S_151 "\n" S_153 "\n\n";
         std::cout << banner_1;
-        delete[] banner_1;
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -409,7 +407,8 @@ enter_chosen_event:
     } break;
     case 2: {
         chosen_event = 0;
-        std::cout << "\n" << S_12 << "\n" << S_13 << "\n" << S_109 << "\n" << S_107 << "\n" << S_146 << "\n" << S_147 << "\n" << S_154 << "\n\n";
+        static const char* banner_2 = "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_107 "\n" S_146 "\n" S_147 "\n" S_154 "\n\n";
+        std::cout << banner_2;
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -422,13 +421,11 @@ enter_chosen_event:
     } break;
     case 3: {
         chosen_event = 0;
-        char* banner_3 = new char[65535]{ '\0' };
-        strcpy(banner_3, "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_32 "\n" S_33 "\n" S_34 "\n" S_35 "\n" S_36 "\n"
+        static const char* banner_3 = "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_32 "\n" S_33 "\n" S_34 "\n" S_35 "\n" S_36 "\n"
             S_37 "\n" S_38 "\n" S_39 "\n" S_40 "\n" S_41 "\n" S_42 "\n" S_43 "\n" S_44 "\n"
             S_45 "\n" S_46 "\n" S_47 "\n" S_96 "\n" S_97 "\n" S_104 "\n" S_105 "\n" S_111 "\n"
-            S_126 "\n" S_148 "\n" S_149 "\n" S_152 "\n" S_155 "\n\n");
+            S_126 "\n" S_148 "\n" S_149 "\n" S_152 "\n" S_155 "\n\n";
         std::cout << banner_3;
-        delete[] banner_3;
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -439,8 +436,9 @@ enter_chosen_event:
     } break;
     case 4: {
         chosen_event = 0;
-        std::cout << "\n" << S_12 << "\n" << S_13 << "\n" << S_109 << "\n" << S_48 << "\n" << S_49 << "\n" << S_50 << "\n" << S_51 << "\n" << S_98 << "\n"
-            << S_99 << "\n" << S_106 << "\n" << S_110 << "\n" << S_150 << "\n\n";
+        static const char* banner_4 = "\n" S_12 "\n" S_13 "\n" S_109 "\n" S_48 "\n" S_49 "\n" S_50 "\n" S_51 "\n" S_98 "\n"
+            S_99 "\n" S_106 "\n" S_110 "\n" S_150 "\n\n";
+        std::cout << banner_4;
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
