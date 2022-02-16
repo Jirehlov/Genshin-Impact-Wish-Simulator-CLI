@@ -18,6 +18,8 @@ Statistics;\
 Showing the luckiest succession of 10 wishes
 
 ### How to build:
+For Windows x64 users, there're executables [available](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4) now.
+You can also build by yourself:
 
 ```
 g++ -s -o3 source.cpp -o giwscli
@@ -121,6 +123,10 @@ V Novice Wish\
 
 This simulator includes no hidden possibilities.
 
+### Why is the executable (Chinese) garbled？
+
+One more step of decoding is needed. Windows Settings -> Time & Language -> Language & region -> Administrative language settings -> Change system locale... -> Check "Use Unicode UTF-8 for worldwide language support".
+
 
 ## 中文
 
@@ -131,6 +137,8 @@ This simulator includes no hidden possibilities.
 任意数量抽卡、指定出货抽卡、简略统计信息反馈、查看当前记录中的运气最佳的十连等
 
 ### 如何编译:
+对于 Windows 64位平台的用户，现在可以在[此](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4)下载编译好的可执行文件了.
+你也可以自己编译：
 
 ```
 g++ -s -o3 source.cpp -o giwscli
@@ -233,6 +241,10 @@ giwscli 1 2 100
 ### 关于隐藏概率（仓检）
 
 本模拟器不考虑仓检。
+
+### 可执行文件（中文）乱码怎么办？
+
+需要再进行一次解码才能得到正常的文本。Windows设置-时间和语言-语言与区域-管理语言设置-更改系统区域设置-勾选“使用 Unicode UTF-8 提供全球语言支持”。
 
 
 ## Credits
