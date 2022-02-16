@@ -45,7 +45,7 @@
 #define is_mode() {if (is_s_mode) {\
                     bool check = false;\
                     if (d_item_n[kind] > 0) d_item_n[kind]--;\
-                    for (size_t ikk = 0; ikk < 113; ikk++) {\
+                    for (size_t ikk = 0; ikk < 115; ikk++) {\
                     if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
                     else if (d_item_n[ikk] == 0) d_item_c = false;\
                     else { std::cout << E_10 << "\n"; goto full_quit; }\
@@ -137,7 +137,7 @@ nup_four_cg9[20] = { 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30, 71,
 four_stars_c[23] = { 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 71, 91, 95, 100, 106, 108 },
 four_stars_w[27] = { 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 79, 80, 82, 83, 84, 88, 102, 103, 104 },
 five_stars_c[23] = { 0, 1, 2, 3, 4, 63, 64, 65, 66, 67, 68, 69, 70, 72, 86, 89, 90, 94, 96, 99, 105, 109, 111 },
-five_stars_w[27] = { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 73, 74, 75, 76, 77, 78, 81, 85, 87, 92, 93, 97, 98, 101, 107, 110, 112 };
+five_stars_w[28] = { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 73, 74, 75, 76, 77, 78, 81, 85, 87, 92, 93, 97, 98, 101, 107, 110, 112, 113 };
 ptrdiff_t chosen_event = 0,
 chosen_banner = 0,
 switch_b_should_be = 0,
@@ -166,9 +166,7 @@ static const char* pname[128] = { C_0, C_1, C_2, C_3, C_4, C_5, C_6, C_7, C_8, C
                 C_41, C_42, C_43, C_44, C_45, C_46, C_47, C_48, C_49, C_50, C_51, C_52, C_53, C_54, C_55, C_56, C_57, C_58, C_59, C_60,
                 C_61, C_62, C_63, C_64, C_65, C_66, C_67, C_68, C_69, C_70, C_71, C_72, C_73, C_74, C_75, C_76, C_77, C_78, C_79, C_80,
                 C_81, C_82, C_83, C_84, C_85, C_86, C_87, C_88, C_89, C_90, C_91, C_92, C_93, C_94, C_95, C_96, C_97, C_98, C_99, C_100,
-                C_101, C_102, C_103, C_104, C_105, C_106, C_107, C_108, C_109, C_110, C_111, C_112,
-                "Placeholder",
-                "Placeholder",
+                C_101, C_102, C_103, C_104, C_105, C_106, C_107, C_108, C_109, C_110, C_111, C_112, C_113, C_114,
                 "Placeholder",
                 "Placeholder",
                 "Placeholder",
@@ -188,9 +186,7 @@ static const char* pnameshort[128] = { X_0, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X
                 X_41, X_42, X_43, X_44, X_45, X_46, X_47, X_48, X_49, X_50, X_51, X_52, X_53, X_54, X_55, X_56, X_57, X_58, X_59, X_60,
                 X_61, X_62, X_63, X_64, X_65, X_66, X_67, X_68, X_69, X_70, X_71, X_72, X_73, X_74, X_75, X_76, X_77, X_78, X_79, X_80,
                 X_81, X_82, X_83, X_84, X_85, X_86, X_87, X_88, X_89, X_90, X_91, X_92, X_93, X_94, X_95, X_96, X_97, X_98, X_99, X_100,
-                X_101, X_102, X_103, X_104, X_105, X_106, X_107, X_108, X_109, X_110, X_111, X_112,
-                "Placeholder",
-                "Placeholder",
+                X_101, X_102, X_103, X_104, X_105, X_106, X_107, X_108, X_109, X_110, X_111, X_112, X_113, X_114,
                 "Placeholder",
                 "Placeholder",
                 "Placeholder",
@@ -248,7 +244,7 @@ static void casesx( size_t kind ){
     else if (kind < 50 ) { std::cout << "!!**** "; }
     else if (kind < 63 ) { std::cout << "*** "; }
     else if (kind == 71 || kind == 79 || kind == 80 || kind == 82 || kind == 83 || kind == 84 || kind == 88 || kind == 91 || kind == 95 || kind == 100 || kind == 102 || kind == 103 || kind == 104 || kind == 106 || kind == 108 ) { std::cout << "!!**** "; }
-    else if (kind < 113 ) { std::cout << "!!!!!***** "; }
+    else if (kind < 115 ) { std::cout << "!!!!!***** "; }
     else { std::cout << E_1 << "  "; }
 } // cout stars prefix
 
