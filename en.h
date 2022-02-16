@@ -155,6 +155,10 @@
 #define S_153 "(test) 27: Reign of Serenity_20220308-20220329 (Raiden Shogun, , , )"
 #define S_154 "(test) 4: Drifting Luminescence_20220308-20220329 (Sangonomiya Kokomi, , , )"
 #define S_155 "(test) 26: Epitome Invocation_20220308-20220329 (, , , , , , )"
+#define S_156 "Luckiness recording disabled!"
+#define S_157 "Luckiness recording enabled!"
+#define S_158 "-7: Luckiness recording or not"
+#define S_159 "ATTENTION: "
 #define C_0 "\"Driving Thunder\" Keqing (Electro)"
 #define C_1 "\"Astral Reflection\" Mona (Hydro)"
 #define C_2 "\"Icy Resurrection\" Qiqi (Cryo)"
@@ -433,4 +437,6 @@
 #define V_39 "Luckiness "
 #define V_40 "If the loop should be break in S Mode "
 #define V_41 "If it's S Mode "
+#define V_42 "Current state of the luckiness function "
+#define V_43 "Luckiness counting "
 #endif
