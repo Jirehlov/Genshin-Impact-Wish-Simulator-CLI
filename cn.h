@@ -272,7 +272,7 @@
 #define C_110 "长柄武器·息灾"
 #define C_111 "磐祭叶守·神里绫人（水）"
 #define C_112 "法器·神乐之真意"
-#define C_113 "单手剑·Haran Tsukishiro Futsu"
+#define C_113 "单手剑·波乱月白经津"
 #define C_114 "Yelan（水）"
 #define X_0 "刻晴"
 #define X_1 "莫娜"
