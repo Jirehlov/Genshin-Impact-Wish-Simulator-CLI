@@ -911,7 +911,7 @@ enter_wishes_number:
         if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n" << S_61; }
         std::cout << ";\n" << S_158;
         if (chosen_banner != 5) { std::cout << ";\n" << S_128; }
-        std::cout << ";\n" << S_113 << "\n" << S_112 << "\n\n";
+        std::cout << ";\n" << S_113 << "\n\n";
         std::cin >> wishes_number;
         if (cin.fail()) { wishes_number = 0; cin_error_by() goto enter_wishes_number; }
         std::cout << "\n";
