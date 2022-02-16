@@ -18,7 +18,7 @@ Statistics;\
 Showing the luckiest succession of 10 wishes
 
 ### How to build:
-For Windows x64 users, there're executables [available](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4) now.
+For Windows x64 users, there're executables [available](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4) now.\
 You can also build by yourself:
 
 ```
@@ -137,7 +137,7 @@ One more step of decoding is needed. Windows Settings -> Time & Language -> Lang
 任意数量抽卡、指定出货抽卡、简略统计信息反馈、查看当前记录中的运气最佳的十连等
 
 ### 如何编译:
-对于 Windows 64位平台的用户，现在可以在[此](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4)下载编译好的可执行文件了.
+对于 Windows 64位平台的用户，现在可以在[此](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/releases/tag/v2.5.4)下载编译好的可执行文件了。\
 你也可以自己编译：
 
 ```
