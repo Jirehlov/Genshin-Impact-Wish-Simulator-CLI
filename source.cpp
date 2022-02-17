@@ -96,8 +96,6 @@ y_arg = false,
 five_star_guarantee_number = false,
 four_star_guarantee_number = false;
 size_t fate_points = 0,
-resultt = 0,
-resultu = 0,
 up_five = 0,
 size_nup_four_c = 1,
 luck = 0,
@@ -138,6 +136,8 @@ four_stars_c[23] = { 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
 four_stars_w[27] = { 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 79, 80, 82, 83, 84, 88, 102, 103, 104 },
 five_stars_c[23] = { 0, 1, 2, 3, 4, 63, 64, 65, 66, 67, 68, 69, 70, 72, 86, 89, 90, 94, 96, 99, 105, 109, 111 },
 five_stars_w[28] = { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 73, 74, 75, 76, 77, 78, 81, 85, 87, 92, 93, 97, 98, 101, 107, 110, 112, 113 };
+unsigned int resultt = 0,
+resultu = 0;
 ptrdiff_t chosen_event = 0,
 chosen_banner = 0,
 switch_b_should_be = 0,
@@ -216,16 +216,16 @@ static size_t rspick(const size_t* kindx, size_t sizekind) {
 }
 // randomly pick an element among kindx which size is sizekind
 
-static size_t WRSpick(const ptrdiff_t* weightx, unsigned int nom) {
+static unsigned int WRSpick(const ptrdiff_t* weightx, size_t nom) {
     ptrdiff_t ceilling = 1;
-    for (unsigned int inin = 0; inin < nom; inin++) ceilling += weightx[inin];
-    const size_t typess1[3] = { 0, 1, 2 };
-    const size_t typess2[2] = { 0, 1 };
+    for (size_t inin = 0; inin < nom; inin++) ceilling += weightx[inin];
+    const unsigned int typess1[3] = { 0, 1, 2 };
+    const unsigned int typess2[2] = { 0, 1 };
     if (nom == 3 && ceilling > 10000) ceilling = 10000;
     ptrdiff_t randomn = static_cast<ptrdiff_t> (generatorz() % static_cast<size_t>(ceilling));
-    unsigned int tc = 0;
-    size_t results = 0;
-    for (unsigned int inin = 0; inin < nom; inin++) {
+    size_t tc = 0;
+    unsigned int results = 0;
+    for (size_t inin = 0; inin < nom; inin++) {
         if (randomn < weightx[inin]) {
             if (nom == 3) results = typess1[tc];
             else results = typess2[tc];
