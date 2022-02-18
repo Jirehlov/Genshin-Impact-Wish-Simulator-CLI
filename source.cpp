@@ -81,6 +81,11 @@
                     cin.clear();\
                     cin.ignore(32767, '\n');\
                 }
+#define cin_error_by3(){\
+                    std::cout << "\n" << EN_S_72 << "\n" << CN_S_72 << "\n\n";\
+                    cin.clear();\
+                    cin.ignore(32767, '\n');\
+                }
 
 using namespace std;
 
@@ -268,7 +273,7 @@ language_setting:
     std::cout << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
     std::cin >> lang_status;
     std::cout << "\n";
-    if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting; }
+    if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting; }
 enter_chosen_banner:
     d_item_c = true;
     is_s_mode = false;
@@ -397,24 +402,11 @@ enter_chosen_event:
     case -1: goto full_quit;
     case 1: {
         chosen_event = 0;
-        static const char* banner_1_en = "\n" EN_S_12 "\n" EN_S_13 "\n" EN_S_109 "\n" EN_S_161 "\n" EN_S_14 "\n" EN_S_15 "\n" EN_S_16 "\n" EN_S_17 "\n" EN_S_18 "\n"
-             EN_S_19 "\n" EN_S_20 "\n" EN_S_21 "\n" EN_S_22 "\n" EN_S_23 "\n" EN_S_24 "\n" EN_S_25 "\n" EN_S_26 "\n"
-             EN_S_27 "\n" EN_S_28 "\n" EN_S_29 "\n" EN_S_30 "\n" EN_S_94 "\n" EN_S_95 "\n" EN_S_100 "\n" EN_S_101 "\n"
-             EN_S_102 "\n" EN_S_103 "\n" EN_S_144 "\n" EN_S_145 "\n" EN_S_151 "\n" EN_S_153 "\n\n";
-        static const char* banner_1_cn = "\n" CN_S_12 "\n" CN_S_13 "\n" CN_S_109 "\n" CN_S_161 "\n" CN_S_14 "\n" CN_S_15 "\n" CN_S_16 "\n" CN_S_17 "\n" CN_S_18 "\n"
-            CN_S_19 "\n" CN_S_20 "\n" CN_S_21 "\n" CN_S_22 "\n" CN_S_23 "\n" CN_S_24 "\n" CN_S_25 "\n" CN_S_26 "\n"
-            CN_S_27 "\n" CN_S_28 "\n" CN_S_29 "\n" CN_S_30 "\n" CN_S_94 "\n" CN_S_95 "\n" CN_S_100 "\n" CN_S_101 "\n"
-            CN_S_102 "\n" CN_S_103 "\n" CN_S_144 "\n" CN_S_145 "\n" CN_S_151 "\n" CN_S_153 "\n\n";
-        if (lang_status == 0) {
-            std::cout << banner_1_en;
-        }
-        else if (lang_status == 1) {
-            std::cout << banner_1_cn;
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t banner_1[31] = { 12, 13, 109, 161, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                                        94, 95, 100, 101, 102, 103, 144, 145, 151, 153 };
+        std::cout << "\n";
+        for (size_t i = 0; i < 31; i++) { lang_cout(1, banner_1[i]); std::cout << "\n"; }
+        std::cout << "\n";
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -428,25 +420,17 @@ enter_chosen_event:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local; }
             else { chosen_event = 0; goto enter_chosen_event; }
         }
         else if (chosen_event > 0 && chosen_event < 28) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
     } break;
     case 2: {
         chosen_event = 0;
-        static const char* banner_2_en = "\n" EN_S_12 "\n" EN_S_13 "\n" EN_S_109 "\n" EN_S_161 "\n" EN_S_107 "\n" EN_S_146 "\n" EN_S_147 "\n" EN_S_154 "\n\n";
-        static const char* banner_2_cn = "\n" CN_S_12 "\n" CN_S_13 "\n" CN_S_109 "\n" CN_S_161 "\n" CN_S_107 "\n" CN_S_146 "\n" CN_S_147 "\n" CN_S_154 "\n\n";
-        if (lang_status == 0) {
-            std::cout << banner_2_en;
-        }
-        else if (lang_status == 1) {
-            std::cout << banner_2_cn;
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t banner_2[8] = { 12, 13, 109, 161, 107, 146, 147, 154 };
+        std::cout << "\n";
+        for (size_t i = 0; i < 8; i++) { lang_cout(1, banner_2[i]); std::cout << "\n"; }
+        std::cout << "\n";
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -460,31 +444,18 @@ enter_chosen_event:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local_1; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_1; }
             else { chosen_event = 0; goto enter_chosen_event; }
         }
         else if (chosen_event > 0 && chosen_event < 5) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
     } break;
     case 3: {
         chosen_event = 0;
-        static const char* banner_3_en = "\n" EN_S_12 "\n" EN_S_13 "\n" EN_S_109 "\n" EN_S_161 "\n" EN_S_32 "\n" EN_S_33 "\n" EN_S_34 "\n" EN_S_35 "\n" EN_S_36 "\n"
-            EN_S_37 "\n" EN_S_38 "\n" EN_S_39 "\n" EN_S_40 "\n" EN_S_41 "\n" EN_S_42 "\n" EN_S_43 "\n" EN_S_44 "\n"
-            EN_S_45 "\n" EN_S_46 "\n" EN_S_47 "\n" EN_S_96 "\n" EN_S_97 "\n" EN_S_104 "\n" EN_S_105 "\n" EN_S_111 "\n"
-            EN_S_126 "\n" EN_S_148 "\n" EN_S_149 "\n" EN_S_152 "\n" EN_S_155 "\n\n";
-        static const char* banner_3_cn = "\n" CN_S_12 "\n" CN_S_13 "\n" CN_S_109 "\n" CN_S_161 "\n" CN_S_32 "\n" CN_S_33 "\n" CN_S_34 "\n" CN_S_35 "\n" CN_S_36 "\n"
-            CN_S_37 "\n" CN_S_38 "\n" CN_S_39 "\n" CN_S_40 "\n" CN_S_41 "\n" CN_S_42 "\n" CN_S_43 "\n" CN_S_44 "\n"
-            CN_S_45 "\n" CN_S_46 "\n" CN_S_47 "\n" CN_S_96 "\n" CN_S_97 "\n" CN_S_104 "\n" CN_S_105 "\n" CN_S_111 "\n"
-            CN_S_126 "\n" CN_S_148 "\n" CN_S_149 "\n" CN_S_152 "\n" CN_S_155 "\n\n";
-        if (lang_status == 0) {
-            std::cout << banner_3_en;
-        }
-        else if (lang_status == 1) {
-            std::cout << banner_3_cn;
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t banner_3[30] = { 12, 13, 109, 161, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47,
+                                            96, 97, 104, 105, 111, 126, 148, 149, 152, 155};
+        std::cout << "\n";
+        for (size_t i = 0; i < 30; i++) { lang_cout(1, banner_3[i]); std::cout << "\n"; }
+        std::cout << "\n";
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -496,27 +467,17 @@ enter_chosen_event:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local_2; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_2; }
             else { chosen_event = 0; goto enter_chosen_event; }
         }
         else if (chosen_event > 0 && chosen_event < 27) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
     } break;
     case 4: {
         chosen_event = 0;
-        static const char* banner_4_en = "\n" EN_S_12 "\n" EN_S_13 "\n" EN_S_109 "\n" EN_S_161 "\n" EN_S_48 "\n" EN_S_49 "\n" EN_S_50 "\n" EN_S_51 "\n" EN_S_98 "\n"
-            EN_S_99 "\n" EN_S_106 "\n" EN_S_110 "\n" EN_S_150 "\n\n";
-        static const char* banner_4_cn = "\n" CN_S_12 "\n" CN_S_13 "\n" CN_S_109 "\n" CN_S_161 "\n" CN_S_48 "\n" CN_S_49 "\n" CN_S_50 "\n" CN_S_51 "\n" CN_S_98 "\n"
-            CN_S_99 "\n" CN_S_106 "\n" CN_S_110 "\n" CN_S_150 "\n\n";
-        if (lang_status == 0) {
-            std::cout << banner_4_en;
-        }
-        else if (lang_status == 1) {
-            std::cout << banner_4_cn;
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t banner_4[13] = { 12, 13, 109, 161, 48, 49, 50, 51, 98, 99, 106, 110, 150 };
+        std::cout << "\n";
+        for (size_t i = 0; i < 13; i++) { lang_cout(1, banner_4[i]); std::cout << "\n"; }
+        std::cout << "\n";
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -528,25 +489,17 @@ enter_chosen_event:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local_3; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_3; }
             else { chosen_event = 0; goto enter_chosen_event; }
         }
         else if (chosen_event > 0 && chosen_event < 10) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
     } break;
     case 5: {
         chosen_event = 0;
-        static const char* banner_5_en = "\n" EN_S_12 "\n" EN_S_13 "\n" EN_S_109 "\n" EN_S_161 "\n" EN_S_52 "\n\n";
-        static const char* banner_5_cn = "\n" CN_S_12 "\n" CN_S_13 "\n" CN_S_109 "\n" CN_S_161 "\n" CN_S_52 "\n\n";
-        if (lang_status == 0) {
-            std::cout << banner_5_en;
-        }
-        else if (lang_status == 1) {
-            std::cout << banner_5_cn;
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t banner_5[5] = { 12, 13, 109, 161, 52 };
+        std::cout << "\n";
+        for (size_t i = 0; i < 5; i++) { lang_cout(1, banner_5[i]); std::cout << "\n"; }
+        std::cout << "\n";
         std::cin >> chosen_event;
         fate_weapon = 0;
         fate_points = 0;
@@ -558,7 +511,7 @@ enter_chosen_event:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local_4; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_4; }
             else { chosen_event = 0; goto enter_chosen_event; }
         }
         else if (chosen_event == 1) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; } } break;
@@ -567,7 +520,7 @@ enter_chosen_event:
         std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
         std::cin >> lang_status;
         std::cout << "\n";
-        if (cin.fail() || lang_status > 1 ) { lang_status = 0; cin_error_by2() goto language_setting_local_5; }
+        if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_5; }
         else { chosen_event = 0; goto enter_chosen_banner; }
     } break;
     default: {chosen_banner = 0; chosen_event = 0; quit = true; std::cout << "\n"; lang_cout(1, 53); std::cout << "\n\n"; goto enter_chosen_banner; }
@@ -1018,26 +971,15 @@ pre_core_loop:
 enter_wishes_number:
         if (quit) { lang_cout(4, 6); std::cout << "\n"; goto full_quit; }
         d_item_c = true;
-        if (lang_status == 0) {
-            std::cout << "\n" << EN_S_54 << "\n" << EN_S_55 << "\n" << EN_S_56 << "\n" << EN_S_57 << "\n" << EN_S_58 << "\n" << EN_S_59 << "\n" << EN_S_60;
-            if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 || chosen_banner == 4) { std::cout << ";\n" << EN_S_90; }
-            if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n" << EN_S_61; }
-            std::cout << ";\n" << EN_S_158;
-            if (chosen_banner != 5) { std::cout << ";\n" << EN_S_128; }
-            std::cout << ";\n" << EN_S_113 << "\n" << EN_S_161 << "\n\n";
-        }
-        else if (lang_status == 1) {
-            std::cout << "\n" << CN_S_54 << "\n" << CN_S_55 << "\n" << CN_S_56 << "\n" << CN_S_57 << "\n" << CN_S_58 << "\n" << CN_S_59 << "\n" << CN_S_60;
-            if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 || chosen_banner == 4) { std::cout << ";\n" << CN_S_90; }
-            if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n" << CN_S_61; }
-            std::cout << ";\n" << CN_S_158;
-            if (chosen_banner != 5) { std::cout << ";\n" << CN_S_128; }
-            std::cout << ";\n" << CN_S_113 << "\n" << CN_S_161 << "\n\n";
-        }
-        else {
-            std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-            goto full_quit;
-        }
+        static const size_t ewn[6] = { 54, 55, 56, 57, 58, 59 };
+        std::cout << "\n";
+        for (size_t i = 0; i < 6; i++) { lang_cout(1, ewn[i]); std::cout << "\n"; }
+        lang_cout(1, 60);
+        if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 || chosen_banner == 4) { std::cout << ";\n"; lang_cout(1, 90); }
+        if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n"; lang_cout(1, 61); }
+        std::cout << ";\n"; lang_cout(1, 158);
+        if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
+        std::cout << ";\n"; lang_cout(1, 113); std::cout << "\n"; lang_cout(1, 161); std::cout << "\n\n";
         std::cin >> wishes_number;
         if (cin.fail()) { wishes_number = 0; cin_error_by() goto enter_wishes_number; }
         std::cout << "\n";
@@ -1055,16 +997,9 @@ enter_wishes_number:
         }
         else if (wishes_number == -3) {
         enter_cleanornot:
-            if (lang_status == 0) {
-                std::cout << EN_S_91 << "\n" << EN_S_92 << "\n" << EN_S_93 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_91 << "\n" << CN_S_92 << "\n" << CN_S_93 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 91); std::cout << "\n";
+            lang_cout(1, 92); std::cout << "\n";
+            lang_cout(1, 93); std::cout << "\n\n";
             ptrdiff_t cleanornot = 0;
             std::cin >> cleanornot;
             if (cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
@@ -1161,21 +1096,13 @@ enter_wishes_number:
         else if (wishes_number == -6) {
             if (chosen_banner == 3 && chosen_event > 14) {
             enter_fate_weapon:
-                if (lang_status == 0) {
-                    std::cout << EN_S_67 << "\n" << EN_S_68 << "\n"
-                        << EN_S_69 << " ( " << pname_en[up_five_g[0]] << " ) \n"
-                        << EN_S_70 << " ( " << pname_en[up_five_g[1]] << " ) \n"
-                        << EN_S_71 << "\n\n";
-                }
-                else if (lang_status == 1) {
-                    std::cout << CN_S_67 << "\n" << CN_S_68 << "\n"
-                        << CN_S_69 << " ( " << pname_cn[up_five_g[0]] << " ) \n"
-                        << CN_S_70 << " ( " << pname_cn[up_five_g[1]] << " ) \n"
-                        << CN_S_71 << "\n\n";
-                }
-                else {
-                    std::cout << EN_E_12 << "\n" << CN_E_12 << "\n"; quit = true;
-                }
+                lang_cout(1, 67); std::cout << "\n";
+                lang_cout(1, 68); std::cout << "\n";
+                lang_cout(1, 69); std::cout << " ( ";
+                lang_cout(2, up_five_g[0]); std::cout << " ) \n";
+                lang_cout(1, 70); std::cout << " ( ";
+                lang_cout(2, up_five_g[1]); std::cout << " ) \n";
+                lang_cout(1, 71); std::cout << "\n\n";
                 std::cin >> fate_weapon;
                 if (cin.fail()) { fate_weapon = 0; cin_error_by2() goto enter_fate_weapon; }
                 else if (fate_weapon == -1) { fate_weapon = 0; goto enter_wishes_number; }
@@ -1200,22 +1127,14 @@ enter_wishes_number:
             size_t else_counter = 0;
             if (chosen_banner == 3 && chosen_event > 14) {
             enter_profile_0:
-                if (lang_status == 0) {
-                    std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_67 << "\n"
-                        << EN_S_69 << " ( " << pname_en[up_five_g[0]] << " ) \n"
-                        << EN_S_70 << " ( " << pname_en[up_five_g[1]] << " ) \n"
-                        << EN_S_71 << "\n\n";
-                }
-                else if (lang_status == 1) {
-                    std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_67 << "\n"
-                        << CN_S_69 << " ( " << pname_cn[up_five_g[0]] << " ) \n"
-                        << CN_S_70 << " ( " << pname_cn[up_five_g[1]] << " ) \n"
-                        << CN_S_71 << "\n\n";
-                }
-                else {
-                    std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                    goto full_quit;
-                }
+                lang_cout(1, 138); std::cout << "\n";
+                lang_cout(1, 139); std::cout << "\n\n";
+                lang_cout(1, 67); std::cout << "\n";
+                lang_cout(1, 69); std::cout << " ( ";
+                lang_cout(2, up_five_g[0]); std::cout << " ) \n";
+                lang_cout(1, 70); std::cout << " ( ";
+                lang_cout(2, up_five_g[1]); std::cout << " ) \n";
+                lang_cout(1, 71); std::cout << "\n\n";
                 std::cin >> sav[8];
                 if (cin.fail()) { sav[8] = 0; cin_error_by2() goto enter_profile_0; }
                 else if (sav[8] == -1) { sav[8] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1225,16 +1144,9 @@ enter_wishes_number:
                 else { else_counter++; }
                 std::cout << "\n";
             enter_profile_01:
-                if (lang_status == 0) {
-                    std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_140 << "\n\n";
-                }
-                else if (lang_status == 1) {
-                    std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_140 << "\n\n";
-                }
-                else {
-                    std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                    goto full_quit;
-                }
+                lang_cout(1, 138); std::cout << "\n";
+                lang_cout(1, 139); std::cout << "\n\n";
+                lang_cout(1, 140); std::cout << "\n\n";
                 std::cin >> sav[9];
                 if (cin.fail()) { sav[9] = 0; cin_error_by2() goto enter_profile_01; }
                 else if (sav[9] == -1) { sav[9] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1245,16 +1157,9 @@ enter_wishes_number:
             }
             else { else_counter++; }
         enter_profile_1:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_129 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_129 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 129); std::cout << "\n\n";
             std::cin >> sav[0];
             if (cin.fail()) { sav[0] = 0; cin_error_by2() goto enter_profile_1; }
             else if (sav[0] == -1) { sav[0] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1263,16 +1168,10 @@ enter_wishes_number:
             else { else_counter++; }
             std::cout << "\n";
         enter_profile_2:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_130 << EN_S_137 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_130 << CN_S_137 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 130);
+            lang_cout(1, 137); std::cout << "\n\n";
             std::cin >> sav[1];
             if (cin.fail()) { sav[1] = 0; cin_error_by() goto enter_profile_2; }
             else if (sav[1] == -1) { sav[1] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1281,16 +1180,9 @@ enter_wishes_number:
             else { else_counter++; }
             std::cout << "\n";
         enter_profile_3:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_131 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_131 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 131); std::cout << "\n\n";
             std::cin >> sav[2];
             if (cin.fail()) { sav[2] = 0; cin_error_by() goto enter_profile_3; }
             else if (sav[2] == -1) { sav[2] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1299,16 +1191,10 @@ enter_wishes_number:
             else { else_counter++; }
             std::cout << "\n";
         enter_profile_4:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_132 << EN_S_137 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_132 << CN_S_137 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 132);
+            lang_cout(1, 137); std::cout << "\n\n";
             std::cin >> sav[3];
             if (cin.fail()) { sav[3] = 0; cin_error_by() goto enter_profile_4; }
             else if (sav[3] == -1) { sav[3] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1317,16 +1203,10 @@ enter_wishes_number:
             else { else_counter++; }
             std::cout << "\n";
         enter_profile_5:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_133 << EN_S_137 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_133 << CN_S_137 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 133);
+            lang_cout(1, 137); std::cout << "\n\n";
             std::cin >> sav[4];
             if (cin.fail()) { sav[4] = 0; cin_error_by() goto enter_profile_5; }
             else if (sav[4] == -1) { sav[4] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1338,16 +1218,10 @@ enter_wishes_number:
             std::cout << "\n";
             if (chosen_banner == 3 || chosen_banner == 4) {
             enter_profile_6:
-                if (lang_status == 0) {
-                    std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_134 << EN_S_137 << "\n\n";
-                }
-                else if (lang_status == 1) {
-                    std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_134 << CN_S_137 << "\n\n";
-                }
-                else {
-                    std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                    goto full_quit;
-                }
+                lang_cout(1, 138); std::cout << "\n";
+                lang_cout(1, 139); std::cout << "\n\n";
+                lang_cout(1, 134);
+                lang_cout(1, 137); std::cout << "\n\n";
                 std::cin >> sav[5];
                 if (cin.fail()) { sav[5] = 0; cin_error_by() goto enter_profile_6; }
                 else if (sav[5] == -1) { sav[5] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1357,16 +1231,10 @@ enter_wishes_number:
             }
             std::cout << "\n";
         enter_profile_7:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_135 << EN_S_137 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_135 << CN_S_137 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 135);
+            lang_cout(1, 137); std::cout << "\n\n";
             std::cin >> sav[6];
             if (cin.fail()) { sav[6] = 0; cin_error_by() goto enter_profile_7; }
             else if (sav[6] == -1) { sav[6] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1375,16 +1243,10 @@ enter_wishes_number:
             else { else_counter++; }
             std::cout << "\n";
         enter_profile_8:
-            if (lang_status == 0) {
-                std::cout << EN_S_138 << "\n" << EN_S_139 << "\n\n" << EN_S_136 << EN_S_137 << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout << CN_S_138 << "\n" << CN_S_139 << "\n\n" << CN_S_136 << CN_S_137 << "\n\n";
-            }
-            else {
-                std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                goto full_quit;
-            }
+            lang_cout(1, 138); std::cout << "\n";
+            lang_cout(1, 139); std::cout << "\n\n";
+            lang_cout(1, 136);
+            lang_cout(1, 137); std::cout << "\n\n";
             std::cin >> sav[7];
             if (cin.fail()) { sav[7] = 0; cin_error_by() goto enter_profile_8; }
             else if (sav[7] == -1) { sav[7] = 0; wishes_number = 0; goto enter_wishes_number; }
@@ -1525,102 +1387,49 @@ enter_wishes_number:
         }
         else if (wishes_number == -127) {
             wishes_number = 0;
-            if (lang_status == 0) {
-                std::cout <<
-                    EN_V_1 << "chosen_banner = " << chosen_banner << "\n" <<
-                    EN_V_2 << "chosen_event = " << chosen_event << "\n" <<
-                    EN_V_3 << "up_five = " << up_five << "\n" <<
-                    EN_V_4 << "y_print = " << y_print << "\n" <<
-                    EN_V_42 << "y_luck = " << y_luck << "\n" <<
-                    EN_V_5 << "four_star_assurance_number = " << four_star_assurance_number << "\n" <<
-                    EN_V_6 << "five_star_assurance_number = " << five_star_assurance_number << "\n" <<
-                    EN_V_7 << "four_star_guarantee_number = " << four_star_guarantee_number << "\n" <<
-                    EN_V_8 << "five_star_guarantee_number = " << five_star_guarantee_number << "\n" <<
-                    EN_V_9 << "countx = " << countx << "\n" <<
-                    EN_V_10 << "five_count = " << five_count << "\n" <<
-                    EN_V_11 << "five_count_c = " << five_count_c << "\n" <<
-                    EN_V_12 << "five_count_w = " << five_count_w << "\n" <<
-                    EN_V_13 << "four_count = " << four_count << "\n" <<
-                    EN_V_14 << "four_count_c = " << four_count_c << "\n" <<
-                    EN_V_15 << "four_count_w = " << four_count_w << "\n" <<
-                    EN_V_16 << "is_noelle = " << is_noelle << "\n" <<
-                    EN_V_17 << "ave_fives = " << ave_fives << "\n" <<
-                    EN_V_18 << "max_fives = " << max_fives << "\n" <<
-                    EN_V_19 << "min_fives = " << min_fives << "\n" <<
-                    EN_V_20 << "max_fivesth = " << max_fivesth << "\n" <<
-                    EN_V_21 << "min_fivesth = " << min_fivesth << "\n" <<
-                    EN_V_22 << "max_fivecount = " << max_fivecount << "\n" <<
-                    EN_V_23 << "min_fivecount = " << min_fivecount << "\n" <<
-                    EN_V_24 << "unmet4_c = " << unmet4_c << "\n" <<
-                    EN_V_25 << "unmet4_w = " << unmet4_w << "\n" <<
-                    EN_V_26 << "unmet5_c = " << unmet5_c << "\n" <<
-                    EN_V_27 << "unmet5_w = " << unmet5_w << "\n" <<
-                    EN_V_28 << "five_weight = " << five_weight << "\n" <<
-                    EN_V_29 << "four_weight = " << four_weight << "\n" <<
-                    EN_V_30 << "three_weight = " << three_weight << "\n" <<
-                    EN_V_31 << "size_nup_four_c = " << size_nup_four_c << "\n" <<
-                    EN_V_32 << "size_nup_four_w = " << size_nup_four_w << "\n" <<
-                    EN_V_33 << "is_cross = " << is_cross << "\n" <<
-                    EN_V_34 << "is_dualcross = " << is_dualcross << "\n" <<
-                    EN_V_35 << "switch_b_should_be = " << switch_b_should_be << "\n" <<
-                    EN_V_36 << "switch_e_should_be = " << switch_e_should_be << "\n" <<
-                    EN_V_37 << "fate_weapon = " << fate_weapon << "\n" <<
-                    EN_V_38 << "fate_points = " << fate_points << "\n" <<
-                    EN_V_39 << "luckiest = " << luckiest << "\n" <<
-                    EN_V_40 << "d_item_c = " << d_item_c << "\n" <<
-                    EN_V_41 << "is_s_mode = " << is_s_mode << "\n" <<
-                    EN_V_43 << "countx_l = " << countx_l << "\n\n";
-            }
-            else if (lang_status == 1) {
-                std::cout <<
-                    CN_V_1 << "chosen_banner = " << chosen_banner << "\n" <<
-                    CN_V_2 << "chosen_event = " << chosen_event << "\n" <<
-                    CN_V_3 << "up_five = " << up_five << "\n" <<
-                    CN_V_4 << "y_print = " << y_print << "\n" <<
-                    CN_V_42 << "y_luck = " << y_luck << "\n" <<
-                    CN_V_5 << "four_star_assurance_number = " << four_star_assurance_number << "\n" <<
-                    CN_V_6 << "five_star_assurance_number = " << five_star_assurance_number << "\n" <<
-                    CN_V_7 << "four_star_guarantee_number = " << four_star_guarantee_number << "\n" <<
-                    CN_V_8 << "five_star_guarantee_number = " << five_star_guarantee_number << "\n" <<
-                    CN_V_9 << "countx = " << countx << "\n" <<
-                    CN_V_10 << "five_count = " << five_count << "\n" <<
-                    CN_V_11 << "five_count_c = " << five_count_c << "\n" <<
-                    CN_V_12 << "five_count_w = " << five_count_w << "\n" <<
-                    CN_V_13 << "four_count = " << four_count << "\n" <<
-                    CN_V_14 << "four_count_c = " << four_count_c << "\n" <<
-                    CN_V_15 << "four_count_w = " << four_count_w << "\n" <<
-                    CN_V_16 << "is_noelle = " << is_noelle << "\n" <<
-                    CN_V_17 << "ave_fives = " << ave_fives << "\n" <<
-                    CN_V_18 << "max_fives = " << max_fives << "\n" <<
-                    CN_V_19 << "min_fives = " << min_fives << "\n" <<
-                    CN_V_20 << "max_fivesth = " << max_fivesth << "\n" <<
-                    CN_V_21 << "min_fivesth = " << min_fivesth << "\n" <<
-                    CN_V_22 << "max_fivecount = " << max_fivecount << "\n" <<
-                    CN_V_23 << "min_fivecount = " << min_fivecount << "\n" <<
-                    CN_V_24 << "unmet4_c = " << unmet4_c << "\n" <<
-                    CN_V_25 << "unmet4_w = " << unmet4_w << "\n" <<
-                    CN_V_26 << "unmet5_c = " << unmet5_c << "\n" <<
-                    CN_V_27 << "unmet5_w = " << unmet5_w << "\n" <<
-                    CN_V_28 << "five_weight = " << five_weight << "\n" <<
-                    CN_V_29 << "four_weight = " << four_weight << "\n" <<
-                    CN_V_30 << "three_weight = " << three_weight << "\n" <<
-                    CN_V_31 << "size_nup_four_c = " << size_nup_four_c << "\n" <<
-                    CN_V_32 << "size_nup_four_w = " << size_nup_four_w << "\n" <<
-                    CN_V_33 << "is_cross = " << is_cross << "\n" <<
-                    CN_V_34 << "is_dualcross = " << is_dualcross << "\n" <<
-                    CN_V_35 << "switch_b_should_be = " << switch_b_should_be << "\n" <<
-                    CN_V_36 << "switch_e_should_be = " << switch_e_should_be << "\n" <<
-                    CN_V_37 << "fate_weapon = " << fate_weapon << "\n" <<
-                    CN_V_38 << "fate_points = " << fate_points << "\n" <<
-                    CN_V_39 << "luckiest = " << luckiest << "\n" <<
-                    CN_V_40 << "d_item_c = " << d_item_c << "\n" <<
-                    CN_V_41 << "is_s_mode = " << is_s_mode << "\n" <<
-                    CN_V_43 << "countx_l = " << countx_l << "\n\n";
-            }
-            else {
-                    std::cout << EN_E_12 << "\n" << CN_E_12 << "\n";
-                    goto full_quit;
-            }
+                lang_cout(5, 1); std::cout << "chosen_banner = " << chosen_banner << "\n";
+                lang_cout(5, 2); std::cout << "chosen_event = " << chosen_event << "\n";
+                lang_cout(5, 3); std::cout << "up_five = " << up_five << "\n";
+                lang_cout(5, 4); std::cout << "y_print = " << y_print << "\n";
+                lang_cout(5, 42); std::cout << "y_luck = " << y_luck << "\n";
+                lang_cout(5, 5); std::cout << "four_star_assurance_number = " << four_star_assurance_number << "\n";
+                lang_cout(5, 6); std::cout << "five_star_assurance_number = " << five_star_assurance_number << "\n";
+                lang_cout(5, 7); std::cout << "four_star_guarantee_number = " << four_star_guarantee_number << "\n";
+                lang_cout(5, 8); std::cout << "five_star_guarantee_number = " << five_star_guarantee_number << "\n";
+                lang_cout(5, 9); std::cout << "countx = " << countx << "\n";
+                lang_cout(5, 10); std::cout << "five_count = " << five_count << "\n";
+                lang_cout(5, 11); std::cout << "five_count_c = " << five_count_c << "\n";
+                lang_cout(5, 12); std::cout << "five_count_w = " << five_count_w << "\n";
+                lang_cout(5, 13); std::cout << "four_count = " << four_count << "\n";
+                lang_cout(5, 14); std::cout << "four_count_c = " << four_count_c << "\n";
+                lang_cout(5, 15); std::cout << "four_count_w = " << four_count_w << "\n";
+                lang_cout(5, 16); std::cout << "is_noelle = " << is_noelle << "\n";
+                lang_cout(5, 17); std::cout << "ave_fives = " << ave_fives << "\n";
+                lang_cout(5, 18); std::cout << "max_fives = " << max_fives << "\n";
+                lang_cout(5, 19); std::cout << "min_fives = " << min_fives << "\n";
+                lang_cout(5, 20); std::cout << "max_fivesth = " << max_fivesth << "\n";
+                lang_cout(5, 21); std::cout << "min_fivesth = " << min_fivesth << "\n";
+                lang_cout(5, 22); std::cout << "max_fivecount = " << max_fivecount << "\n";
+                lang_cout(5, 23); std::cout << "min_fivecount = " << min_fivecount << "\n";
+                lang_cout(5, 24); std::cout << "unmet4_c = " << unmet4_c << "\n";
+                lang_cout(5, 25); std::cout << "unmet4_w = " << unmet4_w << "\n";
+                lang_cout(5, 26); std::cout << "unmet5_c = " << unmet5_c << "\n";
+                lang_cout(5, 27); std::cout << "unmet5_w = " << unmet5_w << "\n";
+                lang_cout(5, 28); std::cout << "five_weight = " << five_weight << "\n";
+                lang_cout(5, 29); std::cout << "four_weight = " << four_weight << "\n";
+                lang_cout(5, 30); std::cout << "three_weight = " << three_weight << "\n";
+                lang_cout(5, 31); std::cout << "size_nup_four_c = " << size_nup_four_c << "\n";
+                lang_cout(5, 32); std::cout << "size_nup_four_w = " << size_nup_four_w << "\n";
+                lang_cout(5, 33); std::cout << "is_cross = " << is_cross << "\n";
+                lang_cout(5, 34); std::cout << "is_dualcross = " << is_dualcross << "\n";
+                lang_cout(5, 35); std::cout << "switch_b_should_be = " << switch_b_should_be << "\n";
+                lang_cout(5, 36); std::cout << "switch_e_should_be = " << switch_e_should_be << "\n";
+                lang_cout(5, 37); std::cout << "fate_weapon = " << fate_weapon << "\n";
+                lang_cout(5, 38); std::cout << "fate_points = " << fate_points << "\n";
+                lang_cout(5, 39); std::cout << "luckiest = " << luckiest << "\n";
+                lang_cout(5, 40); std::cout << "d_item_c = " << d_item_c << "\n";
+                lang_cout(5, 41); std::cout << "is_s_mode = " << is_s_mode << "\n";
+                lang_cout(5, 43); std::cout << "countx_l = " << countx_l << "\n\n";
             goto enter_wishes_number;
         }
         else if (wishes_number == -120) {
@@ -1628,7 +1437,7 @@ enter_wishes_number:
             std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
             std::cin >> lang_status;
             std::cout << "\n";
-            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by2() goto language_setting_local_6; }
+            if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_6; }
             else { wishes_number = 0; goto enter_wishes_number; }
         }
         else if (wishes_number < 1) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
