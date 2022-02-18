@@ -112,7 +112,7 @@
 #define EN_S_109 "-2: Re-choose Wishes (Banners) (Records will NOT be reset!)"
 #define EN_S_110 "8: Wanderlust Invocation_20220105-20220215 (Adds Gorou)"
 #define EN_S_111 "21: Epitome Invocation_20211124-20211214 (Freedom Sworn, Song of Broken Pines, Alley Hunter, Lion's Roar, Dragon's Bane, Wine and Song, Sacrificial Greatsword)"
-#define EN_S_112 "-127: Return some non-array variables"
+#define EN_S_112 "-127: Return some variables"
 #define EN_S_113 "-63: Specific Output Mode;"
 #define EN_S_114 "Specific Item (No.)"
 #define EN_S_115 "How many of this item ("
@@ -162,7 +162,7 @@
 #define EN_S_159 "ATTENTION: "
 #define EN_S_160 "Please choose language"
 #define EN_S_161 "-120: Change language (will be effective on next output)"
-#define EN_S_162 "Placeholder"
+#define EN_S_162 "-270: Return Achievements list"
 #define EN_S_163 "Placeholder"
 #define EN_S_164 "Placeholder"
 #define EN_S_165 "Placeholder"
@@ -571,6 +571,31 @@
 #define EN_V_41 "If it's S Mode "
 #define EN_V_42 "Current state of the luckiness function "
 #define EN_V_43 "Luckiness counting "
+#define EN_V_44 "Achievements counting array "
+#define EN_V_45 "Achievements checking array "
+#define EN_V_46 "Achievements inventory array "
+#define EN_V_47 "Achievement 9 checking kind "
+#define EN_A_0 "Congrats! "
+#define EN_A_1 " Obtained "
+#define EN_A_2 " Achievement!\n"
+#define EN_A_3 "Failed 7 pities of a 5-star char in a row!"
+#define EN_A_4 "\"Pity-failer\""
+#define EN_A_5 "Succeeded 7 pities of a 5-star char in a row!"
+#define EN_A_6 "\"This is Destiny\""
+#define EN_A_7 "No 4-star in a succession of 11 pulls!"
+#define EN_A_8 "\"Out of the Box\""
+#define EN_A_9 "Pity occurred at over 87 pulls!"
+#define EN_A_10 "\"Sunspot\""
+#define EN_A_11 "Filled fate points to the full 5 times in a row!"
+#define EN_A_12 "\"Torre di Pisa\""
+#define EN_A_13 "Fate points is always zero 5 times in a row!"
+#define EN_A_14 "\"Nonstop\""
+#define EN_A_15 "One 5-star in the first 10 pulls of the total!"
+#define EN_A_16 "\"Lucky Day\""
+#define EN_A_17 "One 5-star at a Mersenne prime"
+#define EN_A_18 "\"Golden cross\""
+#define EN_A_19 "4 same 3-star weapons in a row"
+#define EN_A_20 "\"Before & After\""
 #endif
 
 static const char* pstring_en[256] = {
@@ -638,10 +663,15 @@ static const char* perror_en[14] = {
                 EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10, EN_E_11, EN_E_12, EN_E_13
 };
 
-static const char* pvalue_en[44] = {
+static const char* pvalue_en[48] = {
                 EN_V_0, EN_V_1, EN_V_2, EN_V_3, EN_V_4, EN_V_5, EN_V_6, EN_V_7, EN_V_8, EN_V_9, EN_V_10,
                 EN_V_11, EN_V_12, EN_V_13, EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
                 EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27, EN_V_28, EN_V_29, EN_V_30,
                 EN_V_31, EN_V_32, EN_V_33, EN_V_34, EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40,
-                EN_V_41, EN_V_42, EN_V_43
+                EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47
+};
+
+static const char* pachieve_en[19] = {
+                EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
+                EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18
 };
