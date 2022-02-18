@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #ifndef EN_H
 #define EN_S_0 "Placeholder"
 #define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.4"
@@ -130,13 +130,13 @@
 #define EN_S_127 "This go, You have pulled "
 #define EN_S_128 "-31: Set pity profile"
 #define EN_S_129 "Should the next 5-star guaranteed to be up-ped? 1: Yes; 0: No"
-#define EN_S_130 "How many pulls are you away from the last 5-star？"
+#define EN_S_130 "How many pulls are you away from the last 5-star?"
 #define EN_S_131 "Should the next 4-star guaranteed to be up-ped? 1: Yes; 0: No"
-#define EN_S_132 "How many pulls are you away from the last 4-star？"
-#define EN_S_133 "How many pulls are you away from the last 5-star character？"
-#define EN_S_134 "How many pulls are you away from the last 5-star weapon？"
-#define EN_S_135 "How many pulls are you away from the last 4-star character？"
-#define EN_S_136 "How many pulls are you away from the last 4-star weapon？"
+#define EN_S_132 "How many pulls are you away from the last 4-star?"
+#define EN_S_133 "How many pulls are you away from the last 5-star character?"
+#define EN_S_134 "How many pulls are you away from the last 5-star weapon?"
+#define EN_S_135 "How many pulls are you away from the last 4-star character?"
+#define EN_S_136 "How many pulls are you away from the last 4-star weapon?"
 #define EN_S_137 " (count from 0)"
 #define EN_S_138 "-1: quit (not save)"
 #define EN_S_139 "-2: quit (save)"

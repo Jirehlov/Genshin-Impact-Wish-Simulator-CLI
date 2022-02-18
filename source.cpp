@@ -1,4 +1,4 @@
-﻿#include <chrono>
+#include <chrono>
 #include <iostream>
 #include <random>
 #include <string>
@@ -281,7 +281,7 @@ int main(int argc, char* argv[]) {
     y_print = true;
     y_luck = true;
 language_setting:
-    std::cout << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+    std::cout << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
     std::cin >> lang_status;
     std::cout << "\n";
     if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting; }
@@ -430,7 +430,7 @@ enter_chosen_event:
         else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
         else if (chosen_event == -120) {
         language_setting_local:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local; }
@@ -454,7 +454,7 @@ enter_chosen_event:
         else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
         else if (chosen_event == -120) {
         language_setting_local_1:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_1; }
@@ -477,7 +477,7 @@ enter_chosen_event:
         else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
         else if (chosen_event == -120) {
         language_setting_local_2:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_2; }
@@ -499,7 +499,7 @@ enter_chosen_event:
         else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
         else if (chosen_event == -120) {
         language_setting_local_3:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_3; }
@@ -521,7 +521,7 @@ enter_chosen_event:
         else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
         else if (chosen_event == -120) {
         language_setting_local_4:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_4; }
@@ -530,7 +530,7 @@ enter_chosen_event:
         else if (chosen_event == 1) quit = false; else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; } } break;
     case -120: {
     language_setting_local_5:
-        std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+        std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
         std::cin >> lang_status;
         std::cout << "\n";
         if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_5; }
@@ -1459,7 +1459,7 @@ enter_wishes_number:
         }
         else if (wishes_number == -120) {
         language_setting_local_6:
-            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << "\n\n0: English\n1: 中文\n\n";
+            std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
             std::cin >> lang_status;
             std::cout << "\n";
             if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_6; }
