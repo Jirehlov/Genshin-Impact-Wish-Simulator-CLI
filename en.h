@@ -1,7 +1,7 @@
 #pragma once
 #ifndef EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.5"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.6"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"
@@ -163,8 +163,8 @@
 #define EN_S_160 "Please choose language"
 #define EN_S_161 "-120: Change language (will be effective on next output)"
 #define EN_S_162 "-270: Return Achievements list"
-#define EN_S_163 "Placeholder"
-#define EN_S_164 "Placeholder"
+#define EN_S_163 "Hey! What're you looking at!"
+#define EN_S_164 "Huh! Nothing here!"
 #define EN_S_165 "Placeholder"
 #define EN_S_166 "Placeholder"
 #define EN_S_167 "Placeholder"
@@ -592,9 +592,9 @@
 #define EN_A_14 "\"Nonstop\""
 #define EN_A_15 "One 5-star in the first 10 pulls of the total!"
 #define EN_A_16 "\"Lucky Day\""
-#define EN_A_17 "One 5-star at a Mersenne prime"
+#define EN_A_17 "One 5-star at a Mersenne prime!"
 #define EN_A_18 "\"Golden cross\""
-#define EN_A_19 "4 same 3-star weapons in a row"
+#define EN_A_19 "Six same 3-star weapons in a row!"
 #define EN_A_20 "\"Before & After\""
 #endif
 
@@ -671,7 +671,7 @@ static const char* pvalue_en[48] = {
                 EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47
 };
 
-static const char* pachieve_en[19] = {
+static const char* pachieve_en[21] = {
                 EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
-                EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18
+                EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20
 };

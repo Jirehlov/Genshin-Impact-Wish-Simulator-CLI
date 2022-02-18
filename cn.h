@@ -2,7 +2,7 @@
 #ifndef CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.5"
+#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.6"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -164,8 +164,8 @@
 #define CN_S_160 "请选择语言"
 #define CN_S_161 "-120: 更改语言 (将在下次输出时生效)"
 #define CN_S_162 "-270: 返回已获得成就"
-#define CN_S_163 "Placeholder"
-#define CN_S_164 "Placeholder"
+#define CN_S_163 "呀! 你点开了什么奇怪的地方!"
+#define CN_S_164 "哼! 啥也没有!"
 #define CN_S_165 "Placeholder"
 #define CN_S_166 "Placeholder"
 #define CN_S_167 "Placeholder"
@@ -592,9 +592,9 @@
 #define CN_A_14 "\"一步到位\""
 #define CN_A_15 "总计10发以内出了1个五星!"
 #define CN_A_16 "\"开门红\""
-#define CN_A_17 "在某个梅森素数位置获得一个五星"
+#define CN_A_17 "在某个梅森素数位置获得一个五星!"
 #define CN_A_18 "\"金十字\""
-#define CN_A_19 "连续4个三星武器一模一样"
+#define CN_A_19 "连续6个三星武器一模一样!"
 #define CN_A_20 "\"排排坐, 吃果果\""
 #endif
 

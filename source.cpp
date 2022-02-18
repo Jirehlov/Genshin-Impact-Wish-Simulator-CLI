@@ -43,7 +43,7 @@
 #define Tri() {\
                 star = 3;\
                 kind = rspick(three_g, 13);\
-                if(ach_count[8] < 4) {\
+                if(ach_count[8] < 6) {\
                     if (kind_r_ach != kind) { kind_r_ach = kind; ach_count[8] = 0; }\
                     else ach_count[8]++;\
                 }\
@@ -90,6 +90,16 @@
                     cin.clear();\
                     cin.ignore(32767, '\n');\
                 }
+#define mpcheck(){if (countx == 4 ||\
+                    countx == 8 ||\
+                    countx == 32 ||\
+                    countx == 128 ||\
+                    countx == 8192 ||\
+                    countx == 131072 ||\
+                    countx == 524288 ||\
+                    countx == 2147483648 ||\
+                    countx == 2305843009213693952) ach[7] = true;\
+                }
 
 using namespace std;
 
@@ -113,6 +123,7 @@ five_star_guarantee_number = false,
 four_star_guarantee_number = false,
 iacheck = false,
 achp_check = false,
+achp_check_again = false,
 ach[9] = { false, false, false, false, false, false, false, false, false },
 ach_q[9] = { false, false, false, false, false, false, false, false, false };
 size_t fate_points = 0,
@@ -1069,6 +1080,8 @@ enter_wishes_number:
                 for (size_t ini = 0; ini < 127; ini++) { d_item[ini] = 0; }
                 for (size_t ini = 0; ini < 127; ini++) { d_item_n[ini] = 0; }
                 for (size_t ini = 0; ini < 9; ini++) { ach_count[ini] = 0; }
+                for (size_t ini = 0; ini < 9; ini++) { ach_q[ini] = false; }
+                achp_check_again = false;
                 d_item_c = true;
                 is_s_mode = false;
                 lang_cout(1, 64); std::cout << "\n";
@@ -1467,12 +1480,17 @@ enter_wishes_number:
         }
         else if (wishes_number == -270) {
         wishes_number = 0;
-        for (size_t i = 0; i < 9; i++) {
-            if (ach_q[i]) {
-                const size_t achdis = i + i + 3;
-                const size_t achname = i + i + 4;
-                lang_cout(6, achname); std::cout << " --- "; lang_cout(6, achdis); std::cout << "\n";
+        if (!achp_check) { lang_cout(1, 163); }
+        else {
+            for (size_t i = 0; i < 9; i++) {
+                if (ach_q[i]) {
+                    const size_t achdis = i + i + 3;
+                    const size_t achname = i + i + 4;
+                    lang_cout(6, achname); std::cout << " --- "; lang_cout(6, achdis); std::cout << "\n";
+                    achp_check_again = true;
+                }
             }
+            if (!achp_check_again) { lang_cout(1, 164); }
         }
         std::cout << "\n";
         goto enter_wishes_number;
@@ -1518,15 +1536,7 @@ enter_wishes_number:
                 case 0: {
                     star = 5;
                     five_count++;
-                    if (countx == 3 ||
-                        countx == 7 ||
-                        countx == 31 ||
-                        countx == 127 ||
-                        countx == 8191 ||
-                        countx == 131071 ||
-                        countx == 524287 ||
-                        countx == 2147483647 ||
-                        countx == 2305843009213693951) ach[7] = true;
+                    mpcheck()
                     ave_fives += five_star_assurance_number;
                     if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                     if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -1634,7 +1644,7 @@ enter_wishes_number:
                 if (star != 4 || type != 3) unmet4_w++;
                 if (ach_count[0] > 7) ach[0] = true;
                 if (ach_count[1] > 7) ach[1] = true;
-                if (ach_count[8] > 3) ach[8] = true;
+                if (ach_count[8] > 5) ach[8] = true;
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -1668,15 +1678,7 @@ enter_wishes_number:
                 case 0: {
                     star = 5;
                     five_count++;
-                    if (countx == 3 ||
-                        countx == 7 ||
-                        countx == 31 ||
-                        countx == 127 ||
-                        countx == 8191 ||
-                        countx == 131071 ||
-                        countx == 524287 ||
-                        countx == 2147483647 ||
-                        countx == 2305843009213693951) ach[7] = true;
+                    mpcheck()
                     ave_fives += five_star_assurance_number;
                     if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                     if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -1812,7 +1814,7 @@ enter_wishes_number:
                 if (star != 4 || type != 3) unmet4_w++;
                 if (ach_count[4] > 6) ach[4] = true;
                 if (ach_count[5] > 6) ach[5] = true;
-                if (ach_count[8] > 3) ach[8] = true;
+                if (ach_count[8] > 5) ach[8] = true;
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -1843,15 +1845,7 @@ enter_wishes_number:
                 case 0: {
                     star = 5;
                     five_count++;
-                    if (countx == 3 ||
-                        countx == 7 ||
-                        countx == 31 ||
-                        countx == 127 ||
-                        countx == 8191 ||
-                        countx == 131071 ||
-                        countx == 524287 ||
-                        countx == 2147483647 ||
-                        countx == 2305843009213693951) ach[7] = true;
+                    mpcheck()
                     ave_fives += five_star_assurance_number;
                     if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                     if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -1987,7 +1981,7 @@ enter_wishes_number:
                 if (!(star == 5 && type == 2)) unmet5_w++;
                 if (!(star == 4 && type == 1)) unmet4_c++;
                 if (!(star == 4 && type == 2)) unmet4_w++;
-                if (ach_count[8] > 3) ach[8] = true;
+                if (ach_count[8] > 5) ach[8] = true;
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -2019,15 +2013,7 @@ enter_wishes_number:
                     if (temp1 < 6) {
                         star = 5;
                         five_count++;
-                        if (countx == 3 ||
-                            countx == 7 ||
-                            countx == 31 ||
-                            countx == 127 ||
-                            countx == 8191 ||
-                            countx == 131071 ||
-                            countx == 524287 ||
-                            countx == 2147483647 ||
-                            countx == 2305843009213693951) ach[7] = true;
+                        mpcheck()
                         ave_fives += five_star_assurance_number;
                         if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                         if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -2049,15 +2035,7 @@ enter_wishes_number:
                     if (temp1 < 6) {
                         star = 5;
                         five_count++;
-                        if (countx == 3 ||
-                            countx == 7 ||
-                            countx == 31 ||
-                            countx == 127 ||
-                            countx == 8191 ||
-                            countx == 131071 ||
-                            countx == 524287 ||
-                            countx == 2147483647 ||
-                            countx == 2305843009213693951) ach[7] = true;
+                        mpcheck()
                         ave_fives += five_star_assurance_number;
                         if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                         if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -2079,15 +2057,7 @@ enter_wishes_number:
                     if (temp1 < 6) {
                         star = 5;
                         five_count++;
-                        if (countx == 3 ||
-                            countx == 7 ||
-                            countx == 31 ||
-                            countx == 127 ||
-                            countx == 8191 ||
-                            countx == 131071 ||
-                            countx == 524287 ||
-                            countx == 2147483647 ||
-                            countx == 2305843009213693951) ach[7] = true;
+                        mpcheck()
                         ave_fives += five_star_assurance_number;
                         if (five_star_assurance_number > max_fives) { max_fives = five_star_assurance_number; max_fivesth = five_count; max_fivecount = countx; }
                         if (five_star_assurance_number < min_fives) { min_fives = five_star_assurance_number; min_fivesth = five_count; min_fivecount = countx; }
@@ -2105,7 +2075,7 @@ enter_wishes_number:
                     }
                 }
                 output_string()
-                if (ach_count[8] > 3) ach[8] = true;
+                if (ach_count[8] > 5) ach[8] = true;
                 if (!y_arg && y_luck) {
                     luckget()
                         if (star == 4 || star == 5) {
