@@ -115,7 +115,7 @@ V Novice Wish\
 
 ### Screenshots
 
-![Screenshot 2022-02-16 065832](https://user-images.githubusercontent.com/34600796/154212623-c0cb67b4-6612-441e-9ee6-11bb832fed1e.png)
+![Screenshot 2022-02-18 072701](https://user-images.githubusercontent.com/34600796/154637299-26d49365-0dd3-47dc-aab9-d9c5cd1d4497.png)
 
 
 
@@ -231,7 +231,7 @@ giwscli 1 2 100
 
 ### 截图
 
-![Screenshot 2022-02-16 065804](https://user-images.githubusercontent.com/34600796/154212663-8f8e25bc-b81b-4bfa-95ed-f78e5dba7fad.png)
+![Screenshot 2022-02-18 072644](https://user-images.githubusercontent.com/34600796/154637331-700e7872-875d-412f-b3f8-ae68bd9949de.png)
 
 
 
