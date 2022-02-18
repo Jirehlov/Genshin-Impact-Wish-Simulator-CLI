@@ -29,12 +29,14 @@ Or Visual Studio, etc.
 ### How to use:
 
 ```
-giwscli <chosen_banner> <chosen_event> <wishes_number>
+giwscli <chosen_banner> <chosen_event> <wishes_number> <language>
 ```
-For exmaple, if you want to pull 100 wishes in Sparkling Steps/20201020-20201110 which is a Character Event Wish, type:
+For exmaple, if you want to pull 100 wishes in Sparkling Steps/20201020-20201110 which is a Character Event Wish and the exported text to be in English, type:
 ```
-giwscli 1 2 100
+giwscli 1 2 100 0
 ```
+where 0 for English and 1 for Chinese.\
+If language option is not provided, the program will ask the user about the language.\
 If no argument is provided, the program will enter interactive mode.
 
 No. of banners and events seen as follows:
@@ -145,12 +147,14 @@ g++ -s -o3 source.cpp -o giwscli
 ### 如何使用:
 
 ```
-giwscli <卡池类型编号> <活动类型编号> <祈愿数量>
+giwscli <卡池类型编号> <活动类型编号> <祈愿数量> <语言>
 ```
-比如，你想在 角色活动祈愿 中的 闪焰的驻足/20201020-20201110 中抽取100次，可以键入:
+比如，你想在 角色活动祈愿 中的 闪焰的驻足/20201020-20201110 中抽取100次并用英文输出，可以键入:
 ```
-giwscli 1 2 100
+giwscli 1 2 100 0
 ```
+其中0表示英文，1表示中文。\
+如果没有语言项，模拟器将询问用户语言。\
 如果没有arguments，模拟器将进入交互模式。
 
 卡池类型编号与活动类型编号如下:

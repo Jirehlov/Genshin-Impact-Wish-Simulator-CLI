@@ -2,7 +2,7 @@
 #ifndef CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.6"
+#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.7"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -582,7 +582,7 @@
 #define CN_A_4 "\"爽歪歪\""
 #define CN_A_5 "连续7个五星角色小保底没有歪!"
 #define CN_A_6 "\"天命既定\""
-#define CN_A_7 "连续11发没有获得四星!"
+#define CN_A_7 "连续10发没有获得四星!"
 #define CN_A_8 "\"跳出牢笼\""
 #define CN_A_9 "保底发生在87+!"
 #define CN_A_10 "\"太阳黑子\""
@@ -590,12 +590,16 @@
 #define CN_A_12 "\"比萨斜塔\""
 #define CN_A_13 "连续5个五星武器没有歪!"
 #define CN_A_14 "\"一步到位\""
-#define CN_A_15 "总计10发以内出了1个五星!"
+#define CN_A_15 "总计10发以内出了五星!"
 #define CN_A_16 "\"开门红\""
 #define CN_A_17 "在某个梅森素数位置获得一个五星!"
 #define CN_A_18 "\"金十字\""
 #define CN_A_19 "连续6个三星武器一模一样!"
 #define CN_A_20 "\"排排坐, 吃果果\""
+#define CN_A_21 "在原神版号位置获得一个五星!"
+#define CN_A_22 "\"至暗时刻\""
+#define CN_A_23 "在一个神奇的UID的位置获得一个五星!"
+#define CN_A_24 "\"薪火相传\""
 #endif
 
 static const char* pstring_cn[256] = {
@@ -671,7 +675,8 @@ static const char* pvalue_cn[48] = {
                 CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47
 };
 
-static const char* pachieve_cn[21] = {
+static const char* pachieve_cn[25] = {
                 CN_A_0, CN_A_1, CN_A_2, CN_A_3, CN_A_4, CN_A_5, CN_A_6, CN_A_7, CN_A_8, CN_A_9, CN_A_10,
-                CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20
+                CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
+                CN_A_21, CN_A_22, CN_A_23, CN_A_24
 };

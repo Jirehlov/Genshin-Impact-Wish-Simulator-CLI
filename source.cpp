@@ -60,10 +60,10 @@
                     }\
                 } // do if is s mode
 #define set_pool_1_m(up_five_m,size_nup_four_c_m, nup_four_cgm) {\
-                    set_pool_1((up_five_m), (size_nup_four_c_m), tempg1, tempg5, up_four_g, nup_four_c, (nup_four_cgm), four_check);\
+                    set_pool_1((up_five_m), (size_nup_four_c_m), tempg1, tempg5, (nup_four_cgm));\
                 }
 #define set_pool_3_m(size_nup_four_c_m, nup_four_cgm) {\
-                    set_pool_3(up_five_g, (size_nup_four_c_m), tempg1, tempg5, tempg6, tempg7, up_four_g, nup_four_c, (nup_four_cgm), four_check, five_check);\
+                    set_pool_3((size_nup_four_c_m), tempg1, tempg5, tempg6, tempg7, (nup_four_cgm));\
                 }
 #define check_profile_throw() {\
                     lang_cout(1, 143);\
@@ -90,15 +90,17 @@
                     cin.clear();\
                     cin.ignore(32767, '\n');\
                 }
-#define mpcheck(){if (countx == 4 ||\
-                    countx == 8 ||\
-                    countx == 32 ||\
-                    countx == 128 ||\
-                    countx == 8192 ||\
-                    countx == 131072 ||\
-                    countx == 524288 ||\
-                    countx == 2147483648 ||\
-                    countx == 2305843009213693952) ach[7] = true;\
+#define mpcheck(){if (countx == 2 ||\
+                    countx == 6 ||\
+                    countx == 30 ||\
+                    countx == 126 ||\
+                    countx == 8190 ||\
+                    countx == 131070 ||\
+                    countx == 524286 ||\
+                    countx == 2147483646 ||\
+                    countx == 2305843009213693950) ach[7] = true;\
+                  if (countx == 20192978) ach[9] = true;\
+                  if (countx == 157087285) ach[10] = true;\
                 }
 
 using namespace std;
@@ -124,8 +126,8 @@ four_star_guarantee_number = false,
 iacheck = false,
 achp_check = false,
 achp_check_again = false,
-ach[9] = { false, false, false, false, false, false, false, false, false },
-ach_q[9] = { false, false, false, false, false, false, false, false, false };
+ach[11] = { false, false, false, false, false, false, false, false, false, false, false },
+ach_q[11] = { false, false, false, false, false, false, false, false, false, false, false };
 size_t fate_points = 0,
 up_five = 0,
 size_nup_four_c = 1,
@@ -145,7 +147,28 @@ min_fivesth = 1,
 max_fivecount = 1,
 min_fivecount = 1,
 size_nup_four_w = 18,
-kind_r_ach = 0;
+kind_r_ach = 0,
+d_item[128] = { 0 },
+d_item_n[128] = { 0 },
+up_five_g[2] = { 0 },
+up_four_g[16] = { 0 },
+nup_four_c[32] = { 0 },
+luckkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
+luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 },
+luckiestkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
+five_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
+four_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
+lucklocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+lucksublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+lucksubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+luckiestlocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+luckiestsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+luckiestsubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+pcount[128] = { 0 },
+four_pity[11] = { 0 },
+five_pity[90] = { 0 },
+five_pity_w[80] = { 0 },
+one_to_ten[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 std::chrono::system_clock::time_point starty = std::chrono::system_clock::now();
 std::chrono::system_clock::time_point endy = std::chrono::system_clock::now();
 std::chrono::nanoseconds elapsed = starty - endy;
@@ -190,7 +213,8 @@ five_weight = 0,
 four_weight = 0,
 three_weight = 0,
 fate_weapon = 0,
-ave_fives = 0;
+ave_fives = 0,
+ach_count[11] = { 0 };
 signed long long int wishes_number = 0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
@@ -268,21 +292,31 @@ static void casesx( size_t kind ){
     else { lang_cout(4, 1); std::cout << "  "; }
 } // cout stars prefix
 
-static void set_pool_1(size_t up_five_p, size_t size_nup_four_c_p, const size_t* tempg1, const size_t* tempg5, size_t* up_four_g, size_t* nup_four_c, const size_t* nup_four_cgm, size_t* four_check) {
-    up_five = up_five_p;
-    size_nup_four_c = size_nup_four_c_p;
-    for (size_t i = 0; i < 3; i++) { up_four_g[i] = tempg1[i]; }
-    for (size_t i = 0; i < size_nup_four_c; i++) { nup_four_c[i] = nup_four_cgm[i]; }
-    for (size_t i = 0; i < 8; i++) { four_check[i] = tempg5[i]; }
+
+static void ini_all(size_t* in, size_t ins, size_t nu) {
+    for (size_t i = 0; i < ins; i++) { in[i] = nu; }
 }
 
-static void set_pool_3(size_t* up_five_g, size_t size_nup_four_c_p, const size_t* tempg1, const size_t* tempg5, const size_t* tempg6, const size_t* tempg7, size_t* up_four_g, size_t* nup_four_c, const size_t* nup_four_cgm, size_t* four_check, size_t* five_check) {
-    for (size_t i = 0; i < 2; i++) { up_five_g[i] = tempg6[i]; }
+static void ini_ams(size_t* in, size_t ins, const size_t* out) {
+    for (size_t i = 0; i < ins; i++) { in[i] = out[i]; }
+}//for of the same size
+
+
+static void set_pool_1(size_t up_five_p, size_t size_nup_four_c_p, const size_t* tempg1, const size_t* tempg5, const size_t* nup_four_cgm) {
+    up_five = up_five_p;
     size_nup_four_c = size_nup_four_c_p;
-    for (size_t i = 0; i < 5; i++) { up_four_g[i] = tempg1[i]; }
-    for (size_t i = 0; i < size_nup_four_c; i++) { nup_four_c[i] = nup_four_cgm[i]; }
-    for (size_t i = 0; i < 8; i++) { four_check[i] = tempg5[i]; }
-    for (size_t i = 0; i < 8; i++) { five_check[i] = tempg7[i]; }
+    ini_ams(up_four_g, 3, tempg1);
+    ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
+    ini_ams(four_check, 8, tempg5);
+}
+
+static void set_pool_3(size_t size_nup_four_c_p, const size_t* tempg1, const size_t* tempg5, const size_t* tempg6, const size_t* tempg7, const size_t* nup_four_cgm) {
+    ini_ams(up_five_g, 2, tempg6);
+    size_nup_four_c = size_nup_four_c_p;
+    ini_ams(up_four_g, 5, tempg1);
+    ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
+    ini_ams(four_check, 8, tempg5);
+    ini_ams(five_check, 8, tempg7);
 }
 
 int main(int argc, char* argv[]) {
@@ -291,11 +325,85 @@ int main(int argc, char* argv[]) {
         argv[0] = default_argv0;
     y_print = true;
     y_luck = true;
+//arg_proc:
+    if (argc == 5) {
+        int test0 = 0;
+        int test1 = 0;
+        long long int test2 = 0;
+        unsigned long int test3 = 0;
+        try {
+            test0 = stoi(argv[1]);
+            test1 = stoi(argv[2]);
+            test2 = stoll(argv[3]);
+            test3 = stoul(argv[4]);
+        }
+        catch (...) {
+            lang_cout(4, 11); std::cout << "\n";
+            y_arg = true;
+            goto full_quit;
+        }
+        test0 = 1 + test1;
+        test1 = 1 + test0;
+        test2 = 1 + test2;
+        test3 = 1 + test3;
+        chosen_banner = stoi(argv[1]);
+        chosen_event = stoi(argv[2]);
+        wishes_number = stoll(argv[3]);
+        lang_status = stoul(argv[4]);
+        if (wishes_number < 1) {
+            wishes_number = 0;
+            lang_cout(4, 72); std::cout << "\n";
+            y_arg = true;
+            goto full_quit;
+        }
+        quit = false;
+        y_arg = true;
+        goto set_banner;
+    }
+    else if (argc == 4) {
+        int test0 = 0;
+        int test1 = 0;
+        long long int test2 = 0;
+        try {
+            test0 = stoi(argv[1]);
+            test1 = stoi(argv[2]);
+            test2 = stoll(argv[3]);
+        }
+        catch (...) {
+            lang_cout(4, 11); std::cout << "\n";
+            y_arg = true;
+            goto full_quit;
+        }
+        test0 = 1 + test1;
+        test1 = 1 + test0;
+        test2 = 1 + test2;
+        chosen_banner = stoi(argv[1]);
+        chosen_event = stoi(argv[2]);
+        wishes_number = stoll(argv[3]);
+        if (wishes_number < 1) {
+            wishes_number = 0;
+            lang_cout(4, 72); std::cout << "\n";
+            y_arg = true;
+            goto full_quit;
+        }
+        quit = false;
+        y_arg = true;
+        goto language_setting;
+    }
+    else if (argc == 1) {
+        goto language_setting;
+    }
+    else {
+        lang_cout(4, 11); std::cout << "\n";
+        y_arg = true;
+        goto full_quit;
+    }
 language_setting:
     std::cout << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
     std::cin >> lang_status;
     std::cout << "\n";
     if (cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting; }
+    if (argc == 4) goto set_banner;
 enter_chosen_banner:
     d_item_c = true;
     is_s_mode = false;
@@ -345,66 +453,28 @@ enter_chosen_banner:
     max_fivecount = 1;
     min_fivecount = 1;
     kind_r_ach = 0;
-    size_t d_item[128] = { 0 },
-        d_item_n[128] = { 0 },
-        up_five_g[2] = { 0 },
-        up_four_g[16] = { 0 },
-        nup_four_c[32] = { 0 },
-        luckkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
-        luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 },
-        luckiestkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
-        five_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
-        four_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
-        lucklocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        lucksublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        lucksubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        luckiestlocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        luckiestsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        luckiestsubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
-        pcount[128] = { 0 },
-        four_pity[11] = { 0 },
-        five_pity[90] = { 0 },
-        five_pity_w[80] = { 0 };
-    ptrdiff_t ach_count[9] = { 0 };
-    if (argc == 4) {
-        int test0 = 0;
-        int test1 = 0;
-        long long int test2 = 0;
-        try {
-            test0 = stoi(argv[1]);
-            test1 = stoi(argv[2]);
-            test2 = stoll(argv[3]);
-        }
-        catch (...) {
-            lang_cout(4, 11); std::cout << "\n";
-            y_arg = true;
-            goto full_quit;
-        }
-        test0 = 1 + test1;
-        test1 = 1 + test0;
-        test2 = 1 + test2;
-        chosen_banner = stoi(argv[1]);
-        chosen_event = stoi(argv[2]);
-        wishes_number = stoll(argv[3]);
-        if (wishes_number < 1) {
-            wishes_number = 0;
-            lang_cout(4, 72); std::cout << "\n";
-            y_arg = true;
-            goto full_quit;
-        }
-        quit = false;
-        y_arg = true;
-        goto set_banner;
-    }
-    else if (argc == 1) {
-        goto welcome;
-    }
-    else {
-        lang_cout(4, 11); std::cout << "\n";
-        y_arg = true;
-        goto full_quit;
-    }
-welcome:
+    ini_all(d_item, 128, 0);
+    ini_all(d_item_n, 128, 0);
+    ini_all(up_five_g, 2, 0);
+    ini_all(up_four_g, 16, 0);
+    ini_all(nup_four_c, 32, 0);
+    ini_all(luckkind, 10, 127);
+    ini_all(luckstar, 10, 3);
+    ini_all(luckiestkind, 10, 127);
+    ini_all(five_check, 8, 127);
+    ini_all(four_check, 8, 127);
+    ini_all(pcount, 128, 0);
+    ini_all(four_pity, 11, 0);
+    ini_all(five_pity, 90, 0);
+    ini_all(five_pity_w, 80, 0);
+    ini_ams(lucklocation, 10, one_to_ten);
+    ini_ams(lucksublocation, 10, one_to_ten);
+    ini_ams(lucksubsublocation, 10, one_to_ten);
+    ini_ams(luckiestlocation, 10, one_to_ten);
+    ini_ams(luckiestsublocation, 10, one_to_ten);
+    ini_ams(luckiestsubsublocation, 10, one_to_ten);
+    for (size_t i = 0; i < 11; i++) { ach_count[i] = 0; }
+//welcome:
     lang_cout(1, 1); std::cout << "\n";
     lang_cout(1, 2); std::cout << "\n";
     lang_cout(1, 3); std::cout << "\n";
@@ -1079,8 +1149,8 @@ enter_wishes_number:
                 for (size_t& ini : five_pity_w) { ini = 0; }
                 for (size_t ini = 0; ini < 127; ini++) { d_item[ini] = 0; }
                 for (size_t ini = 0; ini < 127; ini++) { d_item_n[ini] = 0; }
-                for (size_t ini = 0; ini < 9; ini++) { ach_count[ini] = 0; }
-                for (size_t ini = 0; ini < 9; ini++) { ach_q[ini] = false; }
+                for (size_t ini = 0; ini < 11; ini++) { ach_count[ini] = 0; }
+                for (size_t ini = 0; ini < 11; ini++) { ach_q[ini] = false; }
                 achp_check_again = false;
                 d_item_c = true;
                 is_s_mode = false;
@@ -1464,9 +1534,9 @@ enter_wishes_number:
                 lang_cout(5, 40); std::cout << "d_item_c = " << d_item_c << "\n";
                 lang_cout(5, 41); std::cout << "is_s_mode = " << is_s_mode << "\n";
                 lang_cout(5, 43); std::cout << "countx_l = " << countx_l << "\n";
-                lang_cout(5, 44); std::cout << "ach_cout[] = "; for (size_t i = 0; i < 9; i++) { std::cout << ach_count[i] << " "; } std::cout << "\n";
-                lang_cout(5, 45); std::cout << "ach[] = "; for (size_t i = 0; i < 9; i++) { std::cout << ach[i] << " "; } std::cout << "\n";
-                lang_cout(5, 46); std::cout << "ach_q[] = "; for (size_t i = 0; i < 9; i++) { std::cout << ach_q[i] << " "; } std::cout << "\n";
+                lang_cout(5, 44); std::cout << "ach_cout[] = "; for (size_t i = 0; i < 11; i++) { std::cout << ach_count[i] << " "; } std::cout << "\n";
+                lang_cout(5, 45); std::cout << "ach[] = "; for (size_t i = 0; i < 11; i++) { std::cout << ach[i] << " "; } std::cout << "\n";
+                lang_cout(5, 46); std::cout << "ach_q[] = "; for (size_t i = 0; i < 11; i++) { std::cout << ach_q[i] << " "; } std::cout << "\n";
                 lang_cout(5, 47); std::cout << "kind_r_ach = " << kind_r_ach << "\n\n";
             goto enter_wishes_number;
         }
@@ -1645,6 +1715,7 @@ enter_wishes_number:
                 if (ach_count[0] > 7) ach[0] = true;
                 if (ach_count[1] > 7) ach[1] = true;
                 if (ach_count[8] > 5) ach[8] = true;
+                if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) ach[6] = true; }
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -1815,6 +1886,7 @@ enter_wishes_number:
                 if (ach_count[4] > 6) ach[4] = true;
                 if (ach_count[5] > 6) ach[5] = true;
                 if (ach_count[8] > 5) ach[8] = true;
+                if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) ach[6] = true; }
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -1982,6 +2054,7 @@ enter_wishes_number:
                 if (!(star == 4 && type == 1)) unmet4_c++;
                 if (!(star == 4 && type == 2)) unmet4_w++;
                 if (ach_count[8] > 5) ach[8] = true;
+                if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) ach[6] = true; }
                 if (!y_arg && y_luck) {
                     luckget()
                     if (star == 4 || star == 5) {
@@ -2076,6 +2149,7 @@ enter_wishes_number:
                 }
                 output_string()
                 if (ach_count[8] > 5) ach[8] = true;
+                if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) ach[6] = true; }
                 if (!y_arg && y_luck) {
                     luckget()
                         if (star == 4 || star == 5) {
@@ -2101,7 +2175,6 @@ enter_wishes_number:
         lang_cout(1, 87); std::cout << t_end << "\n";
         std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000; lang_cout(1, 84); std::cout << "\n";
         if (max_fives > 86) { ach[3] = true; }
-        if (five_count > 0 && countx < 11) { ach[6] = true; }
         if (five_count == 0) {
             std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
             lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
