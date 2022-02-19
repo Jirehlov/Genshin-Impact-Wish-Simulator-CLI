@@ -1,7 +1,7 @@
 #pragma once
 #ifndef EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.7"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.8"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"
@@ -112,7 +112,7 @@
 #define EN_S_109 "-2: Re-choose Wishes (Banners) (Records will NOT be reset!)"
 #define EN_S_110 "8: Wanderlust Invocation_20220105-20220215 (Adds Gorou)"
 #define EN_S_111 "21: Epitome Invocation_20211124-20211214 (Freedom Sworn, Song of Broken Pines, Alley Hunter, Lion's Roar, Dragon's Bane, Wine and Song, Sacrificial Greatsword)"
-#define EN_S_112 "-127: Return some variables"
+#define EN_S_112 "-127: Debug Options"
 #define EN_S_113 "-63: Specific Output Mode;"
 #define EN_S_114 "Specific Item (No.)"
 #define EN_S_115 "How many of this item ("
@@ -161,7 +161,7 @@
 #define EN_S_158 "-7: Luckiness recording or not"
 #define EN_S_159 "ATTENTION: "
 #define EN_S_160 "Please choose language"
-#define EN_S_161 "-120: Change language (will be effective on next output)"
+#define EN_S_161 "-120: Change language (will take effect on next output)"
 #define EN_S_162 "-270: Return Achievements list"
 #define EN_S_163 "Hey! What're you looking at!"
 #define EN_S_164 "Huh! Nothing here!"
@@ -372,8 +372,8 @@
 #define EN_C_112 "Kagura's Verity (Catalyst)"
 #define EN_C_113 "Haran Tsukishiro Futsu (Sword)"
 #define EN_C_114 "Yelan (Hydro)"
-#define EN_C_115 "Placeholder"
-#define EN_C_116 "Placeholder"
+#define EN_C_115 "Kuki Shinobu"
+#define EN_C_116 "Shikanoin Heizou"
 #define EN_C_117 "Placeholder"
 #define EN_C_118 "Placeholder"
 #define EN_C_119 "Placeholder"
@@ -500,8 +500,8 @@
 #define EN_X_112 "Kagura's Verity"
 #define EN_X_113 "Haran Tsukishiro Futsu"
 #define EN_X_114 "Yelan"
-#define EN_X_115 "Placeholder"
-#define EN_X_116 "Placeholder"
+#define EN_X_115 "Kuki Shinobu"
+#define EN_X_116 "Shikanoin Heizou"
 #define EN_X_117 "Placeholder"
 #define EN_X_118 "Placeholder"
 #define EN_X_119 "Placeholder"
@@ -575,6 +575,7 @@
 #define EN_V_45 "Achievements checking array "
 #define EN_V_46 "Achievements inventory array "
 #define EN_V_47 "Achievement 9 checking kind "
+#define EN_V_48 "Achievement 12 checking kind "
 #define EN_A_0 "Congrats! "
 #define EN_A_1 " Obtained "
 #define EN_A_2 " Achievement!\n"
@@ -594,12 +595,14 @@
 #define EN_A_16 "\"Lucky Day\""
 #define EN_A_17 "One 5-star at a Mersenne prime!"
 #define EN_A_18 "\"Golden Cross\""
-#define EN_A_19 "Six same 3-star weapons in a row!"
+#define EN_A_19 "Seven same 3-star weapons in a row!"
 #define EN_A_20 "\"Before & After\""
 #define EN_A_21 "One 5-star at Genshin's publication number!"
 #define EN_A_22 "\"The Darkest Moment\""
 #define EN_A_23 "One 5-star at a sweet UID!"
 #define EN_A_24 "\"Legacy Endures\""
+#define EN_A_25 "Seven same 4-stars in a row!"
+#define EN_A_26 "\"Big Dipper\""
 #endif
 
 static const char* pstring_en[256] = {
@@ -667,16 +670,16 @@ static const char* perror_en[14] = {
                 EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10, EN_E_11, EN_E_12, EN_E_13
 };
 
-static const char* pvalue_en[48] = {
+static const char* pvalue_en[49] = {
                 EN_V_0, EN_V_1, EN_V_2, EN_V_3, EN_V_4, EN_V_5, EN_V_6, EN_V_7, EN_V_8, EN_V_9, EN_V_10,
                 EN_V_11, EN_V_12, EN_V_13, EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
                 EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27, EN_V_28, EN_V_29, EN_V_30,
                 EN_V_31, EN_V_32, EN_V_33, EN_V_34, EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40,
-                EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47
+                EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47, EN_V_48
 };
 
-static const char* pachieve_en[25] = {
+static const char* pachieve_en[27] = {
                 EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
                 EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
-                EN_A_21, EN_A_22, EN_A_23, EN_A_24
+                EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26
 };

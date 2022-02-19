@@ -2,7 +2,7 @@
 #ifndef CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.7"
+#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.8"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -113,7 +113,7 @@
 #define CN_S_109 "-2: 重新选择卡池类型 (将保留记录)"
 #define CN_S_110 "8: 奔行世间_20220105-20220215 (新增五郎)"
 #define CN_S_111 "21: 神铸赋形_20211124-20211214 (苍古自由之誓, 松籁响起之时, 暗巷猎手, 匣里龙吟, 匣里灭辰, 暗巷的酒与诗, 祭礼大剑)"
-#define CN_S_112 "-127: 返回部分变量"
+#define CN_S_112 "-127: 调试选项"
 #define CN_S_113 "-63: 指定出货结果模式;"
 #define CN_S_114 "指定出货对象 (编号)"
 #define CN_S_115 "指定该对象 ("
@@ -372,8 +372,8 @@
 #define CN_C_112 "法器·神乐之真意"
 #define CN_C_113 "单手剑·波乱月白经津"
 #define CN_C_114 "夜阑（水）"
-#define CN_C_115 "Placeholder"
-#define CN_C_116 "Placeholder"
+#define CN_C_115 "久岐忍"
+#define CN_C_116 "鹿野院平藏"
 #define CN_C_117 "Placeholder"
 #define CN_C_118 "Placeholder"
 #define CN_C_119 "Placeholder"
@@ -500,8 +500,8 @@
 #define CN_X_112 "神乐之真意"
 #define CN_X_113 "波乱月白经津"
 #define CN_X_114 "夜阑"
-#define CN_X_115 "Placeholder"
-#define CN_X_116 "Placeholder"
+#define CN_X_115 "久岐忍"
+#define CN_X_116 "鹿野院平藏"
 #define CN_X_117 "Placeholder"
 #define CN_X_118 "Placeholder"
 #define CN_X_119 "Placeholder"
@@ -575,6 +575,7 @@
 #define CN_V_45 "成就判定数组 "
 #define CN_V_46 "成就获得数组 "
 #define CN_V_47 "成就9判定种类 "
+#define CN_V_48 "成就12判定种类 "
 #define CN_A_0 "恭喜你! "
 #define CN_A_1 " 获得 "
 #define CN_A_2 " 称号!\n"
@@ -594,12 +595,14 @@
 #define CN_A_16 "\"开门红\""
 #define CN_A_17 "在某个梅森素数位置获得一个五星!"
 #define CN_A_18 "\"金十字\""
-#define CN_A_19 "连续6个三星武器一模一样!"
+#define CN_A_19 "连续7个三星武器一模一样!"
 #define CN_A_20 "\"排排坐, 吃果果\""
 #define CN_A_21 "在原神版号位置获得一个五星!"
 #define CN_A_22 "\"至暗时刻\""
 #define CN_A_23 "在一个神奇的UID的位置获得一个五星!"
 #define CN_A_24 "\"薪火相传\""
+#define CN_A_25 "连续7个四星一模一样!"
+#define CN_A_26 "\"魁杓\""
 #endif
 
 static const char* pstring_cn[256] = {
@@ -667,16 +670,16 @@ static const char* perror_cn[14] = {
                 CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10, CN_E_11, CN_E_12, CN_E_13
 };
 
-static const char* pvalue_cn[48] = {
+static const char* pvalue_cn[49] = {
                 CN_V_0, CN_V_1, CN_V_2, CN_V_3, CN_V_4, CN_V_5, CN_V_6, CN_V_7, CN_V_8, CN_V_9, CN_V_10,
                 CN_V_11, CN_V_12, CN_V_13, CN_V_14, CN_V_15, CN_V_16, CN_V_17, CN_V_18, CN_V_19, CN_V_20,
                 CN_V_21, CN_V_22, CN_V_23, CN_V_24, CN_V_25, CN_V_26, CN_V_27, CN_V_28, CN_V_29, CN_V_30,
                 CN_V_31, CN_V_32, CN_V_33, CN_V_34, CN_V_35, CN_V_36, CN_V_37, CN_V_38, CN_V_39, CN_V_40,
-                CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47
+                CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47, CN_V_48
 };
 
-static const char* pachieve_cn[25] = {
+static const char* pachieve_cn[27] = {
                 CN_A_0, CN_A_1, CN_A_2, CN_A_3, CN_A_4, CN_A_5, CN_A_6, CN_A_7, CN_A_8, CN_A_9, CN_A_10,
                 CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
-                CN_A_21, CN_A_22, CN_A_23, CN_A_24
+                CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26
 };
