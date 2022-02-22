@@ -329,6 +329,7 @@ int main(int argc, char* argv[]) {
 		int test1 = 0;
 		long long int test2 = 0;
 		unsigned long int test3 = 0;
+        	static size_t drump5 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -340,14 +341,11 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-		test0 = 1 + test1;
-		test1 = 1 + test0;
-		test2 = 1 + test2;
-		test3 = 1 + test3;
+        	drump5 = test0 + test1 + test2 + test3;
 		chosen_banner = std::stoi(argv[1]);
 		chosen_event = std::stoi(argv[2]);
 		wishes_number = std::stoll(argv[3]);
-		lang_status = std::stoul(argv[4]);
+		lang_status = static_cast<unsigned int>(std::stoul(argv[4]));
 		if (wishes_number < 1) {
 			wishes_number = 0;
 			lang_cout(4, 72); std::cout << "\n";
@@ -362,6 +360,7 @@ int main(int argc, char* argv[]) {
 		int test0 = 0;
 		int test1 = 0;
 		long long int test2 = 0;
+        	static size_t drump4 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -372,9 +371,7 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-		test0 = 1 + test1;
-		test1 = 1 + test0;
-		test2 = 1 + test2;
+        	drump4 = test0 + test1 + test2;
 		chosen_banner = std::stoi(argv[1]);
 		chosen_event = std::stoi(argv[2]);
 		wishes_number = std::stoll(argv[3]);
@@ -1102,9 +1099,9 @@ enter_wishes_number:
 		lang_cout(1, 91); std::cout << "\n";
 		lang_cout(1, 92); std::cout << "\n";
 		lang_cout(1, 93); std::cout << "\n\n";
-		ptrdiff_t cleanornot = 0;
+		static ptrdiff_t cleanornot = 0;
 		std::cin >> cleanornot;
-		if (std::cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
+        	if (std::cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
 		std::cout << "\n";
 		if (cleanornot == 1) {
 			wishes_number = 0;
@@ -1388,7 +1385,7 @@ enter_wishes_number:
 		bool zero_input_check = true;
 		bool zero_input_recheck = true;
 		while (true) {
-			ptrdiff_t ij = 0;
+			static ptrdiff_t ij = 0;
 		enter_ij:
 			lang_cout(1, 114); std::cout << "\n\n"; lang_cout(1, 121); std::cout << "\n";
 			for (size_t uk5 : three_g) {
