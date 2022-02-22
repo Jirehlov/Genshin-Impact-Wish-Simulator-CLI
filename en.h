@@ -1,7 +1,7 @@
 #pragma once
 #ifndef EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.8"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.9"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"
@@ -524,7 +524,7 @@
 #define EN_E_8 "Unexpected five_count! Error code: 8"
 #define EN_E_9 "Unexpected ij! Error code: 9"
 #define EN_E_10 "Unexpected d_item_n[kind]! Error code: 10"
-#define EN_E_11 "Arguments error! Usage: chosen_banner chosen_event wishes_number"
+#define EN_E_11 "Arguments error! Usage: chosen_banner chosen_event wishes_number language"
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
 #define EN_V_0 "Placeholder"

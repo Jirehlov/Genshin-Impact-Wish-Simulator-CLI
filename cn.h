@@ -2,7 +2,7 @@
 #ifndef CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.8"
+#define CN_S_1 "原神祈愿模拟器（命令行）V2.5.9"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -524,7 +524,7 @@
 #define CN_E_8 "five_count 不合理! 错误码: 8"
 #define CN_E_9 "ij 不合理! 错误码: 9"
 #define CN_E_10 "d_item_n[kind] 不合理! 错误码: 10"
-#define CN_E_11 "arguments错误! 正确格式为: 卡池类型编号 活动类型编号 祈愿数量"
+#define CN_E_11 "arguments错误! 正确格式为: 卡池类型编号 活动类型编号 祈愿数量 语言"
 #define CN_E_12 "lang_status不合理! 错误码: 12"
 #define CN_E_13 "lang_cout错误! 错误码: 13"
 #define CN_V_0 "Placeholder"

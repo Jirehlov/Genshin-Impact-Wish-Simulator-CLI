@@ -327,9 +327,9 @@ int main(int argc, char* argv[]) {
 	if (argc == 5) {
 		int test0 = 0;
 		int test1 = 0;
-		long long int test2 = 0;
+		signed long long int test2 = 0;
 		unsigned long int test3 = 0;
-        	static size_t drump5 = 0;
+		static size_t drump5 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -341,17 +341,27 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-        	drump5 = test0 + test1 + test2 + test3;
-		chosen_banner = std::stoi(argv[1]);
-		chosen_event = std::stoi(argv[2]);
-		wishes_number = std::stoll(argv[3]);
-		lang_status = static_cast<unsigned int>(std::stoul(argv[4]));
-		if (wishes_number < 1) {
-			wishes_number = 0;
-			lang_cout(4, 72); std::cout << "\n";
+		drump5 = static_cast<size_t>(test0) + static_cast<size_t>(test1) + static_cast<size_t>(test2) + static_cast<size_t>(test3);
+		test0 = std::stoi(argv[1]);
+		test1 = std::stoi(argv[2]);
+		test2 = std::stoll(argv[3]);
+		test3 = std::stoul(argv[4]);
+		chosen_banner = static_cast<ptrdiff_t>(test0);
+		chosen_event = static_cast<ptrdiff_t>(test1);
+		if (test2 < 1) {
+			lang_cout(1, 72);
+			std::cout << "\n";
 			y_arg = true;
 			goto full_quit;
 		}
+		else { wishes_number = test2; }
+		if (test3 != 0 && test3 != 1) {
+			lang_cout(4, 12);
+			std::cout << "\n";
+			y_arg = true;
+			goto full_quit;
+		}
+		else { lang_status = static_cast<unsigned int>(test3); }
 		quit = false;
 		y_arg = true;
 		goto set_banner;
@@ -359,8 +369,8 @@ int main(int argc, char* argv[]) {
 	else if (argc == 4) {
 		int test0 = 0;
 		int test1 = 0;
-		long long int test2 = 0;
-        	static size_t drump4 = 0;
+		signed long long int test2 = 0;
+		static size_t drump4 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -371,16 +381,19 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-        	drump4 = test0 + test1 + test2;
-		chosen_banner = std::stoi(argv[1]);
-		chosen_event = std::stoi(argv[2]);
-		wishes_number = std::stoll(argv[3]);
-		if (wishes_number < 1) {
-			wishes_number = 0;
-			lang_cout(4, 72); std::cout << "\n";
+		drump4 = static_cast<size_t>(test0) + static_cast<size_t>(test1) + static_cast<size_t>(test2);
+		test0 = std::stoi(argv[1]);
+		test1 = std::stoi(argv[2]);
+		test2 = std::stoll(argv[3]);
+		chosen_banner = static_cast<ptrdiff_t>(test0);
+		chosen_event = static_cast<ptrdiff_t>(test1);
+		if (test2 < 1) {
+			lang_cout(1, 72);
+			std::cout << "\n";
 			y_arg = true;
 			goto full_quit;
 		}
+		else { wishes_number = test2; }
 		quit = false;
 		y_arg = true;
 		goto language_setting;
@@ -1101,7 +1114,7 @@ enter_wishes_number:
 		lang_cout(1, 93); std::cout << "\n\n";
 		static ptrdiff_t cleanornot = 0;
 		std::cin >> cleanornot;
-        	if (std::cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
+		if (std::cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
 		std::cout << "\n";
 		if (cleanornot == 1) {
 			wishes_number = 0;
@@ -1478,7 +1491,7 @@ enter_wishes_number:
 			std::cin >> ij;
 			if (std::cin.fail()) { ij = 0; cin_error_by2() goto enter_ij; }
 			if (ij == -1) {
-				for (size_t i = 0; i < 127; i++) { if (d_item_n[i] > 0) zero_input_check = false; }
+				for (size_t i = 0; i < 127; i++) { if (d_item_n[i] > 0) { zero_input_check = false; } }
 				if (zero_input_check) { ij = 0; d_item_c = false; std::cout << "\n"; lang_cout(1, 125); std::cout << "\n"; goto enter_wishes_number; }
 				else { ij = 0; std::cout << "\n"; lang_cout(1, 85); std::cout << "\n\n"; goto core_core_loop; }
 			}
@@ -1717,8 +1730,8 @@ core_core_loop:
 					}
 				}
 				if (ach_count[11] < 7) {
-						if (kind_r_ach_11 != kind) { kind_r_ach_11 = kind; ach_count[11] = 0; }
-						else { ach_count[11]++; }
+					if (kind_r_ach_11 != kind) { kind_r_ach_11 = kind; ach_count[11] = 0; }
+					else { ach_count[11]++; }
 				}
 			} break;
 			case 2: Tri() break;
