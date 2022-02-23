@@ -2,110 +2,121 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <iomanip>
 #include "cn.h"
 #include "en.h" //include the language header file
 
 
 #define output_string() {if (y_print) {std::cout << countx + 1 << "(" << five_star_assurance_number << ")(" << four_star_assurance_number << ") ";\
-                    casesx( kind );\
-                    lang_cout(2, kind); std::cout << "\n"; }\
-                    pcount[kind]++;\
-                    wishes_number--;\
-                    countx++;\
-                    five_star_assurance_number++;\
-                    four_star_assurance_number++;\
-                    } // cout what have come home
+					casesx( kind );\
+					lang_cout(2, kind); std::cout << "\n"; }\
+					pcount[kind]++;\
+					wishes_number--;\
+					wishes_number_left++;\
+					countx++;\
+					five_star_assurance_number++;\
+					four_star_assurance_number++;\
+					} // cout what have come home
 #define luckcpy() {if ( luck > luckiest || countx_l < 11) {\
-                        luckiest = luck;\
-                        for (size_t templuck = 0; templuck < 10; templuck++) {\
-                            luckiestlocation[templuck] = lucklocation[templuck];\
-                            luckiestsublocation[templuck] = lucksublocation[templuck];\
-                            luckiestsubsublocation[templuck] = lucksubsublocation[templuck];\
-                            luckiestkind[templuck] = luckkind[templuck];\
-                        }\
-                    }\
-                } // snapshot the luckiest moment
+						luckiest = luck;\
+						for (size_t templuck = 0; templuck < 10; templuck++) {\
+							luckiestlocation[templuck] = lucklocation[templuck];\
+							luckiestsublocation[templuck] = lucksublocation[templuck];\
+							luckiestsubsublocation[templuck] = lucksubsublocation[templuck];\
+							luckiestkind[templuck] = luckkind[templuck];\
+						}\
+					}\
+				} // snapshot the luckiest moment
 #define luckget() {for (size_t templuck = 0; templuck < 9; templuck++) {\
-                        lucklocation[templuck] = lucklocation[templuck + 1];\
-                        lucksublocation[templuck] = lucksublocation[templuck + 1];\
-                        lucksubsublocation[templuck] = lucksubsublocation[templuck + 1];\
-                        luckkind[templuck] = luckkind[templuck + 1];\
-                        luckstar[templuck] = luckstar[templuck + 1];\
-                    }\
-                    countx_l ++;\
-                    lucklocation[9] = countx;\
-                    lucksublocation[9] = static_cast<size_t> (five_star_assurance_number) - 1;\
-                    lucksubsublocation[9] = static_cast<size_t> (four_star_assurance_number) - 1;\
-                    luckkind[9] = kind;\
-                    luckstar[9] = star;\
-                    luck = 0;\
-                } // get the recorded luckiest
+						lucklocation[templuck] = lucklocation[templuck + 1];\
+						lucksublocation[templuck] = lucksublocation[templuck + 1];\
+						lucksubsublocation[templuck] = lucksubsublocation[templuck + 1];\
+						luckkind[templuck] = luckkind[templuck + 1];\
+						luckstar[templuck] = luckstar[templuck + 1];\
+					}\
+					countx_l ++;\
+					lucklocation[9] = countx;\
+					lucksublocation[9] = static_cast<size_t> (five_star_assurance_number) - 1;\
+					lucksubsublocation[9] = static_cast<size_t> (four_star_assurance_number) - 1;\
+					luckkind[9] = kind;\
+					luckstar[9] = star;\
+					luck = 0;\
+				} // get the recorded luckiest
 #define Tri() {\
-                star = 3;\
-                kind = rspick(three_g, 13);\
-                if(ach_count[8] < 7) {\
-                    if (kind_r_ach_8 != kind) { kind_r_ach_8 = kind; ach_count[8] = 0; }\
-                    else { ach_count[8]++; }\
-                }\
-                } // 3-star kind settler for all banners
+				star = 3;\
+				kind = rspick(three_g, 13);\
+				if(ach_count[8] < 7) {\
+					if (kind_r_ach_8 != kind) { kind_r_ach_8 = kind; ach_count[8] = 0; }\
+					else { ach_count[8]++; }\
+				}\
+				} // 3-star kind settler for all banners
 #define is_mode() {if (is_s_mode) {\
-                    bool check = false;\
-                    if (d_item_n[kind] > 0) { d_item_n[kind]--; }\
-                    for (size_t ikk = 0; ikk < 115; ikk++) {\
-                    if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
-                    else if (d_item_n[ikk] == 0) { d_item_c = false; }\
-                    else { lang_cout(4, 10); std::cout << "\n"; goto full_quit; }\
-                    if (check) { break; }\
-                    }\
-                    }\
-                } // do if is s mode
+					bool check = false;\
+					if (d_item_n[kind] > 0) { d_item_n[kind]--; }\
+					for (size_t ikk = 0; ikk < 115; ikk++) {\
+					if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
+					else if (d_item_n[ikk] == 0) { d_item_c = false; }\
+					else { lang_cout(4, 10); std::cout << "\n"; goto full_quit; }\
+					if (check) { break; }\
+					}\
+					}\
+				} // do if is s mode
 #define set_pool_1_m(up_five_m,size_nup_four_c_m, nup_four_cgm) {\
-                    set_pool_1((up_five_m), (size_nup_four_c_m), tempg1, tempg5, (nup_four_cgm));\
-                }
+					set_pool_1((up_five_m), (size_nup_four_c_m), tempg1, tempg5, (nup_four_cgm));\
+				}
 #define set_pool_3_m(size_nup_four_c_m, nup_four_cgm) {\
-                    set_pool_3((size_nup_four_c_m), tempg1, tempg5, tempg6, tempg7, (nup_four_cgm));\
-                }
+					set_pool_3((size_nup_four_c_m), tempg1, tempg5, tempg6, tempg7, (nup_four_cgm));\
+				}
 #define check_profile_throw() {\
-                    lang_cout(1, 143);\
-                    std::cout << "\n";\
-                    wishes_number = 0;\
-                    goto enter_wishes_number;\
-                }
+					lang_cout(1, 143);\
+					std::cout << "\n";\
+					wishes_number = 0;\
+					goto enter_wishes_number;\
+				}
 #define cin_error_by(){\
-                    std::cout << "\n";\
-                    lang_cout(1, 11);\
-                    std::cout << "\n";\
-                    std::cin.clear();\
-                    std::cin.ignore(32767, '\n');\
-                }
+					std::cout << "\n";\
+					lang_cout(1, 11);\
+					std::cout << "\n";\
+					std::cin.clear();\
+					std::cin.ignore(32767, '\n');\
+				}
 #define cin_error_by2(){\
-                    std::cout << "\n";\
-                    lang_cout(1, 11);\
-                    std::cout << "\n\n";\
-                    std::cin.clear();\
-                    std::cin.ignore(32767, '\n');\
-                }
+					std::cout << "\n";\
+					lang_cout(1, 11);\
+					std::cout << "\n\n";\
+					std::cin.clear();\
+					std::cin.ignore(32767, '\n');\
+				}
 #define cin_error_by3(){\
-                    std::cout << "\n" << EN_S_72 << "\n" << CN_S_72 << "\n\n";\
-                    std::cin.clear();\
-                    std::cin.ignore(32767, '\n');\
-                }
+					std::cout << "\n" << EN_S_72 << "\n" << CN_S_72 << "\n\n";\
+					std::cin.clear();\
+					std::cin.ignore(32767, '\n');\
+				}
 #define mpcheck(){if (countx == 2 ||\
-                    countx == 6 ||\
-                    countx == 30 ||\
-                    countx == 126 ||\
-                    countx == 8190 ||\
-                    countx == 131070 ||\
-                    countx == 524286 ||\
-                    countx == 2147483646 ||\
-                    countx == 2305843009213693950) { ach[7] = true; }\
-                  if (countx == 20192977) { ach[9] = true; }\
-                  if (countx == 157087284) { ach[10] = true; }\
-                }
+					countx == 6 ||\
+					countx == 30 ||\
+					countx == 126 ||\
+					countx == 8190 ||\
+					countx == 131070 ||\
+					countx == 524286 ||\
+					countx == 2147483646 ||\
+					countx == 2305843009213693950) { ach[7] = true; }\
+				  if (countx == 20192977) { ach[9] = true; }\
+				  if (countx == 157087284) { ach[10] = true; }\
+				}
+#define prog_g(){if (!y_print && y_prog) {\
+					delay_prog = static_cast<double>(static_cast<long double>(wishes_number_left * 100) / static_cast<long double>(wishes_number_r));\
+					if ((delay_prog - delay_prog_r) > 0.09 || static_cast<signed int>(delay_prog) == 100) {\
+						delay_prog_r = delay_prog;\
+						std::cout << "\r"; lang_cout(1, 166);\
+						std::cout << wishes_number_left << "/" << wishes_number_r << " (" << std::fixed << std::setprecision(2) << delay_prog << "%)";\
+					}\
+					}\
+				}\
 
 std::random_device seed_gen;
 static unsigned int seed_r = seed_gen() % 10000000;
-static unsigned long long int seed_t = std::chrono::high_resolution_clock::now().time_since_epoch().count() * static_cast<unsigned long long int>(100000);
+static unsigned long long int seed_t = static_cast<unsigned long long int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()) * static_cast<unsigned long long int>(100000);
 static size_t seed = static_cast<size_t>(seed_t) + static_cast<size_t>(seed_r);
 std::mt19937_64 generatorz(seed);
 // random set
@@ -119,6 +130,7 @@ is_dualcross = false,
 y_print = true,
 y_luck = true,
 y_arg = false,
+y_prog = false,
 five_star_guarantee_number = false,
 four_star_guarantee_number = false,
 iacheck = false,
@@ -132,7 +144,6 @@ size_nup_four_c = 1,
 luck = 0,
 luckiest = 0,
 countx = 0,
-countx_r = 0,
 countx_l = 0,
 five_count = 0,
 five_count_c = 0,
@@ -147,6 +158,8 @@ min_fivecount = 1,
 size_nup_four_w = 18,
 kind_r_ach_11 = 0,
 kind_r_ach_8 = 0,
+drump5 = 0,
+drump4 = 0,
 d_item[128] = { 0 },
 d_item_n[128] = { 0 },
 up_five_g[2] = { 0 },
@@ -214,7 +227,11 @@ three_weight = 0,
 fate_weapon = 0,
 ave_fives = 0,
 ach_count[12] = { 0 };
-signed long long int wishes_number = 0;
+signed long long int wishes_number = 0,
+wishes_number_left = 0,
+wishes_number_r = 0;
+double delay_prog = 0.0,
+delay_prog_r = 0.0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
 static size_t rspick(const size_t* kindx, size_t sizekind) {
@@ -323,13 +340,13 @@ int main(int argc, char* argv[]) {
 	argv[0] = default_argv0;
 	y_print = true;
 	y_luck = true;
+	y_prog = false;
 	//arg_proc:
 	if (argc == 5) {
 		int test0 = 0;
 		int test1 = 0;
 		signed long long int test2 = 0;
 		unsigned long int test3 = 0;
-		static size_t drump5 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -370,7 +387,6 @@ int main(int argc, char* argv[]) {
 		int test0 = 0;
 		int test1 = 0;
 		signed long long int test2 = 0;
-		static size_t drump4 = 0;
 		try {
 			test0 = std::stoi(argv[1]);
 			test1 = std::stoi(argv[2]);
@@ -449,6 +465,7 @@ enter_chosen_banner:
 	countx = 0;
 	countx_l = 0;
 	wishes_number = 0;
+	wishes_number_left = 0;
 	five_count = 0;
 	five_count_c = 0;
 	five_count_w = 0;
@@ -629,7 +646,7 @@ enter_chosen_event:
 		std::cout << "\n";
 		if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_5; }
 		else { chosen_event = 0; goto enter_chosen_banner; }
-	} break;
+	}
 	default: {chosen_banner = 0; chosen_event = 0; quit = true; std::cout << "\n"; lang_cout(1, 53); std::cout << "\n\n"; goto enter_chosen_banner; }
 	}
 	// choose event
@@ -1083,6 +1100,7 @@ enter_wishes_number:
 	if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 || chosen_banner == 4) { std::cout << ";\n"; lang_cout(1, 90); }
 	if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n"; lang_cout(1, 61); }
 	std::cout << ";\n"; lang_cout(1, 158);
+	std::wcout << ";\n"; lang_cout(1, 165);
 	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
 	std::cout << ";\n"; lang_cout(1, 113); std::cout << "\n"; lang_cout(1, 161);
 	for (size_t i = 0; i < 9; i++) {
@@ -1165,6 +1183,7 @@ enter_wishes_number:
 			for (size_t ini = 0; ini < 12; ini++) { ach_q[ini] = false; }
 			kind_r_ach_8 = 0;
 			kind_r_ach_11 = 0;
+			wishes_number_left = 0;
 			achp_check_again = false;
 			d_item_c = true;
 			is_s_mode = false;
@@ -1236,6 +1255,12 @@ enter_wishes_number:
 	else if (wishes_number == -7) {
 		if (y_luck) { y_luck = false; lang_cout(1, 156); std::cout << "\n"; }
 		else { y_luck = true; lang_cout(1, 157); std::cout << "\n"; }
+		wishes_number = 0;
+		goto enter_wishes_number;
+	}
+	else if (wishes_number == -8) {
+		if (y_prog) { y_prog = false; lang_cout(1, 167); std::cout << "\n"; }
+		else { y_prog = true; lang_cout(1, 168); std::cout << "\n"; }
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
@@ -1596,11 +1621,19 @@ enter_wishes_number:
 			else {
 				lang_cout(1, 159); lang_cout(1, 157); std::cout << "\n";
 			}
+			if (!y_prog) {
+				lang_cout(1, 159); lang_cout(1, 167); std::cout << "\n";
+			}
+			else {
+				lang_cout(1, 159); lang_cout(1, 168); std::cout << "\n";
+			}
 		}
 		std::cout << "\n";
 	}
 core_core_loop:
-	countx_r = countx;
+	wishes_number_r = wishes_number;
+	delay_prog = 0.0;
+	delay_prog_r = 0.0;
 	if (y_arg) {
 		lang_cout(1, 1); std::cout << "\n";
 		lang_cout(1, 2); std::cout << "\n";
@@ -1610,6 +1643,7 @@ core_core_loop:
 	}
 	if (!is_s_mode) { d_item_c = false; }
 	starty = std::chrono::system_clock::now();
+	wishes_number_left = 0;
 	if (chosen_banner == 1 || chosen_banner == 2) {
 		while (wishes_number > 0 || d_item_c) {
 			const size_t temp1 = generatorz() % 2;
@@ -1757,6 +1791,7 @@ core_core_loop:
 				luckcpy()
 					is_mode()
 			}
+			prog_g()
 		}
 	}
 	else if (chosen_banner == 3) {
@@ -1938,6 +1973,7 @@ core_core_loop:
 				luckcpy()
 					is_mode()
 			}
+			prog_g()
 		}
 	}
 	else if (chosen_banner == 4) {
@@ -2111,6 +2147,7 @@ core_core_loop:
 				luckcpy()
 					is_mode()
 			}
+			prog_g()
 		}
 	}
 	else if (chosen_banner == 5) {
@@ -2224,6 +2261,7 @@ core_core_loop:
 				luckcpy()
 					is_mode()
 			}
+			prog_g()
 		}
 	}
 	else { lang_cout(4, 7); std::cout << "\n"; goto full_quit; }
@@ -2238,13 +2276,13 @@ core_core_loop:
 	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
 	if (max_fives > 86 && chosen_banner != 5) { ach[3] = true; }
 	if (five_count == 0) {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << "\n"; lang_cout(1, 127); std::cout << wishes_number_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 77); std::cout << five_count_c << " : " << five_count_w << " : " << four_count_c << " : " << four_count_w << "\n\n";
 	}
 	else {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << "\n"; lang_cout(1, 127); std::cout << wishes_number_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 78); std::cout << max_fives; lang_cout(1, 79); std::cout << max_fivesth; lang_cout(1, 80); std::cout << max_fivecount + 1; lang_cout(1, 81); std::cout << "\n";
@@ -2269,7 +2307,7 @@ core_core_loop:
 		}
 	}
 	if (iacheck) { std::cout << "\n"; }
-	countx_r = 0;
+	wishes_number_r = 0;
 	if (y_arg) { goto full_quit; }
 	// a bunch of output of statistics
 	goto enter_wishes_number;
