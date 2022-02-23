@@ -106,7 +106,7 @@
 				}
 #define prog_g(){if (!y_print && y_prog) {\
 					delay_prog = static_cast<double>(static_cast<long double>(wishes_number_left * 100) / static_cast<long double>(wishes_number_r));\
-					if ((delay_prog - delay_prog_r) > 0.09 || static_cast<signed int>(delay_prog) == 100) {\
+					if ((delay_prog - delay_prog_r) > 0.09 || static_cast<signed int>(delay_prog) == 100 || static_cast<signed int>(delay_prog) == 0) {\
 						delay_prog_r = delay_prog;\
 						std::cout << "\r"; lang_cout(1, 166);\
 						std::cout << wishes_number_left << "/" << wishes_number_r << " (" << std::fixed << std::setprecision(2) << delay_prog << "%)";\
