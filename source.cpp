@@ -12,7 +12,6 @@
 					lang_cout(2, kind); std::cout << "\n"; }\
 					pcount[kind]++;\
 					wishes_number--;\
-					wishes_number_left++;\
 					countx++;\
 					five_star_assurance_number++;\
 					four_star_assurance_number++;\
@@ -105,11 +104,11 @@
 				  if (countx == 157087284) { ach[10] = true; }\
 				}
 #define prog_g(){if (!y_print && y_prog) {\
-					delay_prog = static_cast<double>(static_cast<long double>(wishes_number_left * 100) / static_cast<long double>(wishes_number_r));\
-					if ((delay_prog - delay_prog_r) > 0.09 || static_cast<signed int>(delay_prog) == 100 || static_cast<signed int>(delay_prog) == 0) {\
-						delay_prog_r = delay_prog;\
+					if ((delay_prog - wishes_number) > static_cast<signed long long>(wishes_number_r_t) || delay_r == 100|| delay_r == 0) {\
+						delay_prog = wishes_number;\
 						std::cout << "\r"; lang_cout(1, 166);\
-						std::cout << wishes_number_left << "/" << wishes_number_r << " (" << std::fixed << std::setprecision(2) << delay_prog << "%)";\
+						std::cout << "(" << delay_r << "%)";\
+						delay_r ++;\
 					}\
 					}\
 				}\
@@ -205,7 +204,8 @@ five_stars_c[23] = { 0, 1, 2, 3, 4, 63, 64, 65, 66, 67, 68, 69, 70, 72, 86, 89, 
 five_stars_w[28] = { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 73, 74, 75, 76, 77, 78, 81, 85, 87, 92, 93, 97, 98, 101, 107, 110, 112, 113 };
 unsigned int resultt = 0,
 resultu = 0,
-lang_status = 0;
+lang_status = 0,
+delay_r = 0;
 ptrdiff_t chosen_event = 0,
 chosen_banner = 0,
 switch_b_should_be = 0,
@@ -228,10 +228,9 @@ fate_weapon = 0,
 ave_fives = 0,
 ach_count[12] = { 0 };
 signed long long int wishes_number = 0,
-wishes_number_left = 0,
-wishes_number_r = 0;
-double delay_prog = 0.0,
-delay_prog_r = 0.0;
+wishes_number_r = 0,
+delay_prog = 0;
+double wishes_number_r_t = 0.0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
 static size_t rspick(const size_t* kindx, size_t sizekind) {
@@ -358,7 +357,7 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-		drump5 = static_cast<size_t>(test0) + static_cast<size_t>(test1) + static_cast<size_t>(test2) + static_cast<size_t>(test3);
+		drump5 = static_cast<size_t>(test0) == static_cast<size_t>(test1) + static_cast<size_t>(test2) == static_cast<size_t>(test3);
 		test0 = std::stoi(argv[1]);
 		test1 = std::stoi(argv[2]);
 		test2 = std::stoll(argv[3]);
@@ -397,7 +396,7 @@ int main(int argc, char* argv[]) {
 			y_arg = true;
 			goto full_quit;
 		}
-		drump4 = static_cast<size_t>(test0) + static_cast<size_t>(test1) + static_cast<size_t>(test2);
+		drump4 = static_cast<size_t>(test0) + static_cast<size_t>(test1) == static_cast<size_t>(test2);
 		test0 = std::stoi(argv[1]);
 		test1 = std::stoi(argv[2]);
 		test2 = std::stoll(argv[3]);
@@ -465,7 +464,6 @@ enter_chosen_banner:
 	countx = 0;
 	countx_l = 0;
 	wishes_number = 0;
-	wishes_number_left = 0;
 	five_count = 0;
 	five_count_c = 0;
 	five_count_w = 0;
@@ -478,6 +476,9 @@ enter_chosen_banner:
 	max_fivecount = 1;
 	min_fivecount = 1;
 	kind_r_ach_8 = 0;
+	wishes_number_r_t = 0.0;
+	delay_prog = 0;
+	delay_r = 0;
 	ini_all(d_item, 128, 0);
 	ini_all(d_item_n, 128, 0);
 	ini_all(up_five_g, 2, 0);
@@ -1183,7 +1184,6 @@ enter_wishes_number:
 			for (size_t ini = 0; ini < 12; ini++) { ach_q[ini] = false; }
 			kind_r_ach_8 = 0;
 			kind_r_ach_11 = 0;
-			wishes_number_left = 0;
 			achp_check_again = false;
 			d_item_c = true;
 			is_s_mode = false;
@@ -1632,8 +1632,9 @@ enter_wishes_number:
 	}
 core_core_loop:
 	wishes_number_r = wishes_number;
-	delay_prog = 0.0;
-	delay_prog_r = 0.0;
+	wishes_number_r_t = static_cast<double>(wishes_number_r) / 100.0;
+	delay_prog = 0;
+	delay_r = 0;
 	if (y_arg) {
 		lang_cout(1, 1); std::cout << "\n";
 		lang_cout(1, 2); std::cout << "\n";
@@ -1643,7 +1644,6 @@ core_core_loop:
 	}
 	if (!is_s_mode) { d_item_c = false; }
 	starty = std::chrono::system_clock::now();
-	wishes_number_left = 0;
 	if (chosen_banner == 1 || chosen_banner == 2) {
 		while (wishes_number > 0 || d_item_c) {
 			const size_t temp1 = generatorz() % 2;
