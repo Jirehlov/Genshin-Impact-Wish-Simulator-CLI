@@ -527,6 +527,7 @@
 #define EN_E_11 "Arguments error! Usage: chosen_banner chosen_event wishes_number language"
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
+#define EN_E_14 "An error occurred in prog! Error code: 14"
 #define EN_V_0 "Placeholder"
 #define EN_V_1 "Current chosen Banner "
 #define EN_V_2 "Current chosen Event "
@@ -666,8 +667,8 @@ static const char* pnameshort_en[128] = {
                 EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125, EN_X_126, EN_X_127
 };
 
-static const char* perror_en[14] = {
-                EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10, EN_E_11, EN_E_12, EN_E_13
+static const char* perror_en[15] = {
+                EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10, EN_E_11, EN_E_12, EN_E_13, EN_E_14
 };
 
 static const char* pvalue_en[49] = {

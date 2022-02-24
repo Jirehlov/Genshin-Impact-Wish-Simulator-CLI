@@ -104,14 +104,24 @@
 				  if (countx == 157087284) { ach[10] = true; }\
 				}
 #define prog_g(){if (!y_print && y_prog) {\
-					if ((delay_prog - wishes_number) > static_cast<signed long long>(wishes_number_r_t) || delay_r == 100|| delay_r == 0) {\
-						delay_prog = wishes_number;\
+					if (delay_prog > 0) {\
+						delay_prog--;\
+					}\
+					else if (delay_r == 0 || delay_r == 100 || delay_prog == 0)\
+					{\
+						delay_prog = wishes_number_r_t;\
 						std::cout << "\r"; lang_cout(1, 166);\
 						std::cout << "(" << delay_r << "%)";\
-						delay_r ++;\
+						delay_r++;\
 					}\
+					else\
+					{\
+						lang_cout(4, 14);\
+						std::cout << "\n";\
+						goto full_quit;\
 					}\
 				}\
+				}
 
 std::random_device seed_gen;
 static unsigned int seed_r = seed_gen() % 10000000;
@@ -229,8 +239,8 @@ ave_fives = 0,
 ach_count[12] = { 0 };
 signed long long int wishes_number = 0,
 wishes_number_r = 0,
-delay_prog = 0;
-double wishes_number_r_t = 0.0;
+delay_prog = 0,
+wishes_number_r_t = 0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
 static size_t rspick(const size_t* kindx, size_t sizekind) {
@@ -476,7 +486,7 @@ enter_chosen_banner:
 	max_fivecount = 1;
 	min_fivecount = 1;
 	kind_r_ach_8 = 0;
-	wishes_number_r_t = 0.0;
+	wishes_number_r_t = 0;
 	delay_prog = 0;
 	delay_r = 0;
 	ini_all(d_item, 128, 0);
@@ -1632,8 +1642,8 @@ enter_wishes_number:
 	}
 core_core_loop:
 	wishes_number_r = wishes_number;
-	wishes_number_r_t = static_cast<double>(wishes_number_r) / 100.0;
-	delay_prog = 0;
+	wishes_number_r_t = static_cast<signed long long int>(static_cast<double>(wishes_number_r) / 100.0);
+	delay_prog = wishes_number_r_t;
 	delay_r = 0;
 	if (y_arg) {
 		lang_cout(1, 1); std::cout << "\n";

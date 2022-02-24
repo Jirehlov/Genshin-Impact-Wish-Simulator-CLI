@@ -527,6 +527,7 @@
 #define CN_E_11 "arguments错误! 正确格式为: 卡池类型编号 活动类型编号 祈愿数量 语言"
 #define CN_E_12 "lang_status不合理! 错误码: 12"
 #define CN_E_13 "lang_cout错误! 错误码: 13"
+#define CN_E_14 "prog 发生错误! 错误码: 14"
 #define CN_V_0 "Placeholder"
 #define CN_V_1 "当前卡池类型 "
 #define CN_V_2 "当前活动类型 "
@@ -666,8 +667,8 @@ static const char* pnameshort_cn[128] = {
                 CN_X_119, CN_X_120, CN_X_121, CN_X_122, CN_X_123, CN_X_124, CN_X_125, CN_X_126, CN_X_127
 };
 
-static const char* perror_cn[14] = {
-                CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10, CN_E_11, CN_E_12, CN_E_13
+static const char* perror_cn[15] = {
+                CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10, CN_E_11, CN_E_12, CN_E_13, CN_E_14
 };
 
 static const char* pvalue_cn[49] = {
