@@ -109,20 +109,27 @@
 					delay_r++; \
 				}
 #define prog_g(){if (!y_print && y_prog) {\
-					if (delay_prog > 0) {\
-						delay_prog--; \
+					if (wishes_number_r > 10000){\
+						if (delay_prog > 0) {\
+							delay_prog--; \
+						}\
+						else if (delay_prog == 0)\
+						{\
+							delay_prog = wishes_number_r_t; \
+							prog_p()\
+						}\
+						else\
+						{\
+							lang_cout(4, 14);\
+							std::cout << "\n";\
+							error_code = 14;\
+							goto full_quit;\
+						}\
 					}\
-					else if (delay_prog == 0)\
-					{\
-						delay_prog = wishes_number_r_t; \
-						prog_p()\
-					}\
-					else\
-					{\
-						lang_cout(4, 14);\
-						std::cout << "\n";\
-						error_code = 14;\
-						goto full_quit;\
+					else {\
+						delay_prog = static_cast<signed long long int>(100.0 - static_cast<double>(wishes_number) * 100.0 / static_cast<double>(wishes_number_r));\
+						std::cout << "\r"; lang_cout(1, 166); \
+						std::cout << "(" << delay_prog << "%)"; \
 					}\
 				}\
 				}
