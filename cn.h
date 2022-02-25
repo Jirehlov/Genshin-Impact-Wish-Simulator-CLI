@@ -170,7 +170,7 @@
 #define CN_S_166 "进度提示: 已完成 "
 #define CN_S_167 "进度提示已关闭!"
 #define CN_S_168 "进度提示已打开!"
-#define CN_S_169 "Placeholder"
+#define CN_S_169 "指定出货结果模式下进度提示无效"
 #define CN_S_170 "Placeholder"
 #define CN_S_171 "Placeholder"
 #define CN_S_172 "Placeholder"

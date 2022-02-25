@@ -169,7 +169,7 @@
 #define EN_S_166 "Progress: It's been completed "
 #define EN_S_167 "Progress printing is disabled!"
 #define EN_S_168 "Progress printing is enabled!"
-#define EN_S_169 "Placeholder"
+#define EN_S_169 "Progress printing is not supported with Specific Output Mode enabled!"
 #define EN_S_170 "Placeholder"
 #define EN_S_171 "Placeholder"
 #define EN_S_172 "Placeholder"

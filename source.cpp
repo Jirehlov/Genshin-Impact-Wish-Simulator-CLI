@@ -108,7 +108,7 @@
 					std::cout << "(" << delay_r << "%)"; \
 					delay_r++; \
 				}
-#define prog_g(){if (!y_print && y_prog) {\
+#define prog_g(){if (!y_arg && !y_print && y_prog && !is_s_mode) {\
 					if (wishes_number_r > 10000){\
 						if (delay_prog > 0) {\
 							delay_prog--; \
@@ -164,6 +164,7 @@ size_nup_four_c = 1,
 luck = 0,
 luckiest = 0,
 countx = 0,
+countx_r = 0,
 countx_l = 0,
 five_count = 0,
 five_count_c = 0,
@@ -339,7 +340,6 @@ static void ini_ams(size_t* in, size_t ins, const size_t* out) {
 	for (size_t i = 0; i < ins; i++) { in[i] = out[i]; }
 }//for of the same size
 
-
 static void set_pool_1(size_t up_five_p, size_t size_nup_four_c_p, const size_t* tempg1, const size_t* tempg5, const size_t* nup_four_cgm) {
 	up_five = up_five_p;
 	size_nup_four_c = size_nup_four_c_p;
@@ -355,6 +355,25 @@ static void set_pool_3(size_t size_nup_four_c_p, const size_t* tempg1, const siz
 	ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
 	ini_ams(four_check, 8, tempg5);
 	ini_ams(five_check, 8, tempg7);
+}
+
+static void head_print() {
+	lang_cout(1, 85); std::cout << "\n";
+	if (!y_print) {
+		if (!y_luck) {
+			lang_cout(1, 159); lang_cout(1, 156); std::cout << "\n";
+		}
+		else {
+			lang_cout(1, 159); lang_cout(1, 157); std::cout << "\n";
+		}
+		if (!y_prog) {
+			lang_cout(1, 159); lang_cout(1, 167); std::cout << "\n";
+		}
+		else {
+			lang_cout(1, 159); lang_cout(1, 168); std::cout << "\n";
+		}
+	}
+	std::cout << "\n";
 }
 
 int main(int argc, char* argv[]) {
@@ -489,6 +508,7 @@ enter_chosen_banner:
 	e_sav = 0;
 	size_nup_four_w = 18;
 	countx = 0;
+	countx_r = 0;
 	countx_l = 0;
 	wishes_number = 0;
 	five_count = 0;
@@ -1169,6 +1189,7 @@ enter_wishes_number:
 			five_star_guarantee_number = false;
 			four_star_guarantee_number = false;
 			countx = 0;
+			countx_r = 0;
 			five_count = 0;
 			five_count_c = 0;
 			five_count_w = 0;
@@ -1545,7 +1566,7 @@ enter_wishes_number:
 			if (ij == -1) {
 				for (size_t i = 0; i < 127; i++) { if (d_item_n[i] > 0) { zero_input_check = false; } }
 				if (zero_input_check) { ij = 0; d_item_c = false; std::cout << "\n"; lang_cout(1, 125); std::cout << "\n"; goto enter_wishes_number; }
-				else { ij = 0; std::cout << "\n"; lang_cout(1, 85); std::cout << "\n\n"; goto core_core_loop; }
+				else { ij = 0; std::cout << "\n"; head_print(); goto core_core_loop; }
 			}
 			else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 115; qi++) { d_item_n[qi] = 0; } std::cout << "\n"; goto enter_wishes_number; }
 			else if (ij > -1) {
@@ -1640,29 +1661,14 @@ enter_wishes_number:
 	}
 	else if (wishes_number < 1) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
 	else {
-		lang_cout(1, 85); std::cout << "\n";
-		if (!y_print) {
-			if (!y_luck) {
-				lang_cout(1, 159); lang_cout(1, 156); std::cout << "\n";
-			}
-			else {
-				lang_cout(1, 159); lang_cout(1, 157); std::cout << "\n";
-			}
-			if (!y_prog) {
-				lang_cout(1, 159); lang_cout(1, 167); std::cout << "\n";
-			}
-			else {
-				lang_cout(1, 159); lang_cout(1, 168); std::cout << "\n";
-			}
-		}
-		std::cout << "\n";
+		head_print();
 	}
 core_core_loop:
+	countx_r = countx;
 	wishes_number_r = wishes_number;
 	wishes_number_r_t = static_cast<signed long long int>(static_cast<double>(wishes_number_r) / 100.0);
 	delay_prog = wishes_number_r_t;
 	delay_r = 0;
-	if (!y_print && y_prog) { prog_p() }
 	if (y_arg) {
 		lang_cout(1, 1); std::cout << "\n";
 		lang_cout(1, 2); std::cout << "\n";
@@ -1671,6 +1677,15 @@ core_core_loop:
 		lang_cout(1, 85); std::cout << "\n\n";
 	}
 	if (!is_s_mode) { d_item_c = false; }
+	if (!y_arg && !y_print && y_prog) {
+		if (!is_s_mode) {
+			prog_p()
+		}
+		else {
+			std::cout << "\r";
+			lang_cout(1, 169);
+		}
+	}
 	starty = std::chrono::system_clock::now();
 	if (chosen_banner == 1 || chosen_banner == 2) {
 		while (wishes_number > 0 || d_item_c) {
@@ -2300,19 +2315,19 @@ core_core_loop:
 	t_start = std::chrono::system_clock::to_time_t(starty);
 	t_end = std::chrono::system_clock::to_time_t(endy);
 	delay_r = 100;
-	if (!y_print && y_prog) { prog_p() }
+	if (!y_arg && !y_print && y_prog && !is_s_mode) { prog_p() }
 	std::cout << "\n"; lang_cout(1, 86); std::cout << t_start << "\n";
 	lang_cout(1, 87); std::cout << t_end << "\n";
 	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
 	if (max_fives > 86 && chosen_banner != 5) { ach[3] = true; }
 	if (five_count == 0) {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << wishes_number_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 77); std::cout << five_count_c << " : " << five_count_w << " : " << four_count_c << " : " << four_count_w << "\n\n";
 	}
 	else {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << wishes_number_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 78); std::cout << max_fives; lang_cout(1, 79); std::cout << max_fivesth; lang_cout(1, 80); std::cout << max_fivecount + 1; lang_cout(1, 81); std::cout << "\n";
