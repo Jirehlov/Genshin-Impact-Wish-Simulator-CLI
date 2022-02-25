@@ -55,7 +55,7 @@
 					for (size_t ikk = 0; ikk < 115; ikk++) {\
 					if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
 					else if (d_item_n[ikk] == 0) { d_item_c = false; }\
-					else { lang_cout(4, 10); std::cout << "\n"; goto full_quit; }\
+					else { lang_cout(4, 10); std::cout << "\n"; error_code = 10; goto full_quit; }\
 					if (check) { break; }\
 					}\
 					}\
@@ -103,21 +103,25 @@
 				  if (countx == 20192977) { ach[9] = true; }\
 				  if (countx == 157087284) { ach[10] = true; }\
 				}
+#define prog_p(){\
+					std::cout << "\r"; lang_cout(1, 166); \
+					std::cout << "(" << delay_r << "%)"; \
+					delay_r++; \
+				}
 #define prog_g(){if (!y_print && y_prog) {\
-					if (delay_r == 0 || delay_r == 100 || delay_prog == 0)\
-					{\
-						delay_prog = wishes_number_r_t;\
-						std::cout << "\r"; lang_cout(1, 166);\
-						std::cout << "(" << delay_r << "%)";\
-						delay_r++;\
-					}\
-					else if (delay_prog > 0) {\
+					if (delay_prog > 0) {\
 						delay_prog--; \
+					}\
+					else if (delay_prog == 0)\
+					{\
+						delay_prog = wishes_number_r_t; \
+						prog_p()\
 					}\
 					else\
 					{\
 						lang_cout(4, 14);\
 						std::cout << "\n";\
+						error_code = 14;\
 						goto full_quit;\
 					}\
 				}\
@@ -241,6 +245,8 @@ signed long long int wishes_number = 0,
 wishes_number_r = 0,
 delay_prog = 0,
 wishes_number_r_t = 0;
+signed int error_code = 0;
+static int full_q = 0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
 static size_t rspick(const size_t* kindx, size_t sizekind) {
@@ -289,7 +295,7 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 4: std::cout << perror_en[sw]; break;
 		case 5: std::cout << pvalue_en[sw]; break;
 		case 6: std::cout << pachieve_en[sw]; break;
-		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; quit = true; }
+		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
 		}
 	}
 	else if (lang_status == 1) {
@@ -300,11 +306,11 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 4: std::cout << perror_cn[sw]; break;
 		case 5: std::cout << pvalue_cn[sw]; break;
 		case 6: std::cout << pachieve_cn[sw]; break;
-		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; quit = true; }
+		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
 		}
 	}
 	else {
-		std::cout << EN_E_12 << "\n" << CN_E_12 << "\n"; quit = true;
+		std::cout << EN_E_12 << "\n" << CN_E_12 << "\n"; error_code = 12; quit = true;
 	}
 }
 
@@ -314,7 +320,7 @@ static void casesx(size_t kind) {
 	else if (kind < 63) { std::cout << "*** "; }
 	else if (kind == 71 || kind == 79 || kind == 80 || kind == 82 || kind == 83 || kind == 84 || kind == 88 || kind == 91 || kind == 95 || kind == 100 || kind == 102 || kind == 103 || kind == 104 || kind == 106 || kind == 108) { std::cout << "!!**** "; }
 	else if (kind < 115) { std::cout << "!!!!!***** "; }
-	else { lang_cout(4, 1); std::cout << "  "; }
+	else { lang_cout(4, 1); std::cout << "  "; error_code = 1; }
 } // cout stars prefix
 
 
@@ -364,6 +370,7 @@ int main(int argc, char* argv[]) {
 		}
 		catch (...) {
 			lang_cout(4, 11); std::cout << "\n";
+			error_code = 11;
 			y_arg = true;
 			goto full_quit;
 		}
@@ -384,6 +391,7 @@ int main(int argc, char* argv[]) {
 		if (test3 != 0 && test3 != 1) {
 			lang_cout(4, 12);
 			std::cout << "\n";
+			error_code = 12;
 			y_arg = true;
 			goto full_quit;
 		}
@@ -403,6 +411,7 @@ int main(int argc, char* argv[]) {
 		}
 		catch (...) {
 			lang_cout(4, 11); std::cout << "\n";
+			error_code = 11;
 			y_arg = true;
 			goto full_quit;
 		}
@@ -428,6 +437,7 @@ int main(int argc, char* argv[]) {
 	}
 	else {
 		lang_cout(4, 11); std::cout << "\n";
+		error_code = 11;
 		y_arg = true;
 		goto full_quit;
 	}
@@ -813,7 +823,7 @@ set_banner:
 			const size_t tempg5[8] = { 18, 22, 100, 0, 0, 0, 0, 0 };
 			set_pool_1_m(96, 20, nup_four_cg9)
 		} break;
-		default: { lang_cout(4, 5); std::cout << "\n"; goto full_quit; }
+		default: { lang_cout(4, 5); std::cout << "\n"; error_code = 5; goto full_quit; }
 		}
 	}
 	else if (chosen_banner == 2) {
@@ -1089,7 +1099,7 @@ set_banner:
 	else if (chosen_banner == 5) {
 		ini_ams(nup_four_c, 11, nup_four_cg1);
 	}
-	else { lang_cout(4, 7); std::cout << "\n"; goto full_quit; }
+	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
 	if (y_arg) { goto core_core_loop; }
 	// set banner
 	if (!is_cross) { goto pre_core_loop; }
@@ -1102,7 +1112,7 @@ pre_core_loop:
 	if (is_dualcross) { goto enter_wishes_number; }
 	else { unmet4_c = 0; unmet4_w = 0; unmet5_c = 0; unmet5_w = 0; }
 enter_wishes_number:
-	if (quit) { lang_cout(4, 6); std::cout << "\n"; goto full_quit; }
+	if (quit) { lang_cout(4, 6); std::cout << "\n"; error_code = 6; goto full_quit; }
 	d_item_c = true;
 	static const size_t ewn[6] = { 54, 55, 56, 57, 58, 59 };
 	std::cout << "\n";
@@ -1164,7 +1174,7 @@ enter_wishes_number:
 			if (chosen_banner == 3) { min_fives = 80; }
 			else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) { min_fives = 90; }
 			else if (chosen_banner == 5) { min_fives = PTRDIFF_MAX; }
-			else { lang_cout(4, 7); std::cout << "\n"; goto full_quit; }
+			else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
 			max_fivesth = 1;
 			min_fivesth = 1;
 			max_fivecount = 1;
@@ -1237,7 +1247,7 @@ enter_wishes_number:
 			goto enter_wishes_number;
 		}
 		else {
-			wishes_number = 0; lang_cout(4, 7); std::cout << "\n"; goto full_quit;
+			wishes_number = 0; lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit;
 		}
 	}
 	else if (wishes_number == -6) {
@@ -1521,7 +1531,7 @@ enter_wishes_number:
 					d_item[nup_five_c[ukt]] = 1;
 				}
 			}
-			else { lang_cout(4, 7); std::cout << "\n"; goto full_quit; }
+			else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
 			std::cout << "\n"; lang_cout(1, 116); std::cout << "\n"; lang_cout(1, 123); std::cout << "\n\n";
 			std::cin >> ij;
 			if (std::cin.fail()) { ij = 0; cin_error_by2() goto enter_ij; }
@@ -1645,6 +1655,7 @@ core_core_loop:
 	wishes_number_r_t = static_cast<signed long long int>(static_cast<double>(wishes_number_r) / 100.0);
 	delay_prog = wishes_number_r_t;
 	delay_r = 0;
+	if (!y_print && y_prog) { prog_p() }
 	if (y_arg) {
 		lang_cout(1, 1); std::cout << "\n";
 		lang_cout(1, 2); std::cout << "\n";
@@ -1725,7 +1736,7 @@ core_core_loop:
 							kind = rspick(nup_four_w, size_nup_four_w);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 					else if (unmet4_c > 16) {
@@ -1747,7 +1758,7 @@ core_core_loop:
 							kind = rspick(nup_four_w, size_nup_four_w);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 					else {
@@ -1769,7 +1780,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 				}
@@ -1779,7 +1790,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; break;
+			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
 			}
 			output_string()
 				if (star != 4 || type == 3) { unmet4_c++; }
@@ -1872,7 +1883,7 @@ core_core_loop:
 						else { five_star_guarantee_number = true; }
 					}
 				}
-				else { lang_cout(4, 2); std::cout << "\n"; goto full_quit; }
+				else { lang_cout(4, 2); std::cout << "\n"; error_code = 2; goto full_quit; }
 			} break;
 			case 1: {
 				star = 4;
@@ -1907,7 +1918,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 					else if (unmet4_c > 14) {
@@ -1929,7 +1940,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 					else {
@@ -1951,7 +1962,7 @@ core_core_loop:
 							kind = rspick(nup_four_c, size_nup_four_c);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; break;
+						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 						}
 					}
 				}
@@ -1961,7 +1972,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; break;
+			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
 			}
 			output_string()
 				if (star != 4 || type == 3) { unmet4_c++; }
@@ -2024,7 +2035,7 @@ core_core_loop:
 						unmet5_w = 0;
 						kind = rspick(nup_five_w, 10);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 				else if (unmet5_c > 146) {
@@ -2043,7 +2054,7 @@ core_core_loop:
 						unmet5_w = 0;
 						kind = rspick(nup_five_w, 10);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 				else {
@@ -2062,7 +2073,7 @@ core_core_loop:
 						unmet5_c = 0;
 						kind = rspick(nup_five_c, 5);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 			} break;
@@ -2088,7 +2099,7 @@ core_core_loop:
 						unmet4_w = 0;
 						kind = rspick(nup_four_w, size_nup_four_w);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 				else if (unmet4_c > 16) {
@@ -2107,7 +2118,7 @@ core_core_loop:
 						unmet4_w = 0;
 						kind = rspick(nup_four_w, size_nup_four_w);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 				else {
@@ -2126,7 +2137,7 @@ core_core_loop:
 						unmet4_c = 0;
 						kind = rspick(nup_four_c, size_nup_four_c);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; break;
+					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
 					}
 				}
 				if (ach_count[11] < 7) {
@@ -2135,7 +2146,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; break;
+			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
 			}
 			output_string()
 				if (!(star == 5 && type == 1)) { unmet5_c++; }
@@ -2274,13 +2285,15 @@ core_core_loop:
 			prog_g()
 		}
 	}
-	else { lang_cout(4, 7); std::cout << "\n"; goto full_quit; }
+	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
 	// real work
 	endy = std::chrono::system_clock::now();
 	elapsed = endy - starty;
 	elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 	t_start = std::chrono::system_clock::to_time_t(starty);
 	t_end = std::chrono::system_clock::to_time_t(endy);
+	delay_r = 100;
+	if (!y_print && y_prog) { prog_p() }
 	std::cout << "\n"; lang_cout(1, 86); std::cout << t_start << "\n";
 	lang_cout(1, 87); std::cout << t_end << "\n";
 	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
@@ -2322,5 +2335,8 @@ core_core_loop:
 	// a bunch of output of statistics
 	goto enter_wishes_number;
 full_quit:
-	return 0;
+	std::cin.clear();
+	std::cin.ignore(32767, '\n');
+	full_q = std::cin.get();
+	return error_code;
 }
