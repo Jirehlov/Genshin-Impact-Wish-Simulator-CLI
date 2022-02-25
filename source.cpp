@@ -104,15 +104,15 @@
 				  if (countx == 157087284) { ach[10] = true; }\
 				}
 #define prog_g(){if (!y_print && y_prog) {\
-					if (delay_prog > 0) {\
-						delay_prog--;\
-					}\
-					else if (delay_r == 0 || delay_r == 100 || delay_prog == 0)\
+					if (delay_r == 0 || delay_r == 100 || delay_prog == 0)\
 					{\
 						delay_prog = wishes_number_r_t;\
 						std::cout << "\r"; lang_cout(1, 166);\
 						std::cout << "(" << delay_r << "%)";\
 						delay_r++;\
+					}\
+					else if (delay_prog > 0) {\
+						delay_prog--; \
 					}\
 					else\
 					{\
