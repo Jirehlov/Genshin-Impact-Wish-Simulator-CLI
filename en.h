@@ -256,7 +256,6 @@
 #define EN_S_253 "Placeholder"
 #define EN_S_254 "Placeholder"
 #define EN_S_255 "Placeholder"
-#define EN_S_256 "Placeholder"
 #define EN_C_0 "\"Driving Thunder\" Keqing (Electro)"
 #define EN_C_1 "\"Astral Reflection\" Mona (Hydro)"
 #define EN_C_2 "\"Icy Resurrection\" Qiqi (Cryo)"

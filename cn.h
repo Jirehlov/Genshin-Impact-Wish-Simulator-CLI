@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #ifndef CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
