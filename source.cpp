@@ -4,8 +4,7 @@
 #include <string>
 #include <iomanip>
 #include "cn.h"
-#include "en.h" //include the language header file
-
+#include "en.h"
 
 #define output_string() {if (y_print) {std::cout << countx + 1 << "(" << five_star_assurance_number << ")(" << four_star_assurance_number << ") ";\
 					casesx( kind );\
@@ -187,7 +186,6 @@ up_five_g[2] = { 0 },
 up_four_g[16] = { 0 },
 nup_four_c[32] = { 0 },
 luckkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
-luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 },
 luckiestkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
 five_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
 four_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
@@ -227,7 +225,8 @@ five_stars_w[28] = { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 73, 74, 75, 76, 77, 78, 
 unsigned int resultt = 0,
 resultu = 0,
 lang_status = 0,
-delay_r = 0;
+delay_r = 0,
+luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 ptrdiff_t chosen_event = 0,
 chosen_banner = 0,
 switch_b_should_be = 0,
@@ -330,7 +329,6 @@ static void casesx(size_t kind) {
 	else if (kind < 115) { std::cout << "!!!!!***** "; }
 	else { lang_cout(4, 1); std::cout << "  "; error_code = 1; }
 } // cout stars prefix
-
 
 static void ini_all(size_t* in, size_t ins, size_t nu) {
 	for (size_t i = 0; i < ins; i++) { in[i] = nu; }
@@ -532,7 +530,7 @@ enter_chosen_banner:
 	ini_all(up_four_g, 16, 0);
 	ini_all(nup_four_c, 32, 0);
 	ini_all(luckkind, 10, 127);
-	ini_all(luckstar, 10, 3);
+	for (size_t i = 0; i < 10; i++) { luckstar[i] = 3; }
 	ini_all(luckiestkind, 10, 127);
 	ini_all(five_check, 8, 127);
 	ini_all(four_check, 8, 127);
@@ -1217,7 +1215,7 @@ enter_wishes_number:
 			for (size_t ini = 0; ini < 10; ini++) { lucklocation[ini] = static_cast<size_t> (ini) + 1; }
 			for (size_t ini = 0; ini < 10; ini++) { lucksublocation[ini] = static_cast<size_t> (ini) + 1; }
 			for (size_t& ini : luckkind) { ini = 127; }
-			for (size_t& ini : luckstar) { ini = 3; }
+			for (unsigned int& ini : luckstar) { ini = 3; }
 			luckiest = 0;
 			for (size_t ini = 0; ini < 10; ini++) { luckiestlocation[ini] = static_cast<size_t> (ini) + 1; }
 			for (size_t ini = 0; ini < 10; ini++) { luckiestsublocation[ini] = static_cast<size_t> (ini) + 1; }
@@ -1690,8 +1688,8 @@ core_core_loop:
 	if (chosen_banner == 1 || chosen_banner == 2) {
 		while (wishes_number > 0 || d_item_c) {
 			const size_t temp1 = generatorz() % 2;
-			size_t star = 0; //4-star or 5-star
-			size_t type = 0; //Up or non-up, character or weapon
+			unsigned int star = 0; //4-star or 5-star
+			unsigned int type = 0; //Up or non-up, character or weapon
 			size_t kind = 0; //which exactly
 			if (five_star_assurance_number < 74) { five_weight = 60; }
 			else { five_weight = 60 + 600 * (five_star_assurance_number - 73); }
@@ -1840,8 +1838,8 @@ core_core_loop:
 	else if (chosen_banner == 3) {
 		while (wishes_number > 0 || d_item_c) {
 			const size_t temp1 = generatorz() % 4;
-			size_t star = 0; //4-star or 5-star
-			size_t type = 0; //Up or non-up, character or weapon
+			unsigned int star = 0; //4-star or 5-star
+			unsigned int type = 0; //Up or non-up, character or weapon
 			size_t kind = 0; //which exactly
 			if (five_star_assurance_number < 63) { five_weight = 70; }
 			else if (five_star_assurance_number < 74) { five_weight = 70 + 700 * (five_star_assurance_number - 62); }
@@ -2021,8 +2019,8 @@ core_core_loop:
 	}
 	else if (chosen_banner == 4) {
 		while (wishes_number > 0 || d_item_c) {
-			size_t star = 0; //4-star or 5-star
-			size_t type = 0; //Up or non-up, character or weapon
+			unsigned int star = 0; //4-star or 5-star
+			unsigned int type = 0; //Up or non-up, character or weapon
 			size_t kind = 0; //which exactly
 			if (five_star_assurance_number < 74) { five_weight = 60; }
 			else { five_weight = 60 + 600 * (five_star_assurance_number - 73); }
@@ -2196,7 +2194,7 @@ core_core_loop:
 	else if (chosen_banner == 5) {
 		while (wishes_number > 0 || d_item_c) {
 			const size_t temp1 = generatorz() % 1000;
-			size_t star = 0; //4-star or 5-star
+			unsigned int star = 0; //4-star or 5-star
 			size_t kind = 0; //which exactly
 			if (is_noelle && countx == 9) {
 				star = 4;
