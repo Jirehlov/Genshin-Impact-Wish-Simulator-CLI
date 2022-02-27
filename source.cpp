@@ -50,7 +50,7 @@
 				} // 3-star kind settler for all banners
 #define is_mode() {bool check = false;\
 					if (d_item_n[kind] > 0) { d_item_n[kind]--; }\
-					for (size_t ikk = 0; ikk < 115; ikk++) {\
+					for (size_t ikk = 0; ikk < 117; ikk++) {\
 					if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
 					else if (d_item_n[ikk] == 0) { d_item_c = false; }\
 					else { lang_cout(4, 10); std::cout << "\n"; error_code = 10; goto full_quit; }\
@@ -327,7 +327,7 @@ static void casesx(size_t kind) {
 	else if (kind < 50) { std::cout << "!!**** "; }
 	else if (kind < 63) { std::cout << "*** "; }
 	else if (kind == 71 || kind == 79 || kind == 80 || kind == 82 || kind == 83 || kind == 84 || kind == 88 || kind == 91 || kind == 95 || kind == 100 || kind == 102 || kind == 103 || kind == 104 || kind == 106 || kind == 108) { std::cout << "!!**** "; }
-	else if (kind < 115) { std::cout << "!!!!!***** "; }
+	else if (kind < 117) { std::cout << "!!!!!***** "; }
 	else { lang_cout(4, 1); std::cout << "  "; error_code = 1; }
 } // cout stars prefix
 
@@ -1166,6 +1166,9 @@ enter_wishes_number:
 	std::cout << "\n";
 	if (wishes_number == -1) { wishes_number = 0; goto enter_chosen_event; }
 	else if (wishes_number == -2) {
+		for (size_t templuck = 0; templuck < 10; templuck++) {
+			if(luckiestkind[templuck] > 116) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
+		}
 		if (countx_l < 10) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
 		lang_cout(1, 63); std::cout << luckiest << "\n";
 		for (size_t templuck = 0; templuck < 10; templuck++) {
@@ -1235,6 +1238,7 @@ enter_wishes_number:
 			for (size_t ini = 0; ini < 12; ini++) { ach_q[ini] = false; }
 			kind_r_ach_8 = 0;
 			kind_r_ach_11 = 0;
+			countx_l = 0;
 			achp_check_again = false;
 			d_item_c = true;
 			is_s_mode = false;
@@ -1601,7 +1605,7 @@ enter_wishes_number:
 				if (zero_input_check) { ij = 0; d_item_c = false; std::cout << "\n"; lang_cout(1, 125); std::cout << "\n"; goto enter_wishes_number; }
 				else { ij = 0; std::cout << "\n"; head_print(); goto core_core_loop; }
 			}
-			else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 115; qi++) { d_item_n[qi] = 0; } std::cout << "\n"; goto enter_wishes_number; }
+			else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 117; qi++) { d_item_n[qi] = 0; } std::cout << "\n"; goto enter_wishes_number; }
 			else if (ij > -1) {
 				if (ij > 127 || d_item[ij] == 0) { ij = 0; std::cout << "\n"; lang_cout(1, 122); std::cout << "\n\n"; goto enter_ij; }
 			enter_d_item:
