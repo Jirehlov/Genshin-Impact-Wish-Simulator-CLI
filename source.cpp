@@ -126,7 +126,7 @@
 					else {\
 						delay_prog = static_cast<signed long long int>(100.0 - static_cast<double>(wishes_number) * 100.0 / static_cast<double>(wishes_number_r));\
 						std::cout << "\r"; lang_cout(1, 166); \
-						std::cout << "(" << std::fixed << std::setprecision(0) << delay_prog << "%)"; \
+						std::cout << "(" << delay_prog << "%)"; \
 					}\
 				}\
 				}
@@ -1265,17 +1265,21 @@ enter_wishes_number:
 		if (chosen_banner == 5 || four_count == 0 || five_count == 0) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
 		else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
 			lang_cout(1, 88); std::cout << "\n\n";
+			std::cout << std::fixed << std::setprecision(8);
 			for (size_t iout = 0; iout < 10; iout++) { std::cout << iout + 1 << "  " << four_pity[iout] << "   " << static_cast<double>(four_pity[iout]) * 100.0 / static_cast<double>(four_count) << "%\n"; }
 			std::cout << "10+  " << four_pity[10] << "   " << static_cast<double>(four_pity[10]) * 100.0 / static_cast<double>(four_count) << "%\n\n"; lang_cout(1, 89); std::cout << "\n\n";
-			for (size_t iout = 0; iout < 90; iout++) { std::cout << std::fixed << iout + 1 << "  " << five_pity[iout] << "   " << static_cast<double>(five_pity[iout]) * 100.0 / static_cast<double>(five_count) << "%\n"; }
+			for (size_t iout = 0; iout < 90; iout++) { std::cout << iout + 1 << "  " << five_pity[iout] << "   " << static_cast<double>(five_pity[iout]) * 100.0 / static_cast<double>(five_count) << "%\n"; }
+			std::cout << std::defaultfloat;
 			wishes_number = 0;
 			goto enter_wishes_number;
 		}
 		else if (chosen_banner == 3) {
 			lang_cout(1, 88); std::cout << "\n\n";
+			std::cout << std::fixed << std::setprecision(8);
 			for (size_t iout = 0; iout < 10; iout++) { std::cout << iout + 1 << "  " << four_pity[iout] << "   " << static_cast<double>(four_pity[iout]) * 100.0 / static_cast<double>(four_count) << "%\n"; }
 			std::cout << "10+  " << four_pity[10] << "   " << static_cast<double>(four_pity[10]) * 100.0 / static_cast<double>(four_count) << "%\n\n"; lang_cout(1, 89); std::cout << "\n\n";
-			for (size_t iout = 0; iout < 80; iout++) { std::cout << std::fixed << iout + 1 << "  " << five_pity_w[iout] << "   " << static_cast<double>(five_pity_w[iout]) * 100.0 / static_cast<double>(five_count) << "%\n"; }
+			for (size_t iout = 0; iout < 80; iout++) { std::cout << iout + 1 << "  " << five_pity_w[iout] << "   " << static_cast<double>(five_pity_w[iout]) * 100.0 / static_cast<double>(five_count) << "%\n"; }
+			std::cout << std::defaultfloat;
 			wishes_number = 0;
 			goto enter_wishes_number;
 		}
@@ -2389,7 +2393,7 @@ core_core_loop:
 	y_track_luck_mode = false;
 	std::cout << "\n"; lang_cout(1, 86); std::cout << t_start << "\n";
 	lang_cout(1, 87); std::cout << t_end << "\n";
-	std::cout << std::scientific << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
+	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
 	if (max_fives > 86 && chosen_banner != 5) { ach[3] = true; }
 	if (five_count == 0) {
 		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
