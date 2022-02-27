@@ -48,15 +48,13 @@
 					else { ach_count[8]++; }\
 				}\
 				} // 3-star kind settler for all banners
-#define is_mode() {if (is_s_mode) {\
-					bool check = false;\
+#define is_mode() {bool check = false;\
 					if (d_item_n[kind] > 0) { d_item_n[kind]--; }\
 					for (size_t ikk = 0; ikk < 115; ikk++) {\
 					if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
 					else if (d_item_n[ikk] == 0) { d_item_c = false; }\
 					else { lang_cout(4, 10); std::cout << "\n"; error_code = 10; goto full_quit; }\
 					if (check) { break; }\
-					}\
 					}\
 				} // do if is s mode
 #define set_pool_1_m(up_five_m,size_nup_four_c_m, nup_four_cgm) {\
@@ -107,7 +105,7 @@
 					std::cout << "(" << delay_r << "%)"; \
 					delay_r++; \
 				}
-#define prog_g(){if (!y_arg && !y_print && y_prog && !is_s_mode) {\
+#define prog_g(){if (!y_print && y_prog) {\
 					if (wishes_number_r > 10000){\
 						if (delay_prog > 0) {\
 							delay_prog--; \
@@ -128,7 +126,7 @@
 					else {\
 						delay_prog = static_cast<signed long long int>(100.0 - static_cast<double>(wishes_number) * 100.0 / static_cast<double>(wishes_number_r));\
 						std::cout << "\r"; lang_cout(1, 166); \
-						std::cout << "(" << delay_prog << "%)"; \
+						std::cout << "(" << std::fixed << std::setprecision(0) << delay_prog << "%)"; \
 					}\
 				}\
 				}
@@ -150,6 +148,7 @@ y_print = true,
 y_luck = true,
 y_arg = false,
 y_prog = false,
+y_track_luck = false,
 five_star_guarantee_number = false,
 four_star_guarantee_number = false,
 iacheck = false,
@@ -252,7 +251,8 @@ signed long long int wishes_number = 0,
 wishes_number_r = 0,
 delay_prog = 0,
 wishes_number_r_t = 0;
-signed int error_code = 0;
+signed int error_code = 0,
+tuck = 0;
 static int full_q = 0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
@@ -380,6 +380,7 @@ int main(int argc, char* argv[]) {
 	y_print = true;
 	y_luck = true;
 	y_prog = false;
+	y_track_luck = false;
 	//arg_proc:
 	if (argc == 5) {
 		int test0 = 0;
@@ -495,6 +496,7 @@ enter_chosen_banner:
 	unmet4_w = 0;
 	unmet5_c = 0;
 	unmet5_w = 0;
+	tuck = 0;
 	resultt = 0;
 	resultu = 0;
 	switch_b_should_be = 0;
@@ -1147,6 +1149,7 @@ enter_wishes_number:
 	if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n"; lang_cout(1, 61); }
 	std::cout << ";\n"; lang_cout(1, 158);
 	std::wcout << ";\n"; lang_cout(1, 165);
+	std::wcout << ";\n"; lang_cout(1, 170);
 	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
 	std::cout << ";\n"; lang_cout(1, 113); std::cout << "\n"; lang_cout(1, 161);
 	for (size_t i = 0; i < 9; i++) {
@@ -1309,6 +1312,30 @@ enter_wishes_number:
 		else { y_prog = true; lang_cout(1, 168); std::cout << "\n"; }
 		wishes_number = 0;
 		goto enter_wishes_number;
+	}
+	else if (wishes_number == -9) {
+		wishes_number = 0;
+		signed int temptuck = 0;
+		if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
+			temptuck = static_cast<signed int>(luckiest / 7700);
+		}
+		else if (chosen_banner == 3) {
+			temptuck = static_cast<signed int>(luckiest / 6845);
+		}
+		else if (chosen_banner == 5) {
+			temptuck = static_cast<signed int>(luckiest / 16667);
+		}
+		else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
+	enter_tuck:
+		lang_cout(1, 171); std::cout << "\n";
+		lang_cout(1, 159); lang_cout(1, 172); std::cout << "\n\n";
+		lang_cout(1, 116); std::cout << "\n\n";
+		std::cin >> tuck;
+		if (std::cin.fail()) { tuck = 0; cin_error_by2() goto enter_tuck; }
+		else if (tuck == -1) { tuck = 0; goto enter_wishes_number; }
+		else if (tuck > 10 || tuck < 1) { std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
+		else if (tuck <= temptuck) { std::cout << "\n"; lang_cout(1, 173); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
+		else { y_track_luck = true; y_luck = true; std::cout << "\n"; head_print(); goto core_core_loop; }
 	}
 	else if (wishes_number == -31) {
 		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
@@ -1677,17 +1704,17 @@ core_core_loop:
 	}
 	if (!is_s_mode) { d_item_c = false; }
 	if (!y_arg && !y_print && y_prog) {
-		if (!is_s_mode) {
-			prog_p()
-		}
-		else {
+		if (is_s_mode || y_track_luck) {
 			std::cout << "\r";
 			lang_cout(1, 169);
+		}
+		else {
+			prog_p()
 		}
 	}
 	starty = std::chrono::system_clock::now();
 	if (chosen_banner == 1 || chosen_banner == 2) {
-		while (wishes_number > 0 || d_item_c) {
+		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 2;
 			unsigned int star = 0; //4-star or 5-star
 			unsigned int type = 0; //Up or non-up, character or weapon
@@ -1821,23 +1848,33 @@ core_core_loop:
 			if (ach_count[8] > 6) { ach[8] = true; }
 			if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) { ach[6] = true; } }
 			if (ach_count[11] > 6) { ach[11] = true; }
-			if (!y_arg && y_luck) {
-				luckget()
-					if (star == 4 || star == 5) {
-						for (const size_t templuck : luckstar) {
-							if (templuck == 5) { luck += 6232; }
-							else if (templuck == 4) { luck += 766; }
-							else { luck += 0; }
+			if (!y_arg) {
+				if (y_luck) {
+					luckget()
+						if (star == 4 || star == 5) {
+							for (const size_t templuck : luckstar) {
+								if (templuck == 5) { luck += 7700; }
+								else if (templuck == 4) { luck += 766; }
+								else { luck += 0; }
+							}
 						}
-					}
-				luckcpy()
+					luckcpy()
+						if (y_track_luck) {
+							signed int temptuck = static_cast<signed int>(luckiest / 7700);
+							if (temptuck >= tuck) { y_track_luck = false; }
+						}
+				}
+				if (is_s_mode) {
 					is_mode()
+				}
+				else {
+					if (!y_track_luck) { prog_g() }
+				}
 			}
-			prog_g()
 		}
 	}
 	else if (chosen_banner == 3) {
-		while (wishes_number > 0 || d_item_c) {
+		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 4;
 			unsigned int star = 0; //4-star or 5-star
 			unsigned int type = 0; //Up or non-up, character or weapon
@@ -2003,23 +2040,33 @@ core_core_loop:
 			if (ach_count[8] > 6) { ach[8] = true; }
 			if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) { ach[6] = true; } }
 			if (ach_count[11] > 6) { ach[11] = true; }
-			if (!y_arg && y_luck) {
-				luckget()
-					if (star == 4 || star == 5) {
-						for (const size_t templuck : luckstar) {
-							if (templuck == 5) { luck += 5328; }
-							else if (templuck == 4) { luck += 674; }
-							else { luck += 0; }
+			if (!y_arg) {
+				if (y_luck) {
+					luckget()
+						if (star == 4 || star == 5) {
+							for (const size_t templuck : luckstar) {
+								if (templuck == 5) { luck += 6845; }
+								else if (templuck == 4) { luck += 674; }
+								else { luck += 0; }
+							}
 						}
-					}
-				luckcpy()
+					luckcpy()
+						if (y_track_luck) {
+							signed int temptuck = static_cast<signed int>(luckiest / 6845);
+							if (temptuck >= tuck) { y_track_luck = false; }
+						}
+				}
+				if (is_s_mode) {
 					is_mode()
+				}
+				else {
+					if (!y_track_luck) { prog_g() }
+				}
 			}
-			prog_g()
 		}
 	}
 	else if (chosen_banner == 4) {
-		while (wishes_number > 0 || d_item_c) {
+		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			unsigned int star = 0; //4-star or 5-star
 			unsigned int type = 0; //Up or non-up, character or weapon
 			size_t kind = 0; //which exactly
@@ -2177,23 +2224,33 @@ core_core_loop:
 			if (ach_count[8] > 6) { ach[8] = true; }
 			if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) { ach[6] = true; } }
 			if (ach_count[11] > 6) { ach[11] = true; }
-			if (!y_arg && y_luck) {
-				luckget()
-					if (star == 4 || star == 5) {
-						for (const size_t templuck : luckstar) {
-							if (templuck == 5) { luck += 6232; }
-							else if (templuck == 4) { luck += 766; }
-							else { luck += 0; }
+			if (!y_arg) {
+				if (y_luck) {
+					luckget()
+						if (star == 4 || star == 5) {
+							for (const size_t templuck : luckstar) {
+								if (templuck == 5) { luck += 7700; }
+								else if (templuck == 4) { luck += 766; }
+								else { luck += 0; }
+							}
 						}
-					}
-				luckcpy()
+					luckcpy()
+						if (y_track_luck) {
+							signed int temptuck = static_cast<signed int>(luckiest / 7700);
+							if (temptuck >= tuck) { y_track_luck = false; }
+						}
+				}
+				if (is_s_mode) {
 					is_mode()
+				}
+				else {
+					if (!y_track_luck) { prog_g() }
+				}
 			}
-			prog_g()
 		}
 	}
 	else if (chosen_banner == 5) {
-		while (wishes_number > 0 || d_item_c) {
+		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 1000;
 			unsigned int star = 0; //4-star or 5-star
 			size_t kind = 0; //which exactly
@@ -2291,19 +2348,29 @@ core_core_loop:
 				if (ach_count[8] > 6) { ach[8] = true; }
 			if (ach_count[6] < 11) { ach_count[6]++; if (star == 5) { ach[6] = true; } }
 			if (ach_count[11] > 6) { ach[11] = true; }
-			if (!y_arg && y_luck) {
-				luckget()
-					if (star == 4 || star == 5) {
-						for (const size_t templuck : luckstar) {
-							if (templuck == 5) { luck += 16667; }
-							else if (templuck == 4) { luck += 766; }
-							else { luck += 0; }
+			if (!y_arg) {
+				if (y_luck) {
+					luckget()
+						if (star == 4 || star == 5) {
+							for (const size_t templuck : luckstar) {
+								if (templuck == 5) { luck += 16667; }
+								else if (templuck == 4) { luck += 766; }
+								else { luck += 0; }
+							}
 						}
-					}
-				luckcpy()
+					luckcpy()
+						if (y_track_luck) {
+							signed int temptuck = static_cast<signed int>(luckiest / 16667);
+							if (temptuck >= tuck) { y_track_luck = false; }
+						}
+				}
+				if (is_s_mode) {
 					is_mode()
+				}
+				else {
+					if (!y_track_luck) { prog_g() }
+				}
 			}
-			prog_g()
 		}
 	}
 	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
@@ -2314,7 +2381,7 @@ core_core_loop:
 	t_start = std::chrono::system_clock::to_time_t(starty);
 	t_end = std::chrono::system_clock::to_time_t(endy);
 	delay_r = 100;
-	if (!y_arg && !y_print && y_prog && !is_s_mode) { prog_p() }
+	if (!y_arg && !y_print && y_prog && !is_s_mode && !y_track_luck) { prog_p() }
 	std::cout << "\n"; lang_cout(1, 86); std::cout << t_start << "\n";
 	lang_cout(1, 87); std::cout << t_end << "\n";
 	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
