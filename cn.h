@@ -528,7 +528,7 @@
 #define CN_E_12 "lang_status不合理! 错误码: 12"
 #define CN_E_13 "lang_cout错误! 错误码: 13"
 #define CN_E_14 "prog 发生错误! 错误码: 14"
-#define CN_V_0 "Placeholder"
+#define CN_V_0 "种子 "
 #define CN_V_1 "当前卡池类型 "
 #define CN_V_2 "当前活动类型 "
 #define CN_V_3 "当前概率up的五星编号 "

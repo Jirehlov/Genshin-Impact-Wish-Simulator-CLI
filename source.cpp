@@ -1582,6 +1582,7 @@ enter_wishes_number:
 	}
 	else if (wishes_number == -127) {
 		wishes_number = 0;
+		lang_cout(5, 0); std::cout << "seed = " << seed << "\n";
 		lang_cout(5, 1); std::cout << "chosen_banner = " << chosen_banner << "\n";
 		lang_cout(5, 2); std::cout << "chosen_event = " << chosen_event << "\n";
 		lang_cout(5, 3); std::cout << "up_five = " << up_five << "\n";

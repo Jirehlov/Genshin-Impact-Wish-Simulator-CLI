@@ -1,4 +1,4 @@
-#pragma once
+锘�#pragma once
 #ifndef EN_H
 #define EN_S_0 "Placeholder"
 #define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.10"
@@ -527,7 +527,7 @@
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
 #define EN_E_14 "An error occurred in prog! Error code: 14"
-#define EN_V_0 "Placeholder"
+#define EN_V_0 "Seed "
 #define EN_V_1 "Current chosen Banner "
 #define EN_V_2 "Current chosen Event "
 #define EN_V_3 "Current up-ed 5-star item No. "
