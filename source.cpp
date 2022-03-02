@@ -3,10 +3,12 @@
 #include <random>
 #include <string>
 #include <iomanip>
+#include <thread>
 #include "cn.h"
 #include "en.h"
 
-#define output_string() {if (y_print) {std::cout << countx + 1 << "(" << five_star_assurance_number << ")(" << four_star_assurance_number << ") ";\
+#define output_string() {if (y_print && !y_anim) {\
+					std::cout << countx + 1 << "(" << five_star_assurance_number << ")(" << four_star_assurance_number << ") ";\
 					casesx( kind );\
 					lang_cout(2, kind); std::cout << "\n"; }\
 					pcount[kind]++;\
@@ -130,6 +132,28 @@
 					}\
 				}\
 				}
+#define anim_lp(){if (anim_number == 10) {\
+					animkind[anim_loop] = kind;\
+					animlocation[anim_loop] = countx;\
+					animsublocation[anim_loop] = static_cast<size_t> (five_star_assurance_number) - 1;\
+					animsubsublocation[anim_loop] = static_cast<size_t> (four_star_assurance_number) - 1;\
+					anim_loop++;\
+				}\
+				else if (anim_number == 1) {\
+					anim_kind = static_cast<size_t> (kind);\
+					anim_location = static_cast<size_t> (countx);\
+					anim_sublocation = static_cast<size_t> (five_star_assurance_number) - 1;\
+					anim_subsublocation = static_cast<size_t> (four_star_assurance_number) - 1;\
+				}\
+				else {\
+					lang_cout(4, 16);\
+					std::cout << "\n\n";\
+					error_code = 16;\
+				}\
+				if (star > star_max) { star_max = star; }\
+				}
+
+using namespace std::chrono_literals;
 
 std::random_device seed_gen;
 static unsigned int seed_r = seed_gen() % 10000000;
@@ -150,6 +174,7 @@ y_arg = false,
 y_prog = false,
 y_track_luck = false,
 y_track_luck_mode = false,
+y_anim = false,
 five_star_guarantee_number = false,
 four_star_guarantee_number = false,
 iacheck = false,
@@ -185,8 +210,13 @@ d_item_n[128] = { 0 },
 up_five_g[2] = { 0 },
 up_four_g[16] = { 0 },
 nup_four_c[32] = { 0 },
+anim_kind = 127,
+anim_location = 0,
+anim_sublocation = 0,
+anim_subsublocation = 0,
 luckkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
 luckiestkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
+animkind[10] = { 127, 127, 127, 127, 127, 127, 127, 127, 127, 127 },
 five_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
 four_check[8] = { 127, 127, 127, 127, 127, 127, 127, 127 },
 lucklocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
@@ -195,6 +225,9 @@ lucksubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
 luckiestlocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
 luckiestsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
 luckiestsubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+animlocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+animsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
+animsubsublocation[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 },
 pcount[128] = { 0 },
 four_pity[11] = { 0 },
 five_pity[90] = { 0 },
@@ -226,6 +259,8 @@ unsigned int resultt = 0,
 resultu = 0,
 lang_status = 0,
 delay_r = 0,
+star_max = 0,
+anim_number = 0,
 luckstar[10] = { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
 ptrdiff_t chosen_event = 0,
 chosen_banner = 0,
@@ -375,6 +410,43 @@ static void head_print() {
 	std::cout << "\n";
 }
 
+static void animation_gen(size_t star) {
+	if (star == 3) {
+		for (size_t i = 0; i < 35; i++) {
+			std::cout << "*";
+			std::this_thread::sleep_for(80ms);
+		}
+	}
+	else if (star == 4) {
+		for (size_t i = 0; i < 27; i++) {
+			std::cout << "*";
+			std::this_thread::sleep_for(80ms);
+		}
+		for (size_t i = 0; i < 8; i++) {
+			std::cout << "(*)";
+			std::this_thread::sleep_for(80ms);
+		}
+	}
+	else if (star == 5) {
+		for (size_t i = 0; i < 26; i++) {
+			std::cout << "*";
+			std::this_thread::sleep_for(80ms);
+		}
+		for (size_t i = 0; i < 4; i++) {
+			std::cout << "(*)";
+			std::this_thread::sleep_for(80ms);
+		}
+		for (size_t i = 0; i < 5; i++) {
+			std::cout << "((***))";
+			std::this_thread::sleep_for(80ms);
+		}
+	}
+	else {
+		lang_cout(4, 15); std::cout << "  "; error_code = 15;
+	}
+	std::cout << "\n";
+}
+
 int main(int argc, char* argv[]) {
 	static char default_argv0[] = "giwscli";
 	argv[0] = default_argv0;
@@ -383,6 +455,7 @@ int main(int argc, char* argv[]) {
 	y_prog = false;
 	y_track_luck = false;
 	y_track_luck_mode = false;
+	y_anim = false;
 	//arg_proc:
 	if (argc == 5) {
 		int test0 = 0;
@@ -499,6 +572,12 @@ enter_chosen_banner:
 	unmet5_c = 0;
 	unmet5_w = 0;
 	tuck = 0;
+	anim_number = 0;
+	star_max = 0;
+	anim_kind = 127;
+	anim_location = 0;
+	anim_sublocation = 0;
+	anim_subsublocation = 0;
 	resultt = 0;
 	resultu = 0;
 	switch_b_should_be = 0;
@@ -536,6 +615,7 @@ enter_chosen_banner:
 	ini_all(luckkind, 10, 127);
 	for (size_t i = 0; i < 10; i++) { luckstar[i] = 3; }
 	ini_all(luckiestkind, 10, 127);
+	ini_all(animkind, 10, 127);
 	ini_all(five_check, 8, 127);
 	ini_all(four_check, 8, 127);
 	ini_all(pcount, 128, 0);
@@ -548,6 +628,9 @@ enter_chosen_banner:
 	ini_ams(luckiestlocation, 10, one_to_ten);
 	ini_ams(luckiestsublocation, 10, one_to_ten);
 	ini_ams(luckiestsubsublocation, 10, one_to_ten);
+	ini_ams(animlocation, 10, one_to_ten);
+	ini_ams(animsublocation, 10, one_to_ten);
+	ini_ams(animsubsublocation, 10, one_to_ten);
 	for (size_t i = 0; i < 12; i++) { ach_count[i] = 0; }
 	//welcome:
 	lang_cout(1, 1); std::cout << "\n";
@@ -1143,6 +1226,14 @@ pre_core_loop:
 enter_wishes_number:
 	if (quit) { lang_cout(4, 6); std::cout << "\n"; error_code = 6; goto full_quit; }
 	d_item_c = true;
+	ini_ams(animlocation, 10, one_to_ten);
+	ini_ams(animsublocation, 10, one_to_ten);
+	ini_ams(animsubsublocation, 10, one_to_ten);
+	anim_kind = 127;
+	anim_location = 0;
+	anim_sublocation = 0;
+	anim_subsublocation = 0;
+	for (size_t& ini : animkind) { ini = 127; }
 	static const size_t ewn[6] = { 54, 55, 56, 57, 58, 59 };
 	std::cout << "\n";
 	for (size_t i = 0; i < 6; i++) { lang_cout(1, ewn[i]); std::cout << "\n"; }
@@ -1152,6 +1243,7 @@ enter_wishes_number:
 	std::cout << ";\n"; lang_cout(1, 158);
 	std::wcout << ";\n"; lang_cout(1, 165);
 	std::wcout << ";\n"; lang_cout(1, 170);
+	std::wcout << ";\n"; lang_cout(1, 174);
 	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
 	std::cout << ";\n"; lang_cout(1, 113); std::cout << "\n"; lang_cout(1, 161);
 	for (size_t i = 0; i < 9; i++) {
@@ -1167,7 +1259,7 @@ enter_wishes_number:
 	if (wishes_number == -1) { wishes_number = 0; goto enter_chosen_event; }
 	else if (wishes_number == -2) {
 		for (size_t templuck = 0; templuck < 10; templuck++) {
-			if(luckiestkind[templuck] > 116) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
+			if (luckiestkind[templuck] > 116) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
 		}
 		if (countx_l < 10) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
 		lang_cout(1, 63); std::cout << luckiest << "\n";
@@ -1348,6 +1440,12 @@ enter_wishes_number:
 		else if (tuck > 10 || tuck < 1) { std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
 		else if (tuck <= temptuck) { std::cout << "\n"; lang_cout(1, 173); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
 		else { y_track_luck = true; y_track_luck_mode = true; y_luck = true; std::cout << "\n"; head_print(); goto core_core_loop; }
+	}
+	else if (wishes_number == -10) {
+		if (y_anim) { y_anim = false; lang_cout(1, 175); std::cout << "\n"; }
+		else { y_anim = true; lang_cout(1, 176); std::cout << "\n"; }
+		wishes_number = 0;
+		goto enter_wishes_number;
 	}
 	else if (wishes_number == -31) {
 		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
@@ -1702,6 +1800,12 @@ enter_wishes_number:
 		head_print();
 	}
 core_core_loop:
+	if (y_anim) {
+		if (wishes_number != 1 && wishes_number != 10) {
+			y_anim = false; lang_cout(1, 177); std::cout << "\n\n"; anim_number = 0;
+		}
+		else { anim_number = static_cast<unsigned int>(wishes_number); }
+	}
 	countx_r = countx;
 	wishes_number_r = wishes_number;
 	wishes_number_r_t = static_cast<signed long long int>(static_cast<double>(wishes_number_r) / 100.0);
@@ -1726,6 +1830,7 @@ core_core_loop:
 	}
 	starty = std::chrono::system_clock::now();
 	if (chosen_banner == 1 || chosen_banner == 2) {
+		size_t anim_loop = 0;
 		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 2;
 			unsigned int star = 0; //4-star or 5-star
@@ -1882,10 +1987,14 @@ core_core_loop:
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
 				}
+				if (y_anim) {
+					anim_lp()
+				}
 			}
 		}
 	}
 	else if (chosen_banner == 3) {
+		size_t anim_loop = 0;
 		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 4;
 			unsigned int star = 0; //4-star or 5-star
@@ -2074,10 +2183,14 @@ core_core_loop:
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
 				}
+				if (y_anim) {
+					anim_lp()
+				}
 			}
 		}
 	}
 	else if (chosen_banner == 4) {
+		size_t anim_loop = 0;
 		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			unsigned int star = 0; //4-star or 5-star
 			unsigned int type = 0; //Up or non-up, character or weapon
@@ -2258,10 +2371,14 @@ core_core_loop:
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
 				}
+				if (y_anim) {
+					anim_lp()
+				}
 			}
 		}
 	}
 	else if (chosen_banner == 5) {
+		size_t anim_loop = 0;
 		while (wishes_number > 0 || d_item_c || y_track_luck) {
 			const size_t temp1 = generatorz() % 1000;
 			unsigned int star = 0; //4-star or 5-star
@@ -2382,12 +2499,36 @@ core_core_loop:
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
 				}
+				if (y_anim) {
+					anim_lp()
+				}
 			}
 		}
 	}
 	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
 	// real work
 	endy = std::chrono::system_clock::now();
+	if (y_anim) {
+		animation_gen(star_max);
+		if (anim_number == 10) {
+			for (size_t templuck = 0; templuck < 10; templuck++) {
+				std::cout << animlocation[templuck] << "(" << animsublocation[templuck] << ")(" << animsubsublocation[templuck] << ") ";
+				casesx(animkind[templuck]);
+				lang_cout(2, animkind[templuck]); std::cout << "\n";
+			}
+		}
+		else if (anim_number == 1) {
+			std::cout << anim_location << "(" << anim_sublocation << ")(" << anim_subsublocation << ") ";
+			casesx(anim_kind);
+			lang_cout(2, anim_kind); std::cout << "\n";
+		}
+		else {
+			lang_cout(4, 16);
+			std::cout << "\n\n";
+			error_code = 16;
+			goto full_quit;
+		}
+	}
 	elapsed = endy - starty;
 	elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 	t_start = std::chrono::system_clock::to_time_t(starty);
@@ -2432,7 +2573,7 @@ core_core_loop:
 	}
 	if (iacheck) { std::cout << "\n"; }
 	wishes_number_r = 0;
-	if (y_arg) { goto full_quit; }
+	if (y_arg || error_code != 0) { goto full_quit; }
 	// a bunch of output of statistics
 	goto enter_wishes_number;
 full_quit:

@@ -174,10 +174,10 @@
 #define EN_S_171 "Pull untill ... how many 5-stars in 10 pulls (a succession of)?"
 #define EN_S_172 "Luckiness recording is forcely enabled through Marathon Mode!"
 #define EN_S_173 "It's true according to current recording!"
-#define EN_S_174 "Placeholder"
-#define EN_S_175 "Placeholder"
-#define EN_S_176 "Placeholder"
-#define EN_S_177 "Placeholder"
+#define EN_S_174 "-10: Animation or not"
+#define EN_S_175 "Animation is disabled!"
+#define EN_S_176 "Animation is enabled!"
+#define EN_S_177 "Animation is only available for 1 or 10 pulls!"
 #define EN_S_178 "Placeholder"
 #define EN_S_179 "Placeholder"
 #define EN_S_180 "Placeholder"
@@ -527,6 +527,8 @@
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
 #define EN_E_14 "An error occurred in prog! Error code: 14"
+#define EN_E_15 "Unexpected star! Error code: 15"
+#define EN_E_16 "Unexpected anim_number! Error code: 16"
 #define EN_V_0 "Seed "
 #define EN_V_1 "Current chosen Banner "
 #define EN_V_2 "Current chosen Event "
@@ -666,8 +668,9 @@ static const char* pnameshort_en[128] = {
                 EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125, EN_X_126, EN_X_127
 };
 
-static const char* perror_en[15] = {
-                EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10, EN_E_11, EN_E_12, EN_E_13, EN_E_14
+static const char* perror_en[17] = {
+                EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10,
+                EN_E_11, EN_E_12, EN_E_13, EN_E_14, EN_E_15, EN_E_16
 };
 
 static const char* pvalue_en[49] = {
