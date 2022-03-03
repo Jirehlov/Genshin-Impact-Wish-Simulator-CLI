@@ -67,12 +67,14 @@ I Character Event Wish\
 23: Oni's Royale/20211214-20220104 (Arataki Itto, Gorou, Xiangling, Barbara)\
 24: The Transcendent One Returns/20220105-20220125 (Shenhe, Yun Jin, Ningguang, Chongyun)\
 25: Gentry of Hermitage/20220125-20220215 (Zhongli, Yanfei, Xingqiu, Beidou)\
-26: Everbloom Violet/20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)
+26: Everbloom Violet/20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)\
+27: Reign of Serenity/20220308-20220329 (Raiden Shogun, Bennett, Xinyan, Kujo Sara)
 
 II Character Event Wish-2\
 1: Born of Ocean Swell/20211124-20211214 (Eula, Rosaria, Noelle, Bennett)\
 2: Invitation to Mundane Life/20220105-20220125 (Xiao, Yun Jin, Ningguang, Chongyun)\
-3: Adrift in the Harbor/20220125-20220215 (Ganyu, Yanfei, Xingqiu, Beidou)
+3: Adrift in the Harbor/20220125-20220215 (Ganyu, Yanfei, Xingqiu, Beidou)\
+4: Drifting Luminescence/20220308-20220329 (Sangonomiya Kokomi, Bennett, Xinyan, Kujo Sara)
 
 III Weapon Event Wish\
 1: Epitome Invocation/20200928-20201018 (Aquila Favonia, Amos' Bow, The Flute, The Bell, The Widsith, The Stringless, Favonius Lance)\
@@ -99,7 +101,8 @@ III Weapon Event Wish\
 22: Epitome Invocation/20211214-20210104 (Redhorn Stonethresher, Skyward Harp, The Alley Flash, Mitternachts Waltz, Favonius Lance, Sacrificial Fragments, The Bell)\
 23: Epitome Invocation/20220105-20220125 (Calamity Queller, Primordial Jade Winged-Spear, Lithic Spear, The Flute, Favonius Warbow, The Widsith, Favonius Greatsword)\
 24: Epitome Invocation/20220125-20220215 (Vortex Vanquisher, Amos' Bow, Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial Bow)\
-25: Epitome Invocation/20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)
+25: Epitome Invocation/20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)\
+26: Epitome Invocation/20220308-20220329 (Engulfing Lightning, Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius Lance, Sacrificial Fragments)
 
 IV Permanent Wish\
 1: Wanderlust Invocation/20200928-20201222 (Released)\
@@ -185,12 +188,14 @@ giwscli 1 2 100 0
 23: 鬼门斗宴/20211214-20220104 (荒泷一斗, 五郎, 香菱, 芭芭拉)\
 24: 出尘入世/20220105-20220125 (申鹤, 云堇, 凝光, 重云)\
 25: 陵薮市朝/20220125-20220215 (钟离, 烟绯, 行秋, 北斗)\
-26: 华紫樱绯/20220216-20220308 (八重神子, 菲谢尔, 迪奥娜, 托马)
+26: 华紫樱绯/20220216-20220308 (八重神子, 菲谢尔, 迪奥娜, 托马)\
+27: 影寂天下人/20220308-20220329 (雷电将军, 班尼特, 辛焱, 九条裟罗)
 
 二、角色活动祈愿-2\
 1: 浪涌之瞬/20211124-20211214 (优菈, 罗莎莉亚, 诺艾尔, 班尼特)\
 2: 烟火之邀/20220105-20220125 (魈, 云堇, 凝光, 重云)\
-3: 浮生孰来/20220125-20220215 (甘雨, 烟绯, 行秋, 北斗)
+3: 浮生孰来/20220125-20220215 (甘雨, 烟绯, 行秋, 北斗)\
+4: 浮岳虹珠/20220308-20220329 (珊瑚宫心海, 班尼特, 辛焱, 九条裟罗)
 
 三、武器活动祈愿\
 1: 神铸赋形/20200928-20201018 (风鹰剑, 阿莫斯之弓, 笛剑, 钟剑, 流浪乐章, 绝弦, 西风长枪)\
@@ -217,7 +222,8 @@ giwscli 1 2 100 0
 22: 神铸赋形/20211214-20210104 (赤角石溃杵, 天空之翼, 暗巷闪光, 幽夜华尔兹, 西风长枪, 祭礼残章, 钟剑)\
 23: 神铸赋形/20220105-20220125 (息灾, 和璞鸢, 千岩长枪, 笛剑, 西风猎弓, 流浪乐章, 西风大剑)\
 24: 神铸赋形/20220125-20220215 (贯虹之槊, 阿莫斯之弓, 千岩古剑, 西风剑, 匣里灭辰, 西风秘典, 祭礼弓)\
-25: 神铸赋形/20220216-20220308 (神乐之真意, 磐岩结绿, 断浪长鳍, 绝弦, 祭礼剑, 昭心, 雨裁)
+25: 神铸赋形/20220216-20220308 (神乐之真意, 磐岩结绿, 断浪长鳍, 绝弦, 祭礼剑, 昭心, 雨裁)\
+26: 神铸赋形/20220308-20220329 (薙草之稻光, 不灭月华, 恶玉丸, 曚云之月, 匣里龙吟, 西风长枪, 祭礼残章)
 
 四、常驻祈愿\
 1: 奔行世间/20200928-20201222 (公测)\

@@ -338,6 +338,7 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 4: std::cout << perror_en[sw]; break;
 		case 5: std::cout << pvalue_en[sw]; break;
 		case 6: std::cout << pachieve_en[sw]; break;
+		case 7: std::cout << pdetails_en[sw]; break;
 		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
 		}
 	}
@@ -349,6 +350,7 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 4: std::cout << perror_cn[sw]; break;
 		case 5: std::cout << pvalue_cn[sw]; break;
 		case 6: std::cout << pachieve_cn[sw]; break;
+		case 7: std::cout << pdetails_cn[sw]; break;
 		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
 		}
 	}
@@ -978,8 +980,8 @@ set_banner:
 		case 27: {
 			switch_e_sav = switch_e_should_be;
 			switch_e_should_be = 4;
-			const size_t tempg1[3] = { 18, 22, 100 };
-			const size_t tempg5[8] = { 18, 22, 100, 0, 0, 0, 0, 0 };
+			const size_t tempg1[3] = { 16, 21, 95 };
+			const size_t tempg5[8] = { 16, 21, 95, 0, 0, 0, 0, 0 };
 			set_pool_1_m(96, 20, nup_four_cg9)
 		} break;
 		default: { lang_cout(4, 5); std::cout << "\n"; error_code = 5; goto full_quit; }
@@ -1011,8 +1013,8 @@ set_banner:
 		case 4: {
 			switch_e_sav = switch_e_should_be;
 			switch_e_should_be = 27;
-			const size_t tempg1[3] = { 24, 25, 71 };
-			const size_t tempg5[8] = { 24, 25, 71, 0, 0, 0, 0, 0 };
+			const size_t tempg1[3] = { 16, 21, 95 };
+			const size_t tempg5[8] = { 16, 21, 95, 0, 0, 0, 0, 0 };
 			set_pool_1_m(94, 20, nup_four_cg9)
 		} break;
 		default: { lang_cout(4, 5); std::cout << "\n"; goto full_quit; }
@@ -1196,9 +1198,9 @@ set_banner:
 			set_pool_3_m(20, nup_four_cg9)
 		} break;
 		case 26: {
-			const size_t tempg6[2] = { 112, 77 };
-			const size_t tempg1[5] = { 34, 36, 42, 47, 104 };
-			const size_t tempg5[8] = { 34, 36, 42, 47, 0, 0, 0, 0 };
+			const size_t tempg6[2] = { 97, 98 };
+			const size_t tempg1[5] = { 37, 40, 46, 102, 104 };
+			const size_t tempg5[8] = { 37, 40, 46, 0, 0, 0, 0, 0 };
 			const size_t tempg7[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 			set_pool_3_m(20, nup_four_cg9)
 		} break;
@@ -2555,6 +2557,7 @@ core_core_loop:
 				std::cout << animlocation[templuck] << "(" << animsublocation[templuck] << ")(" << animsubsublocation[templuck] << ") ";
 				casesx(animkind[templuck]);
 				lang_cout(2, animkind[templuck]); std::cout << "\n";
+				lang_cout(7, animkind[templuck]); std::cout << "\n";
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			}
 		}
@@ -2562,6 +2565,7 @@ core_core_loop:
 			std::cout << anim_location << "(" << anim_sublocation << ")(" << anim_subsublocation << ") ";
 			casesx(anim_kind);
 			lang_cout(2, anim_kind); std::cout << "\n";
+			lang_cout(7, anim_kind); std::cout << "\n";
 		}
 		else {
 			lang_cout(4, 16);
