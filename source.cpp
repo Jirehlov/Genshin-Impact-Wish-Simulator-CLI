@@ -416,30 +416,25 @@ static void animation_gen(const unsigned int star) {
 	if (anim_number == 10) {
 		if (star == 4) {
 			for (size_t i = 0; i < 27; i++) {
-				std::cout << "*";
-				std::cout.clear();
+				printf("*");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 8; i++) {
-				std::cout << "(*)";
-				std::cout.clear();
+				printf("(*)");
 				std::this_thread::sleep_for(160ms);
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 26; i++) {
-				std::cout << "*";
-				std::cout.clear();
+				printf("*");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 4; i++) {
-				std::cout << "(*)";
-				std::cout.clear();
+				printf("(*)");
 				std::this_thread::sleep_for(160ms);
 			}
 			for (size_t i = 0; i < 5; i++) {
-				std::cout << "((***))";
-				std::cout.clear();
+				printf("((***))");
 				std::this_thread::sleep_for(320ms);
 			}
 		}
@@ -450,52 +445,43 @@ static void animation_gen(const unsigned int star) {
 	else if (anim_number == 1) {
 		if (star == 3) {
 			for (size_t i = 0; i < 20; i++) {
-				std::cout << ".";
-				std::cout.clear();
+				printf(".");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 15; i++) {
-				std::cout << "*";
-				std::cout.clear();
+				printf("*");
 				std::this_thread::sleep_for(80ms);
 			}
 		}
 		else if (star == 4) {
 			for (size_t i = 0; i < 12; i++) {
-				std::cout << ".";
-				std::cout.clear();
+				printf(".");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 15; i++) {
-				std::cout << "*";
-				std::cout.clear();
+				printf("*");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 8; i++) {
-				std::cout << "(*)";
-				std::cout.clear();
+				printf("(*)");
 				std::this_thread::sleep_for(160ms);
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 12; i++) {
-				std::cout << ".";
-				std::cout.clear();
+				printf(".");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 14; i++) {
-				std::cout << "*";
-				std::cout.clear();
+				printf("*");
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 4; i++) {
-				std::cout << "(*)";
-				std::cout.clear();
+				printf("(*)");
 				std::this_thread::sleep_for(160ms);
 			}
 			for (size_t i = 0; i < 5; i++) {
-				std::cout << "((***))";
-				std::cout.clear();
+				printf("((***))");
 				std::this_thread::sleep_for(320ms);
 			}
 		}
