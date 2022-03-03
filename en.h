@@ -177,7 +177,7 @@
 #define EN_S_174 "-10: Animation or not"
 #define EN_S_175 "Animation is disabled!"
 #define EN_S_176 "Animation is enabled!"
-#define EN_S_177 "Animation is only available for 1 or 10 pulls!"
+#define EN_S_177 "Animation is only available for 1 or 10 pulls in non-specific-mode!"
 #define EN_S_178 "Placeholder"
 #define EN_S_179 "Placeholder"
 #define EN_S_180 "Placeholder"

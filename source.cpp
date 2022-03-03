@@ -76,19 +76,19 @@
 					lang_cout(1, 11);\
 					std::cout << "\n";\
 					std::cin.clear();\
-					std::cin.ignore(32767, '\n');\
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
 #define cin_error_by2(){\
 					std::cout << "\n";\
 					lang_cout(1, 11);\
 					std::cout << "\n\n";\
 					std::cin.clear();\
-					std::cin.ignore(32767, '\n');\
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
 #define cin_error_by3(){\
 					std::cout << "\n" << EN_S_72 << "\n" << CN_S_72 << "\n\n";\
 					std::cin.clear();\
-					std::cin.ignore(32767, '\n');\
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
 #define mpcheck(){if (countx == 2 ||\
 					countx == 6 ||\
@@ -417,24 +417,29 @@ static void animation_gen(const unsigned int star) {
 		if (star == 4) {
 			for (size_t i = 0; i < 27; i++) {
 				std::cout << "*";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 8; i++) {
 				std::cout << "(*)";
+				std::cout.clear();
 				std::this_thread::sleep_for(160ms);
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 26; i++) {
 				std::cout << "*";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 4; i++) {
 				std::cout << "(*)";
+				std::cout.clear();
 				std::this_thread::sleep_for(160ms);
 			}
 			for (size_t i = 0; i < 5; i++) {
 				std::cout << "((***))";
+				std::cout.clear();
 				std::this_thread::sleep_for(320ms);
 			}
 		}
@@ -446,42 +451,51 @@ static void animation_gen(const unsigned int star) {
 		if (star == 3) {
 			for (size_t i = 0; i < 20; i++) {
 				std::cout << ".";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 15; i++) {
 				std::cout << "*";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 		}
 		else if (star == 4) {
 			for (size_t i = 0; i < 12; i++) {
 				std::cout << ".";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 15; i++) {
 				std::cout << "*";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 8; i++) {
 				std::cout << "(*)";
+				std::cout.clear();
 				std::this_thread::sleep_for(160ms);
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 12; i++) {
 				std::cout << ".";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 14; i++) {
 				std::cout << "*";
+				std::cout.clear();
 				std::this_thread::sleep_for(80ms);
 			}
 			for (size_t i = 0; i < 4; i++) {
 				std::cout << "(*)";
+				std::cout.clear();
 				std::this_thread::sleep_for(160ms);
 			}
 			for (size_t i = 0; i < 5; i++) {
 				std::cout << "((***))";
+				std::cout.clear();
 				std::this_thread::sleep_for(320ms);
 			}
 		}
@@ -1851,10 +1865,9 @@ enter_wishes_number:
 	}
 core_core_loop:
 	if (y_anim) {
-		if (wishes_number != 1 && wishes_number != 10) {
-			y_anim_del = true; y_anim = false; lang_cout(1, 177); std::cout << "\n\n"; anim_number = 0;
-		}
-		else { anim_number = static_cast<unsigned int>(wishes_number); }
+		if (wishes_number == 1) { anim_number = 1; }
+		else if (wishes_number == 10) { anim_number = 10; }
+		else { y_anim_del = true; y_anim = false; lang_cout(1, 177); std::cout << "\n\n"; anim_number = 0; }
 	}
 	countx_r = countx;
 	wishes_number_r = wishes_number;
@@ -2020,6 +2033,7 @@ core_core_loop:
 					is_mode()
 				}
 				else {
+					if (y_anim) { anim_lp() }
 					if (!y_track_luck_mode) { prog_g() }
 				}
 				if (y_luck) {
@@ -2036,9 +2050,6 @@ core_core_loop:
 							signed int temptuck = static_cast<signed int>(luckiest / 7700);
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
-				}
-				if (y_anim) {
-					anim_lp()
 				}
 			}
 		}
@@ -2216,6 +2227,7 @@ core_core_loop:
 					is_mode()
 				}
 				else {
+					if (y_anim) { anim_lp() }
 					if (!y_track_luck_mode) { prog_g() }
 				}
 				if (y_luck) {
@@ -2232,9 +2244,6 @@ core_core_loop:
 							signed int temptuck = static_cast<signed int>(luckiest / 6845);
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
-				}
-				if (y_anim) {
-					anim_lp()
 				}
 			}
 		}
@@ -2404,6 +2413,7 @@ core_core_loop:
 					is_mode()
 				}
 				else {
+					if (y_anim) { anim_lp() }
 					if (!y_track_luck_mode) { prog_g() }
 				}
 				if (y_luck) {
@@ -2420,9 +2430,6 @@ core_core_loop:
 							signed int temptuck = static_cast<signed int>(luckiest / 7700);
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
-				}
-				if (y_anim) {
-					anim_lp()
 				}
 			}
 		}
@@ -2532,6 +2539,7 @@ core_core_loop:
 					is_mode()
 				}
 				else {
+					if (y_anim) { anim_lp() }
 					if (!y_track_luck_mode) { prog_g() }
 				}
 				if (y_luck) {
@@ -2549,9 +2557,6 @@ core_core_loop:
 							if (temptuck >= tuck) { y_track_luck = false; }
 						}
 				}
-				if (y_anim) {
-					anim_lp()
-				}
 			}
 		}
 	}
@@ -2560,23 +2565,19 @@ core_core_loop:
 	endy = std::chrono::system_clock::now();
 	if (y_anim) {
 		animation_gen(star_max);
-		std::cin.clear();
-		anim_out = std::cin.get();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		if (anim_number == 10) {
 			for (size_t templuck = 0; templuck < 10; templuck++) {
 				std::cout << animlocation[templuck] << "(" << animsublocation[templuck] << ")(" << animsubsublocation[templuck] << ") ";
 				casesx(animkind[templuck]);
 				lang_cout(2, animkind[templuck]); std::cout << "\n";
-				std::cin.clear();
-				anim_out = std::cin.get();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			}
 		}
 		else if (anim_number == 1) {
 			std::cout << anim_location << "(" << anim_sublocation << ")(" << anim_subsublocation << ") ";
 			casesx(anim_kind);
 			lang_cout(2, anim_kind); std::cout << "\n";
-			std::cin.clear();
-			anim_out = std::cin.get();
 		}
 		else {
 			lang_cout(4, 16);
@@ -2635,7 +2636,7 @@ core_core_loop:
 	goto enter_wishes_number;
 full_quit:
 	std::cin.clear();
-	std::cin.ignore(32767, '\n');
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	full_q = std::cin.get();
 	return error_code;
 }

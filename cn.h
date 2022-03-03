@@ -178,7 +178,7 @@
 #define CN_S_174 "-10 :动画效果开关"
 #define CN_S_175 "动画效果已关闭!"
 #define CN_S_176 "动画效果已打开!"
-#define CN_S_177 "动画效果只在1抽和10抽中出现!"
+#define CN_S_177 "动画效果只在非指定出货结果模式的1抽和10抽中出现!"
 #define CN_S_178 "Placeholder"
 #define CN_S_179 "Placeholder"
 #define CN_S_180 "Placeholder"
