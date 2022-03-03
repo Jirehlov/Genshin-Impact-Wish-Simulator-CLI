@@ -153,8 +153,6 @@
 				if (star > star_max) { star_max = star; }\
 				}
 
-using namespace std::chrono_literals;
-
 std::random_device seed_gen;
 static unsigned int seed_r = seed_gen() % 10000000;
 static unsigned long long int seed_t = static_cast<unsigned long long int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()) * static_cast<unsigned long long int>(100000);
@@ -416,26 +414,26 @@ static void animation_gen(const unsigned int star) {
 	if (anim_number == 10) {
 		if (star == 4) {
 			for (size_t i = 0; i < 27; i++) {
-				printf("*");
-				std::this_thread::sleep_for(80ms);
+				std::cout << "*";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 8; i++) {
-				printf("(*)");
-				std::this_thread::sleep_for(160ms);
+				std::cout << "(*)";
+				std::this_thread::sleep_for(std::chrono::milliseconds(160));
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 26; i++) {
-				printf("*");
-				std::this_thread::sleep_for(80ms);
+				std::cout << "*";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 4; i++) {
-				printf("(*)");
-				std::this_thread::sleep_for(160ms);
+				std::cout << "(*)";
+				std::this_thread::sleep_for(std::chrono::milliseconds(160));
 			}
 			for (size_t i = 0; i < 5; i++) {
-				printf("((***))");
-				std::this_thread::sleep_for(320ms);
+				std::cout << "((***))";
+				std::this_thread::sleep_for(std::chrono::milliseconds(320));
 			}
 		}
 		else {
@@ -445,44 +443,44 @@ static void animation_gen(const unsigned int star) {
 	else if (anim_number == 1) {
 		if (star == 3) {
 			for (size_t i = 0; i < 20; i++) {
-				printf(".");
-				std::this_thread::sleep_for(80ms);
+				std::cout << ".";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 15; i++) {
-				printf("*");
-				std::this_thread::sleep_for(80ms);
+				std::cout << "*";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 		}
 		else if (star == 4) {
 			for (size_t i = 0; i < 12; i++) {
-				printf(".");
-				std::this_thread::sleep_for(80ms);
+				std::cout << ".";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 15; i++) {
-				printf("*");
-				std::this_thread::sleep_for(80ms);
+				std::cout << "*";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 8; i++) {
-				printf("(*)");
-				std::this_thread::sleep_for(160ms);
+				std::cout << "(*)";
+				std::this_thread::sleep_for(std::chrono::milliseconds(160));
 			}
 		}
 		else if (star == 5) {
 			for (size_t i = 0; i < 12; i++) {
-				printf(".");
-				std::this_thread::sleep_for(80ms);
+				std::cout << ".";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 14; i++) {
-				printf("*");
-				std::this_thread::sleep_for(80ms);
+				std::cout << "*";
+				std::this_thread::sleep_for(std::chrono::milliseconds(80));
 			}
 			for (size_t i = 0; i < 4; i++) {
-				printf("(*)");
-				std::this_thread::sleep_for(160ms);
+				std::cout << "(*)";
+				std::this_thread::sleep_for(std::chrono::milliseconds(160));
 			}
 			for (size_t i = 0; i < 5; i++) {
-				printf("((***))");
-				std::this_thread::sleep_for(320ms);
+				std::cout << "((***))";
+				std::this_thread::sleep_for(std::chrono::milliseconds(320));
 			}
 		}
 		else {
