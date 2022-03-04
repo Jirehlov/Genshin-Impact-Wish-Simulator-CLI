@@ -10,9 +10,9 @@
 #define output_string() {if (y_print && !y_anim) {\
 					std::cout << countx + 1 << "(" << five_star_assurance_number << ")(" << four_star_assurance_number << ") ";\
 					casesx( kind );\
-					lang_cout(2, kind); std::cout << "\n"; }\
+					lang_cout(2, kind); std::cout << '\n'; }\
 					pcount[kind]++;\
-					wishes_number--;\
+					if(!is_s_mode){ wishes_number--; }\
 					countx++;\
 					five_star_assurance_number++;\
 					four_star_assurance_number++;\
@@ -55,7 +55,7 @@
 					for (size_t ikk = 0; ikk < 117; ikk++) {\
 					if (d_item_n[ikk] > 0) { d_item_c = true; check = true; break; }\
 					else if (d_item_n[ikk] == 0) { d_item_c = false; }\
-					else { lang_cout(4, 10); std::cout << "\n"; error_code = 10; goto full_quit; }\
+					else { lang_cout(4, 10); std::cout << '\n'; error_code = 10; goto full_quit; }\
 					if (check) { break; }\
 					}\
 				} // do if is s mode
@@ -67,26 +67,26 @@
 				}
 #define check_profile_throw() {\
 					lang_cout(1, 143);\
-					std::cout << "\n";\
+					std::cout << '\n';\
 					wishes_number = 0;\
 					goto enter_wishes_number;\
 				}
 #define cin_error_by(){\
-					std::cout << "\n";\
+					std::cout << '\n';\
 					lang_cout(1, 11);\
-					std::cout << "\n";\
+					std::cout << '\n';\
 					std::cin.clear();\
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
 #define cin_error_by2(){\
-					std::cout << "\n";\
+					std::cout << '\n';\
 					lang_cout(1, 11);\
 					std::cout << "\n\n";\
 					std::cin.clear();\
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
 #define cin_error_by3(){\
-					std::cout << "\n" << EN_S_72 << "\n" << CN_S_72 << "\n\n";\
+					std::cout << '\n' << EN_S_72 << '\n' << CN_S_72 << "\n\n";\
 					std::cin.clear();\
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');\
 				}
@@ -120,7 +120,7 @@
 						else\
 						{\
 							lang_cout(4, 14);\
-							std::cout << "\n";\
+							std::cout << '\n';\
 							error_code = 14;\
 							goto full_quit;\
 						}\
@@ -339,7 +339,7 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 5: std::cout << pvalue_en[sw]; break;
 		case 6: std::cout << pachieve_en[sw]; break;
 		case 7: std::cout << pdetails_en[sw]; break;
-		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
+		default: { std::cout << EN_E_13 << '\n' << CN_E_13 << '\n'; error_code = 13; quit = true; }
 		}
 	}
 	else if (lang_status == 1) {
@@ -351,13 +351,14 @@ static void lang_cout(unsigned int sq, size_t sw) {
 		case 5: std::cout << pvalue_cn[sw]; break;
 		case 6: std::cout << pachieve_cn[sw]; break;
 		case 7: std::cout << pdetails_cn[sw]; break;
-		default: { std::cout << EN_E_13 << "\n" << CN_E_13 << "\n"; error_code = 13; quit = true; }
+		default: { std::cout << EN_E_13 << '\n' << CN_E_13 << '\n'; error_code = 13; quit = true; }
 		}
 	}
 	else {
-		std::cout << EN_E_12 << "\n" << CN_E_12 << "\n"; error_code = 12; quit = true;
+		std::cout << EN_E_12 << '\n' << CN_E_12 << '\n'; error_code = 12; quit = true;
 	}
 }
+//care for possible out of bound
 
 static void casesx(size_t kind) {
 	if (kind < 15) { std::cout << "!!!!!***** "; }
@@ -394,22 +395,22 @@ static void set_pool_3(size_t size_nup_four_c_p, const size_t* tempg1, const siz
 }
 
 static void head_print() {
-	lang_cout(1, 85); std::cout << "\n";
+	lang_cout(1, 85); std::cout << '\n';
 	if (!y_print) {
 		if (!y_luck) {
-			lang_cout(1, 159); lang_cout(1, 156); std::cout << "\n";
+			lang_cout(1, 159); lang_cout(1, 156); std::cout << '\n';
 		}
 		else {
-			lang_cout(1, 159); lang_cout(1, 157); std::cout << "\n";
+			lang_cout(1, 159); lang_cout(1, 157); std::cout << '\n';
 		}
 		if (!y_prog) {
-			lang_cout(1, 159); lang_cout(1, 167); std::cout << "\n";
+			lang_cout(1, 159); lang_cout(1, 167); std::cout << '\n';
 		}
 		else {
-			lang_cout(1, 159); lang_cout(1, 168); std::cout << "\n";
+			lang_cout(1, 159); lang_cout(1, 168); std::cout << '\n';
 		}
 	}
-	std::cout << "\n";
+	std::cout << '\n';
 }
 
 static void animation_gen(const unsigned int star) {
@@ -492,7 +493,7 @@ static void animation_gen(const unsigned int star) {
 	else {
 		lang_cout(4, 16); std::cout << "  "; error_code = 16;
 	}
-	std::cout << "\n";
+	std::cout << '\n';
 }
 
 int main(int argc, char* argv[]) {
@@ -518,7 +519,7 @@ int main(int argc, char* argv[]) {
 			test3 = std::stoul(argv[4]);
 		}
 		catch (...) {
-			lang_cout(4, 11); std::cout << "\n";
+			lang_cout(4, 11); std::cout << '\n';
 			error_code = 11;
 			y_arg = true;
 			goto full_quit;
@@ -532,14 +533,14 @@ int main(int argc, char* argv[]) {
 		chosen_event = static_cast<ptrdiff_t>(test1);
 		if (test2 < 1) {
 			lang_cout(1, 72);
-			std::cout << "\n";
+			std::cout << '\n';
 			y_arg = true;
 			goto full_quit;
 		}
 		else { wishes_number = test2; }
 		if (test3 != 0 && test3 != 1) {
 			lang_cout(4, 12);
-			std::cout << "\n";
+			std::cout << '\n';
 			error_code = 12;
 			y_arg = true;
 			goto full_quit;
@@ -559,7 +560,7 @@ int main(int argc, char* argv[]) {
 			test2 = std::stoll(argv[3]);
 		}
 		catch (...) {
-			lang_cout(4, 11); std::cout << "\n";
+			lang_cout(4, 11); std::cout << '\n';
 			error_code = 11;
 			y_arg = true;
 			goto full_quit;
@@ -572,7 +573,7 @@ int main(int argc, char* argv[]) {
 		chosen_event = static_cast<ptrdiff_t>(test1);
 		if (test2 < 1) {
 			lang_cout(1, 72);
-			std::cout << "\n";
+			std::cout << '\n';
 			y_arg = true;
 			goto full_quit;
 		}
@@ -585,15 +586,15 @@ int main(int argc, char* argv[]) {
 		goto language_setting;
 	}
 	else {
-		lang_cout(4, 11); std::cout << "\n";
+		lang_cout(4, 11); std::cout << '\n';
 		error_code = 11;
 		y_arg = true;
 		goto full_quit;
 	}
 language_setting:
-	std::cout << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+	std::cout << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 	std::cin >> lang_status;
-	std::cout << "\n";
+	std::cout << '\n';
 	if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting; }
 	if (argc == 4) { goto set_banner; }
 enter_chosen_banner:
@@ -682,18 +683,18 @@ enter_chosen_banner:
 	ini_ams(animsubsublocation, 10, one_to_ten);
 	for (size_t i = 0; i < 12; i++) { ach_count[i] = 0; }
 	//welcome:
-	lang_cout(1, 1); std::cout << "\n";
-	lang_cout(1, 2); std::cout << "\n";
-	lang_cout(1, 3); std::cout << "\n";
+	lang_cout(1, 1); std::cout << '\n';
+	lang_cout(1, 2); std::cout << '\n';
+	lang_cout(1, 3); std::cout << '\n';
 	lang_cout(1, 4); std::cout << "\n\n";
 enter_chosen_banner_switch:
-	lang_cout(1, 5); std::cout << "\n";
-	lang_cout(1, 6); std::cout << "\n";
-	lang_cout(1, 7); std::cout << "\n";
-	lang_cout(1, 108); std::cout << "\n";
-	lang_cout(1, 8); std::cout << "\n";
-	lang_cout(1, 9); std::cout << "\n";
-	lang_cout(1, 10); std::cout << "\n";
+	lang_cout(1, 5); std::cout << '\n';
+	lang_cout(1, 6); std::cout << '\n';
+	lang_cout(1, 7); std::cout << '\n';
+	lang_cout(1, 108); std::cout << '\n';
+	lang_cout(1, 8); std::cout << '\n';
+	lang_cout(1, 9); std::cout << '\n';
+	lang_cout(1, 10); std::cout << '\n';
 	lang_cout(1, 161); std::cout << "\n\n";
 	std::cin >> chosen_banner;
 	if (std::cin.fail()) { chosen_banner = 0; cin_error_by2() goto enter_chosen_banner; }
@@ -705,131 +706,131 @@ enter_chosen_event:
 		chosen_event = 0;
 		static const size_t banner_1[31] = { 12, 13, 109, 161, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
 										94, 95, 100, 101, 102, 103, 144, 145, 151, 153 };
-		std::cout << "\n";
-		for (size_t i = 0; i < 31; i++) { lang_cout(1, banner_1[i]); std::cout << "\n"; }
-		std::cout << "\n";
+		std::cout << '\n';
+		for (size_t i = 0; i < 31; i++) { lang_cout(1, banner_1[i]); std::cout << '\n'; }
+		std::cout << '\n';
 		std::cin >> chosen_event;
 		fate_weapon = 0;
 		fate_points = 0;
 		switch_b_sav = switch_b_should_be;
 		switch_b_should_be = 2;
 		if (std::cin.fail()) { chosen_event = 0; cin_error_by() goto enter_chosen_event; }
-		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner; }
-		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
+		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner; }
+		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner_switch; }
 		else if (chosen_event == -120) {
 		language_setting_local:
-			std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+			std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 			std::cin >> lang_status;
-			std::cout << "\n";
+			std::cout << '\n';
 			if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local; }
 			else { chosen_event = 0; goto enter_chosen_event; }
 		}
 		else if (chosen_event > 0 && chosen_event < 28) { quit = false; }
-		else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
+		else { std::cout << '\n'; lang_cout(1, 31); std::cout << '\n'; goto enter_chosen_event; }
 	} break;
 	case 2: {
 		chosen_event = 0;
 		static const size_t banner_2[8] = { 12, 13, 109, 161, 107, 146, 147, 154 };
-		std::cout << "\n";
-		for (size_t i = 0; i < 8; i++) { lang_cout(1, banner_2[i]); std::cout << "\n"; }
-		std::cout << "\n";
+		std::cout << '\n';
+		for (size_t i = 0; i < 8; i++) { lang_cout(1, banner_2[i]); std::cout << '\n'; }
+		std::cout << '\n';
 		std::cin >> chosen_event;
 		fate_weapon = 0;
 		fate_points = 0;
 		switch_b_sav = switch_b_should_be;
 		switch_b_should_be = 1;
 		if (std::cin.fail()) { chosen_event = 0; cin_error_by() goto enter_chosen_event; }
-		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner; }
-		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
+		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner; }
+		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner_switch; }
 		else if (chosen_event == -120) {
 		language_setting_local_1:
-			std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+			std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 			std::cin >> lang_status;
-			std::cout << "\n";
+			std::cout << '\n';
 			if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_1; }
 			else { chosen_event = 0; goto enter_chosen_event; }
 		}
 		else if (chosen_event > 0 && chosen_event < 5) { quit = false; }
-		else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
+		else { std::cout << '\n'; lang_cout(1, 31); std::cout << '\n'; goto enter_chosen_event; }
 	} break;
 	case 3: {
 		chosen_event = 0;
 		static const size_t banner_3[30] = { 12, 13, 109, 161, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47,
 											96, 97, 104, 105, 111, 126, 148, 149, 152, 155 };
-		std::cout << "\n";
-		for (size_t i = 0; i < 30; i++) { lang_cout(1, banner_3[i]); std::cout << "\n"; }
-		std::cout << "\n";
+		std::cout << '\n';
+		for (size_t i = 0; i < 30; i++) { lang_cout(1, banner_3[i]); std::cout << '\n'; }
+		std::cout << '\n';
 		std::cin >> chosen_event;
 		fate_weapon = 0;
 		fate_points = 0;
 		if (std::cin.fail()) { chosen_event = 0; cin_error_by() goto enter_chosen_event; }
-		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner; }
-		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
+		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner; }
+		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner_switch; }
 		else if (chosen_event == -120) {
 		language_setting_local_2:
-			std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+			std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 			std::cin >> lang_status;
-			std::cout << "\n";
+			std::cout << '\n';
 			if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_2; }
 			else { chosen_event = 0; goto enter_chosen_event; }
 		}
 		else if (chosen_event > 0 && chosen_event < 27) { quit = false; }
-		else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
+		else { std::cout << '\n'; lang_cout(1, 31); std::cout << '\n'; goto enter_chosen_event; }
 	} break;
 	case 4: {
 		chosen_event = 0;
 		static const size_t banner_4[13] = { 12, 13, 109, 161, 48, 49, 50, 51, 98, 99, 106, 110, 150 };
-		std::cout << "\n";
-		for (size_t i = 0; i < 13; i++) { lang_cout(1, banner_4[i]); std::cout << "\n"; }
-		std::cout << "\n";
+		std::cout << '\n';
+		for (size_t i = 0; i < 13; i++) { lang_cout(1, banner_4[i]); std::cout << '\n'; }
+		std::cout << '\n';
 		std::cin >> chosen_event;
 		fate_weapon = 0;
 		fate_points = 0;
 		if (std::cin.fail()) { chosen_event = 0; cin_error_by() goto enter_chosen_event; }
-		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner; }
-		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
+		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner; }
+		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner_switch; }
 		else if (chosen_event == -120) {
 		language_setting_local_3:
-			std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+			std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 			std::cin >> lang_status;
-			std::cout << "\n";
+			std::cout << '\n';
 			if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_3; }
 			else { chosen_event = 0; goto enter_chosen_event; }
 		}
 		else if (chosen_event > 0 && chosen_event < 10) { quit = false; }
-		else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; }
+		else { std::cout << '\n'; lang_cout(1, 31); std::cout << '\n'; goto enter_chosen_event; }
 	} break;
 	case 5: {
 		chosen_event = 0;
 		static const size_t banner_5[5] = { 12, 13, 109, 161, 52 };
-		std::cout << "\n";
-		for (size_t i = 0; i < 5; i++) { lang_cout(1, banner_5[i]); std::cout << "\n"; }
-		std::cout << "\n";
+		std::cout << '\n';
+		for (size_t i = 0; i < 5; i++) { lang_cout(1, banner_5[i]); std::cout << '\n'; }
+		std::cout << '\n';
 		std::cin >> chosen_event;
 		fate_weapon = 0;
 		fate_points = 0;
 		if (std::cin.fail()) { chosen_event = 0; cin_error_by() goto enter_chosen_event; }
-		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner; }
-		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << "\n"; goto enter_chosen_banner_switch; }
+		else if (chosen_event == -1) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner; }
+		else if (chosen_event == -2) { chosen_event = 0; is_cross = true; std::cout << '\n'; goto enter_chosen_banner_switch; }
 		else if (chosen_event == -120) {
 		language_setting_local_4:
-			std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+			std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 			std::cin >> lang_status;
-			std::cout << "\n";
+			std::cout << '\n';
 			if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_4; }
 			else { chosen_event = 0; goto enter_chosen_event; }
 		}
 		else if (chosen_event == 1) { quit = false; }
-		else { std::cout << "\n"; lang_cout(1, 31); std::cout << "\n"; goto enter_chosen_event; } } break;
+		else { std::cout << '\n'; lang_cout(1, 31); std::cout << '\n'; goto enter_chosen_event; } } break;
 	case -120: {
 	language_setting_local_5:
-		std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+		std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 		std::cin >> lang_status;
-		std::cout << "\n";
+		std::cout << '\n';
 		if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_5; }
 		else { chosen_event = 0; goto enter_chosen_banner; }
 	}
-	default: {chosen_banner = 0; chosen_event = 0; quit = true; std::cout << "\n"; lang_cout(1, 53); std::cout << "\n\n"; goto enter_chosen_banner; }
+	default: {chosen_banner = 0; chosen_event = 0; quit = true; std::cout << '\n'; lang_cout(1, 53); std::cout << "\n\n"; goto enter_chosen_banner; }
 	}
 	// choose event
 set_banner:
@@ -984,7 +985,7 @@ set_banner:
 			const size_t tempg5[8] = { 16, 21, 95, 0, 0, 0, 0, 0 };
 			set_pool_1_m(96, 20, nup_four_cg9)
 		} break;
-		default: { lang_cout(4, 5); std::cout << "\n"; error_code = 5; goto full_quit; }
+		default: { lang_cout(4, 5); std::cout << '\n'; error_code = 5; goto full_quit; }
 		}
 	}
 	else if (chosen_banner == 2) {
@@ -1017,7 +1018,7 @@ set_banner:
 			const size_t tempg5[8] = { 16, 21, 95, 0, 0, 0, 0, 0 };
 			set_pool_1_m(94, 20, nup_four_cg9)
 		} break;
-		default: { lang_cout(4, 5); std::cout << "\n"; goto full_quit; }
+		default: { lang_cout(4, 5); std::cout << '\n'; goto full_quit; }
 		}
 	}
 	else if (chosen_banner == 3) {
@@ -1204,7 +1205,7 @@ set_banner:
 			const size_t tempg7[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 			set_pool_3_m(20, nup_four_cg9)
 		} break;
-		default: { lang_cout(4, 5); std::cout << "\n"; goto full_quit; }
+		default: { lang_cout(4, 5); std::cout << '\n'; goto full_quit; }
 		}
 	}
 	else if (chosen_banner == 4) {
@@ -1254,13 +1255,13 @@ set_banner:
 			size_nup_four_c = 22;
 			for (size_t i = 0; i < 23; i++) { nup_four_c[i] = nup_four_cg39[i]; }
 		} break;
-		default: { lang_cout(4, 5); std::cout << "\n"; goto full_quit; }
+		default: { lang_cout(4, 5); std::cout << '\n'; goto full_quit; }
 		}
 	}
 	else if (chosen_banner == 5) {
 		ini_ams(nup_four_c, 11, nup_four_cg1);
 	}
-	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
+	else { lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit; }
 	if (y_arg) { goto core_core_loop; }
 	// set banner
 	if (!is_cross) { goto pre_core_loop; }
@@ -1273,7 +1274,7 @@ pre_core_loop:
 	if (is_dualcross) { goto enter_wishes_number; }
 	else { unmet4_c = 0; unmet4_w = 0; unmet5_c = 0; unmet5_w = 0; }
 enter_wishes_number:
-	if (quit) { lang_cout(4, 6); std::cout << "\n"; error_code = 6; goto full_quit; }
+	if (quit) { lang_cout(4, 6); std::cout << '\n'; error_code = 6; goto full_quit; }
 	d_item_c = true;
 	ini_ams(animlocation, 10, one_to_ten);
 	ini_ams(animsublocation, 10, one_to_ten);
@@ -1285,51 +1286,51 @@ enter_wishes_number:
 	star_max = 0;
 	for (size_t& ini : animkind) { ini = 127; }
 	static const size_t ewn[6] = { 54, 55, 56, 57, 58, 59 };
-	std::cout << "\n";
-	for (size_t i = 0; i < 6; i++) { lang_cout(1, ewn[i]); std::cout << "\n"; }
+	std::cout << '\n';
+	for (size_t i = 0; i < 6; i++) { lang_cout(1, ewn[i]); std::cout << '\n'; }
 	lang_cout(1, 60);
 	if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 || chosen_banner == 4) { std::cout << ";\n"; lang_cout(1, 90); }
 	if (chosen_banner == 3 && chosen_event > 14) { std::cout << ";\n"; lang_cout(1, 61); }
 	std::cout << ";\n"; lang_cout(1, 158);
-	std::wcout << ";\n"; lang_cout(1, 165);
-	std::wcout << ";\n"; lang_cout(1, 170);
-	std::wcout << ";\n"; lang_cout(1, 174);
+	std::cout << ";\n"; lang_cout(1, 165);
+	std::cout << ";\n"; lang_cout(1, 170);
+	std::cout << ";\n"; lang_cout(1, 174);
 	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
-	std::cout << ";\n"; lang_cout(1, 113); std::cout << "\n"; lang_cout(1, 161);
+	std::cout << ";\n"; lang_cout(1, 113); std::cout << '\n'; lang_cout(1, 161);
 	for (size_t i = 0; i < 9; i++) {
 		if (ach_q[i]) {
 			achp_check = true;
 		}
 	}
-	if (achp_check) { std::cout << "\n"; lang_cout(1, 162); }
+	if (achp_check) { std::cout << '\n'; lang_cout(1, 162); }
 	std::cout << "\n\n";
 	std::cin >> wishes_number;
 	if (std::cin.fail()) { wishes_number = 0; cin_error_by() goto enter_wishes_number; }
-	std::cout << "\n";
+	std::cout << '\n';
 	if (wishes_number == -1) { wishes_number = 0; goto enter_chosen_event; }
 	else if (wishes_number == -2) {
 		for (size_t templuck = 0; templuck < 10; templuck++) {
-			if (luckiestkind[templuck] > 116) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
+			if (luckiestkind[templuck] > 116) { lang_cout(1, 62); std::cout << '\n'; goto enter_wishes_number; }
 		}
-		if (countx_l < 10) { lang_cout(1, 62); std::cout << "\n"; goto enter_wishes_number; }
-		lang_cout(1, 63); std::cout << luckiest << "\n";
+		if (countx_l < 10) { lang_cout(1, 62); std::cout << '\n'; goto enter_wishes_number; }
+		lang_cout(1, 63); std::cout << luckiest << '\n';
 		for (size_t templuck = 0; templuck < 10; templuck++) {
 			std::cout << luckiestlocation[templuck] << "(" << luckiestsublocation[templuck] << ")(" << luckiestsubsublocation[templuck] << ") ";
 			casesx(luckiestkind[templuck]);
-			lang_cout(2, luckiestkind[templuck]); std::cout << "\n";
+			lang_cout(2, luckiestkind[templuck]); std::cout << '\n';
 		}
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -3) {
 	enter_cleanornot:
-		lang_cout(1, 91); std::cout << "\n";
-		lang_cout(1, 92); std::cout << "\n";
+		lang_cout(1, 91); std::cout << '\n';
+		lang_cout(1, 92); std::cout << '\n';
 		lang_cout(1, 93); std::cout << "\n\n";
 		static ptrdiff_t cleanornot = 0;
 		std::cin >> cleanornot;
 		if (std::cin.fail()) { cleanornot = 0; cin_error_by2() goto enter_cleanornot; }
-		std::cout << "\n";
+		std::cout << '\n';
 		if (cleanornot == 1) {
 			wishes_number = 0;
 			four_star_assurance_number = 1;
@@ -1350,7 +1351,7 @@ enter_wishes_number:
 			if (chosen_banner == 3) { min_fives = 80; }
 			else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) { min_fives = 90; }
 			else if (chosen_banner == 5) { min_fives = PTRDIFF_MAX; }
-			else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
+			else { lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit; }
 			max_fivesth = 1;
 			min_fivesth = 1;
 			max_fivecount = 1;
@@ -1386,7 +1387,7 @@ enter_wishes_number:
 			is_s_mode = false;
 			y_track_luck = false;
 			y_track_luck_mode = false;
-			lang_cout(1, 64); std::cout << "\n";
+			lang_cout(1, 64); std::cout << '\n';
 			goto enter_wishes_number;
 		}
 		else if (cleanornot == -1) {
@@ -1402,13 +1403,13 @@ enter_wishes_number:
 		}
 	}
 	else if (wishes_number == -4) {
-		if (y_print) { y_print = false; lang_cout(1, 65); std::cout << "\n"; }
-		else { y_print = true; lang_cout(1, 66); std::cout << "\n"; }
+		if (y_print) { y_print = false; lang_cout(1, 65); std::cout << '\n'; }
+		else { y_print = true; lang_cout(1, 66); std::cout << '\n'; }
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -5) {
-		if (chosen_banner == 5 || four_count == 0 || five_count == 0) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
+		if (chosen_banner == 5 || four_count == 0 || five_count == 0) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
 		else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
 			lang_cout(1, 88); std::cout << "\n\n";
 			std::cout << std::fixed << std::setprecision(8);
@@ -1430,14 +1431,14 @@ enter_wishes_number:
 			goto enter_wishes_number;
 		}
 		else {
-			wishes_number = 0; lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit;
+			wishes_number = 0; lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit;
 		}
 	}
 	else if (wishes_number == -6) {
 		if (chosen_banner == 3 && chosen_event > 14) {
 		enter_fate_weapon:
-			lang_cout(1, 67); std::cout << "\n";
-			lang_cout(1, 68); std::cout << "\n";
+			lang_cout(1, 67); std::cout << '\n';
+			lang_cout(1, 68); std::cout << '\n';
 			lang_cout(1, 69); std::cout << " ( ";
 			lang_cout(2, up_five_g[0]); std::cout << " ) \n";
 			lang_cout(1, 70); std::cout << " ( ";
@@ -1446,24 +1447,24 @@ enter_wishes_number:
 			std::cin >> fate_weapon;
 			if (std::cin.fail()) { fate_weapon = 0; cin_error_by2() goto enter_fate_weapon; }
 			else if (fate_weapon == -1) { fate_weapon = 0; goto enter_wishes_number; }
-			else if (fate_weapon > 2) { std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; fate_weapon = 0; goto enter_fate_weapon; }
+			else if (fate_weapon > 2) { std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; fate_weapon = 0; goto enter_fate_weapon; }
 			else { fate_points = 0; }
 			wishes_number = 0;
 			goto enter_wishes_number;
 		}
 		else {
-			wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number;
+			wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number;
 		}
 	}
 	else if (wishes_number == -7) {
-		if (y_luck) { y_luck = false; lang_cout(1, 156); std::cout << "\n"; }
-		else { y_luck = true; lang_cout(1, 157); std::cout << "\n"; }
+		if (y_luck) { y_luck = false; lang_cout(1, 156); std::cout << '\n'; }
+		else { y_luck = true; lang_cout(1, 157); std::cout << '\n'; }
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -8) {
-		if (y_prog) { y_prog = false; lang_cout(1, 167); std::cout << "\n"; }
-		else { y_prog = true; lang_cout(1, 168); std::cout << "\n"; }
+		if (y_prog) { y_prog = false; lang_cout(1, 167); std::cout << '\n'; }
+		else { y_prog = true; lang_cout(1, 168); std::cout << '\n'; }
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
@@ -1479,33 +1480,77 @@ enter_wishes_number:
 		else if (chosen_banner == 5) {
 			temptuck = static_cast<signed int>(luckiest / 16667);
 		}
-		else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
+		else { lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit; }
 	enter_tuck:
-		lang_cout(1, 171); std::cout << "\n";
+		lang_cout(1, 171); std::cout << '\n';
 		lang_cout(1, 159); lang_cout(1, 172); std::cout << "\n\n";
 		lang_cout(1, 116); std::cout << "\n\n";
 		std::cin >> tuck;
 		if (std::cin.fail()) { tuck = 0; cin_error_by2() goto enter_tuck; }
 		else if (tuck == -1) { tuck = 0; goto enter_wishes_number; }
-		else if (tuck > 10 || tuck < 1) { std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
-		else if (tuck <= temptuck) { std::cout << "\n"; lang_cout(1, 173); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
-		else { y_track_luck = true; y_track_luck_mode = true; y_luck = true; std::cout << "\n"; head_print(); goto core_core_loop; }
+		else if (tuck > 10 || tuck < 1) { std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
+		else if (tuck <= temptuck) { std::cout << '\n'; lang_cout(1, 173); std::cout << "\n\n"; tuck = 0; goto enter_tuck; }
+		else { y_track_luck = true; y_track_luck_mode = true; y_luck = true; std::cout << '\n'; head_print(); goto core_core_loop; }
 	}
 	else if (wishes_number == -10) {
-		if (y_anim) { y_anim = false; lang_cout(1, 175); std::cout << "\n"; }
-		else { y_anim = true; lang_cout(1, 176); std::cout << "\n"; }
+		if (y_anim) { y_anim = false; lang_cout(1, 175); std::cout << '\n'; }
+		else { y_anim = true; lang_cout(1, 176); std::cout << '\n'; }
+		wishes_number = 0;
+		goto enter_wishes_number;
+	}
+	else if (wishes_number == -11) {
+	if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
+		ptrdiff_t hash_out[9] = { 0 };
+		hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
+		hash_out[1] = five_star_assurance_number;
+		hash_out[2] = static_cast<ptrdiff_t>(four_star_guarantee_number);
+		hash_out[3] = four_star_assurance_number;
+		hash_out[4] = unmet5_c + 1;
+		hash_out[5] = unmet5_w + 1;
+		hash_out[6] = unmet4_c + 1;
+		hash_out[7] = unmet4_w + 1;
+		hash_out[8] = fate_weapon;
+		lang_cout(1, 180); std::cout << '\n';
+		std::cout << "\n&" << hash_out[0];
+		for (size_t i = 1; i < 9; i++) { std::cout << "*" << hash_out[i]; }
+		std::cout << "&\n\n";
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -31) {
-		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
+		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
 		ptrdiff_t sav[16] = { 0 };
 		size_t else_counter = 0;
+	enter_hash:
+		size_t j = 0;
+		size_t k = 0;
+		char hash_sav[256] = { '\0' };
+		char hash_dump[9][25] = { { '\0' } };
+		lang_cout(1, 179); std::cout << "\n\n";
+		lang_cout(1, 182); std::cout << "\n\n";
+		std::cin >> hash_sav;
+		if (std::cin.fail()) { cin_error_by2() goto enter_hash; }
+		if (hash_sav[0] == '-' && hash_sav[1] == '1') { std::cout << '\n'; goto enter_profile; }
+		if (hash_sav[0] != '&') { lang_cout(1, 181); std::cout << "\n\n"; std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');goto enter_hash; }
+		for (size_t i = 1; i < 256; i++) {
+			if ( k > 24 ){ lang_cout(1, 181); goto enter_hash; }
+			else if (isdigit(hash_sav[i])) { hash_dump[j][k] = hash_sav[i]; k++; }
+			else if (hash_sav[i] == '*') { j++; k = 0; }
+			else if (j == 9 || hash_sav[i] == '&') { goto apply_hash; }
+			else { lang_cout(1, 181); goto enter_hash; }
+		}
+	apply_hash:
+		for (size_t i = 0; i < 9; i++) {
+			sav[i] = std::stoll(hash_dump[i]);
+		}
+		goto apply_profile;
+	enter_profile:
+		for (size_t i = 0; i < 256; i++) { hash_sav[i] = '\0'; }
 		if (chosen_banner == 3 && chosen_event > 14) {
 		enter_profile_0:
-			lang_cout(1, 138); std::cout << "\n";
+			lang_cout(1, 138); std::cout << '\n';
 			lang_cout(1, 139); std::cout << "\n\n";
-			lang_cout(1, 67); std::cout << "\n";
+			lang_cout(1, 67); std::cout << '\n';
 			lang_cout(1, 69); std::cout << " ( ";
 			lang_cout(2, up_five_g[0]); std::cout << " ) \n";
 			lang_cout(1, 70); std::cout << " ( ";
@@ -1515,36 +1560,36 @@ enter_wishes_number:
 			if (std::cin.fail()) { sav[8] = 0; cin_error_by2() goto enter_profile_0; }
 			else if (sav[8] == -1) { sav[8] = 0; wishes_number = 0; goto enter_wishes_number; }
 			else if (sav[8] == -2) { goto apply_profile; }
-			else if (sav[8] < -1 || sav[8] > 2) { sav[8] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_0; }
-			else if (sav[8] == 0) { std::cout << "\n"; goto enter_profile_1; }
+			else if (sav[8] < -1 || sav[8] > 2) { sav[8] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_0; }
+			else if (sav[8] == 0) { std::cout << '\n'; goto enter_profile_1; }
 			else { else_counter++; }
-			std::cout << "\n";
+			std::cout << '\n';
 		enter_profile_01:
-			lang_cout(1, 138); std::cout << "\n";
+			lang_cout(1, 138); std::cout << '\n';
 			lang_cout(1, 139); std::cout << "\n\n";
 			lang_cout(1, 140); std::cout << "\n\n";
 			std::cin >> sav[9];
 			if (std::cin.fail()) { sav[9] = 0; cin_error_by2() goto enter_profile_01; }
 			else if (sav[9] == -1) { sav[9] = 0; wishes_number = 0; goto enter_wishes_number; }
 			else if (sav[9] == -2) { goto apply_profile; }
-			else if (sav[9] != 0 && sav[9] != 1 && sav[9] != 2) { sav[9] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n"; goto enter_profile_01; }
+			else if (sav[9] != 0 && sav[9] != 1 && sav[9] != 2) { sav[9] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << '\n'; goto enter_profile_01; }
 			else { else_counter++; }
-			std::cout << "\n";
+			std::cout << '\n';
 		}
 		else { else_counter++; }
 	enter_profile_1:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 129); std::cout << "\n\n";
 		std::cin >> sav[0];
 		if (std::cin.fail()) { sav[0] = 0; cin_error_by2() goto enter_profile_1; }
 		else if (sav[0] == -1) { sav[0] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[0] == -2) { goto apply_profile; }
-		else if (sav[0] != 1 && sav[0] != 0) { sav[0] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_1; }
+		else if (sav[0] != 1 && sav[0] != 0) { sav[0] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_1; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_2:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 130);
 		lang_cout(1, 137); std::cout << "\n\n";
@@ -1552,22 +1597,22 @@ enter_wishes_number:
 		if (std::cin.fail()) { sav[1] = 0; cin_error_by() goto enter_profile_2; }
 		else if (sav[1] == -1) { sav[1] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[1] == -2) { goto apply_profile; }
-		else if (((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && sav[1] > 89) || (chosen_banner == 3 && sav[1] > 79) || sav[1] < 0) { sav[1] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_2; }
+		else if (((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && sav[1] > 89) || (chosen_banner == 3 && sav[1] > 79) || sav[1] < 0) { sav[1] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_2; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_3:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 131); std::cout << "\n\n";
 		std::cin >> sav[2];
 		if (std::cin.fail()) { sav[2] = 0; cin_error_by() goto enter_profile_3; }
 		else if (sav[2] == -1) { sav[2] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[2] == -2) { goto apply_profile; }
-		else if (sav[2] != 1 && sav[2] != 0) { sav[2] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_3; }
+		else if (sav[2] != 1 && sav[2] != 0) { sav[2] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_3; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_4:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 132);
 		lang_cout(1, 137); std::cout << "\n\n";
@@ -1575,11 +1620,11 @@ enter_wishes_number:
 		if (std::cin.fail()) { sav[3] = 0; cin_error_by() goto enter_profile_4; }
 		else if (sav[3] == -1) { sav[3] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[3] == -2) { goto apply_profile; }
-		else if (sav[3] < 0) { sav[3] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_4; }
+		else if (sav[3] < 0) { sav[3] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_4; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_5:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 133);
 		lang_cout(1, 137); std::cout << "\n\n";
@@ -1587,14 +1632,14 @@ enter_wishes_number:
 		if (std::cin.fail()) { sav[4] = 0; cin_error_by() goto enter_profile_5; }
 		else if (sav[4] == -1) { sav[4] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[4] == -2) { goto apply_profile; }
-		else if (sav[4] < 0) { sav[4] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_5; }
-		else if ((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && sav[4] > 89) { sav[1] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n"; goto enter_profile_5; }
-		else if (chosen_banner == 3 && sav[4] > 79) { sav[1] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_5; }
+		else if (sav[4] < 0) { sav[4] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_5; }
+		else if ((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && sav[4] > 89) { sav[1] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << '\n'; goto enter_profile_5; }
+		else if (chosen_banner == 3 && sav[4] > 79) { sav[1] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_5; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 		if (chosen_banner == 3 || chosen_banner == 4) {
 		enter_profile_6:
-			lang_cout(1, 138); std::cout << "\n";
+			lang_cout(1, 138); std::cout << '\n';
 			lang_cout(1, 139); std::cout << "\n\n";
 			lang_cout(1, 134);
 			lang_cout(1, 137); std::cout << "\n\n";
@@ -1602,12 +1647,12 @@ enter_wishes_number:
 			if (std::cin.fail()) { sav[5] = 0; cin_error_by() goto enter_profile_6; }
 			else if (sav[5] == -1) { sav[5] = 0; wishes_number = 0; goto enter_wishes_number; }
 			else if (sav[5] == -2) { goto apply_profile; }
-			else if (sav[5] < 0 || (chosen_banner == 4 && sav[4] > 89) || (chosen_banner == 3 && sav[4] > 79)) { sav[5] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_6; }
+			else if (sav[5] < 0 || (chosen_banner == 4 && sav[4] > 89) || (chosen_banner == 3 && sav[4] > 79)) { sav[5] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_6; }
 			else { else_counter++; }
 		}
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_7:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 135);
 		lang_cout(1, 137); std::cout << "\n\n";
@@ -1615,11 +1660,11 @@ enter_wishes_number:
 		if (std::cin.fail()) { sav[6] = 0; cin_error_by() goto enter_profile_7; }
 		else if (sav[6] == -1) { sav[6] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[6] == -2) { goto apply_profile; }
-		else if (sav[6] < 0) { sav[6] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_7; }
+		else if (sav[6] < 0) { sav[6] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_7; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	enter_profile_8:
-		lang_cout(1, 138); std::cout << "\n";
+		lang_cout(1, 138); std::cout << '\n';
 		lang_cout(1, 139); std::cout << "\n\n";
 		lang_cout(1, 136);
 		lang_cout(1, 137); std::cout << "\n\n";
@@ -1627,13 +1672,13 @@ enter_wishes_number:
 		if (std::cin.fail()) { sav[7] = 0; cin_error_by() goto enter_profile_8; }
 		else if (sav[7] == -1) { sav[7] = 0; wishes_number = 0; goto enter_wishes_number; }
 		else if (sav[7] == -2) { goto apply_profile; }
-		else if (sav[7] < 0) { sav[7] = 0; std::cout << "\n"; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_8; }
+		else if (sav[7] < 0) { sav[7] = 0; std::cout << '\n'; lang_cout(1, 72); std::cout << "\n\n"; goto enter_profile_8; }
 		else { else_counter++; }
-		std::cout << "\n";
+		std::cout << '\n';
 	apply_profile:
-		std::cout << "\n"; lang_cout(1, 141); std::cout << "\n";
-		if (sav[1] == sav[3] || (sav[4] != sav[1] && sav[5] != sav[1]) || (sav[6] != sav[3] && sav[7] != sav[3]) || (chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) || (chosen_banner == 3 && sav[4] > 79 && sav[5] > 79)) check_profile_throw()
-			std::cout << "\n"; lang_cout(1, 142); std::cout << "\n";
+		std::cout << '\n'; lang_cout(1, 141); std::cout << '\n';
+		if (sav[1] == sav[3] || (chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) || (sav[6] != sav[3] && sav[7] != sav[3]) || (chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) || (chosen_banner == 3 && sav[4] > 79 && sav[5] > 79)) check_profile_throw()
+			std::cout << '\n'; lang_cout(1, 142); std::cout << '\n';
 		five_star_guarantee_number = static_cast<bool> (sav[0]);
 		five_star_assurance_number = sav[1];
 		four_star_guarantee_number = static_cast<bool> (sav[2]);
@@ -1658,173 +1703,173 @@ enter_wishes_number:
 		while (true) {
 			static ptrdiff_t ij = 0;
 		enter_ij:
-			lang_cout(1, 114); std::cout << "\n\n"; lang_cout(1, 121); std::cout << "\n";
+			lang_cout(1, 114); std::cout << "\n\n"; lang_cout(1, 121); std::cout << '\n';
 			for (size_t uk5 : three_g) {
-				std::cout << uk5 << ": "; lang_cout(3, uk5); std::cout << "\n";
+				std::cout << uk5 << ": "; lang_cout(3, uk5); std::cout << '\n';
 				d_item[uk5] = 1;
 			}
 			if (chosen_banner == 1 || chosen_banner == 2) {
-				std::cout << "\n"; lang_cout(1, 120); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 120); std::cout << '\n';
 				for (size_t uk3 = 0; uk3 < size_nup_four_c; uk3++) {
-					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << "\n";
+					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << '\n';
 					d_item[nup_four_c[uk3]] = 1;
 				}
 				for (size_t uk4 = 0; uk4 < 18; uk4++) {
-					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << "\n";
+					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << '\n';
 					d_item[nup_four_w[uk4]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 119); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 119); std::cout << '\n';
 				for (size_t uk2 = 0; uk2 < 3; uk2++) {
-					std::cout << up_four_g[uk2] << ": "; lang_cout(3, up_four_g[uk2]); std::cout << "\n";
+					std::cout << up_four_g[uk2] << ": "; lang_cout(3, up_four_g[uk2]); std::cout << '\n';
 					d_item[up_four_g[uk2]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 118); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 118); std::cout << '\n';
 				for (size_t ukt = 0; ukt < 5; ukt++) {
-					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << "\n";
+					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << '\n';
 					d_item[nup_five_c[ukt]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 117); std::cout << "\n" << up_five << ": "; lang_cout(3, up_five); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 117); std::cout << '\n' << up_five << ": "; lang_cout(3, up_five); std::cout << '\n';
 				d_item[up_five] = 1;
 			}
 			else if (chosen_banner == 3) {
-				std::cout << "\n"; lang_cout(1, 120); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 120); std::cout << '\n';
 				for (size_t uk3 = 0; uk3 < size_nup_four_c; uk3++) {
-					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << "\n";
+					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << '\n';
 					d_item[nup_four_c[uk3]] = 1;
 				}
 				for (size_t uk4 = 0; uk4 < 18; uk4++) {
-					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << "\n";
+					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << '\n';
 					d_item[nup_four_w[uk4]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 119); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 119); std::cout << '\n';
 				for (size_t uk2 = 0; uk2 < 5; uk2++) {
-					std::cout << up_four_g[uk2] << ": "; lang_cout(3, up_four_g[uk2]); std::cout << "\n";
+					std::cout << up_four_g[uk2] << ": "; lang_cout(3, up_four_g[uk2]); std::cout << '\n';
 					d_item[up_four_g[uk2]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 118); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 118); std::cout << '\n';
 				for (size_t uktt = 0; uktt < 10; uktt++) {
-					std::cout << nup_five_w[uktt] << ": "; lang_cout(3, nup_five_w[uktt]); std::cout << "\n";
+					std::cout << nup_five_w[uktt] << ": "; lang_cout(3, nup_five_w[uktt]); std::cout << '\n';
 					d_item[nup_five_w[uktt]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 117); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 117); std::cout << '\n';
 				for (size_t uk = 0; uk < 2; uk++) {
-					std::cout << up_five_g[uk] << ": "; lang_cout(3, up_five_g[uk]); std::cout << "\n";
+					std::cout << up_five_g[uk] << ": "; lang_cout(3, up_five_g[uk]); std::cout << '\n';
 					d_item[up_five_g[uk]] = 1;
 				}
 			}
 			else if (chosen_banner == 4) {
-				std::cout << "\n"; lang_cout(1, 120); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 120); std::cout << '\n';
 				for (size_t uk3 = 0; uk3 < size_nup_four_c; uk3++) {
-					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << "\n";
+					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << '\n';
 					d_item[nup_four_c[uk3]] = 1;
 				}
 				for (size_t uk4 = 0; uk4 < 18; uk4++) {
-					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << "\n";
+					std::cout << nup_four_w[uk4] << ": "; lang_cout(3, nup_four_w[uk4]); std::cout << '\n';
 					d_item[nup_four_w[uk4]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 118); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 118); std::cout << '\n';
 				for (size_t ukt = 0; ukt < 5; ukt++) {
-					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << "\n";
+					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << '\n';
 					d_item[nup_five_c[ukt]] = 1;
 				}
 				for (size_t uktt = 0; uktt < 10; uktt++) {
-					std::cout << nup_five_w[uktt] << ": "; lang_cout(3, nup_five_w[uktt]); std::cout << "\n";
+					std::cout << nup_five_w[uktt] << ": "; lang_cout(3, nup_five_w[uktt]); std::cout << '\n';
 					d_item[nup_five_w[uktt]] = 1;
 				}
 			}
 			else if (chosen_banner == 5) {
-				std::cout << "\n"; lang_cout(1, 120); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 120); std::cout << '\n';
 				for (size_t uk3 = 0; uk3 < 11; uk3++) {
-					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << "\n";
+					std::cout << nup_four_c[uk3] << ": "; lang_cout(3, nup_four_c[uk3]); std::cout << '\n';
 					d_item[nup_four_c[uk3]] = 1;
 				}
-				std::cout << "\n"; lang_cout(1, 118); std::cout << "\n";
+				std::cout << '\n'; lang_cout(1, 118); std::cout << '\n';
 				for (size_t ukt = 0; ukt < 5; ukt++) {
-					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << "\n";
+					std::cout << nup_five_c[ukt] << ": "; lang_cout(3, nup_five_c[ukt]); std::cout << '\n';
 					d_item[nup_five_c[ukt]] = 1;
 				}
 			}
-			else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
-			std::cout << "\n"; lang_cout(1, 116); std::cout << "\n"; lang_cout(1, 123); std::cout << "\n\n";
+			else { lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit; }
+			std::cout << '\n'; lang_cout(1, 116); std::cout << '\n'; lang_cout(1, 123); std::cout << "\n\n";
 			std::cin >> ij;
 			if (std::cin.fail()) { ij = 0; cin_error_by2() goto enter_ij; }
 			if (ij == -1) {
 				for (size_t i = 0; i < 127; i++) { if (d_item_n[i] > 0) { zero_input_check = false; } }
-				if (zero_input_check) { ij = 0; d_item_c = false; std::cout << "\n"; lang_cout(1, 125); std::cout << "\n"; goto enter_wishes_number; }
-				else { ij = 0; std::cout << "\n"; head_print(); goto core_core_loop; }
+				if (zero_input_check) { ij = 0; d_item_c = false; std::cout << '\n'; lang_cout(1, 125); std::cout << '\n'; goto enter_wishes_number; }
+				else { ij = 0; std::cout << '\n'; head_print(); goto core_core_loop; }
 			}
-			else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 117; qi++) { d_item_n[qi] = 0; } std::cout << "\n"; goto enter_wishes_number; }
+			else if (ij == -2) { ij = 0; for (size_t qi = 0; qi < 117; qi++) { d_item_n[qi] = 0; } std::cout << '\n'; goto enter_wishes_number; }
 			else if (ij > -1) {
-				if (ij > 127 || d_item[ij] == 0) { ij = 0; std::cout << "\n"; lang_cout(1, 122); std::cout << "\n\n"; goto enter_ij; }
+				if (ij > 127 || d_item[ij] == 0) { ij = 0; std::cout << '\n'; lang_cout(1, 122); std::cout << "\n\n"; goto enter_ij; }
 			enter_d_item:
-				std::cout << "\n"; lang_cout(1, 115); lang_cout(3, static_cast<size_t>(ij)); lang_cout(1, 124); std::cout << "\n\n";
+				std::cout << '\n'; lang_cout(1, 115); lang_cout(3, static_cast<size_t>(ij)); lang_cout(1, 124); std::cout << "\n\n";
 				std::cin >> d_item_n[ij];
 				if (std::cin.fail()) { d_item_n[ij] = 0; cin_error_by() goto enter_d_item; }
 				if (d_item_n[ij] > 0) { zero_input_recheck = false; }
-				if ((countx < 1 && zero_input_recheck) || d_item_n[ij] > LLONG_MAX) { std::cout << "\n"; lang_cout(1, 72); std::cout << "\n"; goto enter_d_item; }
-				std::cout << "\n";
+				if ((countx < 1 && zero_input_recheck) || d_item_n[ij] > LLONG_MAX) { std::cout << '\n'; lang_cout(1, 72); std::cout << '\n'; goto enter_d_item; }
+				std::cout << '\n';
 			}
-			else { ij = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_ij; }
+			else { ij = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_ij; }
 		}
 	}
 	else if (wishes_number == -127) {
 		wishes_number = 0;
-		lang_cout(5, 0); std::cout << "seed = " << seed << "\n";
-		lang_cout(5, 1); std::cout << "chosen_banner = " << chosen_banner << "\n";
-		lang_cout(5, 2); std::cout << "chosen_event = " << chosen_event << "\n";
-		lang_cout(5, 3); std::cout << "up_five = " << up_five << "\n";
-		lang_cout(5, 4); std::cout << "y_print = " << y_print << "\n";
-		lang_cout(5, 42); std::cout << "y_luck = " << y_luck << "\n";
-		lang_cout(5, 5); std::cout << "four_star_assurance_number = " << four_star_assurance_number << "\n";
-		lang_cout(5, 6); std::cout << "five_star_assurance_number = " << five_star_assurance_number << "\n";
-		lang_cout(5, 7); std::cout << "four_star_guarantee_number = " << four_star_guarantee_number << "\n";
-		lang_cout(5, 8); std::cout << "five_star_guarantee_number = " << five_star_guarantee_number << "\n";
-		lang_cout(5, 9); std::cout << "countx = " << countx << "\n";
-		lang_cout(5, 10); std::cout << "five_count = " << five_count << "\n";
-		lang_cout(5, 11); std::cout << "five_count_c = " << five_count_c << "\n";
-		lang_cout(5, 12); std::cout << "five_count_w = " << five_count_w << "\n";
-		lang_cout(5, 13); std::cout << "four_count = " << four_count << "\n";
-		lang_cout(5, 14); std::cout << "four_count_c = " << four_count_c << "\n";
-		lang_cout(5, 15); std::cout << "four_count_w = " << four_count_w << "\n";
-		lang_cout(5, 16); std::cout << "is_noelle = " << is_noelle << "\n";
-		lang_cout(5, 17); std::cout << "ave_fives = " << ave_fives << "\n";
-		lang_cout(5, 18); std::cout << "max_fives = " << max_fives << "\n";
-		lang_cout(5, 19); std::cout << "min_fives = " << min_fives << "\n";
-		lang_cout(5, 20); std::cout << "max_fivesth = " << max_fivesth << "\n";
-		lang_cout(5, 21); std::cout << "min_fivesth = " << min_fivesth << "\n";
-		lang_cout(5, 22); std::cout << "max_fivecount = " << max_fivecount << "\n";
-		lang_cout(5, 23); std::cout << "min_fivecount = " << min_fivecount << "\n";
-		lang_cout(5, 24); std::cout << "unmet4_c = " << unmet4_c << "\n";
-		lang_cout(5, 25); std::cout << "unmet4_w = " << unmet4_w << "\n";
-		lang_cout(5, 26); std::cout << "unmet5_c = " << unmet5_c << "\n";
-		lang_cout(5, 27); std::cout << "unmet5_w = " << unmet5_w << "\n";
-		lang_cout(5, 28); std::cout << "five_weight = " << five_weight << "\n";
-		lang_cout(5, 29); std::cout << "four_weight = " << four_weight << "\n";
-		lang_cout(5, 30); std::cout << "three_weight = " << three_weight << "\n";
-		lang_cout(5, 31); std::cout << "size_nup_four_c = " << size_nup_four_c << "\n";
-		lang_cout(5, 32); std::cout << "size_nup_four_w = " << size_nup_four_w << "\n";
-		lang_cout(5, 33); std::cout << "is_cross = " << is_cross << "\n";
-		lang_cout(5, 34); std::cout << "is_dualcross = " << is_dualcross << "\n";
-		lang_cout(5, 35); std::cout << "switch_b_should_be = " << switch_b_should_be << "\n";
-		lang_cout(5, 36); std::cout << "switch_e_should_be = " << switch_e_should_be << "\n";
-		lang_cout(5, 37); std::cout << "fate_weapon = " << fate_weapon << "\n";
-		lang_cout(5, 38); std::cout << "fate_points = " << fate_points << "\n";
-		lang_cout(5, 39); std::cout << "luckiest = " << luckiest << "\n";
-		lang_cout(5, 40); std::cout << "d_item_c = " << d_item_c << "\n";
-		lang_cout(5, 41); std::cout << "is_s_mode = " << is_s_mode << "\n";
-		lang_cout(5, 43); std::cout << "countx_l = " << countx_l << "\n";
-		lang_cout(5, 44); std::cout << "ach_cout[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach_count[i] << " "; } std::cout << "\n";
-		lang_cout(5, 45); std::cout << "ach[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach[i] << " "; } std::cout << "\n";
-		lang_cout(5, 46); std::cout << "ach_q[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach_q[i] << " "; } std::cout << "\n";
-		lang_cout(5, 47); std::cout << "kind_r_ach_8 = " << kind_r_ach_8 << "\n";
+		lang_cout(5, 0); std::cout << "seed = " << seed << '\n';
+		lang_cout(5, 1); std::cout << "chosen_banner = " << chosen_banner << '\n';
+		lang_cout(5, 2); std::cout << "chosen_event = " << chosen_event << '\n';
+		lang_cout(5, 3); std::cout << "up_five = " << up_five << '\n';
+		lang_cout(5, 4); std::cout << "y_print = " << y_print << '\n';
+		lang_cout(5, 42); std::cout << "y_luck = " << y_luck << '\n';
+		lang_cout(5, 5); std::cout << "four_star_assurance_number = " << four_star_assurance_number << '\n';
+		lang_cout(5, 6); std::cout << "five_star_assurance_number = " << five_star_assurance_number << '\n';
+		lang_cout(5, 7); std::cout << "four_star_guarantee_number = " << four_star_guarantee_number << '\n';
+		lang_cout(5, 8); std::cout << "five_star_guarantee_number = " << five_star_guarantee_number << '\n';
+		lang_cout(5, 9); std::cout << "countx = " << countx << '\n';
+		lang_cout(5, 10); std::cout << "five_count = " << five_count << '\n';
+		lang_cout(5, 11); std::cout << "five_count_c = " << five_count_c << '\n';
+		lang_cout(5, 12); std::cout << "five_count_w = " << five_count_w << '\n';
+		lang_cout(5, 13); std::cout << "four_count = " << four_count << '\n';
+		lang_cout(5, 14); std::cout << "four_count_c = " << four_count_c << '\n';
+		lang_cout(5, 15); std::cout << "four_count_w = " << four_count_w << '\n';
+		lang_cout(5, 16); std::cout << "is_noelle = " << is_noelle << '\n';
+		lang_cout(5, 17); std::cout << "ave_fives = " << ave_fives << '\n';
+		lang_cout(5, 18); std::cout << "max_fives = " << max_fives << '\n';
+		lang_cout(5, 19); std::cout << "min_fives = " << min_fives << '\n';
+		lang_cout(5, 20); std::cout << "max_fivesth = " << max_fivesth << '\n';
+		lang_cout(5, 21); std::cout << "min_fivesth = " << min_fivesth << '\n';
+		lang_cout(5, 22); std::cout << "max_fivecount = " << max_fivecount << '\n';
+		lang_cout(5, 23); std::cout << "min_fivecount = " << min_fivecount << '\n';
+		lang_cout(5, 24); std::cout << "unmet4_c = " << unmet4_c << '\n';
+		lang_cout(5, 25); std::cout << "unmet4_w = " << unmet4_w << '\n';
+		lang_cout(5, 26); std::cout << "unmet5_c = " << unmet5_c << '\n';
+		lang_cout(5, 27); std::cout << "unmet5_w = " << unmet5_w << '\n';
+		lang_cout(5, 28); std::cout << "five_weight = " << five_weight << '\n';
+		lang_cout(5, 29); std::cout << "four_weight = " << four_weight << '\n';
+		lang_cout(5, 30); std::cout << "three_weight = " << three_weight << '\n';
+		lang_cout(5, 31); std::cout << "size_nup_four_c = " << size_nup_four_c << '\n';
+		lang_cout(5, 32); std::cout << "size_nup_four_w = " << size_nup_four_w << '\n';
+		lang_cout(5, 33); std::cout << "is_cross = " << is_cross << '\n';
+		lang_cout(5, 34); std::cout << "is_dualcross = " << is_dualcross << '\n';
+		lang_cout(5, 35); std::cout << "switch_b_should_be = " << switch_b_should_be << '\n';
+		lang_cout(5, 36); std::cout << "switch_e_should_be = " << switch_e_should_be << '\n';
+		lang_cout(5, 37); std::cout << "fate_weapon = " << fate_weapon << '\n';
+		lang_cout(5, 38); std::cout << "fate_points = " << fate_points << '\n';
+		lang_cout(5, 39); std::cout << "luckiest = " << luckiest << '\n';
+		lang_cout(5, 40); std::cout << "d_item_c = " << d_item_c << '\n';
+		lang_cout(5, 41); std::cout << "is_s_mode = " << is_s_mode << '\n';
+		lang_cout(5, 43); std::cout << "countx_l = " << countx_l << '\n';
+		lang_cout(5, 44); std::cout << "ach_cout[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach_count[i] << " "; } std::cout << '\n';
+		lang_cout(5, 45); std::cout << "ach[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach[i] << " "; } std::cout << '\n';
+		lang_cout(5, 46); std::cout << "ach_q[] = "; for (size_t i = 0; i < 12; i++) { std::cout << ach_q[i] << " "; } std::cout << '\n';
+		lang_cout(5, 47); std::cout << "kind_r_ach_8 = " << kind_r_ach_8 << '\n';
 		lang_cout(5, 48); std::cout << "kind_r_ach_11 = " << kind_r_ach_11 << "\n\n";
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -120) {
 	language_setting_local_6:
-		std::cout << "\n" << EN_S_160 << "\n" << CN_S_160 << UNI_S_0;
+		std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
 		std::cin >> lang_status;
-		std::cout << "\n";
+		std::cout << '\n';
 		if (std::cin.fail() || lang_status > 1) { lang_status = 0; cin_error_by3() goto language_setting_local_6; }
 		else { wishes_number = 0; goto enter_wishes_number; }
 	}
@@ -1836,16 +1881,16 @@ enter_wishes_number:
 				if (ach_q[i]) {
 					const size_t achdis = i + i + 3;
 					const size_t achname = i + i + 4;
-					lang_cout(6, achname); std::cout << " --- "; lang_cout(6, achdis); std::cout << "\n";
+					lang_cout(6, achname); std::cout << " --- "; lang_cout(6, achdis); std::cout << '\n';
 					achp_check_again = true;
 				}
 			}
 			if (!achp_check_again) { lang_cout(1, 164); }
 		}
-		std::cout << "\n";
+		std::cout << '\n';
 		goto enter_wishes_number;
 	}
-	else if (wishes_number < 1) { wishes_number = 0; lang_cout(1, 72); std::cout << "\n"; goto enter_wishes_number; }
+	else if (wishes_number < 1) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
 	else {
 		head_print();
 	}
@@ -1861,9 +1906,9 @@ core_core_loop:
 	delay_prog = wishes_number_r_t;
 	delay_r = 0;
 	if (y_arg) {
-		lang_cout(1, 1); std::cout << "\n";
-		lang_cout(1, 2); std::cout << "\n";
-		lang_cout(1, 3); std::cout << "\n";
+		lang_cout(1, 1); std::cout << '\n';
+		lang_cout(1, 2); std::cout << '\n';
+		lang_cout(1, 3); std::cout << '\n';
 		lang_cout(1, 4); std::cout << "\n\n";
 		lang_cout(1, 85); std::cout << "\n\n";
 	}
@@ -1950,7 +1995,7 @@ core_core_loop:
 							kind = rspick(nup_four_w, size_nup_four_w);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 					else if (unmet4_c > 16) {
@@ -1972,7 +2017,7 @@ core_core_loop:
 							kind = rspick(nup_four_w, size_nup_four_w);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 					else {
@@ -1994,7 +2039,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 				}
@@ -2004,7 +2049,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
+			default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; break;
 			}
 			output_string()
 				if (star != 4 || type == 3) { unmet4_c++; }
@@ -2109,7 +2154,7 @@ core_core_loop:
 						else { five_star_guarantee_number = true; }
 					}
 				}
-				else { lang_cout(4, 2); std::cout << "\n"; error_code = 2; goto full_quit; }
+				else { lang_cout(4, 2); std::cout << '\n'; error_code = 2; goto full_quit; }
 			} break;
 			case 1: {
 				star = 4;
@@ -2144,7 +2189,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 					else if (unmet4_c > 14) {
@@ -2166,7 +2211,7 @@ core_core_loop:
 							if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 							else { four_star_guarantee_number = true; }
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 					else {
@@ -2188,7 +2233,7 @@ core_core_loop:
 							kind = rspick(nup_four_c, size_nup_four_c);
 							four_star_guarantee_number = true;
 						} break;
-						default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+						default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 						}
 					}
 				}
@@ -2198,7 +2243,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
+			default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; break;
 			}
 			output_string()
 				if (star != 4 || type == 3) { unmet4_c++; }
@@ -2273,7 +2318,7 @@ core_core_loop:
 						unmet5_w = 0;
 						kind = rspick(nup_five_w, 10);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 				else if (unmet5_c > 146) {
@@ -2292,7 +2337,7 @@ core_core_loop:
 						unmet5_w = 0;
 						kind = rspick(nup_five_w, 10);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 				else {
@@ -2311,7 +2356,7 @@ core_core_loop:
 						unmet5_c = 0;
 						kind = rspick(nup_five_c, 5);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 			} break;
@@ -2337,7 +2382,7 @@ core_core_loop:
 						unmet4_w = 0;
 						kind = rspick(nup_four_w, size_nup_four_w);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 				else if (unmet4_c > 16) {
@@ -2356,7 +2401,7 @@ core_core_loop:
 						unmet4_w = 0;
 						kind = rspick(nup_four_w, size_nup_four_w);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 				else {
@@ -2375,7 +2420,7 @@ core_core_loop:
 						unmet4_c = 0;
 						kind = rspick(nup_four_c, size_nup_four_c);
 					} break;
-					default: lang_cout(4, 4); std::cout << "\n"; error_code = 4; break;
+					default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break;
 					}
 				}
 				if (ach_count[11] < 7) {
@@ -2384,7 +2429,7 @@ core_core_loop:
 				}
 			} break;
 			case 2: Tri() break;
-			default: lang_cout(4, 3); std::cout << "\n"; error_code = 3; break;
+			default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; break;
 			}
 			output_string()
 				if (!(star == 5 && type == 1)) { unmet5_c++; }
@@ -2546,7 +2591,7 @@ core_core_loop:
 			}
 		}
 	}
-	else { lang_cout(4, 7); std::cout << "\n"; error_code = 7; goto full_quit; }
+	else { lang_cout(4, 7); std::cout << '\n'; error_code = 7; goto full_quit; }
 	// real work
 	endy = std::chrono::system_clock::now();
 	if (y_anim) {
@@ -2556,16 +2601,16 @@ core_core_loop:
 			for (size_t templuck = 0; templuck < 10; templuck++) {
 				std::cout << animlocation[templuck] << "(" << animsublocation[templuck] << ")(" << animsubsublocation[templuck] << ") ";
 				casesx(animkind[templuck]);
-				lang_cout(2, animkind[templuck]); std::cout << "\n";
-				lang_cout(7, animkind[templuck]); std::cout << "\n";
+				lang_cout(2, animkind[templuck]); std::cout << '\n';
+				lang_cout(7, animkind[templuck]); std::cout << '\n';
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			}
 		}
 		else if (anim_number == 1) {
 			std::cout << anim_location << "(" << anim_sublocation << ")(" << anim_subsublocation << ") ";
 			casesx(anim_kind);
-			lang_cout(2, anim_kind); std::cout << "\n";
-			lang_cout(7, anim_kind); std::cout << "\n";
+			lang_cout(2, anim_kind); std::cout << '\n';
+			lang_cout(7, anim_kind); std::cout << '\n';
 		}
 		else {
 			lang_cout(4, 16);
@@ -2582,23 +2627,23 @@ core_core_loop:
 	delay_r = 100;
 	if (!y_arg && !y_print && y_prog && !is_s_mode && !y_track_luck_mode) { prog_p() }
 	y_track_luck_mode = false;
-	std::cout << "\n"; lang_cout(1, 86); std::cout << t_start << "\n";
-	lang_cout(1, 87); std::cout << t_end << "\n";
-	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << "\n";
+	std::cout << '\n'; lang_cout(1, 86); std::cout << t_start << '\n';
+	lang_cout(1, 87); std::cout << t_end << '\n';
+	std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0; lang_cout(1, 84); std::cout << '\n';
 	if (max_fives > 86 && chosen_banner != 5) { ach[3] = true; }
 	if (five_count == 0) {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << '\n'; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << '\n'; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << '\n';
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 77); std::cout << five_count_c << " : " << five_count_w << " : " << four_count_c << " : " << four_count_w << "\n\n";
 	}
 	else {
-		std::cout << "\n"; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << "\n"; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << "\n";
+		std::cout << '\n'; lang_cout(1, 127); std::cout << countx - countx_r; lang_cout(1, 74); std::cout << '\n'; lang_cout(1, 73); std::cout << countx; lang_cout(1, 74); std::cout << '\n';
 		lang_cout(1, 75); std::cout << five_count << "  " << static_cast<double>(five_count) * 100.0 / static_cast<double>(countx) << "%\n";
 		lang_cout(1, 76); std::cout << four_count << "  " << static_cast<double>(four_count) * 100.0 / static_cast<double>(countx) << "%\n";
-		lang_cout(1, 78); std::cout << max_fives; lang_cout(1, 79); std::cout << max_fivesth; lang_cout(1, 80); std::cout << max_fivecount + 1; lang_cout(1, 81); std::cout << "\n";
-		lang_cout(1, 82); std::cout << min_fives; lang_cout(1, 79); std::cout << min_fivesth; lang_cout(1, 80); std::cout << min_fivecount + 1; lang_cout(1, 81); std::cout << "\n";
-		lang_cout(1, 83); std::cout << static_cast<double>(ave_fives) * 1.0 / static_cast<double>(five_count) << "\n";
+		lang_cout(1, 78); std::cout << max_fives; lang_cout(1, 79); std::cout << max_fivesth; lang_cout(1, 80); std::cout << max_fivecount + 1; lang_cout(1, 81); std::cout << '\n';
+		lang_cout(1, 82); std::cout << min_fives; lang_cout(1, 79); std::cout << min_fivesth; lang_cout(1, 80); std::cout << min_fivecount + 1; lang_cout(1, 81); std::cout << '\n';
+		lang_cout(1, 83); std::cout << static_cast<double>(ave_fives) * 1.0 / static_cast<double>(five_count) << '\n';
 		lang_cout(1, 77); std::cout << five_count_c << " : " << five_count_w << " : " << four_count_c << " : " << four_count_w << "\n\n";
 	}
 	for (const size_t iout : five_stars_c) { if (pcount[iout] > 0) { lang_cout(3, iout); std::cout << "(" << pcount[iout] << ") "; } }
@@ -2617,7 +2662,7 @@ core_core_loop:
 			iacheck = true;
 		}
 	}
-	if (iacheck) { std::cout << "\n"; }
+	if (iacheck) { std::cout << '\n'; }
 	wishes_number_r = 0;
 	if (y_arg || error_code != 0) { goto full_quit; }
 	// a bunch of output of statistics
