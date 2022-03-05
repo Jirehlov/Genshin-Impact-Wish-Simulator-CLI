@@ -1295,7 +1295,7 @@ enter_wishes_number:
 	std::cout << ";\n"; lang_cout(1, 165);
 	std::cout << ";\n"; lang_cout(1, 170);
 	std::cout << ";\n"; lang_cout(1, 174);
-	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 128); }
+	if (chosen_banner != 5) { std::cout << ";\n"; lang_cout(1, 178); std::cout << ";\n"; lang_cout(1, 128); }
 	std::cout << ";\n"; lang_cout(1, 113); std::cout << '\n'; lang_cout(1, 161);
 	for (size_t i = 0; i < 9; i++) {
 		if (ach_q[i]) {
@@ -1499,7 +1499,7 @@ enter_wishes_number:
 		goto enter_wishes_number;
 	}
 	else if (wishes_number == -11) {
-	if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
+		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
 		ptrdiff_t hash_out[9] = { 0 };
 		hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
 		hash_out[1] = five_star_assurance_number;
@@ -1531,13 +1531,15 @@ enter_wishes_number:
 		std::cin >> hash_sav;
 		if (std::cin.fail()) { cin_error_by2() goto enter_hash; }
 		if (hash_sav[0] == '-' && hash_sav[1] == '1') { std::cout << '\n'; goto enter_profile; }
-		if (hash_sav[0] != '&') { lang_cout(1, 181); std::cout << "\n\n"; std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');goto enter_hash; }
+		if (hash_sav[0] != '&') { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); goto enter_hash; }
 		for (size_t i = 1; i < 256; i++) {
-			if ( k > 24 ){ lang_cout(1, 181); goto enter_hash; }
+			if (k > 24) { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
 			else if (isdigit(hash_sav[i])) { hash_dump[j][k] = hash_sav[i]; k++; }
-			else if (hash_sav[i] == '*') { j++; k = 0; }
-			else if (j == 9 || hash_sav[i] == '&') { goto apply_hash; }
-			else { lang_cout(1, 181); goto enter_hash; }
+			else if (hash_sav[i] == '*' && k > 0) { j++; k = 0; }
+			else if ((hash_sav[i] == '*' || hash_sav[i] == '&') && k == 0) { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
+			else if ((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && j == 8 && hash_sav[i] == '&') { goto apply_hash; }
+			else if ((chosen_banner == 3) && j == 9 && hash_sav[i] == '&') { goto apply_hash; }
+			else { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
 		}
 	apply_hash:
 		for (size_t i = 0; i < 9; i++) {
@@ -1677,7 +1679,13 @@ enter_wishes_number:
 		std::cout << '\n';
 	apply_profile:
 		std::cout << '\n'; lang_cout(1, 141); std::cout << '\n';
-		if (sav[1] == sav[3] || (chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) || (sav[6] != sav[3] && sav[7] != sav[3]) || (chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) || (chosen_banner == 3 && sav[4] > 79 && sav[5] > 79)) check_profile_throw()
+		if (
+			((four_count > 0 || five_count > 0) && sav[1] == sav[3]) ||
+			(chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) ||
+			(sav[6] != sav[3] && sav[7] != sav[3]) ||
+			(chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) ||
+			(chosen_banner == 3 && sav[4] > 79 && sav[5] > 79)
+			) check_profile_throw()
 			std::cout << '\n'; lang_cout(1, 142); std::cout << '\n';
 		five_star_guarantee_number = static_cast<bool> (sav[0]);
 		five_star_assurance_number = sav[1];
