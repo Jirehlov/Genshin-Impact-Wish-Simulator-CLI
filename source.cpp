@@ -496,6 +496,23 @@ static void animation_gen(const unsigned int star) {
 	std::cout << '\n';
 }
 
+static void hash_gen() {
+	ptrdiff_t hash_out[9] = { 0 };
+	hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
+	hash_out[1] = five_star_assurance_number;
+	hash_out[2] = static_cast<ptrdiff_t>(four_star_guarantee_number);
+	hash_out[3] = four_star_assurance_number;
+	hash_out[4] = unmet5_c + 1;
+	hash_out[5] = unmet5_w + 1;
+	hash_out[6] = unmet4_c + 1;
+	hash_out[7] = unmet4_w + 1;
+	hash_out[8] = fate_weapon;
+	lang_cout(1, 180); std::cout << '\n';
+	std::cout << "\n&" << hash_out[0];
+	for (size_t i = 1; i < 9; i++) { std::cout << "*" << hash_out[i]; }
+	std::cout << "&\n\n";
+}
+
 int main(int argc, char* argv[]) {
 	static char default_argv0[] = "giwscli";
 	argv[0] = default_argv0;
@@ -1284,6 +1301,7 @@ enter_wishes_number:
 	anim_sublocation = 0;
 	anim_subsublocation = 0;
 	star_max = 0;
+	if (fate_weapon > 2 || fate_weapon < 0) { fate_weapon = 0; }
 	for (size_t& ini : animkind) { ini = 127; }
 	static const size_t ewn[6] = { 54, 55, 56, 57, 58, 59 };
 	std::cout << '\n';
@@ -1500,20 +1518,7 @@ enter_wishes_number:
 	}
 	else if (wishes_number == -11) {
 		if (chosen_banner == 5) { wishes_number = 0; lang_cout(1, 72); std::cout << '\n'; goto enter_wishes_number; }
-		ptrdiff_t hash_out[9] = { 0 };
-		hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
-		hash_out[1] = five_star_assurance_number;
-		hash_out[2] = static_cast<ptrdiff_t>(four_star_guarantee_number);
-		hash_out[3] = four_star_assurance_number;
-		hash_out[4] = unmet5_c + 1;
-		hash_out[5] = unmet5_w + 1;
-		hash_out[6] = unmet4_c + 1;
-		hash_out[7] = unmet4_w + 1;
-		hash_out[8] = fate_weapon;
-		lang_cout(1, 180); std::cout << '\n';
-		std::cout << "\n&" << hash_out[0];
-		for (size_t i = 1; i < 9; i++) { std::cout << "*" << hash_out[i]; }
-		std::cout << "&\n\n";
+		hash_gen();
 		wishes_number = 0;
 		goto enter_wishes_number;
 	}
@@ -1533,12 +1538,13 @@ enter_wishes_number:
 		if (hash_sav[0] == '-' && hash_sav[1] == '1') { std::cout << '\n'; goto enter_profile; }
 		if (hash_sav[0] != '&') { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; std::cin.clear(); std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); goto enter_hash; }
 		for (size_t i = 1; i < 256; i++) {
-			if (k > 24) { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
-			else if (isdigit(hash_sav[i])) { hash_dump[j][k] = hash_sav[i]; k++; }
+			if (k > 24 || ((hash_sav[i] == '*' || hash_sav[i] == '&') && k == 0)) { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
+			else if (std::isdigit(static_cast<unsigned char>(hash_sav[i]))) { hash_dump[j][k] = hash_sav[i]; k++; }
 			else if (hash_sav[i] == '*' && k > 0) { j++; k = 0; }
-			else if ((hash_sav[i] == '*' || hash_sav[i] == '&') && k == 0) { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
-			else if ((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && j == 8 && hash_sav[i] == '&') { goto apply_hash; }
-			else if ((chosen_banner == 3) && j == 9 && hash_sav[i] == '&') { goto apply_hash; }
+			else if (((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) && j == 8 && hash_sav[i] == '&') ||
+				((chosen_banner == 3) && j == 9 && hash_sav[i] == '&')) {
+				goto apply_hash;
+			}
 			else { std::cout << '\n'; lang_cout(1, 181); std::cout << "\n\n"; goto enter_hash; }
 		}
 	apply_hash:
@@ -1684,7 +1690,8 @@ enter_wishes_number:
 			(chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) ||
 			(sav[6] != sav[3] && sav[7] != sav[3]) ||
 			(chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) ||
-			(chosen_banner == 3 && sav[4] > 79 && sav[5] > 79)
+			(chosen_banner == 3 && sav[4] > 79 && sav[5] > 79) ||
+			(sav[8] > 2)
 			) check_profile_throw()
 			std::cout << '\n'; lang_cout(1, 142); std::cout << '\n';
 		five_star_guarantee_number = static_cast<bool> (sav[0]);
@@ -2672,7 +2679,7 @@ core_core_loop:
 	}
 	if (iacheck) { std::cout << '\n'; }
 	wishes_number_r = 0;
-	if (y_arg || error_code != 0) { goto full_quit; }
+	if (y_arg || error_code != 0) { hash_gen(); goto full_quit; }
 	// a bunch of output of statistics
 	goto enter_wishes_number;
 full_quit:
