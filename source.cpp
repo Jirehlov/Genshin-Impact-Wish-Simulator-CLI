@@ -288,8 +288,7 @@ delay_prog = 0,
 wishes_number_r_t = 0;
 signed int error_code = 0,
 tuck = 0;
-static int full_q = 0,
-anim_out = 0;
+static int full_q = 0;
 auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
 
 static size_t rspick(const size_t* kindx, size_t sizekind) {
