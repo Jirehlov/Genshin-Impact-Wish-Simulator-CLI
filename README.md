@@ -22,7 +22,7 @@ For Windows x64 users, there're executables [available](https://github.com/Jireh
 You can also build by yourself:
 
 ```
-g++ -s -o3 source.cpp -o giwscli
+g++ -s -o3 main.cpp giwscli.cpp functions.cpp random_gen.cpp variables.cpp -o giwscli
 ```
 Or Visual Studio, etc.
 
@@ -144,7 +144,7 @@ This simulator includes no hidden possibilities.
 你也可以自己编译：
 
 ```
-g++ -s -o3 source.cpp -o giwscli
+g++ -s -o3 main.cpp giwscli.cpp functions.cpp random_gen.cpp variables.cpp -o giwscli
 ```
 或者Visual Studio等其他方法。
 
