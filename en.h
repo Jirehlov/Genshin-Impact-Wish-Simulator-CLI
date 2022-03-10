@@ -1,7 +1,7 @@
-#pragma once
 #ifndef EN_H
+#define EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.12"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.13"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"
@@ -736,97 +736,97 @@
 #endif
 
 static const char* pstring_en[256] = {
-                EN_S_0, EN_S_1, EN_S_2, EN_S_3, EN_S_4, EN_S_5, EN_S_6, EN_S_7, EN_S_8, EN_S_9, EN_S_10,
-                EN_S_11, EN_S_12, EN_S_13, EN_S_14, EN_S_15, EN_S_16, EN_S_17, EN_S_18, EN_S_19, EN_S_20,
-                EN_S_21, EN_S_22, EN_S_23, EN_S_24, EN_S_25, EN_S_26, EN_S_27, EN_S_28, EN_S_29, EN_S_30,
-                EN_S_31, EN_S_32, EN_S_33, EN_S_34, EN_S_35, EN_S_36, EN_S_37, EN_S_38, EN_S_39, EN_S_40,
-                EN_S_41, EN_S_42, EN_S_43, EN_S_44, EN_S_45, EN_S_46, EN_S_47, EN_S_48, EN_S_49, EN_S_50,
-                EN_S_51, EN_S_52, EN_S_53, EN_S_54, EN_S_55, EN_S_56, EN_S_57, EN_S_58, EN_S_59, EN_S_60,
-                EN_S_61, EN_S_62, EN_S_63, EN_S_64, EN_S_65, EN_S_66, EN_S_67, EN_S_68, EN_S_69, EN_S_70,
-                EN_S_71, EN_S_72, EN_S_73, EN_S_74, EN_S_75, EN_S_76, EN_S_77, EN_S_78, EN_S_79, EN_S_80,
-                EN_S_81, EN_S_82, EN_S_83, EN_S_84, EN_S_85, EN_S_86, EN_S_87, EN_S_88, EN_S_89, EN_S_90,
-                EN_S_91, EN_S_92, EN_S_93, EN_S_94, EN_S_95, EN_S_96, EN_S_97, EN_S_98, EN_S_99, EN_S_100,
-                EN_S_101, EN_S_102, EN_S_103, EN_S_104, EN_S_105, EN_S_106, EN_S_107, EN_S_108, EN_S_109, EN_S_110,
-                EN_S_111, EN_S_112, EN_S_113, EN_S_114, EN_S_115, EN_S_116, EN_S_117, EN_S_118, EN_S_119, EN_S_120,
-                EN_S_121, EN_S_122, EN_S_123, EN_S_124, EN_S_125, EN_S_126, EN_S_127, EN_S_128, EN_S_129, EN_S_130,
-                EN_S_131, EN_S_132, EN_S_133, EN_S_134, EN_S_135, EN_S_136, EN_S_137, EN_S_138, EN_S_139, EN_S_140,
-                EN_S_141, EN_S_142, EN_S_143, EN_S_144, EN_S_145, EN_S_146, EN_S_147, EN_S_148, EN_S_149, EN_S_150,
-                EN_S_151, EN_S_152, EN_S_153, EN_S_154, EN_S_155, EN_S_156, EN_S_157, EN_S_158, EN_S_159, EN_S_160,
-                EN_S_161, EN_S_162, EN_S_163, EN_S_164, EN_S_165, EN_S_166, EN_S_167, EN_S_168, EN_S_169, EN_S_170,
-                EN_S_171, EN_S_172, EN_S_173, EN_S_174, EN_S_175, EN_S_176, EN_S_177, EN_S_178, EN_S_179, EN_S_180,
-                EN_S_181, EN_S_182, EN_S_183, EN_S_184, EN_S_185, EN_S_186, EN_S_187, EN_S_188, EN_S_189, EN_S_190,
-                EN_S_191, EN_S_192, EN_S_193, EN_S_194, EN_S_195, EN_S_196, EN_S_197, EN_S_198, EN_S_199, EN_S_200,
-                EN_S_201, EN_S_202, EN_S_203, EN_S_204, EN_S_205, EN_S_206, EN_S_207, EN_S_208, EN_S_209, EN_S_210,
-                EN_S_211, EN_S_212, EN_S_213, EN_S_214, EN_S_215, EN_S_216, EN_S_217, EN_S_218, EN_S_219, EN_S_220,
-                EN_S_221, EN_S_222, EN_S_223, EN_S_224, EN_S_225, EN_S_226, EN_S_227, EN_S_228, EN_S_229, EN_S_230,
-                EN_S_231, EN_S_232, EN_S_233, EN_S_234, EN_S_235, EN_S_236, EN_S_237, EN_S_238, EN_S_239, EN_S_240,
-                EN_S_241, EN_S_242, EN_S_243, EN_S_244, EN_S_245, EN_S_246, EN_S_247, EN_S_248, EN_S_249, EN_S_250,
-                EN_S_251, EN_S_252, EN_S_253, EN_S_254, EN_S_255
+				EN_S_0, EN_S_1, EN_S_2, EN_S_3, EN_S_4, EN_S_5, EN_S_6, EN_S_7, EN_S_8, EN_S_9, EN_S_10,
+				EN_S_11, EN_S_12, EN_S_13, EN_S_14, EN_S_15, EN_S_16, EN_S_17, EN_S_18, EN_S_19, EN_S_20,
+				EN_S_21, EN_S_22, EN_S_23, EN_S_24, EN_S_25, EN_S_26, EN_S_27, EN_S_28, EN_S_29, EN_S_30,
+				EN_S_31, EN_S_32, EN_S_33, EN_S_34, EN_S_35, EN_S_36, EN_S_37, EN_S_38, EN_S_39, EN_S_40,
+				EN_S_41, EN_S_42, EN_S_43, EN_S_44, EN_S_45, EN_S_46, EN_S_47, EN_S_48, EN_S_49, EN_S_50,
+				EN_S_51, EN_S_52, EN_S_53, EN_S_54, EN_S_55, EN_S_56, EN_S_57, EN_S_58, EN_S_59, EN_S_60,
+				EN_S_61, EN_S_62, EN_S_63, EN_S_64, EN_S_65, EN_S_66, EN_S_67, EN_S_68, EN_S_69, EN_S_70,
+				EN_S_71, EN_S_72, EN_S_73, EN_S_74, EN_S_75, EN_S_76, EN_S_77, EN_S_78, EN_S_79, EN_S_80,
+				EN_S_81, EN_S_82, EN_S_83, EN_S_84, EN_S_85, EN_S_86, EN_S_87, EN_S_88, EN_S_89, EN_S_90,
+				EN_S_91, EN_S_92, EN_S_93, EN_S_94, EN_S_95, EN_S_96, EN_S_97, EN_S_98, EN_S_99, EN_S_100,
+				EN_S_101, EN_S_102, EN_S_103, EN_S_104, EN_S_105, EN_S_106, EN_S_107, EN_S_108, EN_S_109, EN_S_110,
+				EN_S_111, EN_S_112, EN_S_113, EN_S_114, EN_S_115, EN_S_116, EN_S_117, EN_S_118, EN_S_119, EN_S_120,
+				EN_S_121, EN_S_122, EN_S_123, EN_S_124, EN_S_125, EN_S_126, EN_S_127, EN_S_128, EN_S_129, EN_S_130,
+				EN_S_131, EN_S_132, EN_S_133, EN_S_134, EN_S_135, EN_S_136, EN_S_137, EN_S_138, EN_S_139, EN_S_140,
+				EN_S_141, EN_S_142, EN_S_143, EN_S_144, EN_S_145, EN_S_146, EN_S_147, EN_S_148, EN_S_149, EN_S_150,
+				EN_S_151, EN_S_152, EN_S_153, EN_S_154, EN_S_155, EN_S_156, EN_S_157, EN_S_158, EN_S_159, EN_S_160,
+				EN_S_161, EN_S_162, EN_S_163, EN_S_164, EN_S_165, EN_S_166, EN_S_167, EN_S_168, EN_S_169, EN_S_170,
+				EN_S_171, EN_S_172, EN_S_173, EN_S_174, EN_S_175, EN_S_176, EN_S_177, EN_S_178, EN_S_179, EN_S_180,
+				EN_S_181, EN_S_182, EN_S_183, EN_S_184, EN_S_185, EN_S_186, EN_S_187, EN_S_188, EN_S_189, EN_S_190,
+				EN_S_191, EN_S_192, EN_S_193, EN_S_194, EN_S_195, EN_S_196, EN_S_197, EN_S_198, EN_S_199, EN_S_200,
+				EN_S_201, EN_S_202, EN_S_203, EN_S_204, EN_S_205, EN_S_206, EN_S_207, EN_S_208, EN_S_209, EN_S_210,
+				EN_S_211, EN_S_212, EN_S_213, EN_S_214, EN_S_215, EN_S_216, EN_S_217, EN_S_218, EN_S_219, EN_S_220,
+				EN_S_221, EN_S_222, EN_S_223, EN_S_224, EN_S_225, EN_S_226, EN_S_227, EN_S_228, EN_S_229, EN_S_230,
+				EN_S_231, EN_S_232, EN_S_233, EN_S_234, EN_S_235, EN_S_236, EN_S_237, EN_S_238, EN_S_239, EN_S_240,
+				EN_S_241, EN_S_242, EN_S_243, EN_S_244, EN_S_245, EN_S_246, EN_S_247, EN_S_248, EN_S_249, EN_S_250,
+				EN_S_251, EN_S_252, EN_S_253, EN_S_254, EN_S_255
 };
 
 static const char* pname_en[128] = {
-                EN_C_0, EN_C_1, EN_C_2, EN_C_3, EN_C_4, EN_C_5, EN_C_6, EN_C_7, EN_C_8, EN_C_9, EN_C_10,
-                EN_C_11, EN_C_12, EN_C_13, EN_C_14, EN_C_15, EN_C_16, EN_C_17, EN_C_18, EN_C_19, EN_C_20,
-                EN_C_21, EN_C_22, EN_C_23, EN_C_24, EN_C_25, EN_C_26, EN_C_27, EN_C_28, EN_C_29, EN_C_30,
-                EN_C_31, EN_C_32, EN_C_33, EN_C_34, EN_C_35, EN_C_36, EN_C_37, EN_C_38, EN_C_39, EN_C_40,
-                EN_C_41, EN_C_42, EN_C_43, EN_C_44, EN_C_45, EN_C_46, EN_C_47, EN_C_48, EN_C_49, EN_C_50,
-                EN_C_51, EN_C_52, EN_C_53, EN_C_54, EN_C_55, EN_C_56, EN_C_57, EN_C_58, EN_C_59, EN_C_60,
-                EN_C_61, EN_C_62, EN_C_63, EN_C_64, EN_C_65, EN_C_66, EN_C_67, EN_C_68, EN_C_69, EN_C_70,
-                EN_C_71, EN_C_72, EN_C_73, EN_C_74, EN_C_75, EN_C_76, EN_C_77, EN_C_78, EN_C_79, EN_C_80,
-                EN_C_81, EN_C_82, EN_C_83, EN_C_84, EN_C_85, EN_C_86, EN_C_87, EN_C_88, EN_C_89, EN_C_90,
-                EN_C_91, EN_C_92, EN_C_93, EN_C_94, EN_C_95, EN_C_96, EN_C_97, EN_C_98, EN_C_99, EN_C_100,
-                EN_C_101, EN_C_102, EN_C_103, EN_C_104, EN_C_105, EN_C_106, EN_C_107, EN_C_108, EN_C_109,
-                EN_C_110, EN_C_111, EN_C_112, EN_C_113, EN_C_114, EN_C_115, EN_C_116, EN_C_117, EN_C_118,
-                EN_C_119, EN_C_120, EN_C_121, EN_C_122, EN_C_123, EN_C_124, EN_C_125, EN_C_126, EN_C_127
+				EN_C_0, EN_C_1, EN_C_2, EN_C_3, EN_C_4, EN_C_5, EN_C_6, EN_C_7, EN_C_8, EN_C_9, EN_C_10,
+				EN_C_11, EN_C_12, EN_C_13, EN_C_14, EN_C_15, EN_C_16, EN_C_17, EN_C_18, EN_C_19, EN_C_20,
+				EN_C_21, EN_C_22, EN_C_23, EN_C_24, EN_C_25, EN_C_26, EN_C_27, EN_C_28, EN_C_29, EN_C_30,
+				EN_C_31, EN_C_32, EN_C_33, EN_C_34, EN_C_35, EN_C_36, EN_C_37, EN_C_38, EN_C_39, EN_C_40,
+				EN_C_41, EN_C_42, EN_C_43, EN_C_44, EN_C_45, EN_C_46, EN_C_47, EN_C_48, EN_C_49, EN_C_50,
+				EN_C_51, EN_C_52, EN_C_53, EN_C_54, EN_C_55, EN_C_56, EN_C_57, EN_C_58, EN_C_59, EN_C_60,
+				EN_C_61, EN_C_62, EN_C_63, EN_C_64, EN_C_65, EN_C_66, EN_C_67, EN_C_68, EN_C_69, EN_C_70,
+				EN_C_71, EN_C_72, EN_C_73, EN_C_74, EN_C_75, EN_C_76, EN_C_77, EN_C_78, EN_C_79, EN_C_80,
+				EN_C_81, EN_C_82, EN_C_83, EN_C_84, EN_C_85, EN_C_86, EN_C_87, EN_C_88, EN_C_89, EN_C_90,
+				EN_C_91, EN_C_92, EN_C_93, EN_C_94, EN_C_95, EN_C_96, EN_C_97, EN_C_98, EN_C_99, EN_C_100,
+				EN_C_101, EN_C_102, EN_C_103, EN_C_104, EN_C_105, EN_C_106, EN_C_107, EN_C_108, EN_C_109,
+				EN_C_110, EN_C_111, EN_C_112, EN_C_113, EN_C_114, EN_C_115, EN_C_116, EN_C_117, EN_C_118,
+				EN_C_119, EN_C_120, EN_C_121, EN_C_122, EN_C_123, EN_C_124, EN_C_125, EN_C_126, EN_C_127
 };
 
 static const char* pnameshort_en[128] = {
-                EN_X_0, EN_X_1, EN_X_2, EN_X_3, EN_X_4, EN_X_5, EN_X_6, EN_X_7, EN_X_8, EN_X_9, EN_X_10,
-                EN_X_11, EN_X_12, EN_X_13, EN_X_14, EN_X_15, EN_X_16, EN_X_17, EN_X_18, EN_X_19, EN_X_20,
-                EN_X_21, EN_X_22, EN_X_23, EN_X_24, EN_X_25, EN_X_26, EN_X_27, EN_X_28, EN_X_29, EN_X_30,
-                EN_X_31, EN_X_32, EN_X_33, EN_X_34, EN_X_35, EN_X_36, EN_X_37, EN_X_38, EN_X_39, EN_X_40,
-                EN_X_41, EN_X_42, EN_X_43, EN_X_44, EN_X_45, EN_X_46, EN_X_47, EN_X_48, EN_X_49, EN_X_50,
-                EN_X_51, EN_X_52, EN_X_53, EN_X_54, EN_X_55, EN_X_56, EN_X_57, EN_X_58, EN_X_59, EN_X_60,
-                EN_X_61, EN_X_62, EN_X_63, EN_X_64, EN_X_65, EN_X_66, EN_X_67, EN_X_68, EN_X_69, EN_X_70,
-                EN_X_71, EN_X_72, EN_X_73, EN_X_74, EN_X_75, EN_X_76, EN_X_77, EN_X_78, EN_X_79, EN_X_80,
-                EN_X_81, EN_X_82, EN_X_83, EN_X_84, EN_X_85, EN_X_86, EN_X_87, EN_X_88, EN_X_89, EN_X_90,
-                EN_X_91, EN_X_92, EN_X_93, EN_X_94, EN_X_95, EN_X_96, EN_X_97, EN_X_98, EN_X_99, EN_X_100,
-                EN_X_101, EN_X_102, EN_X_103, EN_X_104, EN_X_105, EN_X_106, EN_X_107, EN_X_108, EN_X_109,
-                EN_X_110, EN_X_111, EN_X_112, EN_X_113, EN_X_114, EN_X_115, EN_X_116, EN_X_117, EN_X_118,
-                EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125, EN_X_126, EN_X_127
+				EN_X_0, EN_X_1, EN_X_2, EN_X_3, EN_X_4, EN_X_5, EN_X_6, EN_X_7, EN_X_8, EN_X_9, EN_X_10,
+				EN_X_11, EN_X_12, EN_X_13, EN_X_14, EN_X_15, EN_X_16, EN_X_17, EN_X_18, EN_X_19, EN_X_20,
+				EN_X_21, EN_X_22, EN_X_23, EN_X_24, EN_X_25, EN_X_26, EN_X_27, EN_X_28, EN_X_29, EN_X_30,
+				EN_X_31, EN_X_32, EN_X_33, EN_X_34, EN_X_35, EN_X_36, EN_X_37, EN_X_38, EN_X_39, EN_X_40,
+				EN_X_41, EN_X_42, EN_X_43, EN_X_44, EN_X_45, EN_X_46, EN_X_47, EN_X_48, EN_X_49, EN_X_50,
+				EN_X_51, EN_X_52, EN_X_53, EN_X_54, EN_X_55, EN_X_56, EN_X_57, EN_X_58, EN_X_59, EN_X_60,
+				EN_X_61, EN_X_62, EN_X_63, EN_X_64, EN_X_65, EN_X_66, EN_X_67, EN_X_68, EN_X_69, EN_X_70,
+				EN_X_71, EN_X_72, EN_X_73, EN_X_74, EN_X_75, EN_X_76, EN_X_77, EN_X_78, EN_X_79, EN_X_80,
+				EN_X_81, EN_X_82, EN_X_83, EN_X_84, EN_X_85, EN_X_86, EN_X_87, EN_X_88, EN_X_89, EN_X_90,
+				EN_X_91, EN_X_92, EN_X_93, EN_X_94, EN_X_95, EN_X_96, EN_X_97, EN_X_98, EN_X_99, EN_X_100,
+				EN_X_101, EN_X_102, EN_X_103, EN_X_104, EN_X_105, EN_X_106, EN_X_107, EN_X_108, EN_X_109,
+				EN_X_110, EN_X_111, EN_X_112, EN_X_113, EN_X_114, EN_X_115, EN_X_116, EN_X_117, EN_X_118,
+				EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125, EN_X_126, EN_X_127
 };
 
 static const char* perror_en[17] = {
-                EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10,
-                EN_E_11, EN_E_12, EN_E_13, EN_E_14, EN_E_15, EN_E_16
+				EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10,
+				EN_E_11, EN_E_12, EN_E_13, EN_E_14, EN_E_15, EN_E_16
 };
 
 static const char* pvalue_en[49] = {
-                EN_V_0, EN_V_1, EN_V_2, EN_V_3, EN_V_4, EN_V_5, EN_V_6, EN_V_7, EN_V_8, EN_V_9, EN_V_10,
-                EN_V_11, EN_V_12, EN_V_13, EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
-                EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27, EN_V_28, EN_V_29, EN_V_30,
-                EN_V_31, EN_V_32, EN_V_33, EN_V_34, EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40,
-                EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47, EN_V_48
+				EN_V_0, EN_V_1, EN_V_2, EN_V_3, EN_V_4, EN_V_5, EN_V_6, EN_V_7, EN_V_8, EN_V_9, EN_V_10,
+				EN_V_11, EN_V_12, EN_V_13, EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
+				EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27, EN_V_28, EN_V_29, EN_V_30,
+				EN_V_31, EN_V_32, EN_V_33, EN_V_34, EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40,
+				EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47, EN_V_48
 };
 
 static const char* pachieve_en[27] = {
-                EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
-                EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
-                EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26
+				EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
+				EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
+				EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26
 };
 
 static const char* pdetails_en[128] = {
-                EN_D_0, EN_D_1, EN_D_2, EN_D_3, EN_D_4, EN_D_5, EN_D_6, EN_D_7, EN_D_8, EN_D_9, EN_D_10,
-                EN_D_11, EN_D_12, EN_D_13, EN_D_14, EN_D_15, EN_D_16, EN_D_17, EN_D_18, EN_D_19, EN_D_20,
-                EN_D_21, EN_D_22, EN_D_23, EN_D_24, EN_D_25, EN_D_26, EN_D_27, EN_D_28, EN_D_29, EN_D_30,
-                EN_D_31, EN_D_32, EN_D_33, EN_D_34, EN_D_35, EN_D_36, EN_D_37, EN_D_38, EN_D_39, EN_D_40,
-                EN_D_41, EN_D_42, EN_D_43, EN_D_44, EN_D_45, EN_D_46, EN_D_47, EN_D_48, EN_D_49, EN_D_50,
-                EN_D_51, EN_D_52, EN_D_53, EN_D_54, EN_D_55, EN_D_56, EN_D_57, EN_D_58, EN_D_59, EN_D_60,
-                EN_D_61, EN_D_62, EN_D_63, EN_D_64, EN_D_65, EN_D_66, EN_D_67, EN_D_68, EN_D_69, EN_D_70,
-                EN_D_71, EN_D_72, EN_D_73, EN_D_74, EN_D_75, EN_D_76, EN_D_77, EN_D_78, EN_D_79, EN_D_80,
-                EN_D_81, EN_D_82, EN_D_83, EN_D_84, EN_D_85, EN_D_86, EN_D_87, EN_D_88, EN_D_89, EN_D_90,
-                EN_D_91, EN_D_92, EN_D_93, EN_D_94, EN_D_95, EN_D_96, EN_D_97, EN_D_98, EN_D_99, EN_D_100,
-                EN_D_101, EN_D_102, EN_D_103, EN_D_104, EN_D_105, EN_D_106, EN_D_107, EN_D_108, EN_D_109,
-                EN_D_110, EN_D_111, EN_D_112, EN_D_113, EN_D_114, EN_D_115, EN_D_116, EN_D_117, EN_D_118,
-                EN_D_119, EN_D_120, EN_D_121, EN_D_122, EN_D_123, EN_D_124, EN_D_125, EN_D_126, EN_D_127
+				EN_D_0, EN_D_1, EN_D_2, EN_D_3, EN_D_4, EN_D_5, EN_D_6, EN_D_7, EN_D_8, EN_D_9, EN_D_10,
+				EN_D_11, EN_D_12, EN_D_13, EN_D_14, EN_D_15, EN_D_16, EN_D_17, EN_D_18, EN_D_19, EN_D_20,
+				EN_D_21, EN_D_22, EN_D_23, EN_D_24, EN_D_25, EN_D_26, EN_D_27, EN_D_28, EN_D_29, EN_D_30,
+				EN_D_31, EN_D_32, EN_D_33, EN_D_34, EN_D_35, EN_D_36, EN_D_37, EN_D_38, EN_D_39, EN_D_40,
+				EN_D_41, EN_D_42, EN_D_43, EN_D_44, EN_D_45, EN_D_46, EN_D_47, EN_D_48, EN_D_49, EN_D_50,
+				EN_D_51, EN_D_52, EN_D_53, EN_D_54, EN_D_55, EN_D_56, EN_D_57, EN_D_58, EN_D_59, EN_D_60,
+				EN_D_61, EN_D_62, EN_D_63, EN_D_64, EN_D_65, EN_D_66, EN_D_67, EN_D_68, EN_D_69, EN_D_70,
+				EN_D_71, EN_D_72, EN_D_73, EN_D_74, EN_D_75, EN_D_76, EN_D_77, EN_D_78, EN_D_79, EN_D_80,
+				EN_D_81, EN_D_82, EN_D_83, EN_D_84, EN_D_85, EN_D_86, EN_D_87, EN_D_88, EN_D_89, EN_D_90,
+				EN_D_91, EN_D_92, EN_D_93, EN_D_94, EN_D_95, EN_D_96, EN_D_97, EN_D_98, EN_D_99, EN_D_100,
+				EN_D_101, EN_D_102, EN_D_103, EN_D_104, EN_D_105, EN_D_106, EN_D_107, EN_D_108, EN_D_109,
+				EN_D_110, EN_D_111, EN_D_112, EN_D_113, EN_D_114, EN_D_115, EN_D_116, EN_D_117, EN_D_118,
+				EN_D_119, EN_D_120, EN_D_121, EN_D_122, EN_D_123, EN_D_124, EN_D_125, EN_D_126, EN_D_127
 };

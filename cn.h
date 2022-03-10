@@ -1,8 +1,8 @@
-#pragma once
 #ifndef CN_H
+#define CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.12"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.13"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -737,97 +737,97 @@
 #endif
 
 static const char* pstring_cn[256] = {
-                CN_S_0, CN_S_1, CN_S_2, CN_S_3, CN_S_4, CN_S_5, CN_S_6, CN_S_7, CN_S_8, CN_S_9, CN_S_10,
-                CN_S_11, CN_S_12, CN_S_13, CN_S_14, CN_S_15, CN_S_16, CN_S_17, CN_S_18, CN_S_19, CN_S_20,
-                CN_S_21, CN_S_22, CN_S_23, CN_S_24, CN_S_25, CN_S_26, CN_S_27, CN_S_28, CN_S_29, CN_S_30,
-                CN_S_31, CN_S_32, CN_S_33, CN_S_34, CN_S_35, CN_S_36, CN_S_37, CN_S_38, CN_S_39, CN_S_40,
-                CN_S_41, CN_S_42, CN_S_43, CN_S_44, CN_S_45, CN_S_46, CN_S_47, CN_S_48, CN_S_49, CN_S_50,
-                CN_S_51, CN_S_52, CN_S_53, CN_S_54, CN_S_55, CN_S_56, CN_S_57, CN_S_58, CN_S_59, CN_S_60,
-                CN_S_61, CN_S_62, CN_S_63, CN_S_64, CN_S_65, CN_S_66, CN_S_67, CN_S_68, CN_S_69, CN_S_70,
-                CN_S_71, CN_S_72, CN_S_73, CN_S_74, CN_S_75, CN_S_76, CN_S_77, CN_S_78, CN_S_79, CN_S_80,
-                CN_S_81, CN_S_82, CN_S_83, CN_S_84, CN_S_85, CN_S_86, CN_S_87, CN_S_88, CN_S_89, CN_S_90,
-                CN_S_91, CN_S_92, CN_S_93, CN_S_94, CN_S_95, CN_S_96, CN_S_97, CN_S_98, CN_S_99, CN_S_100,
-                CN_S_101, CN_S_102, CN_S_103, CN_S_104, CN_S_105, CN_S_106, CN_S_107, CN_S_108, CN_S_109, CN_S_110,
-                CN_S_111, CN_S_112, CN_S_113, CN_S_114, CN_S_115, CN_S_116, CN_S_117, CN_S_118, CN_S_119, CN_S_120,
-                CN_S_121, CN_S_122, CN_S_123, CN_S_124, CN_S_125, CN_S_126, CN_S_127, CN_S_128, CN_S_129, CN_S_130,
-                CN_S_131, CN_S_132, CN_S_133, CN_S_134, CN_S_135, CN_S_136, CN_S_137, CN_S_138, CN_S_139, CN_S_140,
-                CN_S_141, CN_S_142, CN_S_143, CN_S_144, CN_S_145, CN_S_146, CN_S_147, CN_S_148, CN_S_149, CN_S_150,
-                CN_S_151, CN_S_152, CN_S_153, CN_S_154, CN_S_155, CN_S_156, CN_S_157, CN_S_158, CN_S_159, CN_S_160,
-                CN_S_161, CN_S_162, CN_S_163, CN_S_164, CN_S_165, CN_S_166, CN_S_167, CN_S_168, CN_S_169, CN_S_170,
-                CN_S_171, CN_S_172, CN_S_173, CN_S_174, CN_S_175, CN_S_176, CN_S_177, CN_S_178, CN_S_179, CN_S_180,
-                CN_S_181, CN_S_182, CN_S_183, CN_S_184, CN_S_185, CN_S_186, CN_S_187, CN_S_188, CN_S_189, CN_S_190,
-                CN_S_191, CN_S_192, CN_S_193, CN_S_194, CN_S_195, CN_S_196, CN_S_197, CN_S_198, CN_S_199, CN_S_200,
-                CN_S_201, CN_S_202, CN_S_203, CN_S_204, CN_S_205, CN_S_206, CN_S_207, CN_S_208, CN_S_209, CN_S_210,
-                CN_S_211, CN_S_212, CN_S_213, CN_S_214, CN_S_215, CN_S_216, CN_S_217, CN_S_218, CN_S_219, CN_S_220,
-                CN_S_221, CN_S_222, CN_S_223, CN_S_224, CN_S_225, CN_S_226, CN_S_227, CN_S_228, CN_S_229, CN_S_230,
-                CN_S_231, CN_S_232, CN_S_233, CN_S_234, CN_S_235, CN_S_236, CN_S_237, CN_S_238, CN_S_239, CN_S_240,
-                CN_S_241, CN_S_242, CN_S_243, CN_S_244, CN_S_245, CN_S_246, CN_S_247, CN_S_248, CN_S_249, CN_S_250,
-                CN_S_251, CN_S_252, CN_S_253, CN_S_254, CN_S_255,
+				CN_S_0, CN_S_1, CN_S_2, CN_S_3, CN_S_4, CN_S_5, CN_S_6, CN_S_7, CN_S_8, CN_S_9, CN_S_10,
+				CN_S_11, CN_S_12, CN_S_13, CN_S_14, CN_S_15, CN_S_16, CN_S_17, CN_S_18, CN_S_19, CN_S_20,
+				CN_S_21, CN_S_22, CN_S_23, CN_S_24, CN_S_25, CN_S_26, CN_S_27, CN_S_28, CN_S_29, CN_S_30,
+				CN_S_31, CN_S_32, CN_S_33, CN_S_34, CN_S_35, CN_S_36, CN_S_37, CN_S_38, CN_S_39, CN_S_40,
+				CN_S_41, CN_S_42, CN_S_43, CN_S_44, CN_S_45, CN_S_46, CN_S_47, CN_S_48, CN_S_49, CN_S_50,
+				CN_S_51, CN_S_52, CN_S_53, CN_S_54, CN_S_55, CN_S_56, CN_S_57, CN_S_58, CN_S_59, CN_S_60,
+				CN_S_61, CN_S_62, CN_S_63, CN_S_64, CN_S_65, CN_S_66, CN_S_67, CN_S_68, CN_S_69, CN_S_70,
+				CN_S_71, CN_S_72, CN_S_73, CN_S_74, CN_S_75, CN_S_76, CN_S_77, CN_S_78, CN_S_79, CN_S_80,
+				CN_S_81, CN_S_82, CN_S_83, CN_S_84, CN_S_85, CN_S_86, CN_S_87, CN_S_88, CN_S_89, CN_S_90,
+				CN_S_91, CN_S_92, CN_S_93, CN_S_94, CN_S_95, CN_S_96, CN_S_97, CN_S_98, CN_S_99, CN_S_100,
+				CN_S_101, CN_S_102, CN_S_103, CN_S_104, CN_S_105, CN_S_106, CN_S_107, CN_S_108, CN_S_109, CN_S_110,
+				CN_S_111, CN_S_112, CN_S_113, CN_S_114, CN_S_115, CN_S_116, CN_S_117, CN_S_118, CN_S_119, CN_S_120,
+				CN_S_121, CN_S_122, CN_S_123, CN_S_124, CN_S_125, CN_S_126, CN_S_127, CN_S_128, CN_S_129, CN_S_130,
+				CN_S_131, CN_S_132, CN_S_133, CN_S_134, CN_S_135, CN_S_136, CN_S_137, CN_S_138, CN_S_139, CN_S_140,
+				CN_S_141, CN_S_142, CN_S_143, CN_S_144, CN_S_145, CN_S_146, CN_S_147, CN_S_148, CN_S_149, CN_S_150,
+				CN_S_151, CN_S_152, CN_S_153, CN_S_154, CN_S_155, CN_S_156, CN_S_157, CN_S_158, CN_S_159, CN_S_160,
+				CN_S_161, CN_S_162, CN_S_163, CN_S_164, CN_S_165, CN_S_166, CN_S_167, CN_S_168, CN_S_169, CN_S_170,
+				CN_S_171, CN_S_172, CN_S_173, CN_S_174, CN_S_175, CN_S_176, CN_S_177, CN_S_178, CN_S_179, CN_S_180,
+				CN_S_181, CN_S_182, CN_S_183, CN_S_184, CN_S_185, CN_S_186, CN_S_187, CN_S_188, CN_S_189, CN_S_190,
+				CN_S_191, CN_S_192, CN_S_193, CN_S_194, CN_S_195, CN_S_196, CN_S_197, CN_S_198, CN_S_199, CN_S_200,
+				CN_S_201, CN_S_202, CN_S_203, CN_S_204, CN_S_205, CN_S_206, CN_S_207, CN_S_208, CN_S_209, CN_S_210,
+				CN_S_211, CN_S_212, CN_S_213, CN_S_214, CN_S_215, CN_S_216, CN_S_217, CN_S_218, CN_S_219, CN_S_220,
+				CN_S_221, CN_S_222, CN_S_223, CN_S_224, CN_S_225, CN_S_226, CN_S_227, CN_S_228, CN_S_229, CN_S_230,
+				CN_S_231, CN_S_232, CN_S_233, CN_S_234, CN_S_235, CN_S_236, CN_S_237, CN_S_238, CN_S_239, CN_S_240,
+				CN_S_241, CN_S_242, CN_S_243, CN_S_244, CN_S_245, CN_S_246, CN_S_247, CN_S_248, CN_S_249, CN_S_250,
+				CN_S_251, CN_S_252, CN_S_253, CN_S_254, CN_S_255,
 };
 
 static const char* pname_cn[128] = {
-                CN_C_0, CN_C_1, CN_C_2, CN_C_3, CN_C_4, CN_C_5, CN_C_6, CN_C_7, CN_C_8, CN_C_9, CN_C_10,
-                CN_C_11, CN_C_12, CN_C_13, CN_C_14, CN_C_15, CN_C_16, CN_C_17, CN_C_18, CN_C_19, CN_C_20,
-                CN_C_21, CN_C_22, CN_C_23, CN_C_24, CN_C_25, CN_C_26, CN_C_27, CN_C_28, CN_C_29, CN_C_30,
-                CN_C_31, CN_C_32, CN_C_33, CN_C_34, CN_C_35, CN_C_36, CN_C_37, CN_C_38, CN_C_39, CN_C_40,
-                CN_C_41, CN_C_42, CN_C_43, CN_C_44, CN_C_45, CN_C_46, CN_C_47, CN_C_48, CN_C_49, CN_C_50,
-                CN_C_51, CN_C_52, CN_C_53, CN_C_54, CN_C_55, CN_C_56, CN_C_57, CN_C_58, CN_C_59, CN_C_60,
-                CN_C_61, CN_C_62, CN_C_63, CN_C_64, CN_C_65, CN_C_66, CN_C_67, CN_C_68, CN_C_69, CN_C_70,
-                CN_C_71, CN_C_72, CN_C_73, CN_C_74, CN_C_75, CN_C_76, CN_C_77, CN_C_78, CN_C_79, CN_C_80,
-                CN_C_81, CN_C_82, CN_C_83, CN_C_84, CN_C_85, CN_C_86, CN_C_87, CN_C_88, CN_C_89, CN_C_90,
-                CN_C_91, CN_C_92, CN_C_93, CN_C_94, CN_C_95, CN_C_96, CN_C_97, CN_C_98, CN_C_99, CN_C_100,
-                CN_C_101, CN_C_102, CN_C_103, CN_C_104, CN_C_105, CN_C_106, CN_C_107, CN_C_108, CN_C_109,
-                CN_C_110, CN_C_111, CN_C_112, CN_C_113, CN_C_114, CN_C_115, CN_C_116, CN_C_117, CN_C_118,
-                CN_C_119, CN_C_120, CN_C_121, CN_C_122, CN_C_123, CN_C_124, CN_C_125, CN_C_126, CN_C_127
+				CN_C_0, CN_C_1, CN_C_2, CN_C_3, CN_C_4, CN_C_5, CN_C_6, CN_C_7, CN_C_8, CN_C_9, CN_C_10,
+				CN_C_11, CN_C_12, CN_C_13, CN_C_14, CN_C_15, CN_C_16, CN_C_17, CN_C_18, CN_C_19, CN_C_20,
+				CN_C_21, CN_C_22, CN_C_23, CN_C_24, CN_C_25, CN_C_26, CN_C_27, CN_C_28, CN_C_29, CN_C_30,
+				CN_C_31, CN_C_32, CN_C_33, CN_C_34, CN_C_35, CN_C_36, CN_C_37, CN_C_38, CN_C_39, CN_C_40,
+				CN_C_41, CN_C_42, CN_C_43, CN_C_44, CN_C_45, CN_C_46, CN_C_47, CN_C_48, CN_C_49, CN_C_50,
+				CN_C_51, CN_C_52, CN_C_53, CN_C_54, CN_C_55, CN_C_56, CN_C_57, CN_C_58, CN_C_59, CN_C_60,
+				CN_C_61, CN_C_62, CN_C_63, CN_C_64, CN_C_65, CN_C_66, CN_C_67, CN_C_68, CN_C_69, CN_C_70,
+				CN_C_71, CN_C_72, CN_C_73, CN_C_74, CN_C_75, CN_C_76, CN_C_77, CN_C_78, CN_C_79, CN_C_80,
+				CN_C_81, CN_C_82, CN_C_83, CN_C_84, CN_C_85, CN_C_86, CN_C_87, CN_C_88, CN_C_89, CN_C_90,
+				CN_C_91, CN_C_92, CN_C_93, CN_C_94, CN_C_95, CN_C_96, CN_C_97, CN_C_98, CN_C_99, CN_C_100,
+				CN_C_101, CN_C_102, CN_C_103, CN_C_104, CN_C_105, CN_C_106, CN_C_107, CN_C_108, CN_C_109,
+				CN_C_110, CN_C_111, CN_C_112, CN_C_113, CN_C_114, CN_C_115, CN_C_116, CN_C_117, CN_C_118,
+				CN_C_119, CN_C_120, CN_C_121, CN_C_122, CN_C_123, CN_C_124, CN_C_125, CN_C_126, CN_C_127
 };
 
 static const char* pnameshort_cn[128] = {
-                CN_X_0, CN_X_1, CN_X_2, CN_X_3, CN_X_4, CN_X_5, CN_X_6, CN_X_7, CN_X_8, CN_X_9, CN_X_10,
-                CN_X_11, CN_X_12, CN_X_13, CN_X_14, CN_X_15, CN_X_16, CN_X_17, CN_X_18, CN_X_19, CN_X_20,
-                CN_X_21, CN_X_22, CN_X_23, CN_X_24, CN_X_25, CN_X_26, CN_X_27, CN_X_28, CN_X_29, CN_X_30,
-                CN_X_31, CN_X_32, CN_X_33, CN_X_34, CN_X_35, CN_X_36, CN_X_37, CN_X_38, CN_X_39, CN_X_40,
-                CN_X_41, CN_X_42, CN_X_43, CN_X_44, CN_X_45, CN_X_46, CN_X_47, CN_X_48, CN_X_49, CN_X_50,
-                CN_X_51, CN_X_52, CN_X_53, CN_X_54, CN_X_55, CN_X_56, CN_X_57, CN_X_58, CN_X_59, CN_X_60,
-                CN_X_61, CN_X_62, CN_X_63, CN_X_64, CN_X_65, CN_X_66, CN_X_67, CN_X_68, CN_X_69, CN_X_70,
-                CN_X_71, CN_X_72, CN_X_73, CN_X_74, CN_X_75, CN_X_76, CN_X_77, CN_X_78, CN_X_79, CN_X_80,
-                CN_X_81, CN_X_82, CN_X_83, CN_X_84, CN_X_85, CN_X_86, CN_X_87, CN_X_88, CN_X_89, CN_X_90,
-                CN_X_91, CN_X_92, CN_X_93, CN_X_94, CN_X_95, CN_X_96, CN_X_97, CN_X_98, CN_X_99, CN_X_100,
-                CN_X_101, CN_X_102, CN_X_103, CN_X_104, CN_X_105, CN_X_106, CN_X_107, CN_X_108, CN_X_109,
-                CN_X_110, CN_X_111, CN_X_112, CN_X_113, CN_X_114, CN_X_115, CN_X_116, CN_X_117, CN_X_118,
-                CN_X_119, CN_X_120, CN_X_121, CN_X_122, CN_X_123, CN_X_124, CN_X_125, CN_X_126, CN_X_127
+				CN_X_0, CN_X_1, CN_X_2, CN_X_3, CN_X_4, CN_X_5, CN_X_6, CN_X_7, CN_X_8, CN_X_9, CN_X_10,
+				CN_X_11, CN_X_12, CN_X_13, CN_X_14, CN_X_15, CN_X_16, CN_X_17, CN_X_18, CN_X_19, CN_X_20,
+				CN_X_21, CN_X_22, CN_X_23, CN_X_24, CN_X_25, CN_X_26, CN_X_27, CN_X_28, CN_X_29, CN_X_30,
+				CN_X_31, CN_X_32, CN_X_33, CN_X_34, CN_X_35, CN_X_36, CN_X_37, CN_X_38, CN_X_39, CN_X_40,
+				CN_X_41, CN_X_42, CN_X_43, CN_X_44, CN_X_45, CN_X_46, CN_X_47, CN_X_48, CN_X_49, CN_X_50,
+				CN_X_51, CN_X_52, CN_X_53, CN_X_54, CN_X_55, CN_X_56, CN_X_57, CN_X_58, CN_X_59, CN_X_60,
+				CN_X_61, CN_X_62, CN_X_63, CN_X_64, CN_X_65, CN_X_66, CN_X_67, CN_X_68, CN_X_69, CN_X_70,
+				CN_X_71, CN_X_72, CN_X_73, CN_X_74, CN_X_75, CN_X_76, CN_X_77, CN_X_78, CN_X_79, CN_X_80,
+				CN_X_81, CN_X_82, CN_X_83, CN_X_84, CN_X_85, CN_X_86, CN_X_87, CN_X_88, CN_X_89, CN_X_90,
+				CN_X_91, CN_X_92, CN_X_93, CN_X_94, CN_X_95, CN_X_96, CN_X_97, CN_X_98, CN_X_99, CN_X_100,
+				CN_X_101, CN_X_102, CN_X_103, CN_X_104, CN_X_105, CN_X_106, CN_X_107, CN_X_108, CN_X_109,
+				CN_X_110, CN_X_111, CN_X_112, CN_X_113, CN_X_114, CN_X_115, CN_X_116, CN_X_117, CN_X_118,
+				CN_X_119, CN_X_120, CN_X_121, CN_X_122, CN_X_123, CN_X_124, CN_X_125, CN_X_126, CN_X_127
 };
 
 static const char* perror_cn[17] = {
-                CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10,
-                CN_E_11, CN_E_12, CN_E_13, CN_E_14, CN_E_15, CN_E_16
+				CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10,
+				CN_E_11, CN_E_12, CN_E_13, CN_E_14, CN_E_15, CN_E_16
 };
 
 static const char* pvalue_cn[49] = {
-                CN_V_0, CN_V_1, CN_V_2, CN_V_3, CN_V_4, CN_V_5, CN_V_6, CN_V_7, CN_V_8, CN_V_9, CN_V_10,
-                CN_V_11, CN_V_12, CN_V_13, CN_V_14, CN_V_15, CN_V_16, CN_V_17, CN_V_18, CN_V_19, CN_V_20,
-                CN_V_21, CN_V_22, CN_V_23, CN_V_24, CN_V_25, CN_V_26, CN_V_27, CN_V_28, CN_V_29, CN_V_30,
-                CN_V_31, CN_V_32, CN_V_33, CN_V_34, CN_V_35, CN_V_36, CN_V_37, CN_V_38, CN_V_39, CN_V_40,
-                CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47, CN_V_48
+				CN_V_0, CN_V_1, CN_V_2, CN_V_3, CN_V_4, CN_V_5, CN_V_6, CN_V_7, CN_V_8, CN_V_9, CN_V_10,
+				CN_V_11, CN_V_12, CN_V_13, CN_V_14, CN_V_15, CN_V_16, CN_V_17, CN_V_18, CN_V_19, CN_V_20,
+				CN_V_21, CN_V_22, CN_V_23, CN_V_24, CN_V_25, CN_V_26, CN_V_27, CN_V_28, CN_V_29, CN_V_30,
+				CN_V_31, CN_V_32, CN_V_33, CN_V_34, CN_V_35, CN_V_36, CN_V_37, CN_V_38, CN_V_39, CN_V_40,
+				CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47, CN_V_48
 };
 
 static const char* pachieve_cn[27] = {
-                CN_A_0, CN_A_1, CN_A_2, CN_A_3, CN_A_4, CN_A_5, CN_A_6, CN_A_7, CN_A_8, CN_A_9, CN_A_10,
-                CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
-                CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26
+				CN_A_0, CN_A_1, CN_A_2, CN_A_3, CN_A_4, CN_A_5, CN_A_6, CN_A_7, CN_A_8, CN_A_9, CN_A_10,
+				CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
+				CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26
 };
 
 static const char* pdetails_cn[128] = {
-                CN_D_0, CN_D_1, CN_D_2, CN_D_3, CN_D_4, CN_D_5, CN_D_6, CN_D_7, CN_D_8, CN_D_9, CN_D_10,
-                CN_D_11, CN_D_12, CN_D_13, CN_D_14, CN_D_15, CN_D_16, CN_D_17, CN_D_18, CN_D_19, CN_D_20,
-                CN_D_21, CN_D_22, CN_D_23, CN_D_24, CN_D_25, CN_D_26, CN_D_27, CN_D_28, CN_D_29, CN_D_30,
-                CN_D_31, CN_D_32, CN_D_33, CN_D_34, CN_D_35, CN_D_36, CN_D_37, CN_D_38, CN_D_39, CN_D_40,
-                CN_D_41, CN_D_42, CN_D_43, CN_D_44, CN_D_45, CN_D_46, CN_D_47, CN_D_48, CN_D_49, CN_D_50,
-                CN_D_51, CN_D_52, CN_D_53, CN_D_54, CN_D_55, CN_D_56, CN_D_57, CN_D_58, CN_D_59, CN_D_60,
-                CN_D_61, CN_D_62, CN_D_63, CN_D_64, CN_D_65, CN_D_66, CN_D_67, CN_D_68, CN_D_69, CN_D_70,
-                CN_D_71, CN_D_72, CN_D_73, CN_D_74, CN_D_75, CN_D_76, CN_D_77, CN_D_78, CN_D_79, CN_D_80,
-                CN_D_81, CN_D_82, CN_D_83, CN_D_84, CN_D_85, CN_D_86, CN_D_87, CN_D_88, CN_D_89, CN_D_90,
-                CN_D_91, CN_D_92, CN_D_93, CN_D_94, CN_D_95, CN_D_96, CN_D_97, CN_D_98, CN_D_99, CN_D_100,
-                CN_D_101, CN_D_102, CN_D_103, CN_D_104, CN_D_105, CN_D_106, CN_D_107, CN_D_108, CN_D_109,
-                CN_D_110, CN_D_111, CN_D_112, CN_D_113, CN_D_114, CN_D_115, CN_D_116, CN_D_117, CN_D_118,
-                CN_D_119, CN_D_120, CN_D_121, CN_D_122, CN_D_123, CN_D_124, CN_D_125, CN_D_126, CN_D_127
+				CN_D_0, CN_D_1, CN_D_2, CN_D_3, CN_D_4, CN_D_5, CN_D_6, CN_D_7, CN_D_8, CN_D_9, CN_D_10,
+				CN_D_11, CN_D_12, CN_D_13, CN_D_14, CN_D_15, CN_D_16, CN_D_17, CN_D_18, CN_D_19, CN_D_20,
+				CN_D_21, CN_D_22, CN_D_23, CN_D_24, CN_D_25, CN_D_26, CN_D_27, CN_D_28, CN_D_29, CN_D_30,
+				CN_D_31, CN_D_32, CN_D_33, CN_D_34, CN_D_35, CN_D_36, CN_D_37, CN_D_38, CN_D_39, CN_D_40,
+				CN_D_41, CN_D_42, CN_D_43, CN_D_44, CN_D_45, CN_D_46, CN_D_47, CN_D_48, CN_D_49, CN_D_50,
+				CN_D_51, CN_D_52, CN_D_53, CN_D_54, CN_D_55, CN_D_56, CN_D_57, CN_D_58, CN_D_59, CN_D_60,
+				CN_D_61, CN_D_62, CN_D_63, CN_D_64, CN_D_65, CN_D_66, CN_D_67, CN_D_68, CN_D_69, CN_D_70,
+				CN_D_71, CN_D_72, CN_D_73, CN_D_74, CN_D_75, CN_D_76, CN_D_77, CN_D_78, CN_D_79, CN_D_80,
+				CN_D_81, CN_D_82, CN_D_83, CN_D_84, CN_D_85, CN_D_86, CN_D_87, CN_D_88, CN_D_89, CN_D_90,
+				CN_D_91, CN_D_92, CN_D_93, CN_D_94, CN_D_95, CN_D_96, CN_D_97, CN_D_98, CN_D_99, CN_D_100,
+				CN_D_101, CN_D_102, CN_D_103, CN_D_104, CN_D_105, CN_D_106, CN_D_107, CN_D_108, CN_D_109,
+				CN_D_110, CN_D_111, CN_D_112, CN_D_113, CN_D_114, CN_D_115, CN_D_116, CN_D_117, CN_D_118,
+				CN_D_119, CN_D_120, CN_D_121, CN_D_122, CN_D_123, CN_D_124, CN_D_125, CN_D_126, CN_D_127
 };
