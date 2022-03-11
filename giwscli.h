@@ -1,4 +1,3 @@
-#pragma once
 #ifndef GIWSCLI_H
 #define GIWSCLI_H
 #include "cn.h"
