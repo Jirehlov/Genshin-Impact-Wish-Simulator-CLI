@@ -222,7 +222,7 @@ void core_f_3(const size_t& temp1, unsigned int& star, unsigned int& type, size_
 					if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 					else { four_star_guarantee_number = true; }
 				} break;
-				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 				}
 			}
 			else if (unmet4_c > 14) {
@@ -244,7 +244,7 @@ void core_f_3(const size_t& temp1, unsigned int& star, unsigned int& type, size_
 					if ((kind == four_check[0] || kind == four_check[1] || kind == four_check[2] || kind == four_check[3] || kind == four_check[4] || kind == four_check[5] || kind == four_check[6] || kind == four_check[7])) { four_star_guarantee_number = false; }
 					else { four_star_guarantee_number = true; }
 				} break;
-				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 				}
 			}
 			else {
@@ -266,7 +266,7 @@ void core_f_3(const size_t& temp1, unsigned int& star, unsigned int& type, size_
 					kind = rspick(nup_four_c, size_nup_four_c);
 					four_star_guarantee_number = true;
 				} break;
-				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+				default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 				}
 			}
 		}
@@ -276,7 +276,7 @@ void core_f_3(const size_t& temp1, unsigned int& star, unsigned int& type, size_
 		}
 	} break;
 	case 2: tri(star, kind); break;
-	default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; break; full_quit_e()
+	default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; full_quit_e() break;
 	}
 }
 
@@ -314,7 +314,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet5_w = 0;
 				kind = rspick(nup_five_w, 10);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 		else if (unmet5_c > 146) {
@@ -333,7 +333,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet5_w = 0;
 				kind = rspick(nup_five_w, 10);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 		else {
@@ -352,7 +352,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet5_c = 0;
 				kind = rspick(nup_five_c, 5);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 	} break;
@@ -378,7 +378,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet4_w = 0;
 				kind = rspick(nup_four_w, size_nup_four_w);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 		else if (unmet4_c > 16) {
@@ -397,7 +397,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet4_w = 0;
 				kind = rspick(nup_four_w, size_nup_four_w);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 		else {
@@ -416,7 +416,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 				unmet4_c = 0;
 				kind = rspick(nup_four_c, size_nup_four_c);
 			} break;
-			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; break; full_quit_e()
+			default: lang_cout(4, 4); std::cout << '\n'; error_code = 4; full_quit_e() break;
 			}
 		}
 		if (ach_count[11] < 7) {
@@ -425,7 +425,7 @@ void core_f_4(unsigned int& star, unsigned int& type, size_t& kind) {
 		}
 	} break;
 	case 2: tri(star, kind); break;
-	default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; break; full_quit_e()
+	default: lang_cout(4, 3); std::cout << '\n'; error_code = 3; full_quit_e() break;
 	}
 }
 
