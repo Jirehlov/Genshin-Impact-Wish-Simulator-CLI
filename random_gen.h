@@ -8,4 +8,4 @@ extern unsigned long long int seed_t;
 extern size_t seed;
 extern std::mt19937_64 generatorz;
 
-#endif 
+#endif
