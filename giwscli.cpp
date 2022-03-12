@@ -30,9 +30,8 @@ signed int error_code = 0, full_q = 0;
 size_t rspick(const size_t *kindx, size_t sizekind) {
   size_t kindout = kindx[0];
   size_t index = 1;
-  signed int temp121 = 0;
   for (; index < sizekind; ++index) {
-    temp121 = static_cast<signed int>(
+    signed int temp121 = static_cast<signed int>(
         generatorz() % (static_cast<unsigned long long int>(index) + 1));
     if (temp121 == 0) {
       kindout = kindx[index];
