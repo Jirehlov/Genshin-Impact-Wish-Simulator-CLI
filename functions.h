@@ -2,6 +2,7 @@
 #define FUNCTIONS_H
 #include <string>
 #include <thread>
+#include <iomanip>
 
 #include "cn.h"
 #include "en.h"
@@ -35,4 +36,8 @@ extern void luckget(unsigned int star, size_t kind);
 extern void lang_cout(unsigned int sq, size_t sw);
 extern void pre_ccloop();
 extern void stat_out();
+extern int wishes_5();
+extern int e_wishes();
+extern void anim_p();
+extern int ccloop();
 #endif

@@ -736,7 +736,7 @@
 #define CN_D_127 "Placeholder"
 #endif
 
-static const char* pstring_cn[256] = {
+static const char* s_pstring_cn[256] = {
 				CN_S_0, CN_S_1, CN_S_2, CN_S_3, CN_S_4, CN_S_5, CN_S_6, CN_S_7, CN_S_8, CN_S_9, CN_S_10,
 				CN_S_11, CN_S_12, CN_S_13, CN_S_14, CN_S_15, CN_S_16, CN_S_17, CN_S_18, CN_S_19, CN_S_20,
 				CN_S_21, CN_S_22, CN_S_23, CN_S_24, CN_S_25, CN_S_26, CN_S_27, CN_S_28, CN_S_29, CN_S_30,
@@ -765,7 +765,7 @@ static const char* pstring_cn[256] = {
 				CN_S_251, CN_S_252, CN_S_253, CN_S_254, CN_S_255,
 };
 
-static const char* pname_cn[128] = {
+static const char* s_pname_cn[128] = {
 				CN_C_0, CN_C_1, CN_C_2, CN_C_3, CN_C_4, CN_C_5, CN_C_6, CN_C_7, CN_C_8, CN_C_9, CN_C_10,
 				CN_C_11, CN_C_12, CN_C_13, CN_C_14, CN_C_15, CN_C_16, CN_C_17, CN_C_18, CN_C_19, CN_C_20,
 				CN_C_21, CN_C_22, CN_C_23, CN_C_24, CN_C_25, CN_C_26, CN_C_27, CN_C_28, CN_C_29, CN_C_30,
@@ -781,7 +781,7 @@ static const char* pname_cn[128] = {
 				CN_C_119, CN_C_120, CN_C_121, CN_C_122, CN_C_123, CN_C_124, CN_C_125, CN_C_126, CN_C_127
 };
 
-static const char* pnameshort_cn[128] = {
+static const char* s_pnameshort_cn[128] = {
 				CN_X_0, CN_X_1, CN_X_2, CN_X_3, CN_X_4, CN_X_5, CN_X_6, CN_X_7, CN_X_8, CN_X_9, CN_X_10,
 				CN_X_11, CN_X_12, CN_X_13, CN_X_14, CN_X_15, CN_X_16, CN_X_17, CN_X_18, CN_X_19, CN_X_20,
 				CN_X_21, CN_X_22, CN_X_23, CN_X_24, CN_X_25, CN_X_26, CN_X_27, CN_X_28, CN_X_29, CN_X_30,
@@ -797,12 +797,12 @@ static const char* pnameshort_cn[128] = {
 				CN_X_119, CN_X_120, CN_X_121, CN_X_122, CN_X_123, CN_X_124, CN_X_125, CN_X_126, CN_X_127
 };
 
-static const char* perror_cn[17] = {
+static const char* s_perror_cn[17] = {
 				CN_E_0, CN_E_1, CN_E_2, CN_E_3, CN_E_4, CN_E_5, CN_E_6, CN_E_7, CN_E_8, CN_E_9, CN_E_10,
 				CN_E_11, CN_E_12, CN_E_13, CN_E_14, CN_E_15, CN_E_16
 };
 
-static const char* pvalue_cn[49] = {
+static const char* s_pvalue_cn[49] = {
 				CN_V_0, CN_V_1, CN_V_2, CN_V_3, CN_V_4, CN_V_5, CN_V_6, CN_V_7, CN_V_8, CN_V_9, CN_V_10,
 				CN_V_11, CN_V_12, CN_V_13, CN_V_14, CN_V_15, CN_V_16, CN_V_17, CN_V_18, CN_V_19, CN_V_20,
 				CN_V_21, CN_V_22, CN_V_23, CN_V_24, CN_V_25, CN_V_26, CN_V_27, CN_V_28, CN_V_29, CN_V_30,
@@ -810,13 +810,13 @@ static const char* pvalue_cn[49] = {
 				CN_V_41, CN_V_42, CN_V_43, CN_V_44, CN_V_45, CN_V_46, CN_V_47, CN_V_48
 };
 
-static const char* pachieve_cn[27] = {
+static const char* s_pachieve_cn[27] = {
 				CN_A_0, CN_A_1, CN_A_2, CN_A_3, CN_A_4, CN_A_5, CN_A_6, CN_A_7, CN_A_8, CN_A_9, CN_A_10,
 				CN_A_11, CN_A_12, CN_A_13, CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
 				CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26
 };
 
-static const char* pdetails_cn[128] = {
+static const char* s_pdetails_cn[128] = {
 				CN_D_0, CN_D_1, CN_D_2, CN_D_3, CN_D_4, CN_D_5, CN_D_6, CN_D_7, CN_D_8, CN_D_9, CN_D_10,
 				CN_D_11, CN_D_12, CN_D_13, CN_D_14, CN_D_15, CN_D_16, CN_D_17, CN_D_18, CN_D_19, CN_D_20,
 				CN_D_21, CN_D_22, CN_D_23, CN_D_24, CN_D_25, CN_D_26, CN_D_27, CN_D_28, CN_D_29, CN_D_30,
