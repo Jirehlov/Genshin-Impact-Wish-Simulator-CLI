@@ -40,4 +40,11 @@ extern int wishes_5();
 extern int e_wishes();
 extern void anim_p();
 extern int ccloop();
+extern int post_ccloop_1(unsigned int& star, unsigned int& type, size_t& kind,
+                       size_t& anim_loop);
+extern int post_ccloop_3(unsigned int& star, unsigned int& type, size_t& kind,
+                  size_t& anim_loop);
+extern int post_ccloop_4(unsigned int& star, unsigned int& type, size_t& kind,
+                         size_t& anim_loop);
+extern int post_ccloop_5(unsigned int& star, size_t& kind, size_t& anim_loop);
 #endif

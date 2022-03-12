@@ -1380,7 +1380,7 @@ enter_hash:
     cin_error_by2() goto enter_hash;
   }
   if (hash_sav[0] == '-' && hash_sav[1] == '1') {
-    slash_n() goto enter_profile;
+    slash_n() return 1;
   }
   if (hash_sav[0] != '&') {
     slash_n() lang_cout(1, 181);
@@ -1412,252 +1412,7 @@ apply_hash:
   for (size_t i = 0; i < 9; i++) {
     sav[i] = std::stoll(hash_dump[i]);
   }
-  goto apply_profile;
-enter_profile:
-  for (size_t i = 0; i < 256; i++) {
-    hash_sav[i] = '\0';
-  }
-  if (chosen_banner == 3 && chosen_event > 14) {
-  enter_profile_0:
-    lang_cout(1, 138);
-    slash_n() lang_cout(1, 139);
-    slash_nn() lang_cout(1, 67);
-    slash_n() lang_cout(1, 69);
-    std::cout << " ( ";
-    lang_cout(2, up_five_g[0]);
-    std::cout << " ) \n";
-    lang_cout(1, 70);
-    std::cout << " ( ";
-    lang_cout(2, up_five_g[1]);
-    std::cout << " ) \n";
-    lang_cout(1, 71);
-    slash_nn() std::cin >> sav[8];
-    if (std::cin.fail()) {
-      sav[8] = 0;
-      cin_error_by2() goto enter_profile_0;
-    } else if (sav[8] == -1) {
-      sav[8] = 0;
-      wishes_number = 0;
-      return 1;
-    } else if (sav[8] == -2) {
-      goto apply_profile;
-    } else if (sav[8] < -1 || sav[8] > 2) {
-      sav[8] = 0;
-      slash_n() lang_cout(1, 72);
-      slash_nn() goto enter_profile_0;
-    } else if (sav[8] == 0) {
-      slash_n() goto enter_profile_1;
-    } else {
-      else_counter++;
-    }
-    slash_n() enter_profile_01 : lang_cout(1, 138);
-    slash_n() lang_cout(1, 139);
-    slash_nn() lang_cout(1, 140);
-    slash_nn() std::cin >> sav[9];
-    if (std::cin.fail()) {
-      sav[9] = 0;
-      cin_error_by2() goto enter_profile_01;
-    } else if (sav[9] == -1) {
-      sav[9] = 0;
-      wishes_number = 0;
-      return 1;
-    } else if (sav[9] == -2) {
-      goto apply_profile;
-    } else if (sav[9] != 0 && sav[9] != 1 && sav[9] != 2) {
-      sav[9] = 0;
-      slash_n() lang_cout(1, 72);
-      slash_n() goto enter_profile_01;
-    } else {
-      else_counter++;
-    }
-    slash_n()
-  } else {
-    else_counter++;
-  }
-enter_profile_1:
-  lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 129);
-  slash_nn() std::cin >> sav[0];
-  if (std::cin.fail()) {
-    sav[0] = 0;
-    cin_error_by2() goto enter_profile_1;
-  } else if (sav[0] == -1) {
-    sav[0] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[0] == -2) {
-    goto apply_profile;
-  } else if (sav[0] != 1 && sav[0] != 0) {
-    sav[0] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_1;
-  } else {
-    else_counter++;
-  }
-  slash_n() enter_profile_2 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 130);
-  lang_cout(1, 137);
-  slash_nn() std::cin >> sav[1];
-  if (std::cin.fail()) {
-    sav[1] = 0;
-    cin_error_by() goto enter_profile_2;
-  } else if (sav[1] == -1) {
-    sav[1] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[1] == -2) {
-    goto apply_profile;
-  } else if (((chosen_banner == 1 || chosen_banner == 2 ||
-               chosen_banner == 4) &&
-              sav[1] > 89) ||
-             (chosen_banner == 3 && sav[1] > 79) || sav[1] < 0) {
-    sav[1] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_2;
-  } else {
-    else_counter++;
-  }
-  slash_n() enter_profile_3 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 131);
-  slash_nn() std::cin >> sav[2];
-  if (std::cin.fail()) {
-    sav[2] = 0;
-    cin_error_by() goto enter_profile_3;
-  } else if (sav[2] == -1) {
-    sav[2] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[2] == -2) {
-    goto apply_profile;
-  } else if (sav[2] != 1 && sav[2] != 0) {
-    sav[2] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_3;
-  } else {
-    else_counter++;
-  }
-  slash_n() enter_profile_4 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 132);
-  lang_cout(1, 137);
-  slash_nn() std::cin >> sav[3];
-  if (std::cin.fail()) {
-    sav[3] = 0;
-    cin_error_by() goto enter_profile_4;
-  } else if (sav[3] == -1) {
-    sav[3] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[3] == -2) {
-    goto apply_profile;
-  } else if (sav[3] < 0) {
-    sav[3] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_4;
-  } else {
-    else_counter++;
-  }
-  slash_n() enter_profile_5 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 133);
-  lang_cout(1, 137);
-  slash_nn() std::cin >> sav[4];
-  if (std::cin.fail()) {
-    sav[4] = 0;
-    cin_error_by() goto enter_profile_5;
-  } else if (sav[4] == -1) {
-    sav[4] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[4] == -2) {
-    goto apply_profile;
-  } else if (sav[4] < 0) {
-    sav[4] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_5;
-  } else if ((chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) &&
-             sav[4] > 89) {
-    sav[1] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_n() goto enter_profile_5;
-  } else if (chosen_banner == 3 && sav[4] > 79) {
-    sav[1] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_5;
-  } else {
-    else_counter++;
-  }
-  slash_n() if (chosen_banner == 3 || chosen_banner == 4) {
-  enter_profile_6:
-    lang_cout(1, 138);
-    slash_n() lang_cout(1, 139);
-    slash_nn() lang_cout(1, 134);
-    lang_cout(1, 137);
-    slash_nn() std::cin >> sav[5];
-    if (std::cin.fail()) {
-      sav[5] = 0;
-      cin_error_by() goto enter_profile_6;
-    } else if (sav[5] == -1) {
-      sav[5] = 0;
-      wishes_number = 0;
-      return 1;
-    } else if (sav[5] == -2) {
-      goto apply_profile;
-    } else if (sav[5] < 0 || (chosen_banner == 4 && sav[4] > 89) ||
-               (chosen_banner == 3 && sav[4] > 79)) {
-      sav[5] = 0;
-      slash_n() lang_cout(1, 72);
-      slash_nn() goto enter_profile_6;
-    } else {
-      else_counter++;
-    }
-  }
-  slash_n() enter_profile_7 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 135);
-  lang_cout(1, 137);
-  slash_nn() std::cin >> sav[6];
-  if (std::cin.fail()) {
-    sav[6] = 0;
-    cin_error_by() goto enter_profile_7;
-  } else if (sav[6] == -1) {
-    sav[6] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[6] == -2) {
-    goto apply_profile;
-  } else if (sav[6] < 0) {
-    sav[6] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_7;
-  } else {
-    else_counter++;
-  }
-  slash_n() enter_profile_8 : lang_cout(1, 138);
-  slash_n() lang_cout(1, 139);
-  slash_nn() lang_cout(1, 136);
-  lang_cout(1, 137);
-  slash_nn() std::cin >> sav[7];
-  if (std::cin.fail()) {
-    sav[7] = 0;
-    cin_error_by() goto enter_profile_8;
-  } else if (sav[7] == -1) {
-    sav[7] = 0;
-    wishes_number = 0;
-    return 1;
-  } else if (sav[7] == -2) {
-    goto apply_profile;
-  } else if (sav[7] < 0) {
-    sav[7] = 0;
-    slash_n() lang_cout(1, 72);
-    slash_nn() goto enter_profile_8;
-  } else {
-    else_counter++;
-  }
-  slash_n() apply_profile : slash_n() lang_cout(1, 141);
+  slash_n() lang_cout(1, 141);
   slash_n() if (((four_count > 0 || five_count > 0) && sav[1] == sav[3]) ||
                 (chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) ||
                 (sav[6] != sav[3] && sav[7] != sav[3]) ||
@@ -2543,63 +2298,7 @@ int ccloop() {
       size_t kind = 0;        // which exactly
       core_f_1(temp1, star, type, kind);
       output_string(kind);
-      if (star != 4 || type == 3) {
-        unmet4_c++;
-      }
-      if (star != 4 || type != 3) {
-        unmet4_w++;
-      }
-      if (ach_count[0] > 7) {
-        ach[0] = true;
-      }
-      if (ach_count[1] > 7) {
-        ach[1] = true;
-      }
-      if (ach_count[8] > 6) {
-        ach[8] = true;
-      }
-      if (ach_count[6] < 11) {
-        ach_count[6]++;
-        if (star == 5) {
-          ach[6] = true;
-        }
-      }
-      if (ach_count[11] > 6) {
-        ach[11] = true;
-      }
-      if (!y_arg) {
-        if (is_s_mode) {
-          is_mode()
-        } else {
-          if (y_anim) {
-            anim_lp()
-          }
-          if (!y_track_luck_mode) {
-            prog_g()
-          }
-        }
-        if (y_luck) {
-          luckget(star, kind);
-          if (star == 4 || star == 5) {
-            for (const size_t templuck : luckstar) {
-              if (templuck == 5) {
-                luck += 7700;
-              } else if (templuck == 4) {
-                luck += 766;
-              } else {
-                luck += 0;
-              }
-            }
-          }
-          luckcpy();
-          if (y_track_luck) {
-            signed int temptuck = static_cast<signed int>(luckiest / 7700);
-            if (temptuck >= tuck) {
-              y_track_luck = false;
-            }
-          }
-        }
-      }
+      error_code = post_ccloop_1(star, type, kind, anim_loop);
     }
   }
   // chars up
@@ -2613,63 +2312,7 @@ int ccloop() {
       size_t kind = 0;        // which exactly
       core_f_3(temp1, star, type, kind);
       output_string(kind);
-      if (star != 4 || type == 3) {
-        unmet4_c++;
-      }
-      if (star != 4 || type != 3) {
-        unmet4_w++;
-      }
-      if (ach_count[4] > 6) {
-        ach[4] = true;
-      }
-      if (ach_count[5] > 6) {
-        ach[5] = true;
-      }
-      if (ach_count[8] > 6) {
-        ach[8] = true;
-      }
-      if (ach_count[6] < 11) {
-        ach_count[6]++;
-        if (star == 5) {
-          ach[6] = true;
-        }
-      }
-      if (ach_count[11] > 6) {
-        ach[11] = true;
-      }
-      if (!y_arg) {
-        if (is_s_mode) {
-          is_mode()
-        } else {
-          if (y_anim) {
-            anim_lp()
-          }
-          if (!y_track_luck_mode) {
-            prog_g()
-          }
-        }
-        if (y_luck) {
-          luckget(star, kind);
-          if (star == 4 || star == 5) {
-            for (const size_t templuck : luckstar) {
-              if (templuck == 5) {
-                luck += 6845;
-              } else if (templuck == 4) {
-                luck += 674;
-              } else {
-                luck += 0;
-              }
-            }
-          }
-          luckcpy();
-          if (y_track_luck) {
-            signed int temptuck = static_cast<signed int>(luckiest / 6845);
-            if (temptuck >= tuck) {
-              y_track_luck = false;
-            }
-          }
-        }
-      }
+      error_code = post_ccloop_3(star, type, kind, anim_loop);
     }
   }
   // weapons up
@@ -2682,63 +2325,7 @@ int ccloop() {
       size_t kind = 0;        // which exactly
       core_f_4(star, type, kind);
       output_string(kind);
-      if (!(star == 5 && type == 1)) {
-        unmet5_c++;
-      }
-      if (!(star == 5 && type == 2)) {
-        unmet5_w++;
-      }
-      if (!(star == 4 && type == 1)) {
-        unmet4_c++;
-      }
-      if (!(star == 4 && type == 2)) {
-        unmet4_w++;
-      }
-      if (ach_count[8] > 6) {
-        ach[8] = true;
-      }
-      if (ach_count[6] < 11) {
-        ach_count[6]++;
-        if (star == 5) {
-          ach[6] = true;
-        }
-      }
-      if (ach_count[11] > 6) {
-        ach[11] = true;
-      }
-      if (!y_arg) {
-        if (is_s_mode) {
-          is_mode()
-        } else {
-          if (y_anim) {
-            anim_lp()
-          }
-          if (!y_track_luck_mode) {
-            prog_g()
-          }
-        }
-        if (y_luck) {
-          luckget(star, kind);
-          if (star == 4 || star == 5) {
-            for (const size_t templuck : luckstar) {
-              if (templuck == 5) {
-                luck += 7700;
-              } else if (templuck == 4) {
-                luck += 766;
-              } else {
-                luck += 0;
-              }
-            }
-          }
-          luckcpy();
-          if (y_track_luck) {
-            signed int temptuck = static_cast<signed int>(luckiest / 7700);
-            if (temptuck >= tuck) {
-              y_track_luck = false;
-            }
-          }
-        }
-      }
+      error_code = post_ccloop_4(star, type, kind, anim_loop);
     }
   }
   // no up
@@ -2751,51 +2338,7 @@ int ccloop() {
       size_t kind = 0;        // which exactly
       core_f_5(temp1, star, kind);
       output_string(kind);
-      if (ach_count[8] > 6) {
-        ach[8] = true;
-      }
-      if (ach_count[6] < 11) {
-        ach_count[6]++;
-        if (star == 5) {
-          ach[6] = true;
-        }
-      }
-      if (ach_count[11] > 6) {
-        ach[11] = true;
-      }
-      if (!y_arg) {
-        if (is_s_mode) {
-          is_mode()
-        } else {
-          if (y_anim) {
-            anim_lp()
-          }
-          if (!y_track_luck_mode) {
-            prog_g()
-          }
-        }
-        if (y_luck) {
-          luckget(star, kind);
-          if (star == 4 || star == 5) {
-            for (const size_t templuck : luckstar) {
-              if (templuck == 5) {
-                luck += 16667;
-              } else if (templuck == 4) {
-                luck += 766;
-              } else {
-                luck += 0;
-              }
-            }
-          }
-          luckcpy();
-          if (y_track_luck) {
-            signed int temptuck = static_cast<signed int>(luckiest / 16667);
-            if (temptuck >= tuck) {
-              y_track_luck = false;
-            }
-          }
-        }
-      }
+      error_code = post_ccloop_5(star, kind, anim_loop);
     }
   }  // novice
 
@@ -2805,5 +2348,240 @@ int ccloop() {
     full_quit_f()
   }
 
+  return 0;
+}
+
+int post_ccloop_1(unsigned int& star, unsigned int& type, size_t& kind,
+                  size_t& anim_loop) {
+  if (star != 4 || type == 3) {
+    unmet4_c++;
+  }
+  if (star != 4 || type != 3) {
+    unmet4_w++;
+  }
+  if (ach_count[0] > 7) {
+    ach[0] = true;
+  }
+  if (ach_count[1] > 7) {
+    ach[1] = true;
+  }
+  if (ach_count[8] > 6) {
+    ach[8] = true;
+  }
+  if (ach_count[6] < 11) {
+    ach_count[6]++;
+    if (star == 5) {
+      ach[6] = true;
+    }
+  }
+  if (ach_count[11] > 6) {
+    ach[11] = true;
+  }
+  if (!y_arg) {
+    if (is_s_mode) {
+      is_mode()
+    } else {
+      if (y_anim) {
+        anim_lp()
+      }
+      if (!y_track_luck_mode) {
+        prog_g()
+      }
+    }
+    if (y_luck) {
+      luckget(star, kind);
+      if (star == 4 || star == 5) {
+        for (const size_t templuck : luckstar) {
+          if (templuck == 5) {
+            luck += 7700;
+          } else if (templuck == 4) {
+            luck += 766;
+          } else {
+            luck += 0;
+          }
+        }
+      }
+      luckcpy();
+      if (y_track_luck) {
+        signed int temptuck = static_cast<signed int>(luckiest / 7700);
+        if (temptuck >= tuck) {
+          y_track_luck = false;
+        }
+      }
+    }
+  }
+  return 0;
+}
+
+int post_ccloop_3(unsigned int& star, unsigned int& type, size_t& kind,
+                  size_t& anim_loop) {
+  if (star != 4 || type == 3) {
+    unmet4_c++;
+  }
+  if (star != 4 || type != 3) {
+    unmet4_w++;
+  }
+  if (ach_count[4] > 6) {
+    ach[4] = true;
+  }
+  if (ach_count[5] > 6) {
+    ach[5] = true;
+  }
+  if (ach_count[8] > 6) {
+    ach[8] = true;
+  }
+  if (ach_count[6] < 11) {
+    ach_count[6]++;
+    if (star == 5) {
+      ach[6] = true;
+    }
+  }
+  if (ach_count[11] > 6) {
+    ach[11] = true;
+  }
+  if (!y_arg) {
+    if (is_s_mode) {
+      is_mode()
+    } else {
+      if (y_anim) {
+        anim_lp()
+      }
+      if (!y_track_luck_mode) {
+        prog_g()
+      }
+    }
+    if (y_luck) {
+      luckget(star, kind);
+      if (star == 4 || star == 5) {
+        for (const size_t templuck : luckstar) {
+          if (templuck == 5) {
+            luck += 6845;
+          } else if (templuck == 4) {
+            luck += 674;
+          } else {
+            luck += 0;
+          }
+        }
+      }
+      luckcpy();
+      if (y_track_luck) {
+        signed int temptuck = static_cast<signed int>(luckiest / 6845);
+        if (temptuck >= tuck) {
+          y_track_luck = false;
+        }
+      }
+    }
+  }
+  return 0;
+}
+
+int post_ccloop_4(unsigned int& star, unsigned int& type, size_t& kind,
+                  size_t& anim_loop) {
+  if (!(star == 5 && type == 1)) {
+    unmet5_c++;
+  }
+  if (!(star == 5 && type == 2)) {
+    unmet5_w++;
+  }
+  if (!(star == 4 && type == 1)) {
+    unmet4_c++;
+  }
+  if (!(star == 4 && type == 2)) {
+    unmet4_w++;
+  }
+  if (ach_count[8] > 6) {
+    ach[8] = true;
+  }
+  if (ach_count[6] < 11) {
+    ach_count[6]++;
+    if (star == 5) {
+      ach[6] = true;
+    }
+  }
+  if (ach_count[11] > 6) {
+    ach[11] = true;
+  }
+  if (!y_arg) {
+    if (is_s_mode) {
+      is_mode()
+    } else {
+      if (y_anim) {
+        anim_lp()
+      }
+      if (!y_track_luck_mode) {
+        prog_g()
+      }
+    }
+    if (y_luck) {
+      luckget(star, kind);
+      if (star == 4 || star == 5) {
+        for (const size_t templuck : luckstar) {
+          if (templuck == 5) {
+            luck += 7700;
+          } else if (templuck == 4) {
+            luck += 766;
+          } else {
+            luck += 0;
+          }
+        }
+      }
+      luckcpy();
+      if (y_track_luck) {
+        signed int temptuck = static_cast<signed int>(luckiest / 7700);
+        if (temptuck >= tuck) {
+          y_track_luck = false;
+        }
+      }
+    }
+  }
+  return 0;
+}
+
+int post_ccloop_5(unsigned int& star, size_t& kind, size_t& anim_loop) {
+  if (ach_count[8] > 6) {
+    ach[8] = true;
+  }
+  if (ach_count[6] < 11) {
+    ach_count[6]++;
+    if (star == 5) {
+      ach[6] = true;
+    }
+  }
+  if (ach_count[11] > 6) {
+    ach[11] = true;
+  }
+  if (!y_arg) {
+    if (is_s_mode) {
+      is_mode()
+    } else {
+      if (y_anim) {
+        anim_lp()
+      }
+      if (!y_track_luck_mode) {
+        prog_g()
+      }
+    }
+    if (y_luck) {
+      luckget(star, kind);
+      if (star == 4 || star == 5) {
+        for (const size_t templuck : luckstar) {
+          if (templuck == 5) {
+            luck += 16667;
+          } else if (templuck == 4) {
+            luck += 766;
+          } else {
+            luck += 0;
+          }
+        }
+      }
+      luckcpy();
+      if (y_track_luck) {
+        signed int temptuck = static_cast<signed int>(luckiest / 16667);
+        if (temptuck >= tuck) {
+          y_track_luck = false;
+        }
+      }
+    }
+  }
   return 0;
 }
