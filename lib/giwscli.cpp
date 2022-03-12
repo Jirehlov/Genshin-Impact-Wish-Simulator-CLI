@@ -46,7 +46,7 @@ ptrdiff_t chosen_event = 0, chosen_banner = 0, unmet4_c = 0, unmet4_w = 0,
           ach_count[12] = {0};
 signed int error_code = 0, full_q = 0;
 
-void giwscli::ini_ams(size_t *in, size_t ins, const size_t *out) {
+void ini_ams(size_t *in, size_t ins, const size_t *out) {
   for (size_t i = 0; i < ins; i++) {
     in[i] = out[i];
   }
@@ -118,7 +118,7 @@ unsigned int giwscli::WRSpick(const ptrdiff_t *weightx, size_t nom) {
 }
 // weighted random sampling
 
-void giwscli::full_quit_e [[noreturn]] () {
+void full_quit_e [[noreturn]] () {
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   full_q = std::cin.get();

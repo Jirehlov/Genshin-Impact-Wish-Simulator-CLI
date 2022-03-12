@@ -8,8 +8,8 @@ Fileout: [Genshin Impact Wish Simulator Fileout](https://github.com/Jirehlov/Gen
 
 ## READMEs
 
-[English](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/README_en.md)
-[中文](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/README_cn.md)
+[English](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/blob/main/README_en.md)\
+[中文](https://github.com/Jirehlov/Genshin-Impact-Wish-Simulator-CLI/blob/main/README_cn.md)
 
 ## Credits
 

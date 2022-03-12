@@ -117,3 +117,39 @@ giwscli 1 2 100 0
 ### 关于隐藏概率（仓检）
 
 本模拟器不考虑仓检。
+
+
+### 库与库的使用
+
+lib文件夹下有打包好的库，包含进"giwscli.h"即可使用。\
+
+定义于命名空间 giwscli 的函数有：\
+```
+giwscli::set_pool_1    // 设置一类卡池
+giwscli::set_pool_3    // 设置三类卡池
+giwscli::rspick        // 蓄水池抽样
+giwscli::WRSpick       // 加权抽样
+giwscli::tri           // 抽取三星
+giwscli::mpcheck       // 梅森素数等特殊位置判定
+giwscli::core_f_1      // 抽取卡池I和II
+giwscli::core_f_3      // 抽取卡池III
+giwscli::core_f_4      // 抽取卡池IV
+giwscli::core_f_5      // 抽取卡池V
+giwscli::post_add      // 抽取后的保底计数
+giwscli::set_banner_f  // 快速设置卡池
+giwscli::gipull        // 抽取指定卡池
+```
+
+这里给出gipull函数的使用示例\
+```
+#include <iostream>
+#include "lib/giwscli.h"
+
+int main(){
+    for (size_t i = 0; i < 100; i++ ){
+        giwscli::gipull(1, 27); 
+        std::cout << "稀有度: " << star << " 对象编号: " << kind << std::endl;
+    }// 抽取雷电将军第一次复刻池100次
+    return 0;
+}
+```

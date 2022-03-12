@@ -36,9 +36,10 @@ extern ptrdiff_t chosen_event, chosen_banner, unmet4_c, unmet4_w, unmet5_c,
     min_fives, five_weight, four_weight, three_weight, fate_weapon, ave_fives,
     ach_count[12];
 extern signed int error_code, full_q;
+extern void ini_ams(size_t *in, size_t ins, const size_t *out);
+extern void full_quit_e [[noreturn]] ();
 
 namespace giwscli {
-extern void ini_ams(size_t *in, size_t ins, const size_t *out);
 extern void set_pool_1(size_t up_five_p, size_t size_nup_four_c_p,
                        const size_t *tempg1, const size_t *tempg5,
                        const size_t *nup_four_cgm);
@@ -47,7 +48,6 @@ extern void set_pool_3(size_t size_nup_four_c_p, const size_t *tempg1,
                        const size_t *tempg7, const size_t *nup_four_cgm);
 extern size_t rspick(const size_t *kindx, size_t sizekind);
 extern unsigned int WRSpick(const ptrdiff_t *weightx, size_t nom);
-void full_quit_e [[noreturn]] ();
 extern void tri();
 extern void mpcheck();
 extern void core_f_1();
