@@ -124,9 +124,9 @@ This simulator includes no hidden possibilities.
 
 ### Library and the usage
 
-A library of our core features are available under the "lib" folder. You can used the lib by simply include the "giwscli.h" file.\
+A library of our core features are available under the "lib" folder. You can used the lib by simply include the "giwscli.h" file.
 
-Functions defined in namespace giwscli are:\
+Functions defined in namespace giwscli are:
 ```
 giwscli::set_pool_1    // set an I banner
 giwscli::set_pool_3    // set an III banner
@@ -143,7 +143,7 @@ giwscli::set_banner_f  // Quickly set a banner
 giwscli::gipull        // Pull a specific banner
 ```
 
-Here is an example of using giwscli::gipull\
+Here is an example of using giwscli::gipull
 ```
 #include <iostream>
 #include "lib/giwscli.h"

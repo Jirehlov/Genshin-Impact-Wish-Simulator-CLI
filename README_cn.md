@@ -121,9 +121,9 @@ giwscli 1 2 100 0
 
 ### 库与库的使用
 
-lib文件夹下有打包好的库，包含进"giwscli.h"即可使用。\
+lib文件夹下有打包好的库，包含进"giwscli.h"即可使用。
 
-定义于命名空间 giwscli 的函数有：\
+定义于命名空间 giwscli 的函数有：
 ```
 giwscli::set_pool_1    // 设置一类卡池
 giwscli::set_pool_3    // 设置三类卡池
@@ -140,7 +140,7 @@ giwscli::set_banner_f  // 快速设置卡池
 giwscli::gipull        // 抽取指定卡池
 ```
 
-这里给出gipull函数的使用示例\
+这里给出gipull函数的使用示例
 ```
 #include <iostream>
 #include "lib/giwscli.h"
