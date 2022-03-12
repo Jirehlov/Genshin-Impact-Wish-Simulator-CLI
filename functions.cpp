@@ -12,7 +12,7 @@ void casesx(size_t kind) {
              kind == 95 || kind == 100 || kind == 102 || kind == 103 ||
              kind == 104 || kind == 106 || kind == 108) {
     std::cout << "!!**** ";
-  } else if (kind < 117) {
+  } else if (kind < MAX_ITEMS) {
     std::cout << "!!!!!***** ";
   } else {
     lang_cout(4, 1);
@@ -1834,7 +1834,7 @@ int wishes_63() {
       }
     } else if (ij == -2) {
       ij = 0;
-      for (size_t qi = 0; qi < 117; qi++) {
+      for (size_t qi = 0; qi < MAX_ITEMS; qi++) {
         d_item_n[qi] = 0;
       }
       slash_n() return 1;

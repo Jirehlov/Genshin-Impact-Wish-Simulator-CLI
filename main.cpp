@@ -2,9 +2,11 @@
 
 #include "functions.h"
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   static char default_argv0[] = "giwscli";
   argv[0] = default_argv0;
+  // general settings for robustness
+
   y_print = true;
   y_luck = true;
   y_prog = false;
@@ -12,18 +14,21 @@ int main(int argc, char* argv[]) {
   y_track_luck_mode = false;
   y_anim = false;
   y_anim_del = false;
+  // bool pre-set
+
   // arg_proc:
   {
     int arg_proc_r = arg_proc(argc, argv);
     if (arg_proc_r == 1) {
-      goto set_banner;
+      goto set_banner;  // direct mode with lang provided
     } else if (arg_proc_r == 2) {
-      goto language_setting;
+      goto language_setting;  // with lang not provided
     } else {
       return error_code;
     }
   }
-language_setting:
+
+language_setting : {
   std::cout << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
   std::cin >> lang_status;
   slash_n() if (std::cin.fail() || lang_status > 1) {
@@ -33,14 +38,21 @@ language_setting:
   if (argc == 4) {
     goto set_banner;
   }
-enter_chosen_banner:
+}
+  // pre-settings for language
+
+pre_announcement : {
   enter_chosen_banner_f();
   // welcome:
   lang_cout(1, 1);
   slash_n() lang_cout(1, 2);
   slash_n() lang_cout(1, 3);
   slash_n() lang_cout(1, 4);
-  slash_nn() enter_chosen_banner_switch : lang_cout(1, 5);
+  slash_nn()
+}  // pre-announcement and ini of variables
+
+enter_chosen_banner : {
+  lang_cout(1, 5);
   slash_n() lang_cout(1, 6);
   slash_n() lang_cout(1, 7);
   slash_n() lang_cout(1, 108);
@@ -51,32 +63,36 @@ enter_chosen_banner:
   slash_nn() std::cin >> chosen_banner;
   if (std::cin.fail()) {
     chosen_banner = 0;
-    cin_error_by2() goto enter_chosen_banner;
+    cin_error_by2() goto pre_announcement;
   }
-enter_chosen_event:
+}  // interface for banner chosing
+
+enter_chosen_event : {
   e_sav = chosen_event;
   {
     int enter_chosen_event_f_r = enter_chosen_event_f();
     if (enter_chosen_event_f_r == 1) {
       goto enter_chosen_event;
     } else if (enter_chosen_event_f_r == 2) {
-      goto enter_chosen_banner_switch;
-    } else if (enter_chosen_event_f_r == 3) {
       goto enter_chosen_banner;
+    } else if (enter_chosen_event_f_r == 3) {
+      goto pre_announcement;
     } else if (enter_chosen_event_f_r == 0) {
       goto set_banner;
     } else {
       return error_code;
     }
   }
-set_banner:
+}  // which event? seriously, it's a pretty long list
+
+set_banner : {
   set_banner_f();
   if (y_arg) {
     goto core_core_loop;
   }
   // set banner
   if (!is_cross) {
-    goto pre_core_loop;
+    goto switch_check;
   } else if (chosen_banner == 3) {
     min_fives = 80;
   } else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
@@ -84,7 +100,10 @@ set_banner:
   } else {
     min_fives = PTRDIFF_MAX;
   }
-pre_core_loop:
+  // set min_fives since they vary
+}
+
+switch_check : {
   if ((switch_b_sav == chosen_banner && switch_e_sav == chosen_event) ||
       e_sav == chosen_event) {
     is_dualcross = true;
@@ -99,33 +118,45 @@ pre_core_loop:
     unmet5_c = 0;
     unmet5_w = 0;
   }
-enter_wishes_number:
+}
+  // seriously, why mihoyo want dual banners
+
+enter_wishes_number : {  // this is a pretty long symbol
   if (quit) {
     lang_cout(4, 6);
     slash_n() error_code = 6;
     full_quit_f()
+  }  // quit detect
+
+  {
+    pre_wishes();
+    std::cin >> wishes_number;
+    if (std::cin.fail()) {
+      wishes_number = 0;
+      cin_error_by() goto enter_wishes_number;
+    }
+    slash_n()
   }
-  pre_wishes();
-  std::cin >> wishes_number;
-  if (std::cin.fail()) {
-    wishes_number = 0;
-    cin_error_by() goto enter_wishes_number;
-  }
-  slash_n() if (wishes_number == -1) {
+  // enter wishes number
+
+  if (wishes_number == -1) {
     wishes_number = 0;
     goto enter_chosen_event;
-  }
+  }  // -1 for father options
+
   else if (wishes_number == -2) {
     for (size_t templuck = 0; templuck < 10; templuck++) {
-      if (luckiestkind[templuck] > 116) {
+      if (luckiestkind[templuck] > MAX_ITEMS - 1) {
         lang_cout(1, 62);
         slash_n() goto enter_wishes_number;
       }
-    }
+    }  // check if overpass the max item
+
     if (countx_l < 10) {
       lang_cout(1, 62);
       slash_n() goto enter_wishes_number;
-    }
+    }  // avoid being at less than 10
+
     lang_cout(1, 63);
     std::cout << luckiest << '\n';
     for (size_t templuck = 0; templuck < 10; templuck++) {
@@ -135,37 +166,47 @@ enter_wishes_number:
       casesx(luckiestkind[templuck]);
       lang_cout(2, luckiestkind[templuck]);
       slash_n()
-    }
+    }  // real output
+
     wishes_number = 0;
     goto enter_wishes_number;
-  }
+  }  // -2 for luckiness display
+
   else if (wishes_number == -3) {
-  enter_cleanornot:
-    lang_cout(1, 91);
-    slash_n() lang_cout(1, 92);
-    slash_n() lang_cout(1, 93);
-    slash_nn() static ptrdiff_t cleanornot = 0;
+  enter_cleanornot : {
+    {
+      lang_cout(1, 91);
+      slash_n() lang_cout(1, 92);
+      slash_n() lang_cout(1, 93);
+      slash_nn()
+    }  // interface
+
+    static ptrdiff_t cleanornot = 0;
     std::cin >> cleanornot;
-    if (std::cin.fail()) {
-      cleanornot = 0;
-      cin_error_by2() goto enter_cleanornot;
-    }
-    slash_n() if (cleanornot == 1) {
+    {
+      if (std::cin.fail()) {
+        cleanornot = 0;
+        cin_error_by2() goto enter_cleanornot;
+      }
+      slash_n()
+    }  // get
+
+    if (cleanornot == 1) {
       clean_f();
       goto enter_wishes_number;
-    }
-    else if (cleanornot == -1) {
+    } else if (cleanornot == -1) {
       cleanornot = 0;
       wishes_number = 0;
       goto enter_wishes_number;
-    }
-    else {
+    } else {
       cleanornot = 0;
       wishes_number = 0;
       lang_cout(1, 72);
       slash_nn() goto enter_cleanornot;
     }
+  }  // clean your bedroom everyday
   }
+
   else if (wishes_number == -4) {
     if (y_print) {
       y_print = false;
@@ -175,16 +216,20 @@ enter_wishes_number:
       y_print = true;
       lang_cout(1, 66);
       slash_n()
-    }
+    }  // black is white
+
     wishes_number = 0;
     goto enter_wishes_number;
   }
+
   else if (wishes_number == -5) {
     if (chosen_banner == 5 || four_count == 0 || five_count == 0) {
       wishes_number = 0;
       lang_cout(1, 72);
       slash_n() goto enter_wishes_number;
-    } else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
+    }  // no novice
+
+    else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
       lang_cout(1, 88);
       slash_nn() std::cout << std::fixed << std::setprecision(8);
       for (size_t iout = 0; iout < 10; iout++) {
@@ -207,7 +252,9 @@ enter_wishes_number:
       std::cout << std::defaultfloat;
       wishes_number = 0;
       goto enter_wishes_number;
-    } else if (chosen_banner == 3) {
+    }  // for chars
+
+    else if (chosen_banner == 3) {
       lang_cout(1, 88);
       slash_nn() std::cout << std::fixed << std::setprecision(8);
       for (size_t iout = 0; iout < 10; iout++) {
@@ -230,13 +277,16 @@ enter_wishes_number:
       std::cout << std::defaultfloat;
       wishes_number = 0;
       goto enter_wishes_number;
-    } else {
+    }  // for weapons
+
+    else {
       wishes_number = 0;
       lang_cout(4, 7);
       slash_n() error_code = 7;
       full_quit_f()
-    }
+    }  // illegal
   }
+
   else if (wishes_number == -6) {
     if (chosen_banner == 3 && chosen_event > 14) {
     enter_fate_weapon:
@@ -267,12 +317,15 @@ enter_wishes_number:
       }
       wishes_number = 0;
       goto enter_wishes_number;
-    } else {
+    }  // if available
+
+    else {
       wishes_number = 0;
       lang_cout(1, 72);
       slash_n() goto enter_wishes_number;
-    }
+    }  // if not
   }
+
   else if (wishes_number == -7) {
     if (y_luck) {
       y_luck = false;
@@ -285,7 +338,8 @@ enter_wishes_number:
     }
     wishes_number = 0;
     goto enter_wishes_number;
-  }
+  }  // luck switch
+
   else if (wishes_number == -8) {
     if (y_prog) {
       y_prog = false;
@@ -298,7 +352,8 @@ enter_wishes_number:
     }
     wishes_number = 0;
     goto enter_wishes_number;
-  }
+  }  // prog switch
+
   else if (wishes_number == -9) {
     wishes_number = 0;
     signed int temptuck = 0;
@@ -312,7 +367,7 @@ enter_wishes_number:
       lang_cout(4, 7);
       slash_n() error_code = 7;
       full_quit_f()
-    }
+    }  // set threshold
   enter_tuck:
     lang_cout(1, 171);
     slash_n() lang_cout(1, 159);
@@ -340,7 +395,8 @@ enter_wishes_number:
       slash_n() head_print();
       goto core_core_loop;
     }
-  }
+  }  // marathon settings
+
   else if (wishes_number == -10) {
     if (y_anim) {
       y_anim = false;
@@ -353,7 +409,8 @@ enter_wishes_number:
     }
     wishes_number = 0;
     goto enter_wishes_number;
-  }
+  }  // anim switch
+
   else if (wishes_number == -11) {
     if (chosen_banner == 5) {
       wishes_number = 0;
@@ -363,7 +420,8 @@ enter_wishes_number:
     hash_gen();
     wishes_number = 0;
     goto enter_wishes_number;
-  }
+  }  // hash generator
+
   else if (wishes_number == -31) {
     if (chosen_banner == 5) {
       wishes_number = 0;
@@ -379,7 +437,8 @@ enter_wishes_number:
         goto enter_wishes_number;
       }
     }
-  }
+  }  // manual settings
+
   else if (wishes_number == -63) {
     wishes_number = 0;
     is_s_mode = true;
@@ -391,12 +450,14 @@ enter_wishes_number:
         goto core_core_loop;
       }
     }
-  }
+  }  // s_mode settings
+
   else if (wishes_number == -127) {
     wishes_number = 0;
     wishes_127();
     goto enter_wishes_number;
-  }
+  }  // debugger
+
   else if (wishes_number == -120) {
   language_setting_local_6:
     std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
@@ -409,7 +470,8 @@ enter_wishes_number:
       wishes_number = 0;
       goto enter_wishes_number;
     }
-  }
+  }  // language just-in-time
+
   else if (wishes_number == -270) {
     wishes_number = 0;
     if (!achp_check) {
@@ -430,18 +492,22 @@ enter_wishes_number:
       }
     }
     slash_n() goto enter_wishes_number;
-  }
+  }  // what? achievements
+
   else if (wishes_number < 1) {
     wishes_number = 0;
     lang_cout(1, 72);
     slash_n() goto enter_wishes_number;
-  }
-  else {
+  } else {
     head_print();
-  }
-core_core_loop:
+  }  // invalid settings
+}
+
+core_core_loop : {
   pre_ccloop();
   starty = std::chrono::system_clock::now();
+  // ikuzo
+
   if (chosen_banner == 1 || chosen_banner == 2) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
@@ -509,7 +575,10 @@ core_core_loop:
         }
       }
     }
-  } else if (chosen_banner == 3) {
+  }
+  // chars up
+
+  else if (chosen_banner == 3) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
       const size_t temp1 = generatorz() % 4;
@@ -576,7 +645,10 @@ core_core_loop:
         }
       }
     }
-  } else if (chosen_banner == 4) {
+  }
+  // weapons up
+
+  else if (chosen_banner == 4) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
       unsigned int star = 0;  // 4-star or 5-star
@@ -642,7 +714,10 @@ core_core_loop:
         }
       }
     }
-  } else if (chosen_banner == 5) {
+  }
+  // no up
+
+  else if (chosen_banner == 5) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
       const size_t temp1 = generatorz() % 1000;
@@ -696,13 +771,17 @@ core_core_loop:
         }
       }
     }
-  } else {
+  }  // novice
+
+  else {
     lang_cout(4, 7);
     slash_n() error_code = 7;
     full_quit_f()
   }
-  // real work
+
   endy = std::chrono::system_clock::now();
+  // real work
+
   if (y_anim) {
     animation_gen(star_max);
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -729,26 +808,34 @@ core_core_loop:
       full_quit_f()
     }
   }
+  // animation
+
   if (y_anim_del) {
     y_anim_del = false;
     y_anim = true;
   }
+  // reset
+
   elapsed = endy - starty;
   elapsed_time =
       std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
   t_start = std::chrono::system_clock::to_time_t(starty);
   t_end = std::chrono::system_clock::to_time_t(endy);
+  // time's up
+
   delay_r = 100;
   if (!y_arg && !y_print && y_prog && !is_s_mode && !y_track_luck_mode) {
     prog_p()
   }
   y_track_luck_mode = false;
+  // prog post-output
+
   stat_out();
   wishes_number_r = 0;
   if (y_arg || error_code != 0) {
     hash_gen();
     full_quit_f()
   }
-  // a bunch of output of statistics
   goto enter_wishes_number;
+}
 }

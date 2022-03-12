@@ -1,34 +1,36 @@
 #ifndef MACRO_F_H
 #define MACRO_F_H
 
+#define MAX_ITEMS 117
+
 #define slash_n() \
   { std::cout << '\n'; }
 
 #define slash_nn() \
   { std::cout << "\n\n"; }
 
-#define is_mode()                            \
-  {                                          \
-    bool check = false;                      \
-    if (d_item_n[kind] > 0) {                \
-      d_item_n[kind]--;                      \
-    }                                        \
-    for (size_t ikk = 0; ikk < 117; ikk++) { \
-      if (d_item_n[ikk] > 0) {               \
-        d_item_c = true;                     \
-        check = true;                        \
-        break;                               \
-      } else if (d_item_n[ikk] == 0) {       \
-        d_item_c = false;                    \
-      } else {                               \
-        lang_cout(4, 10);                    \
-        slash_n() error_code = 10;           \
-        full_quit_f()                        \
-      }                                      \
-      if (check) {                           \
-        break;                               \
-      }                                      \
-    }                                        \
+#define is_mode()                                  \
+  {                                                \
+    bool check = false;                            \
+    if (d_item_n[kind] > 0) {                      \
+      d_item_n[kind]--;                            \
+    }                                              \
+    for (size_t ikk = 0; ikk < MAX_ITEMS; ikk++) { \
+      if (d_item_n[ikk] > 0) {                     \
+        d_item_c = true;                           \
+        check = true;                              \
+        break;                                     \
+      } else if (d_item_n[ikk] == 0) {             \
+        d_item_c = false;                          \
+      } else {                                     \
+        lang_cout(4, 10);                          \
+        slash_n() error_code = 10;                 \
+        full_quit_f()                              \
+      }                                            \
+      if (check) {                                 \
+        break;                                     \
+      }                                            \
+    }                                              \
   }  // do if is s mode
 #define set_pool_1_m(up_five_m, size_nup_four_c_m, nup_four_cgm) \
   {                                                              \
