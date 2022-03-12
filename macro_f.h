@@ -32,16 +32,6 @@
       }                                            \
     }                                              \
   }  // do if is s mode
-#define set_pool_1_m(up_five_m, size_nup_four_c_m, nup_four_cgm) \
-  {                                                              \
-    set_pool_1((up_five_m), (size_nup_four_c_m), tempg1, tempg5, \
-               (nup_four_cgm));                                  \
-  }
-#define set_pool_3_m(size_nup_four_c_m, nup_four_cgm)               \
-  {                                                                 \
-    set_pool_3((size_nup_four_c_m), tempg1, tempg5, tempg6, tempg7, \
-               (nup_four_cgm));                                     \
-  }
 #define cin_error_by()                                                  \
   {                                                                     \
     slash_n() lang_cout(1, 11);                                         \

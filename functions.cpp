@@ -1,18 +1,19 @@
 #include "functions.h"
 
-void casesx(size_t kind) {
-  if (kind < 15) {
+using namespace giwscli;
+void casesx(size_t &kind_p) {
+  if (kind_p < 15) {
     std::cout << "!!!!!***** ";
-  } else if (kind < 50) {
+  } else if (kind_p < 50) {
     std::cout << "!!**** ";
-  } else if (kind < 63) {
+  } else if (kind_p < 63) {
     std::cout << "*** ";
-  } else if (kind == 71 || kind == 79 || kind == 80 || kind == 82 ||
-             kind == 83 || kind == 84 || kind == 88 || kind == 91 ||
-             kind == 95 || kind == 100 || kind == 102 || kind == 103 ||
-             kind == 104 || kind == 106 || kind == 108) {
+  } else if (kind_p == 71 || kind_p == 79 || kind_p == 80 || kind_p == 82 ||
+             kind_p == 83 || kind_p == 84 || kind_p == 88 || kind_p == 91 ||
+             kind_p == 95 || kind_p == 100 || kind_p == 102 || kind_p == 103 ||
+             kind_p == 104 || kind_p == 106 || kind_p == 108) {
     std::cout << "!!**** ";
-  } else if (kind < MAX_ITEMS) {
+  } else if (kind_p < MAX_ITEMS) {
     std::cout << "!!!!!***** ";
   } else {
     lang_cout(4, 1);
@@ -26,33 +27,6 @@ void ini_all(size_t* in, size_t ins, size_t nu) {
   for (size_t i = 0; i < ins; i++) {
     in[i] = nu;
   }
-}
-
-void ini_ams(size_t* in, size_t ins, const size_t* out) {
-  for (size_t i = 0; i < ins; i++) {
-    in[i] = out[i];
-  }
-}  // for of the same size
-
-void set_pool_1(size_t up_five_p, size_t size_nup_four_c_p,
-                const size_t* tempg1, const size_t* tempg5,
-                const size_t* nup_four_cgm) {
-  up_five = up_five_p;
-  size_nup_four_c = size_nup_four_c_p;
-  ini_ams(up_four_g, 3, tempg1);
-  ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
-  ini_ams(four_check, 8, tempg5);
-}
-
-void set_pool_3(size_t size_nup_four_c_p, const size_t* tempg1,
-                const size_t* tempg5, const size_t* tempg6,
-                const size_t* tempg7, const size_t* nup_four_cgm) {
-  ini_ams(up_five_g, 2, tempg6);
-  size_nup_four_c = size_nup_four_c_p;
-  ini_ams(up_four_g, 5, tempg1);
-  ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
-  ini_ams(four_check, 8, tempg5);
-  ini_ams(five_check, 8, tempg7);
 }
 
 void head_print() {
@@ -80,9 +54,9 @@ void head_print() {
   slash_n()
 }
 
-void animation_gen(const unsigned int star) {
+void animation_gen(const unsigned int star_p) {
   if (anim_number == 10) {
-    if (star == 4) {
+    if (star_p == 4) {
       for (size_t i = 0; i < 27; i++) {
         std::cout << "*";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
@@ -91,7 +65,7 @@ void animation_gen(const unsigned int star) {
         std::cout << "(*)";
         std::this_thread::sleep_for(std::chrono::milliseconds(160));
       }
-    } else if (star == 5) {
+    } else if (star_p == 5) {
       for (size_t i = 0; i < 26; i++) {
         std::cout << "*";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
@@ -111,7 +85,7 @@ void animation_gen(const unsigned int star) {
       full_quit_e();
     }
   } else if (anim_number == 1) {
-    if (star == 3) {
+    if (star_p == 3) {
       for (size_t i = 0; i < 20; i++) {
         std::cout << ".";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
@@ -120,7 +94,7 @@ void animation_gen(const unsigned int star) {
         std::cout << "*";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
       }
-    } else if (star == 4) {
+    } else if (star_p == 4) {
       for (size_t i = 0; i < 12; i++) {
         std::cout << ".";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
@@ -133,7 +107,7 @@ void animation_gen(const unsigned int star) {
         std::cout << "(*)";
         std::this_thread::sleep_for(std::chrono::milliseconds(160));
       }
-    } else if (star == 5) {
+    } else if (star_p == 5) {
       for (size_t i = 0; i < 12; i++) {
         std::cout << ".";
         std::this_thread::sleep_for(std::chrono::milliseconds(80));
@@ -275,483 +249,7 @@ void enter_chosen_banner_f() {
   }
 }
 
-void set_banner_f() {
-  if (chosen_banner == 1) {
-    if (chosen_event < 22) {
-      switch_e_should_be = 0;
-    }
-    switch (chosen_event) {
-      case 1: {
-        const size_t tempg1[3] = {22, 26, 30};
-        const size_t tempg5[8] = {22, 26, 30, 0, 0, 0, 0, 0};
-        set_pool_1_m(63, 11, nup_four_cg1)
-      } break;
-      case 2: {
-        const size_t tempg1[3] = {17, 20, 24};
-        const size_t tempg5[8] = {17, 20, 24, 0, 0, 0, 0, 0};
-        set_pool_1_m(64, 11, nup_four_cg1)
-      } break;
-      case 3: {
-        const size_t tempg1[3] = {18, 23, 25};
-        const size_t tempg5[8] = {23, 25, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(65, 11, nup_four_cg1)
-      } break;
-      case 4: {
-        const size_t tempg1[3] = {16, 19, 28};
-        const size_t tempg5[8] = {19, 28, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(66, 11, nup_four_cg1)
-      } break;
-      case 5: {
-        const size_t tempg1[3] = {17, 21, 22};
-        const size_t tempg5[8] = {17, 21, 22, 0, 0, 0, 0, 0};
-        set_pool_1_m(67, 13, nup_four_cg2)
-      } break;
-      case 6: {
-        const size_t tempg1[3] = {22, 24, 26};
-        const size_t tempg5[8] = {22, 24, 26, 0, 0, 0, 0, 0};
-        set_pool_1_m(68, 13, nup_four_cg2)
-      } break;
-      case 7: {
-        const size_t tempg1[3] = {16, 18, 25};
-        const size_t tempg5[8] = {16, 18, 25, 0, 0, 0, 0, 0};
-        set_pool_1_m(69, 13, nup_four_cg2)
-      } break;
-      case 8: {
-        const size_t tempg1[3] = {21, 23, 30};
-        const size_t tempg5[8] = {21, 23, 30, 0, 0, 0, 0, 0};
-        set_pool_1_m(0, 13, nup_four_cg2) five_check[0] = 0;
-      } break;
-      case 9: {
-        const size_t tempg1[3] = {19, 24, 26};
-        const size_t tempg5[8] = {19, 24, 26, 0, 0, 0, 0, 0};
-        set_pool_1_m(70, 13, nup_four_cg2)
-      } break;
-      case 10: {
-        const size_t tempg1[3] = {17, 20, 28};
-        const size_t tempg5[8] = {17, 20, 28, 0, 0, 0, 0, 0};
-        set_pool_1_m(63, 13, nup_four_cg2)
-      } break;
-      case 11: {
-        const size_t tempg1[3] = {15, 22, 30};
-        const size_t tempg5[8] = {22, 30, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(65, 13, nup_four_cg2)
-      } break;
-      case 12: {
-        const size_t tempg1[3] = {71, 20, 18};
-        const size_t tempg5[8] = {18, 20, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(66, 14, nup_four_cg3)
-      } break;
-      case 13: {
-        const size_t tempg1[3] = {16, 24, 25};
-        const size_t tempg5[8] = {16, 24, 25, 0, 0, 0, 0, 0};
-        set_pool_1_m(72, 14, nup_four_cg3)
-      } break;
-      case 14: {
-        const size_t tempg1[3] = {17, 22, 30};
-        const size_t tempg5[8] = {17, 22, 30, 0, 0, 0, 0, 0};
-        set_pool_1_m(64, 15, nup_four_cg4)
-      } break;
-      case 15: {
-        const size_t tempg1[3] = {15, 21, 28};
-        const size_t tempg5[8] = {15, 21, 28, 0, 0, 0, 0, 0};
-        set_pool_1_m(86, 15, nup_four_cg4)
-      } break;
-      case 16: {
-        const size_t tempg1[3] = {71, 23, 19};
-        const size_t tempg5[8] = {71, 23, 19, 0, 0, 0, 0, 0};
-        set_pool_1_m(89, 15, nup_four_cg4)
-      } break;
-      case 17: {
-        const size_t tempg1[3] = {91, 16, 18};
-        const size_t tempg5[8] = {16, 18, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(90, 15, nup_four_cg4)
-      } break;
-      case 18: {
-        const size_t tempg1[3] = {95, 17, 26};
-        const size_t tempg5[8] = {17, 26, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(96, 16, nup_four_cg5)
-      } break;
-      case 19: {
-        const size_t tempg1[3] = {15, 24, 25};
-        const size_t tempg5[8] = {15, 24, 25, 0, 0, 0, 0, 0};
-        set_pool_1_m(94, 16, nup_four_cg5)
-      } break;
-      case 20: {
-        const size_t tempg1[3] = {23, 19, 71};
-        const size_t tempg5[8] = {23, 19, 71, 0, 0, 0, 0, 0};
-        set_pool_1_m(65, 17, nup_four_cg6)
-      } break;
-      case 21: {
-        const size_t tempg1[3] = {100, 18, 91};
-        const size_t tempg5[8] = {18, 91, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(70, 17, nup_four_cg6)
-      } break;
-      case 22: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 1;
-        const size_t tempg1[3] = {15, 20, 21};
-        const size_t tempg5[8] = {15, 20, 21, 0, 0, 0, 0, 0};
-        set_pool_1_m(67, 18, nup_four_cg7)
-      } break;
-      case 23: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 0;
-        const size_t tempg1[3] = {26, 30, 106};
-        const size_t tempg5[8] = {26, 30, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(105, 18, nup_four_cg7)
-      } break;
-      case 24: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 2;
-        const size_t tempg1[3] = {19, 23, 108};
-        const size_t tempg5[8] = {19, 23, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(109, 19, nup_four_cg8)
-      } break;
-      case 25: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 3;
-        const size_t tempg1[3] = {24, 25, 71};
-        const size_t tempg5[8] = {24, 25, 71, 0, 0, 0, 0, 0};
-        set_pool_1_m(66, 19, nup_four_cg8)
-      } break;
-      case 26: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 0;
-        const size_t tempg1[3] = {18, 22, 100};
-        const size_t tempg5[8] = {18, 22, 100, 0, 0, 0, 0, 0};
-        set_pool_1_m(99, 20, nup_four_cg9)
-      } break;
-      case 27: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 4;
-        const size_t tempg1[3] = {16, 21, 95};
-        const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-        set_pool_1_m(96, 20, nup_four_cg9)
-      } break;
-      default: {
-        lang_cout(4, 5);
-        slash_n() error_code = 5;
-        full_quit_e();
-      }
-    }
-  } else if (chosen_banner == 2) {
-    switch (chosen_event) {
-      case 1: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 22;
-        const size_t tempg1[3] = {15, 20, 21};
-        const size_t tempg5[8] = {15, 20, 21, 0, 0, 0, 0, 0};
-        set_pool_1_m(72, 18, nup_four_cg7)
-      } break;
-      case 2: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 24;
-        const size_t tempg1[3] = {19, 23, 108};
-        const size_t tempg5[8] = {19, 23, 0, 0, 0, 0, 0, 0};
-        set_pool_1_m(69, 19, nup_four_cg8)
-      } break;
-      case 3: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 25;
-        const size_t tempg1[3] = {24, 25, 71};
-        const size_t tempg5[8] = {24, 25, 71, 0, 0, 0, 0, 0};
-        set_pool_1_m(68, 19, nup_four_cg8)
-      } break;
-      case 4: {
-        switch_e_sav = switch_e_should_be;
-        switch_e_should_be = 27;
-        const size_t tempg1[3] = {16, 21, 95};
-        const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-        set_pool_1_m(94, 20, nup_four_cg9)
-      } break;
-      default: {
-        lang_cout(4, 5);
-        slash_n() full_quit_e();
-      }
-    }
-  } else if (chosen_banner == 3) {
-    switch (chosen_event) {
-      case 1: {
-        const size_t tempg6[2] = {5, 14};
-        const size_t tempg1[5] = {34, 38, 40, 44, 48};
-        const size_t tempg5[8] = {34, 38, 40, 44, 48, 0, 0, 0};
-        const size_t tempg7[8] = {5, 14, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(11, nup_four_cg1)
-      } break;
-      case 2: {
-        const size_t tempg6[2] = {7, 11};
-        const size_t tempg1[5] = {33, 37, 41, 43, 49};
-        const size_t tempg5[8] = {33, 37, 41, 43, 49, 0, 0, 0};
-        const size_t tempg7[8] = {7, 11, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(11, nup_four_cg1)
-      } break;
-      case 3: {
-        const size_t tempg6[2] = {6, 73};
-        const size_t tempg1[5] = {32, 36, 40, 42, 48};
-        const size_t tempg5[8] = {32, 36, 40, 42, 48, 0, 0, 0};
-        const size_t tempg7[8] = {6, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(11, nup_four_cg1)
-      } break;
-      case 4: {
-        const size_t tempg6[2] = {74, 75};
-        const size_t tempg1[5] = {35, 39, 41, 44, 46};
-        const size_t tempg5[8] = {35, 39, 41, 44, 46, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(11, nup_four_cg1)
-      } break;
-      case 5: {
-        const size_t tempg6[2] = {8, 76};
-        const size_t tempg1[5] = {34, 37, 40, 45, 49};
-        const size_t tempg5[8] = {34, 37, 40, 45, 49, 0, 0, 0};
-        const size_t tempg7[8] = {8, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 6: {
-        const size_t tempg6[2] = {5, 12};
-        const size_t tempg1[5] = {35, 36, 41, 44, 47};
-        const size_t tempg5[8] = {35, 36, 41, 44, 47, 0, 0, 0};
-        const size_t tempg7[8] = {5, 12, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 7: {
-        const size_t tempg6[2] = {9, 77};
-        const size_t tempg1[5] = {32, 36, 40, 43, 48};
-        const size_t tempg5[8] = {32, 36, 40, 43, 48, 0, 0, 0};
-        const size_t tempg7[8] = {9, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 8: {
-        const size_t tempg6[2] = {11, 78};
-        const size_t tempg1[5] = {33, 38, 46, 79, 80};
-        const size_t tempg5[8] = {33, 38, 46, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {11, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 9: {
-        const size_t tempg6[2] = {13, 81};
-        const size_t tempg1[5] = {35, 41, 45, 82, 83};
-        const size_t tempg5[8] = {35, 41, 45, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {13, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 10: {
-        const size_t tempg6[2] = {6, 7};
-        const size_t tempg1[5] = {39, 40, 43, 49, 84};
-        const size_t tempg5[8] = {39, 40, 43, 49, 0, 0, 0, 0};
-        const size_t tempg7[8] = {6, 7, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(13, nup_four_cg2)
-      } break;
-      case 11: {
-        const size_t tempg6[2] = {73, 76};
-        const size_t tempg1[5] = {33, 36, 48, 79, 80};
-        const size_t tempg5[8] = {33, 36, 48, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(14, nup_four_cg3)
-      } break;
-      case 12: {
-        const size_t tempg6[2] = {14, 85};
-        const size_t tempg1[5] = {32, 37, 41, 42, 47};
-        const size_t tempg5[8] = {32, 37, 41, 42, 47, 0, 0, 0};
-        const size_t tempg7[8] = {14, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(14, nup_four_cg3)
-      } break;
-      case 13: {
-        const size_t tempg6[2] = {7, 12};
-        const size_t tempg1[5] = {88, 46, 44, 40, 38};
-        const size_t tempg5[8] = {46, 44, 40, 38, 0, 0, 0, 0};
-        const size_t tempg7[8] = {7, 12, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(15, nup_four_cg4)
-      } break;
-      case 14: {
-        const size_t tempg6[2] = {87, 8};
-        const size_t tempg1[5] = {82, 83, 84, 45, 41};
-        const size_t tempg5[8] = {45, 41, 0, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {8, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(15, nup_four_cg4)
-      } break;
-      case 15: {
-        const size_t tempg6[2] = {92, 10};
-        const size_t tempg1[5] = {34, 39, 40, 43, 49};
-        const size_t tempg5[8] = {34, 39, 40, 43, 49, 0, 0, 0};
-        const size_t tempg7[8] = {10, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(15, nup_four_cg4)
-      } break;
-      case 16: {
-        const size_t tempg6[2] = {93, 13};
-        const size_t tempg1[5] = {35, 37, 41, 42, 47};
-        const size_t tempg5[8] = {35, 37, 41, 42, 47, 0, 0, 0};
-        const size_t tempg7[8] = {13, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(15, nup_four_cg4)
-      } break;
-      case 17: {
-        const size_t tempg6[2] = {97, 75};
-        const size_t tempg1[5] = {33, 38, 40, 44, 46};
-        const size_t tempg5[8] = {33, 38, 40, 44, 46, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(16, nup_four_cg5)
-      } break;
-      case 18: {
-        const size_t tempg6[2] = {98, 77};
-        const size_t tempg1[5] = {34, 39, 41, 45, 48};
-        const size_t tempg5[8] = {34, 39, 41, 45, 48, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(16, nup_four_cg5)
-      } break;
-      case 19: {
-        const size_t tempg6[2] = {101, 73};
-        const size_t tempg1[5] = {32, 36, 40, 49, 104};
-        const size_t tempg5[8] = {32, 36, 40, 49, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(17, nup_four_cg6)
-      } break;
-      case 20: {
-        const size_t tempg6[2] = {78, 81};
-        const size_t tempg1[5] = {38, 42, 47, 102, 103};
-        const size_t tempg5[8] = {38, 42, 47, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(17, nup_four_cg6)
-      } break;
-      case 21: {
-        const size_t tempg6[2] = {85, 87};
-        const size_t tempg1[5] = {41, 43, 46, 83, 84};
-        const size_t tempg5[8] = {41, 43, 46, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(18, nup_four_cg7)
-      } break;
-      case 22: {
-        const size_t tempg6[2] = {107, 6};
-        const size_t tempg1[5] = {37, 40, 44, 82, 88};
-        const size_t tempg5[8] = {37, 40, 44, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {6, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(18, nup_four_cg7)
-      } break;
-      case 23: {
-        const size_t tempg6[2] = {110, 9};
-        const size_t tempg1[5] = {35, 38, 45, 48, 80};
-        const size_t tempg5[8] = {35, 38, 45, 48, 0, 0, 0, 0};
-        const size_t tempg7[8] = {9, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(19, nup_four_cg8)
-      } break;
-      case 24: {
-        const size_t tempg6[2] = {74, 5};
-        const size_t tempg1[5] = {33, 39, 41, 49, 79};
-        const size_t tempg5[8] = {33, 39, 41, 49, 0, 0, 0, 0};
-        const size_t tempg7[8] = {5, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(19, nup_four_cg8)
-      } break;
-      case 25: {
-        const size_t tempg6[2] = {112, 77};
-        const size_t tempg1[5] = {34, 36, 42, 47, 103};
-        const size_t tempg5[8] = {34, 36, 42, 47, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(20, nup_four_cg9)
-      } break;
-      case 26: {
-        const size_t tempg6[2] = {97, 98};
-        const size_t tempg1[5] = {37, 40, 46, 102, 104};
-        const size_t tempg5[8] = {37, 40, 46, 0, 0, 0, 0, 0};
-        const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-        set_pool_3_m(20, nup_four_cg9)
-      } break;
-      default: {
-        lang_cout(4, 5);
-        slash_n() full_quit_e();
-      }
-    }
-  } else if (chosen_banner == 4) {
-    switch (chosen_event) {
-      case 1: {
-        const size_t nup_four_cg31[14] = {17, 19, 20, 21, 22, 23, 24,
-                                          25, 26, 27, 28, 29, 30, 31};
-        size_nup_four_c = 14;
-        for (size_t i = 0; i < 14; i++) {
-          nup_four_c[i] = nup_four_cg31[i];
-        }
-      } break;
-      case 2: {
-        const size_t nup_four_cg32[16] = {16, 17, 18, 19, 20, 21, 22, 23,
-                                          24, 25, 26, 27, 28, 29, 30, 31};
-        size_nup_four_c = 16;
-        for (size_t i = 0; i < 16; i++) {
-          nup_four_c[i] = nup_four_cg32[i];
-        }
-      } break;
-      case 3: {
-        const size_t nup_four_cg33[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                          24, 25, 26, 27, 28, 29, 30, 31};
-        size_nup_four_c = 17;
-        for (size_t i = 0; i < 17; i++) {
-          nup_four_c[i] = nup_four_cg33[i];
-        }
-      } break;
-      case 4: {
-        const size_t nup_four_cg34[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                          24, 25, 26, 27, 28, 29, 30, 31, 71};
-        size_nup_four_c = 18;
-        for (size_t i = 0; i < 18; i++) {
-          nup_four_c[i] = nup_four_cg34[i];
-        }
-      } break;
-      case 5: {
-        const size_t nup_four_cg35[19] = {15, 16, 17, 18, 19, 20, 21,
-                                          22, 23, 24, 25, 26, 27, 28,
-                                          29, 30, 31, 71, 91};
-        size_nup_four_c = 19;
-        for (size_t i = 0; i < 19; i++) {
-          nup_four_c[i] = nup_four_cg35[i];
-        }
-      } break;
-      case 6: {
-        const size_t nup_four_cg36[20] = {15, 16, 17, 18, 19, 20, 21,
-                                          22, 23, 24, 25, 26, 27, 28,
-                                          29, 30, 31, 71, 91, 95};
-        size_nup_four_c = 20;
-        for (size_t i = 0; i < 20; i++) {
-          nup_four_c[i] = nup_four_cg36[i];
-        }
-      } break;
-      case 7: {
-        const size_t nup_four_cg37[21] = {15, 16, 17, 18, 19, 20, 21,
-                                          22, 23, 24, 25, 26, 27, 28,
-                                          29, 30, 31, 71, 91, 95, 100};
-        size_nup_four_c = 21;
-        for (size_t i = 0; i < 21; i++) {
-          nup_four_c[i] = nup_four_cg37[i];
-        }
-      } break;
-      case 8: {
-        const size_t nup_four_cg38[22] = {15, 16, 17, 18, 19,  20, 21, 22,
-                                          23, 24, 25, 26, 27,  28, 29, 30,
-                                          31, 71, 91, 95, 100, 106};
-        size_nup_four_c = 22;
-        for (size_t i = 0; i < 22; i++) {
-          nup_four_c[i] = nup_four_cg38[i];
-        }
-      } break;
-      case 9: {
-        const size_t nup_four_cg39[23] = {15, 16, 17, 18, 19,  20,  21, 22,
-                                          23, 24, 25, 26, 27,  28,  29, 30,
-                                          31, 71, 91, 95, 100, 106, 108};
-        size_nup_four_c = 22;
-        for (size_t i = 0; i < 23; i++) {
-          nup_four_c[i] = nup_four_cg39[i];
-        }
-      } break;
-      default: {
-        lang_cout(4, 5);
-        slash_n() full_quit_e();
-      }
-    }
-  } else if (chosen_banner == 5) {
-    ini_ams(nup_four_c, 11, nup_four_cg1);
-  } else {
-    lang_cout(4, 7);
-    slash_n() error_code = 7;
-    full_quit_e();
-  }
-}
-
-void output_string(size_t& kind) {
+void output_string() {
   if (y_print && !y_anim) {
     std::cout << countx + 1 << "(" << five_star_assurance_number << ")("
               << four_star_assurance_number << ") ";
@@ -763,9 +261,6 @@ void output_string(size_t& kind) {
   if (!is_s_mode) {
     wishes_number--;
   }
-  countx++;
-  five_star_assurance_number++;
-  four_star_assurance_number++;
 }  // cout what have come home
 
 void wishes_127() {
@@ -1636,7 +1131,7 @@ void luckcpy() {
   }
 }  // snapshot the luckiest moment
 
-void luckget(unsigned int star, size_t kind) {
+void luckget() {
   for (size_t templuck = 0; templuck < 9; templuck++) {
     lucklocation[templuck] = lucklocation[templuck + 1];
     lucksublocation[templuck] = lucksublocation[templuck + 1];
@@ -2292,13 +1787,14 @@ int ccloop() {
   if (chosen_banner == 1 || chosen_banner == 2) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
-      const size_t temp1 = generatorz() % 2;
-      unsigned int star = 0;  // 4-star or 5-star
-      unsigned int type = 0;  // Up or non-up, character or weapon
-      size_t kind = 0;        // which exactly
-      core_f_1(temp1, star, type, kind);
-      output_string(kind);
-      error_code = post_ccloop_1(star, type, kind, anim_loop);
+      temp1 = generatorz() % 2;
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;        // which exactly
+      core_f_1();
+      output_string();
+      post_add();
+      error_code = post_ccloop_1(anim_loop);
     }
   }
   // chars up
@@ -2306,13 +1802,14 @@ int ccloop() {
   else if (chosen_banner == 3) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
-      const size_t temp1 = generatorz() % 4;
-      unsigned int star = 0;  // 4-star or 5-star
-      unsigned int type = 0;  // Up or non-up, character or weapon
-      size_t kind = 0;        // which exactly
-      core_f_3(temp1, star, type, kind);
-      output_string(kind);
-      error_code = post_ccloop_3(star, type, kind, anim_loop);
+      temp1 = generatorz() % 4;
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;        // which exactly
+      core_f_3();
+      output_string();
+      post_add();
+      error_code = post_ccloop_3(anim_loop);
     }
   }
   // weapons up
@@ -2320,12 +1817,13 @@ int ccloop() {
   else if (chosen_banner == 4) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
-      unsigned int star = 0;  // 4-star or 5-star
-      unsigned int type = 0;  // Up or non-up, character or weapon
-      size_t kind = 0;        // which exactly
-      core_f_4(star, type, kind);
-      output_string(kind);
-      error_code = post_ccloop_4(star, type, kind, anim_loop);
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;        // which exactly
+      core_f_4();
+      output_string();
+      post_add();
+      error_code = post_ccloop_4(anim_loop);
     }
   }
   // no up
@@ -2333,12 +1831,13 @@ int ccloop() {
   else if (chosen_banner == 5) {
     size_t anim_loop = 0;
     while (wishes_number > 0 || d_item_c || y_track_luck) {
-      const size_t temp1 = generatorz() % 1000;
-      unsigned int star = 0;  // 4-star or 5-star
-      size_t kind = 0;        // which exactly
-      core_f_5(temp1, star, kind);
-      output_string(kind);
-      error_code = post_ccloop_5(star, kind, anim_loop);
+      temp1 = generatorz() % 1000;
+      star = 0;  // 4-star or 5-star
+      kind = 0;        // which exactly
+      core_f_5();
+      output_string();
+      post_add();
+      error_code = post_ccloop_5(anim_loop);
     }
   }  // novice
 
@@ -2351,8 +1850,7 @@ int ccloop() {
   return 0;
 }
 
-int post_ccloop_1(unsigned int& star, unsigned int& type, size_t& kind,
-                  size_t& anim_loop) {
+int post_ccloop_1(size_t& anim_loop) {
   if (star != 4 || type == 3) {
     unmet4_c++;
   }
@@ -2389,7 +1887,7 @@ int post_ccloop_1(unsigned int& star, unsigned int& type, size_t& kind,
       }
     }
     if (y_luck) {
-      luckget(star, kind);
+      luckget();
       if (star == 4 || star == 5) {
         for (const size_t templuck : luckstar) {
           if (templuck == 5) {
@@ -2413,8 +1911,7 @@ int post_ccloop_1(unsigned int& star, unsigned int& type, size_t& kind,
   return 0;
 }
 
-int post_ccloop_3(unsigned int& star, unsigned int& type, size_t& kind,
-                  size_t& anim_loop) {
+int post_ccloop_3(size_t& anim_loop) {
   if (star != 4 || type == 3) {
     unmet4_c++;
   }
@@ -2451,7 +1948,7 @@ int post_ccloop_3(unsigned int& star, unsigned int& type, size_t& kind,
       }
     }
     if (y_luck) {
-      luckget(star, kind);
+      luckget();
       if (star == 4 || star == 5) {
         for (const size_t templuck : luckstar) {
           if (templuck == 5) {
@@ -2475,8 +1972,7 @@ int post_ccloop_3(unsigned int& star, unsigned int& type, size_t& kind,
   return 0;
 }
 
-int post_ccloop_4(unsigned int& star, unsigned int& type, size_t& kind,
-                  size_t& anim_loop) {
+int post_ccloop_4(size_t& anim_loop) {
   if (!(star == 5 && type == 1)) {
     unmet5_c++;
   }
@@ -2513,7 +2009,7 @@ int post_ccloop_4(unsigned int& star, unsigned int& type, size_t& kind,
       }
     }
     if (y_luck) {
-      luckget(star, kind);
+      luckget();
       if (star == 4 || star == 5) {
         for (const size_t templuck : luckstar) {
           if (templuck == 5) {
@@ -2537,7 +2033,7 @@ int post_ccloop_4(unsigned int& star, unsigned int& type, size_t& kind,
   return 0;
 }
 
-int post_ccloop_5(unsigned int& star, size_t& kind, size_t& anim_loop) {
+int post_ccloop_5(size_t& anim_loop) {
   if (ach_count[8] > 6) {
     ach[8] = true;
   }
@@ -2562,7 +2058,7 @@ int post_ccloop_5(unsigned int& star, size_t& kind, size_t& anim_loop) {
       }
     }
     if (y_luck) {
-      luckget(star, kind);
+      luckget();
       if (star == 4 || star == 5) {
         for (const size_t templuck : luckstar) {
           if (templuck == 5) {

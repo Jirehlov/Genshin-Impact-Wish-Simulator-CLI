@@ -1,5 +1,6 @@
 #include "functions.h"
 
+using namespace giwscli;
 int main(int argc, char *argv[]) {
   static char default_argv0[] = "giwscli";
   argv[0] = default_argv0;
@@ -84,7 +85,7 @@ enter_chosen_event : {
 }  // which event? seriously, it's a pretty long list
 
 set_banner : {
-  set_banner_f();
+  set_banner_f(chosen_banner, chosen_event);
   if (y_arg) {
     goto core_core_loop;
   }

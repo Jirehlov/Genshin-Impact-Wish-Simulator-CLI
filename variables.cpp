@@ -28,23 +28,7 @@ std::chrono::system_clock::time_point endy = std::chrono::system_clock::now();
 std::chrono::nanoseconds elapsed = starty - endy;
 std::time_t t_start = std::chrono::system_clock::to_time_t(starty);
 std::time_t t_end = std::chrono::system_clock::to_time_t(endy);
-size_t nup_four_cg1[11] = {17, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30},
-       nup_four_cg2[13] = {16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30},
-       nup_four_cg3[14] = {15, 16, 17, 18, 19, 20, 21,
-                           22, 23, 24, 25, 26, 28, 30},
-       nup_four_cg4[15] = {15, 16, 17, 18, 19, 20, 21, 22,
-                           23, 24, 25, 26, 28, 30, 71},
-       nup_four_cg5[16] = {15, 16, 17, 18, 19, 20, 21, 22,
-                           23, 24, 25, 26, 28, 30, 71, 91},
-       nup_four_cg6[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                           24, 25, 26, 28, 30, 71, 91, 95},
-       nup_four_cg7[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                           24, 25, 26, 28, 30, 71, 91, 95, 100},
-       nup_four_cg8[19] = {15, 16, 17, 18, 19, 20, 21, 22,  23, 24,
-                           25, 26, 28, 30, 71, 91, 95, 100, 106},
-       nup_four_cg9[20] = {15, 16, 17, 18, 19, 20, 21, 22,  23,  24,
-                           25, 26, 28, 30, 71, 91, 95, 100, 106, 108},
-       four_stars_c[23] = {15, 16, 17, 18, 19, 20, 21, 22, 23,  24,  25, 26,
+size_t four_stars_c[23] = {15, 16, 17, 18, 19, 20, 21, 22, 23,  24,  25, 26,
                            27, 28, 29, 30, 31, 71, 91, 95, 100, 106, 108},
        four_stars_w[27] = {32, 33, 34, 35, 36, 37, 38,  39,  40,
                            41, 42, 43, 44, 45, 46, 47,  48,  49,
@@ -56,8 +40,6 @@ size_t nup_four_cg1[11] = {17, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30},
                            93, 97, 98, 101, 107, 110, 112, 113};
 unsigned int delay_r = 0, star_max = 0, anim_number = 0,
              luckstar[10] = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
-ptrdiff_t chosen_event = 0, chosen_banner = 0, switch_b_should_be = 0,
-          switch_e_should_be = 0, switch_b_sav = 0, switch_e_sav = 0, e_sav = 0;
 signed long long int
     wishes_number = 0,
     wishes_number_r = 0, delay_prog = 0, wishes_number_r_t = 0,
