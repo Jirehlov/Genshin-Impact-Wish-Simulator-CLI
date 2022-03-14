@@ -1,7 +1,7 @@
 #ifndef EN_H
 #define EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.13"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.14"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"

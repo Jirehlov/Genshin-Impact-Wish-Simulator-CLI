@@ -2,7 +2,7 @@
 #define CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.13"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.14"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
