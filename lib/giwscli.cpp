@@ -1,52 +1,95 @@
 #include "giwscli.h"
 
-bool quit = true, is_noelle = true, five_star_guarantee_number = false,
-     four_star_guarantee_number = false,
-     ach[12] = {false, false, false, false, false, false,
-                false, false, false, false, false, false};
-size_t kind = 0, temp1 = 0, fate_points = 0, up_five = 0, size_nup_four_c = 1,
-       countx = 0, five_count = 0, five_count_c = 0, five_count_w = 0,
-       four_count = 0, four_count_c = 0, four_count_w = 0, max_fivesth = 1,
-       min_fivesth = 1, max_fivecount = 1, min_fivecount = 1,
-       size_nup_four_w = 18, kind_r_ach_11 = 0, kind_r_ach_8 = 0,
-       up_five_g[2] = {0}, up_four_g[16] = {0}, nup_four_c[32] = {0},
-       five_check[8] = {127, 127, 127, 127, 127, 127, 127, 127},
-       four_check[8] = {127, 127, 127, 127, 127, 127, 127, 127},
-       pcount[128] = {0}, four_pity[11] = {0}, five_pity[90] = {0},
-       five_pity_w[80] = {0};
-const size_t nup_five_c[5] = {0, 1, 2, 3, 4},
-             nup_five_w[10] = {5, 6, 7, 8, 9, 10, 11, 12, 13, 14},
-             nup_four_w[32] = {32, 33, 34, 35, 36, 37, 38, 39, 40,
-                               41, 42, 43, 44, 45, 46, 47, 48, 49},
-             three_g[13] = {50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62},
-             nup_four_cg1[11] = {17, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30},
-             nup_four_cg2[13] = {16, 17, 18, 19, 20, 21, 22,
-                                 23, 24, 25, 26, 28, 30},
-             nup_four_cg3[14] = {15, 16, 17, 18, 19, 20, 21,
-                                 22, 23, 24, 25, 26, 28, 30},
-             nup_four_cg4[15] = {15, 16, 17, 18, 19, 20, 21, 22,
-                                 23, 24, 25, 26, 28, 30, 71},
-             nup_four_cg5[16] = {15, 16, 17, 18, 19, 20, 21, 22,
-                                 23, 24, 25, 26, 28, 30, 71, 91},
-             nup_four_cg6[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                 24, 25, 26, 28, 30, 71, 91, 95},
-             nup_four_cg7[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                 24, 25, 26, 28, 30, 71, 91, 95, 100},
-             nup_four_cg8[19] = {15, 16, 17, 18, 19, 20, 21, 22,  23, 24,
-                                 25, 26, 28, 30, 71, 91, 95, 100, 106},
-             nup_four_cg9[20] = {15, 16, 17, 18, 19, 20, 21, 22,  23,  24,
-                                 25, 26, 28, 30, 71, 91, 95, 100, 106, 108};
-unsigned int resultt = 0, resultu = 0, lang_status = 0, star = 0, type = 0;
-ptrdiff_t chosen_event = 0, chosen_banner = 0, unmet4_c = 0, unmet4_w = 0,
-          unmet5_c = 0, unmet5_w = 0, switch_b_should_be = 0,
-          switch_e_should_be = 0, switch_b_sav = 0, switch_e_sav = 0, e_sav = 0,
-          four_star_assurance_number = 1, five_star_assurance_number = 1,
-          max_fives = 1, min_fives = PTRDIFF_MAX, five_weight = 0,
-          four_weight = 0, three_weight = 0, fate_weapon = 0, ave_fives = 0,
-          ach_count[12] = {0};
-signed int error_code = 0, full_q = 0;
+bool giwscli::quit = true;
+bool giwscli::is_noelle = true;
+bool giwscli::five_star_guarantee_number = false;
+bool giwscli::four_star_guarantee_number = false;
+bool giwscli::ach[12] = {false, false, false, false, false, false,
+                         false, false, false, false, false, false};
+size_t giwscli::kind = 0;
+size_t giwscli::temp1 = 0;
+size_t giwscli::fate_points = 0;
+size_t giwscli::up_five = 0;
+size_t giwscli::size_nup_four_c = 1;
+size_t giwscli::countx = 0;
+size_t giwscli::five_count = 0;
+size_t giwscli::five_count_c = 0;
+size_t giwscli::five_count_w = 0;
+size_t giwscli::four_count = 0;
+size_t giwscli::four_count_c = 0;
+size_t giwscli::four_count_w = 0;
+size_t giwscli::max_fivesth = 1;
+size_t giwscli::min_fivesth = 1;
+size_t giwscli::max_fivecount = 1;
+size_t giwscli::min_fivecount = 1;
+size_t giwscli::size_nup_four_w = 18;
+size_t giwscli::kind_r_ach_11 = 0;
+size_t giwscli::kind_r_ach_8 = 0;
+size_t giwscli::up_five_g[2] = {0};
+size_t giwscli::up_four_g[16] = {0};
+size_t giwscli::nup_four_c[32] = {0};
+size_t giwscli::five_check[8] = {127, 127, 127, 127, 127, 127, 127, 127};
+size_t giwscli::four_check[8] = {127, 127, 127, 127, 127, 127, 127, 127};
+size_t giwscli::pcount[128] = {0};
+size_t giwscli::four_pity[11] = {0};
+size_t giwscli::five_pity[90] = {0};
+size_t giwscli::five_pity_w[80] = {0};
+const size_t giwscli::nup_five_c[5] = {0, 1, 2, 3, 4};
+const size_t giwscli::nup_five_w[10] = {5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+const size_t giwscli::nup_four_w[32] = {32, 33, 34, 35, 36, 37, 38, 39, 40,
+                                        41, 42, 43, 44, 45, 46, 47, 48, 49};
+const size_t giwscli::three_g[13] = {50, 51, 52, 53, 54, 55, 56,
+                                     57, 58, 59, 60, 61, 62};
+const size_t giwscli::nup_four_cg1[11] = {17, 19, 20, 21, 22, 23,
+                                          24, 25, 26, 28, 30};
+const size_t giwscli::nup_four_cg2[13] = {16, 17, 18, 19, 20, 21, 22,
+                                          23, 24, 25, 26, 28, 30};
+const size_t giwscli::nup_four_cg3[14] = {15, 16, 17, 18, 19, 20, 21,
+                                          22, 23, 24, 25, 26, 28, 30};
+const size_t giwscli::nup_four_cg4[15] = {15, 16, 17, 18, 19, 20, 21, 22,
+                                          23, 24, 25, 26, 28, 30, 71};
+const size_t giwscli::nup_four_cg5[16] = {15, 16, 17, 18, 19, 20, 21, 22,
+                                          23, 24, 25, 26, 28, 30, 71, 91};
+const size_t giwscli::nup_four_cg6[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
+                                          24, 25, 26, 28, 30, 71, 91, 95};
+const size_t giwscli::nup_four_cg7[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
+                                          24, 25, 26, 28, 30, 71, 91, 95, 100};
+const size_t giwscli::nup_four_cg8[19] = {15, 16, 17, 18,  19, 20, 21,
+                                          22, 23, 24, 25,  26, 28, 30,
+                                          71, 91, 95, 100, 106};
+const size_t giwscli::nup_four_cg9[20] = {15, 16, 17, 18,  19,  20, 21,
+                                          22, 23, 24, 25,  26,  28, 30,
+                                          71, 91, 95, 100, 106, 108};
+unsigned int giwscli::resultt = 0;
+unsigned int giwscli::resultu = 0;
+unsigned int giwscli::lang_status = 0;
+unsigned int giwscli::star = 0;
+unsigned int giwscli::type = 0;
+ptrdiff_t giwscli::chosen_event = 0;
+ptrdiff_t giwscli::chosen_banner = 0;
+ptrdiff_t giwscli::unmet4_c = 0;
+ptrdiff_t giwscli::unmet4_w = 0;
+ptrdiff_t giwscli::unmet5_c = 0;
+ptrdiff_t giwscli::unmet5_w = 0;
+ptrdiff_t giwscli::switch_b_should_be = 0;
+ptrdiff_t giwscli::switch_e_should_be = 0;
+ptrdiff_t giwscli::switch_b_sav = 0;
+ptrdiff_t giwscli::switch_e_sav = 0;
+ptrdiff_t giwscli::e_sav = 0;
+ptrdiff_t giwscli::four_star_assurance_number = 1;
+ptrdiff_t giwscli::five_star_assurance_number = 1;
+ptrdiff_t giwscli::max_fives = 1;
+ptrdiff_t giwscli::min_fives = PTRDIFF_MAX;
+ptrdiff_t giwscli::five_weight = 0;
+ptrdiff_t giwscli::four_weight = 0;
+ptrdiff_t giwscli::three_weight = 0;
+ptrdiff_t giwscli::fate_weapon = 0;
+ptrdiff_t giwscli::ave_fives = 0;
+ptrdiff_t giwscli::ach_count[12] = {0};
+signed int giwscli::error_code = 0;
+signed int giwscli::full_q = 0;
 
-void ini_ams(size_t *in, size_t ins, const size_t *out) {
+void giwscli::ini_ams(size_t *in, size_t ins, const size_t *out) {
   for (size_t i = 0; i < ins; i++) {
     in[i] = out[i];
   }
@@ -118,7 +161,7 @@ unsigned int giwscli::WRSpick(const ptrdiff_t *weightx, size_t nom) {
 }
 // weighted random sampling
 
-void full_quit_e [[noreturn]] () {
+void giwscli::full_quit_e [[noreturn]] () {
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   full_q = std::cin.get();
@@ -1380,21 +1423,29 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
 }
 
 void giwscli::gipull(ptrdiff_t chosen_banner_p, ptrdiff_t chosen_event_p) {
+  size_t tempt = generatorz();
+  star = 0;  // 4-star or 5-star
+  type = 0;  // Up or non-up, character or weapon
+  kind = 0;  // which exactly
   giwscli::set_banner_f(chosen_banner_p, chosen_event_p);
   switch (chosen_banner_p) {
     case 1: {
+      temp1 = tempt % 2;
       core_f_1();
     } break;
     case 2: {
+      temp1 = tempt % 2;
       core_f_1();
     } break;
     case 3: {
+      temp1 = tempt % 4;
       core_f_3();
     } break;
     case 4: {
       core_f_4();
     } break;
     case 5: {
+      temp1 = tempt % 1000;
       core_f_5();
     } break;
     default: {

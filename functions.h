@@ -1,8 +1,8 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
+#include <iomanip>
 #include <string>
 #include <thread>
-#include <iomanip>
 
 #include "cn.h"
 #include "en.h"

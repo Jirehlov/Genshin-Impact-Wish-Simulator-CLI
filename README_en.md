@@ -133,15 +133,14 @@ giwscli::set_pool_3    // set an III banner
 giwscli::rspick        // Reservoir sampling
 giwscli::WRSpick       // Weighted sampling
 giwscli::tri           // Pull a 3 star
-giwscli::mpcheck       // Special places checking
 giwscli::core_f_1      // Pull in an I banner or II banner
 giwscli::core_f_3      // Pull in an III banner
 giwscli::core_f_4      // Pull in an IV banner
 giwscli::core_f_5      // Pull in an V banner
-giwscli::post_add      // Post-pulling addup
 giwscli::set_banner_f  // Quickly set a banner
 giwscli::gipull        // Pull a specific banner
 ```
+etc.
 
 Here is an example of using giwscli::gipull
 ```
@@ -151,7 +150,7 @@ Here is an example of using giwscli::gipull
 int main(){
     for (size_t i = 0; i < 100; i++ ){
         giwscli::gipull(1, 27); 
-        std::cout << "Rarity: " << star << " ItemID: " << kind << std::endl;
+        std::cout << "Rarity: " << giwscli::star << " ItemID: " << giwscli::kind << std::endl;
     }// pull Raiden Shogun's the first re-run banner 100 times
     return 0;
 }

@@ -1,6 +1,7 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 #include <chrono>
+#include <cstddef>
 
 extern bool d_item_c, is_s_mode, is_cross, is_dualcross, y_print, y_luck, y_arg,
     y_prog, y_track_luck, y_track_luck_mode, y_anim, y_anim_del, iacheck,
@@ -17,8 +18,8 @@ extern std::chrono::system_clock::time_point endy;
 extern std::chrono::nanoseconds elapsed;
 extern std::time_t t_start;
 extern std::time_t t_end;
-extern size_t four_stars_c[23], four_stars_w[27],
-    five_stars_c[23], five_stars_w[28];
+extern size_t four_stars_c[23], four_stars_w[27], five_stars_c[23],
+    five_stars_w[28];
 extern unsigned int delay_r, star_max, anim_number, luckstar[10];
 extern signed long long int wishes_number, wishes_number_r, delay_prog,
     wishes_number_r_t, elapsed_time;

@@ -1,7 +1,9 @@
 #include "functions.h"
 
+#include <climits>
+
 using namespace giwscli;
-void casesx(size_t &kind_p) {
+void casesx(size_t& kind_p) {
   if (kind_p < 15) {
     std::cout << "!!!!!***** ";
   } else if (kind_p < 50) {
@@ -1790,7 +1792,7 @@ int ccloop() {
       temp1 = generatorz() % 2;
       star = 0;  // 4-star or 5-star
       type = 0;  // Up or non-up, character or weapon
-      kind = 0;        // which exactly
+      kind = 0;  // which exactly
       core_f_1();
       output_string();
       post_add();
@@ -1805,7 +1807,7 @@ int ccloop() {
       temp1 = generatorz() % 4;
       star = 0;  // 4-star or 5-star
       type = 0;  // Up or non-up, character or weapon
-      kind = 0;        // which exactly
+      kind = 0;  // which exactly
       core_f_3();
       output_string();
       post_add();
@@ -1819,7 +1821,7 @@ int ccloop() {
     while (wishes_number > 0 || d_item_c || y_track_luck) {
       star = 0;  // 4-star or 5-star
       type = 0;  // Up or non-up, character or weapon
-      kind = 0;        // which exactly
+      kind = 0;  // which exactly
       core_f_4();
       output_string();
       post_add();
@@ -1833,7 +1835,7 @@ int ccloop() {
     while (wishes_number > 0 || d_item_c || y_track_luck) {
       temp1 = generatorz() % 1000;
       star = 0;  // 4-star or 5-star
-      kind = 0;        // which exactly
+      kind = 0;  // which exactly
       core_f_5();
       output_string();
       post_add();
