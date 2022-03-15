@@ -120,7 +120,7 @@ size_t giwscli::rspick(const size_t *kindx, size_t sizekind) {
   size_t kindout = kindx[0];
   size_t index = 1;
   for (; index < sizekind; ++index) {
-    signed int temp121 = static_cast<signed int>(
+    const signed int temp121 = static_cast<signed int>(
         generatorz() % (static_cast<unsigned long long int>(index) + 1));
     if (temp121 == 0) {
       kindout = kindx[index];
@@ -1423,7 +1423,7 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
 }
 
 void giwscli::gipull(ptrdiff_t chosen_banner_p, ptrdiff_t chosen_event_p) {
-  size_t tempt = generatorz();
+  const size_t tempt = static_cast<size_t>(generatorz());
   star = 0;  // 4-star or 5-star
   type = 0;  // Up or non-up, character or weapon
   kind = 0;  // which exactly
