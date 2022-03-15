@@ -570,11 +570,11 @@ int enter_chosen_event_f() {
       full_quit_f()  // to diminish conflicts
           case 1 : {
         chosen_event = 0;
-        static const size_t banner_1[31] = {
+        static const size_t banner_1[33] = {
             12, 13,  109, 161, 14,  15,  16,  17,  18, 19, 20,
             21, 22,  23,  24,  25,  26,  27,  28,  29, 30, 94,
-            95, 100, 101, 102, 103, 144, 145, 151, 153};
-        slash_n() for (size_t i = 0; i < 31; i++) {
+            95, 100, 101, 102, 103, 144, 145, 151, 153, 183, 184};
+        slash_n() for (size_t i = 0; i < 33; i++) {
           lang_cout(1, banner_1[i]);
           slash_n()
         }
@@ -606,7 +606,7 @@ int enter_chosen_event_f() {
             chosen_event = 0;
             return 1;
           }
-        } else if (chosen_event > 0 && chosen_event < 28) {
+        } else if (chosen_event > 0 && chosen_event < 30) {
           quit = false;
         } else {
           slash_n() lang_cout(1, 31);
@@ -616,8 +616,8 @@ int enter_chosen_event_f() {
       break;
     case 2: {
       chosen_event = 0;
-      static const size_t banner_2[8] = {12, 13, 109, 161, 107, 146, 147, 154};
-      slash_n() for (size_t i = 0; i < 8; i++) {
+      static const size_t banner_2[9] = {12, 13, 109, 161, 107, 146, 147, 154, 185};
+      slash_n() for (size_t i = 0; i < 9; i++) {
         lang_cout(1, banner_2[i]);
         slash_n()
       }
@@ -649,7 +649,7 @@ int enter_chosen_event_f() {
           chosen_event = 0;
           return 1;
         }
-      } else if (chosen_event > 0 && chosen_event < 5) {
+      } else if (chosen_event > 0 && chosen_event < 6) {
         quit = false;
       } else {
         slash_n() lang_cout(1, 31);
@@ -658,10 +658,10 @@ int enter_chosen_event_f() {
     } break;
     case 3: {
       chosen_event = 0;
-      static const size_t banner_3[30] = {
+      static const size_t banner_3[31] = {
           12, 13, 109, 161, 32, 33, 34, 35,  36,  37,  38,  39,  40,  41,  42,
-          43, 44, 45,  46,  47, 96, 97, 104, 105, 111, 126, 148, 149, 152, 155};
-      slash_n() for (size_t i = 0; i < 30; i++) {
+          43, 44, 45,  46,  47, 96, 97, 104, 105, 111, 126, 148, 149, 152, 155, 186};
+      slash_n() for (size_t i = 0; i < 31; i++) {
         lang_cout(1, banner_3[i]);
         slash_n()
       }
@@ -691,7 +691,7 @@ int enter_chosen_event_f() {
           chosen_event = 0;
           return 1;
         }
-      } else if (chosen_event > 0 && chosen_event < 27) {
+      } else if (chosen_event > 0 && chosen_event < 28) {
         quit = false;
       } else {
         slash_n() lang_cout(1, 31);

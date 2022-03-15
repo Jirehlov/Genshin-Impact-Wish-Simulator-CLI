@@ -1098,6 +1098,20 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
           const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
           set_pool_1_m(96, 20, nup_four_cg9)
         } break;
+        case 28: {
+          switch_e_sav = switch_e_should_be;
+          switch_e_should_be = 5;
+          const size_t tempg1[3] = {16, 21, 95};
+          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
+          set_pool_1_m(111, 20, nup_four_cg9)
+        } break;
+        case 29: {
+          switch_e_sav = switch_e_should_be;
+          switch_e_should_be = 0;
+          const size_t tempg1[3] = {16, 21, 95};
+          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
+          set_pool_1_m(96, 20, nup_four_cg9)
+        } break;
         default: {
           error_code = 5;
           full_quit_e();
@@ -1133,6 +1147,13 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
           const size_t tempg1[3] = {16, 21, 95};
           const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
           set_pool_1_m(94, 20, nup_four_cg9)
+        } break;
+        case 5: {
+          switch_e_sav = switch_e_should_be;
+          switch_e_should_be = 28;
+          const size_t tempg1[3] = {16, 21, 95};
+          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
+          set_pool_1_m(63, 20, nup_four_cg9)
         } break;
         default: {
           full_quit_e();
@@ -1318,6 +1339,13 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
         } break;
         case 26: {
           const size_t tempg6[2] = {97, 98};
+          const size_t tempg1[5] = {37, 40, 46, 102, 104};
+          const size_t tempg5[8] = {37, 40, 46, 0, 0, 0, 0, 0};
+          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+          set_pool_3_m(20, nup_four_cg9)
+        } break;
+        case 27: {
+          const size_t tempg6[2] = {113, 81};
           const size_t tempg1[5] = {37, 40, 46, 102, 104};
           const size_t tempg5[8] = {37, 40, 46, 0, 0, 0, 0, 0};
           const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
