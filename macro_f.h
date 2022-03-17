@@ -1,8 +1,6 @@
 #ifndef MACRO_F_H
 #define MACRO_F_H
 
-#define MAX_ITEMS 117
-
 #define slash_n() \
   { std::cout << '\n'; }
 

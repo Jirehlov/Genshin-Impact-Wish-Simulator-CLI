@@ -187,7 +187,7 @@ void enter_chosen_banner_f() {
   tuck = 0;
   anim_number = 0;
   star_max = 0;
-  anim_kind = 127;
+  anim_kind = MAX_ITEMS;
   anim_location = 0;
   anim_sublocation = 0;
   anim_subsublocation = 0;
@@ -220,19 +220,19 @@ void enter_chosen_banner_f() {
   wishes_number_r_t = 0;
   delay_prog = 0;
   delay_r = 0;
-  ini_all(d_item, 128, 0);
-  ini_all(d_item_n, 128, 0);
+  ini_all(d_item, MAX_ITEMS + 1, 0);
+  ini_all(d_item_n, MAX_ITEMS + 1, 0);
   ini_all(up_five_g, 2, 0);
   ini_all(up_four_g, 16, 0);
   ini_all(nup_four_c, 32, 0);
-  ini_all(luckkind, 10, 127);
+  ini_all(luckkind, 10, MAX_ITEMS);
   for (size_t i = 0; i < 10; i++) {
     luckstar[i] = 3;
   }
-  ini_all(luckiestkind, 10, 127);
-  ini_all(animkind, 10, 127);
-  ini_all(five_check, 8, 127);
-  ini_all(four_check, 8, 127);
+  ini_all(luckiestkind, 10, MAX_ITEMS);
+  ini_all(animkind, 10, MAX_ITEMS);
+  ini_all(five_check, 2, MAX_ITEMS);
+  ini_all(four_check, 5, MAX_ITEMS);
   ini_all(pcount, 128, 0);
   ini_all(four_pity, 11, 0);
   ini_all(five_pity, 90, 0);
@@ -571,8 +571,8 @@ int enter_chosen_event_f() {
           case 1 : {
         chosen_event = 0;
         static const size_t banner_1[33] = {
-            12, 13,  109, 161, 14,  15,  16,  17,  18, 19, 20,
-            21, 22,  23,  24,  25,  26,  27,  28,  29, 30, 94,
+            12, 13,  109, 161, 14,  15,  16,  17,  18,  19,  20,
+            21, 22,  23,  24,  25,  26,  27,  28,  29,  30,  94,
             95, 100, 101, 102, 103, 144, 145, 151, 153, 183, 184};
         slash_n() for (size_t i = 0; i < 33; i++) {
           lang_cout(1, banner_1[i]);
@@ -616,7 +616,8 @@ int enter_chosen_event_f() {
       break;
     case 2: {
       chosen_event = 0;
-      static const size_t banner_2[9] = {12, 13, 109, 161, 107, 146, 147, 154, 185};
+      static const size_t banner_2[9] = {12,  13,  109, 161, 107,
+                                         146, 147, 154, 185};
       slash_n() for (size_t i = 0; i < 9; i++) {
         lang_cout(1, banner_2[i]);
         slash_n()
@@ -659,8 +660,9 @@ int enter_chosen_event_f() {
     case 3: {
       chosen_event = 0;
       static const size_t banner_3[31] = {
-          12, 13, 109, 161, 32, 33, 34, 35,  36,  37,  38,  39,  40,  41,  42,
-          43, 44, 45,  46,  47, 96, 97, 104, 105, 111, 126, 148, 149, 152, 155, 186};
+          12,  13,  109, 161, 32,  33,  34,  35,  36, 37, 38,
+          39,  40,  41,  42,  43,  44,  45,  46,  47, 96, 97,
+          104, 105, 111, 126, 148, 149, 152, 155, 186};
       slash_n() for (size_t i = 0; i < 31; i++) {
         lang_cout(1, banner_3[i]);
         slash_n()
@@ -864,7 +866,6 @@ void pre_wishes() {
 
 int wishes_31() {
   ptrdiff_t sav[16] = {0};
-  size_t else_counter = 0;
 enter_hash:
   size_t j = 0;
   size_t k = 0;

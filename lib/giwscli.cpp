@@ -28,8 +28,9 @@ size_t giwscli::kind_r_ach_8 = 0;
 size_t giwscli::up_five_g[2] = {0};
 size_t giwscli::up_four_g[16] = {0};
 size_t giwscli::nup_four_c[32] = {0};
-size_t giwscli::five_check[8] = {127, 127, 127, 127, 127, 127, 127, 127};
-size_t giwscli::four_check[8] = {127, 127, 127, 127, 127, 127, 127, 127};
+size_t giwscli::five_check[2] = {MAX_ITEMS, MAX_ITEMS};
+size_t giwscli::four_check[5] = {MAX_ITEMS, MAX_ITEMS, MAX_ITEMS, MAX_ITEMS,
+                                 MAX_ITEMS};
 size_t giwscli::pcount[128] = {0};
 size_t giwscli::four_pity[11] = {0};
 size_t giwscli::five_pity[90] = {0};
@@ -60,6 +61,236 @@ const size_t giwscli::nup_four_cg8[19] = {15, 16, 17, 18,  19, 20, 21,
 const size_t giwscli::nup_four_cg9[20] = {15, 16, 17, 18,  19,  20, 21,
                                           22, 23, 24, 25,  26,  28, 30,
                                           71, 91, 95, 100, 106, 108};
+const size_t giwscli::tempga1[30][3] = {
+    {0, 0, 0},      // 0
+    {22, 26, 30},   // 1
+    {17, 20, 24},   // 2
+    {18, 23, 25},   // 3
+    {16, 19, 28},   // 4
+    {17, 21, 22},   // 5
+    {22, 24, 26},   // 6
+    {16, 18, 25},   // 7
+    {21, 23, 30},   // 8
+    {19, 24, 26},   // 9
+    {17, 20, 28},   // 10
+    {15, 22, 30},   // 11
+    {71, 20, 18},   // 12
+    {16, 24, 25},   // 13
+    {17, 22, 30},   // 14
+    {15, 21, 28},   // 15
+    {71, 23, 19},   // 16
+    {91, 16, 18},   // 17
+    {95, 17, 26},   // 18
+    {15, 24, 25},   // 19
+    {23, 19, 71},   // 20
+    {100, 18, 91},  // 21
+    {15, 20, 21},   // 22
+    {26, 30, 106},  // 23
+    {19, 23, 108},  // 24
+    {24, 25, 71},   // 25
+    {18, 22, 100},  // 26
+    {16, 21, 95},   // 27
+    {16, 21, 95},   // 28
+    {16, 21, 95}    // 29
+};
+const size_t giwscli::tempga2[30][3] = {
+    {0, 0, 0},      // 0
+    {22, 26, 30},   // 1
+    {17, 20, 24},   // 2
+    {0, 23, 25},    // 3
+    {0, 19, 28},    // 4
+    {17, 21, 22},   // 5
+    {22, 24, 26},   // 6
+    {16, 18, 25},   // 7
+    {21, 23, 30},   // 8
+    {19, 24, 26},   // 9
+    {17, 20, 28},   // 10
+    {0, 22, 30},    // 11
+    {71, 20, 18},   // 12
+    {16, 24, 25},   // 13
+    {17, 22, 30},   // 14
+    {15, 21, 28},   // 15
+    {71, 23, 19},   // 16
+    {0, 16, 18},    // 17
+    {0, 17, 26},    // 18
+    {15, 24, 25},   // 19
+    {23, 19, 71},   // 20
+    {0, 18, 91},    // 21
+    {15, 20, 21},   // 22
+    {26, 30, 0},    // 23
+    {19, 23, 0},    // 24
+    {24, 25, 71},   // 25
+    {18, 22, 100},  // 26
+    {16, 21, 95},   // 27
+    {16, 21, 95},   // 28
+    {16, 21, 95}    // 29
+};
+const size_t giwscli::tempga3[30] = {
+    MAX_ITEMS, 63, 64, 65, 66, 67, 68, 69, 0,   70,  63, 65, 66, 72,  64,
+    86,        89, 90, 96, 94, 65, 70, 67, 105, 109, 66, 99, 96, 111, 96};
+
+const size_t giwscli::tempgb1[6][3] = {
+    {0, 0, 0},      // 0
+    {15, 20, 21},   // 1
+    {19, 23, 108},  // 2
+    {24, 25, 71},   // 3
+    {16, 21, 95},   // 4
+    {16, 21, 95},   // 5
+};
+const size_t giwscli::tempgb2[6][3] = {
+    {0, 0, 0},     // 0
+    {15, 20, 21},  // 1
+    {19, 23, 0},   // 2
+    {24, 25, 71},  // 3
+    {16, 21, 95},  // 4
+    {16, 21, 95},  // 5
+};
+const size_t giwscli::tempgb3[6] = {MAX_ITEMS, 72, 69, 68, 94, 63};
+
+const size_t giwscli::tempgc1[28][2] = {
+    {0, 0},     // 0
+    {5, 14},    // 1
+    {7, 11},    // 2
+    {6, 73},    // 3
+    {74, 75},   // 4
+    {8, 76},    // 5
+    {5, 12},    // 6
+    {9, 77},    // 7
+    {11, 78},   // 8
+    {13, 81},   // 9
+    {6, 7},     // 10
+    {73, 76},   // 11
+    {14, 85},   // 12
+    {7, 12},    // 13
+    {87, 8},    // 14
+    {92, 10},   // 15
+    {93, 13},   // 16
+    {97, 75},   // 17
+    {98, 77},   // 18
+    {101, 73},  // 19
+    {78, 81},   // 20
+    {85, 87},   // 21
+    {107, 6},   // 22
+    {110, 9},   // 23
+    {74, 5},    // 24
+    {112, 77},  // 25
+    {97, 98},   // 26
+    {113, 81}   // 27
+};
+const size_t giwscli::tempgc2[28][5] = {
+    {0, 0, 0, 0, 0},         // 0
+    {34, 38, 40, 44, 48},    // 1
+    {33, 37, 41, 43, 49},    // 2
+    {32, 36, 40, 42, 48},    // 3
+    {35, 39, 41, 44, 46},    // 4
+    {34, 37, 40, 45, 49},    // 5
+    {35, 36, 41, 44, 47},    // 6
+    {32, 36, 40, 43, 48},    // 7
+    {33, 38, 46, 79, 80},    // 8
+    {35, 41, 45, 82, 83},    // 9
+    {39, 40, 43, 49, 84},    // 10
+    {33, 36, 48, 79, 80},    // 11
+    {32, 37, 41, 42, 47},    // 12
+    {88, 46, 44, 40, 38},    // 13
+    {82, 83, 84, 45, 41},    // 14
+    {34, 39, 40, 43, 49},    // 15
+    {35, 37, 41, 42, 47},    // 16
+    {33, 38, 40, 44, 46},    // 17
+    {34, 39, 41, 45, 48},    // 18
+    {32, 36, 40, 49, 104},   // 19
+    {38, 42, 47, 102, 103},  // 20
+    {41, 43, 46, 83, 84},    // 21
+    {37, 40, 44, 82, 88},    // 22
+    {35, 38, 45, 48, 80},    // 23
+    {33, 39, 41, 49, 79},    // 24
+    {34, 36, 42, 47, 103},   // 25
+    {37, 40, 46, 102, 104},  // 26
+    {37, 40, 46, 102, 104}   // 27
+};
+const size_t giwscli::tempgc3[28][5] = {
+    {0, 0, 0, 0, 0},       // 0
+    {34, 38, 40, 44, 48},  // 1
+    {33, 37, 41, 43, 49},  // 2
+    {32, 36, 40, 42, 48},  // 3
+    {35, 39, 41, 44, 46},  // 4
+    {34, 37, 40, 45, 49},  // 5
+    {35, 36, 41, 44, 47},  // 6
+    {32, 36, 40, 43, 48},  // 7
+    {33, 38, 46, 0, 0},    // 8
+    {35, 41, 45, 0, 0},    // 9
+    {39, 40, 43, 49, 0},   // 10
+    {33, 36, 48, 0, 0},    // 11
+    {32, 37, 41, 42, 47},  // 12
+    {0, 46, 44, 40, 38},   // 13
+    {0, 0, 0, 45, 41},     // 14
+    {34, 39, 40, 43, 49},  // 15
+    {35, 37, 41, 42, 47},  // 16
+    {33, 38, 40, 44, 46},  // 17
+    {34, 39, 41, 45, 48},  // 18
+    {32, 36, 40, 49, 0},   // 19
+    {38, 42, 47, 0, 0},    // 20
+    {41, 43, 46, 0, 0},    // 21
+    {37, 40, 44, 0, 0},    // 22
+    {35, 38, 45, 48, 0},   // 23
+    {33, 39, 41, 49, 0},   // 24
+    {34, 36, 42, 47, 0},   // 25
+    {37, 40, 46, 0, 0},    // 26
+    {37, 40, 46, 0, 0}     // 27
+};
+const size_t giwscli::tempgc4[28][2] = {
+    {0, 0},   // 0
+    {5, 14},  // 1
+    {7, 11},  // 2
+    {6, 0},   // 3
+    {0, 0},   // 4
+    {8, 0},   // 5
+    {5, 12},  // 6
+    {9, 0},   // 7
+    {11, 0},  // 8
+    {13, 0},  // 9
+    {6, 7},   // 10
+    {0, 0},   // 11
+    {14, 0},  // 12
+    {7, 12},  // 13
+    {0, 8},   // 14
+    {0, 10},  // 15
+    {0, 13},  // 16
+    {0, 0},   // 17
+    {0, 0},   // 18
+    {0, 0},   // 19
+    {0, 0},   // 20
+    {0, 0},   // 21
+    {0, 6},   // 22
+    {0, 9},   // 23
+    {0, 5},   // 24
+    {0, 0},   // 25
+    {0, 0},   // 26
+    {0, 0}    // 27
+};
+const size_t giwscli::nup_four_cg31[14] = {17, 19, 20, 21, 22, 23, 24,
+                                           25, 26, 27, 28, 29, 30, 31};
+const size_t giwscli::nup_four_cg32[16] = {16, 17, 18, 19, 20, 21, 22, 23,
+                                           24, 25, 26, 27, 28, 29, 30, 31};
+const size_t giwscli::nup_four_cg33[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
+                                           24, 25, 26, 27, 28, 29, 30, 31};
+const size_t giwscli::nup_four_cg34[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
+                                           24, 25, 26, 27, 28, 29, 30, 31, 71};
+const size_t giwscli::nup_four_cg35[19] = {
+    15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 71, 91};
+const size_t giwscli::nup_four_cg36[20] = {15, 16, 17, 18, 19, 20, 21,
+                                           22, 23, 24, 25, 26, 27, 28,
+                                           29, 30, 31, 71, 91, 95};
+const size_t giwscli::nup_four_cg37[21] = {15, 16, 17, 18, 19, 20, 21,
+                                           22, 23, 24, 25, 26, 27, 28,
+                                           29, 30, 31, 71, 91, 95, 100};
+const size_t giwscli::nup_four_cg38[22] = {15, 16, 17, 18, 19,  20, 21, 22,
+                                           23, 24, 25, 26, 27,  28, 29, 30,
+                                           31, 71, 91, 95, 100, 106};
+const size_t giwscli::nup_four_cg39[23] = {15, 16, 17, 18, 19,  20,  21, 22,
+                                           23, 24, 25, 26, 27,  28,  29, 30,
+                                           31, 71, 91, 95, 100, 106, 108};
+const ptrdiff_t giwscli::tempga4[9] = {0, 1, 0, 2, 3, 0, 4, 5, 0};
+const ptrdiff_t giwscli::tempgb4[6] = {0, 22, 24, 25, 27, 28};
 unsigned int giwscli::resultt = 0;
 unsigned int giwscli::resultu = 0;
 unsigned int giwscli::lang_status = 0;
@@ -95,27 +326,130 @@ void giwscli::ini_ams(size_t *in, size_t ins, const size_t *out) {
   }
 }  // for of the same size
 
-void giwscli::set_pool_1(size_t up_five_p, size_t size_nup_four_c_p,
-                         const size_t *tempg1, const size_t *tempg5,
+void giwscli::set_pool_1(const ptrdiff_t sw, const size_t size_nup_four_c_p,
                          const size_t *nup_four_cgm) {
-  up_five = up_five_p;
+  up_five = tempga3[sw];
   size_nup_four_c = size_nup_four_c_p;
-  ini_ams(up_four_g, 3, tempg1);
+  ini_ams(up_four_g, 3, tempga1[sw]);
   ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
-  ini_ams(four_check, 8, tempg5);
+  ini_ams(four_check, 3, tempga2[sw]);
 }
 
-void giwscli::set_pool_3(size_t size_nup_four_c_p, const size_t *tempg1,
-                         const size_t *tempg5, const size_t *tempg6,
-                         const size_t *tempg7, const size_t *nup_four_cgm) {
-  ini_ams(up_five_g, 2, tempg6);
+void giwscli::set_pool_3(const ptrdiff_t sw, size_t size_nup_four_c_p,
+                         const size_t *nup_four_cgm) {
+  ini_ams(up_five_g, 2, tempgc1[sw]);
   size_nup_four_c = size_nup_four_c_p;
-  ini_ams(up_four_g, 5, tempg1);
+  ini_ams(up_four_g, 5, tempgc2[sw]);
   ini_ams(nup_four_c, size_nup_four_c, nup_four_cgm);
-  ini_ams(four_check, 8, tempg5);
-  ini_ams(five_check, 8, tempg7);
+  ini_ams(four_check, 5, tempgc3[sw]);
+  ini_ams(five_check, 2, tempgc4[sw]);
 }
 
+void giwscli::pool_stair_1(ptrdiff_t chosen_event_p) {
+  if (chosen_event_p > 0 && chosen_event_p < 5) {
+    set_pool_1(chosen_event_p, 11, nup_four_cg1);
+  } else if (chosen_event_p < 12) {
+    set_pool_1(chosen_event_p, 13, nup_four_cg2);
+  } else if (chosen_event_p < 14) {
+    set_pool_1(chosen_event_p, 14, nup_four_cg3);
+  } else if (chosen_event_p < 18) {
+    set_pool_1(chosen_event_p, 15, nup_four_cg4);
+  } else if (chosen_event_p < 20) {
+    set_pool_1(chosen_event_p, 16, nup_four_cg5);
+  } else if (chosen_event_p < 22) {
+    set_pool_1(chosen_event_p, 17, nup_four_cg6);
+  } else if (chosen_event_p < 24) {
+    set_pool_1(chosen_event_p, 18, nup_four_cg7);
+  } else if (chosen_event_p < 26) {
+    set_pool_1(chosen_event_p, 19, nup_four_cg8);
+  } else if (chosen_event_p < 28) {
+    set_pool_1(chosen_event_p, 20, nup_four_cg9);
+  } else {
+    error_code = 5;
+    full_quit_e();
+  }
+}
+
+void giwscli::pool_stair_2(ptrdiff_t chosen_event_p) {
+  if (chosen_event_p > 0 && chosen_event_p < 2) {
+    set_pool_3(chosen_event_p, 18, nup_four_cg7);
+  } else if (chosen_event_p < 4) {
+    set_pool_3(chosen_event_p, 19, nup_four_cg8);
+  } else if (chosen_event_p < 6) {
+    set_pool_3(chosen_event_p, 20, nup_four_cg9);
+  } else {
+    error_code = 5;
+    full_quit_e();
+  }
+}
+
+void giwscli::pool_stair_3(ptrdiff_t chosen_event_p) {
+  if (chosen_event_p > 0 && chosen_event_p < 5) {
+    set_pool_3(chosen_event_p, 11, nup_four_cg1);
+  } else if (chosen_event_p < 11) {
+    set_pool_3(chosen_event_p, 13, nup_four_cg2);
+  } else if (chosen_event_p < 13) {
+    set_pool_3(chosen_event_p, 14, nup_four_cg3);
+  } else if (chosen_event_p < 17) {
+    set_pool_3(chosen_event_p, 15, nup_four_cg4);
+  } else if (chosen_event_p < 19) {
+    set_pool_3(chosen_event_p, 16, nup_four_cg5);
+  } else if (chosen_event_p < 21) {
+    set_pool_3(chosen_event_p, 17, nup_four_cg6);
+  } else if (chosen_event_p < 23) {
+    set_pool_3(chosen_event_p, 18, nup_four_cg7);
+  } else if (chosen_event_p < 25) {
+    set_pool_3(chosen_event_p, 19, nup_four_cg8);
+  } else if (chosen_event_p < 29) {
+    set_pool_3(chosen_event_p, 20, nup_four_cg9);
+  } else {
+    error_code = 5;
+    full_quit_e();
+  }
+}
+void giwscli::pool_stair_4(ptrdiff_t chosen_event_p) {
+  switch (chosen_event_p) {
+    case 1: {
+      size_nup_four_c = 14;
+      ini_ams(nup_four_c, 14, nup_four_cg31);
+    } break;
+    case 2: {
+      size_nup_four_c = 16;
+      ini_ams(nup_four_c, 16, nup_four_cg32);
+    } break;
+    case 3: {
+      size_nup_four_c = 17;
+      ini_ams(nup_four_c, 17, nup_four_cg33);
+    } break;
+    case 4: {
+      size_nup_four_c = 18;
+      ini_ams(nup_four_c, 18, nup_four_cg34);
+    } break;
+    case 5: {
+      size_nup_four_c = 19;
+      ini_ams(nup_four_c, 19, nup_four_cg35);
+    } break;
+    case 6: {
+      size_nup_four_c = 20;
+      ini_ams(nup_four_c, 20, nup_four_cg36);
+    } break;
+    case 7: {
+      size_nup_four_c = 21;
+      ini_ams(nup_four_c, 21, nup_four_cg37);
+    } break;
+    case 8: {
+      size_nup_four_c = 22;
+      ini_ams(nup_four_c, 22, nup_four_cg38);
+    } break;
+    case 9: {
+      size_nup_four_c = 22;
+      ini_ams(nup_four_c, 23, nup_four_cg39);
+    } break;
+    default: {
+      full_quit_e();
+    }
+  }
+}
 size_t giwscli::rspick(const size_t *kindx, size_t sizekind) {
   size_t kindout = kindx[0];
   size_t index = 1;
@@ -279,8 +613,7 @@ void giwscli::core_f_1() {
               kind = rspick(nup_four_c, size_nup_four_c);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -309,8 +642,7 @@ void giwscli::core_f_1() {
               kind = rspick(nup_four_c, size_nup_four_c);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -346,8 +678,7 @@ void giwscli::core_f_1() {
               kind = rspick(nup_four_c, size_nup_four_c);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -451,10 +782,7 @@ void giwscli::core_f_3() {
             fate_points++;
             ach_count[5] = 0;
           }
-          if ((kind == five_check[0] || kind == five_check[1] ||
-               kind == five_check[2] || kind == five_check[3] ||
-               kind == five_check[4] || kind == five_check[5] ||
-               kind == five_check[6] || kind == five_check[7])) {
+          if ((kind == five_check[0] || kind == five_check[1])) {
             five_star_guarantee_number = false;
           } else {
             five_star_guarantee_number = true;
@@ -470,10 +798,7 @@ void giwscli::core_f_3() {
           type = 2;
           five_count_w++;
           kind = rspick(nup_five_w, 10);
-          if ((kind == five_check[0] || kind == five_check[1] ||
-               kind == five_check[2] || kind == five_check[3] ||
-               kind == five_check[4] || kind == five_check[5] ||
-               kind == five_check[6] || kind == five_check[7])) {
+          if ((kind == five_check[0] || kind == five_check[1])) {
             five_star_guarantee_number = false;
           } else {
             five_star_guarantee_number = true;
@@ -519,8 +844,7 @@ void giwscli::core_f_3() {
               kind = rspick(nup_four_w, size_nup_four_w);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -549,8 +873,7 @@ void giwscli::core_f_3() {
               kind = rspick(nup_four_w, size_nup_four_w);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -572,8 +895,7 @@ void giwscli::core_f_3() {
               kind = rspick(nup_four_w, size_nup_four_w);
               if ((kind == four_check[0] || kind == four_check[1] ||
                    kind == four_check[2] || kind == four_check[3] ||
-                   kind == four_check[4] || kind == four_check[5] ||
-                   kind == four_check[6] || kind == four_check[7])) {
+                   kind == four_check[4])) {
                 four_star_guarantee_number = false;
               } else {
                 four_star_guarantee_number = true;
@@ -947,498 +1269,27 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
                            ptrdiff_t chosen_event_p) {
   switch (chosen_banner_p) {
     case 1: {
+      pool_stair_1(chosen_event_p);
+      if (chosen_event_p == 8) {
+        five_check[0] = 0;
+      }
       if (chosen_event_p < 22) {
         switch_e_should_be = 0;
-      }
-      switch (chosen_event_p) {
-        case 1: {
-          const size_t tempg1[3] = {22, 26, 30};
-          const size_t tempg5[8] = {22, 26, 30, 0, 0, 0, 0, 0};
-          set_pool_1_m(63, 11, nup_four_cg1)
-        } break;
-        case 2: {
-          const size_t tempg1[3] = {17, 20, 24};
-          const size_t tempg5[8] = {17, 20, 24, 0, 0, 0, 0, 0};
-          set_pool_1_m(64, 11, nup_four_cg1)
-        } break;
-        case 3: {
-          const size_t tempg1[3] = {18, 23, 25};
-          const size_t tempg5[8] = {23, 25, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(65, 11, nup_four_cg1)
-        } break;
-        case 4: {
-          const size_t tempg1[3] = {16, 19, 28};
-          const size_t tempg5[8] = {19, 28, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(66, 11, nup_four_cg1)
-        } break;
-        case 5: {
-          const size_t tempg1[3] = {17, 21, 22};
-          const size_t tempg5[8] = {17, 21, 22, 0, 0, 0, 0, 0};
-          set_pool_1_m(67, 13, nup_four_cg2)
-        } break;
-        case 6: {
-          const size_t tempg1[3] = {22, 24, 26};
-          const size_t tempg5[8] = {22, 24, 26, 0, 0, 0, 0, 0};
-          set_pool_1_m(68, 13, nup_four_cg2)
-        } break;
-        case 7: {
-          const size_t tempg1[3] = {16, 18, 25};
-          const size_t tempg5[8] = {16, 18, 25, 0, 0, 0, 0, 0};
-          set_pool_1_m(69, 13, nup_four_cg2)
-        } break;
-        case 8: {
-          const size_t tempg1[3] = {21, 23, 30};
-          const size_t tempg5[8] = {21, 23, 30, 0, 0, 0, 0, 0};
-          set_pool_1_m(0, 13, nup_four_cg2) five_check[0] = 0;
-        } break;
-        case 9: {
-          const size_t tempg1[3] = {19, 24, 26};
-          const size_t tempg5[8] = {19, 24, 26, 0, 0, 0, 0, 0};
-          set_pool_1_m(70, 13, nup_four_cg2)
-        } break;
-        case 10: {
-          const size_t tempg1[3] = {17, 20, 28};
-          const size_t tempg5[8] = {17, 20, 28, 0, 0, 0, 0, 0};
-          set_pool_1_m(63, 13, nup_four_cg2)
-        } break;
-        case 11: {
-          const size_t tempg1[3] = {15, 22, 30};
-          const size_t tempg5[8] = {22, 30, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(65, 13, nup_four_cg2)
-        } break;
-        case 12: {
-          const size_t tempg1[3] = {71, 20, 18};
-          const size_t tempg5[8] = {18, 20, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(66, 14, nup_four_cg3)
-        } break;
-        case 13: {
-          const size_t tempg1[3] = {16, 24, 25};
-          const size_t tempg5[8] = {16, 24, 25, 0, 0, 0, 0, 0};
-          set_pool_1_m(72, 14, nup_four_cg3)
-        } break;
-        case 14: {
-          const size_t tempg1[3] = {17, 22, 30};
-          const size_t tempg5[8] = {17, 22, 30, 0, 0, 0, 0, 0};
-          set_pool_1_m(64, 15, nup_four_cg4)
-        } break;
-        case 15: {
-          const size_t tempg1[3] = {15, 21, 28};
-          const size_t tempg5[8] = {15, 21, 28, 0, 0, 0, 0, 0};
-          set_pool_1_m(86, 15, nup_four_cg4)
-        } break;
-        case 16: {
-          const size_t tempg1[3] = {71, 23, 19};
-          const size_t tempg5[8] = {71, 23, 19, 0, 0, 0, 0, 0};
-          set_pool_1_m(89, 15, nup_four_cg4)
-        } break;
-        case 17: {
-          const size_t tempg1[3] = {91, 16, 18};
-          const size_t tempg5[8] = {16, 18, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(90, 15, nup_four_cg4)
-        } break;
-        case 18: {
-          const size_t tempg1[3] = {95, 17, 26};
-          const size_t tempg5[8] = {17, 26, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(96, 16, nup_four_cg5)
-        } break;
-        case 19: {
-          const size_t tempg1[3] = {15, 24, 25};
-          const size_t tempg5[8] = {15, 24, 25, 0, 0, 0, 0, 0};
-          set_pool_1_m(94, 16, nup_four_cg5)
-        } break;
-        case 20: {
-          const size_t tempg1[3] = {23, 19, 71};
-          const size_t tempg5[8] = {23, 19, 71, 0, 0, 0, 0, 0};
-          set_pool_1_m(65, 17, nup_four_cg6)
-        } break;
-        case 21: {
-          const size_t tempg1[3] = {100, 18, 91};
-          const size_t tempg5[8] = {18, 91, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(70, 17, nup_four_cg6)
-        } break;
-        case 22: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 1;
-          const size_t tempg1[3] = {15, 20, 21};
-          const size_t tempg5[8] = {15, 20, 21, 0, 0, 0, 0, 0};
-          set_pool_1_m(67, 18, nup_four_cg7)
-        } break;
-        case 23: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 0;
-          const size_t tempg1[3] = {26, 30, 106};
-          const size_t tempg5[8] = {26, 30, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(105, 18, nup_four_cg7)
-        } break;
-        case 24: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 2;
-          const size_t tempg1[3] = {19, 23, 108};
-          const size_t tempg5[8] = {19, 23, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(109, 19, nup_four_cg8)
-        } break;
-        case 25: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 3;
-          const size_t tempg1[3] = {24, 25, 71};
-          const size_t tempg5[8] = {24, 25, 71, 0, 0, 0, 0, 0};
-          set_pool_1_m(66, 19, nup_four_cg8)
-        } break;
-        case 26: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 0;
-          const size_t tempg1[3] = {18, 22, 100};
-          const size_t tempg5[8] = {18, 22, 100, 0, 0, 0, 0, 0};
-          set_pool_1_m(99, 20, nup_four_cg9)
-        } break;
-        case 27: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 4;
-          const size_t tempg1[3] = {16, 21, 95};
-          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-          set_pool_1_m(96, 20, nup_four_cg9)
-        } break;
-        case 28: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 5;
-          const size_t tempg1[3] = {16, 21, 95};
-          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-          set_pool_1_m(111, 20, nup_four_cg9)
-        } break;
-        case 29: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 0;
-          const size_t tempg1[3] = {16, 21, 95};
-          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-          set_pool_1_m(96, 20, nup_four_cg9)
-        } break;
-        default: {
-          error_code = 5;
-          full_quit_e();
-        }
+      } else {
+        switch_e_sav = switch_e_should_be;
+        switch_e_should_be = tempga4[chosen_event_p];
       }
     } break;
     case 2: {
-      switch (chosen_event_p) {
-        case 1: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 22;
-          const size_t tempg1[3] = {15, 20, 21};
-          const size_t tempg5[8] = {15, 20, 21, 0, 0, 0, 0, 0};
-          set_pool_1_m(72, 18, nup_four_cg7)
-        } break;
-        case 2: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 24;
-          const size_t tempg1[3] = {19, 23, 108};
-          const size_t tempg5[8] = {19, 23, 0, 0, 0, 0, 0, 0};
-          set_pool_1_m(69, 19, nup_four_cg8)
-        } break;
-        case 3: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 25;
-          const size_t tempg1[3] = {24, 25, 71};
-          const size_t tempg5[8] = {24, 25, 71, 0, 0, 0, 0, 0};
-          set_pool_1_m(68, 19, nup_four_cg8)
-        } break;
-        case 4: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 27;
-          const size_t tempg1[3] = {16, 21, 95};
-          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-          set_pool_1_m(94, 20, nup_four_cg9)
-        } break;
-        case 5: {
-          switch_e_sav = switch_e_should_be;
-          switch_e_should_be = 28;
-          const size_t tempg1[3] = {16, 21, 95};
-          const size_t tempg5[8] = {16, 21, 95, 0, 0, 0, 0, 0};
-          set_pool_1_m(63, 20, nup_four_cg9)
-        } break;
-        default: {
-          full_quit_e();
-        }
-      }
+      pool_stair_2(chosen_event_p);
+      switch_e_sav = switch_e_should_be;
+      switch_e_should_be = tempgb4[chosen_event_p];
     } break;
     case 3: {
-      switch (chosen_event_p) {
-        case 1: {
-          const size_t tempg6[2] = {5, 14};
-          const size_t tempg1[5] = {34, 38, 40, 44, 48};
-          const size_t tempg5[8] = {34, 38, 40, 44, 48, 0, 0, 0};
-          const size_t tempg7[8] = {5, 14, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(11, nup_four_cg1)
-        } break;
-        case 2: {
-          const size_t tempg6[2] = {7, 11};
-          const size_t tempg1[5] = {33, 37, 41, 43, 49};
-          const size_t tempg5[8] = {33, 37, 41, 43, 49, 0, 0, 0};
-          const size_t tempg7[8] = {7, 11, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(11, nup_four_cg1)
-        } break;
-        case 3: {
-          const size_t tempg6[2] = {6, 73};
-          const size_t tempg1[5] = {32, 36, 40, 42, 48};
-          const size_t tempg5[8] = {32, 36, 40, 42, 48, 0, 0, 0};
-          const size_t tempg7[8] = {6, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(11, nup_four_cg1)
-        } break;
-        case 4: {
-          const size_t tempg6[2] = {74, 75};
-          const size_t tempg1[5] = {35, 39, 41, 44, 46};
-          const size_t tempg5[8] = {35, 39, 41, 44, 46, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(11, nup_four_cg1)
-        } break;
-        case 5: {
-          const size_t tempg6[2] = {8, 76};
-          const size_t tempg1[5] = {34, 37, 40, 45, 49};
-          const size_t tempg5[8] = {34, 37, 40, 45, 49, 0, 0, 0};
-          const size_t tempg7[8] = {8, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 6: {
-          const size_t tempg6[2] = {5, 12};
-          const size_t tempg1[5] = {35, 36, 41, 44, 47};
-          const size_t tempg5[8] = {35, 36, 41, 44, 47, 0, 0, 0};
-          const size_t tempg7[8] = {5, 12, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 7: {
-          const size_t tempg6[2] = {9, 77};
-          const size_t tempg1[5] = {32, 36, 40, 43, 48};
-          const size_t tempg5[8] = {32, 36, 40, 43, 48, 0, 0, 0};
-          const size_t tempg7[8] = {9, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 8: {
-          const size_t tempg6[2] = {11, 78};
-          const size_t tempg1[5] = {33, 38, 46, 79, 80};
-          const size_t tempg5[8] = {33, 38, 46, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {11, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 9: {
-          const size_t tempg6[2] = {13, 81};
-          const size_t tempg1[5] = {35, 41, 45, 82, 83};
-          const size_t tempg5[8] = {35, 41, 45, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {13, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 10: {
-          const size_t tempg6[2] = {6, 7};
-          const size_t tempg1[5] = {39, 40, 43, 49, 84};
-          const size_t tempg5[8] = {39, 40, 43, 49, 0, 0, 0, 0};
-          const size_t tempg7[8] = {6, 7, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(13, nup_four_cg2)
-        } break;
-        case 11: {
-          const size_t tempg6[2] = {73, 76};
-          const size_t tempg1[5] = {33, 36, 48, 79, 80};
-          const size_t tempg5[8] = {33, 36, 48, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(14, nup_four_cg3)
-        } break;
-        case 12: {
-          const size_t tempg6[2] = {14, 85};
-          const size_t tempg1[5] = {32, 37, 41, 42, 47};
-          const size_t tempg5[8] = {32, 37, 41, 42, 47, 0, 0, 0};
-          const size_t tempg7[8] = {14, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(14, nup_four_cg3)
-        } break;
-        case 13: {
-          const size_t tempg6[2] = {7, 12};
-          const size_t tempg1[5] = {88, 46, 44, 40, 38};
-          const size_t tempg5[8] = {46, 44, 40, 38, 0, 0, 0, 0};
-          const size_t tempg7[8] = {7, 12, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(15, nup_four_cg4)
-        } break;
-        case 14: {
-          const size_t tempg6[2] = {87, 8};
-          const size_t tempg1[5] = {82, 83, 84, 45, 41};
-          const size_t tempg5[8] = {45, 41, 0, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {8, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(15, nup_four_cg4)
-        } break;
-        case 15: {
-          const size_t tempg6[2] = {92, 10};
-          const size_t tempg1[5] = {34, 39, 40, 43, 49};
-          const size_t tempg5[8] = {34, 39, 40, 43, 49, 0, 0, 0};
-          const size_t tempg7[8] = {10, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(15, nup_four_cg4)
-        } break;
-        case 16: {
-          const size_t tempg6[2] = {93, 13};
-          const size_t tempg1[5] = {35, 37, 41, 42, 47};
-          const size_t tempg5[8] = {35, 37, 41, 42, 47, 0, 0, 0};
-          const size_t tempg7[8] = {13, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(15, nup_four_cg4)
-        } break;
-        case 17: {
-          const size_t tempg6[2] = {97, 75};
-          const size_t tempg1[5] = {33, 38, 40, 44, 46};
-          const size_t tempg5[8] = {33, 38, 40, 44, 46, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(16, nup_four_cg5)
-        } break;
-        case 18: {
-          const size_t tempg6[2] = {98, 77};
-          const size_t tempg1[5] = {34, 39, 41, 45, 48};
-          const size_t tempg5[8] = {34, 39, 41, 45, 48, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(16, nup_four_cg5)
-        } break;
-        case 19: {
-          const size_t tempg6[2] = {101, 73};
-          const size_t tempg1[5] = {32, 36, 40, 49, 104};
-          const size_t tempg5[8] = {32, 36, 40, 49, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(17, nup_four_cg6)
-        } break;
-        case 20: {
-          const size_t tempg6[2] = {78, 81};
-          const size_t tempg1[5] = {38, 42, 47, 102, 103};
-          const size_t tempg5[8] = {38, 42, 47, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(17, nup_four_cg6)
-        } break;
-        case 21: {
-          const size_t tempg6[2] = {85, 87};
-          const size_t tempg1[5] = {41, 43, 46, 83, 84};
-          const size_t tempg5[8] = {41, 43, 46, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(18, nup_four_cg7)
-        } break;
-        case 22: {
-          const size_t tempg6[2] = {107, 6};
-          const size_t tempg1[5] = {37, 40, 44, 82, 88};
-          const size_t tempg5[8] = {37, 40, 44, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {6, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(18, nup_four_cg7)
-        } break;
-        case 23: {
-          const size_t tempg6[2] = {110, 9};
-          const size_t tempg1[5] = {35, 38, 45, 48, 80};
-          const size_t tempg5[8] = {35, 38, 45, 48, 0, 0, 0, 0};
-          const size_t tempg7[8] = {9, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(19, nup_four_cg8)
-        } break;
-        case 24: {
-          const size_t tempg6[2] = {74, 5};
-          const size_t tempg1[5] = {33, 39, 41, 49, 79};
-          const size_t tempg5[8] = {33, 39, 41, 49, 0, 0, 0, 0};
-          const size_t tempg7[8] = {5, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(19, nup_four_cg8)
-        } break;
-        case 25: {
-          const size_t tempg6[2] = {112, 77};
-          const size_t tempg1[5] = {34, 36, 42, 47, 103};
-          const size_t tempg5[8] = {34, 36, 42, 47, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(20, nup_four_cg9)
-        } break;
-        case 26: {
-          const size_t tempg6[2] = {97, 98};
-          const size_t tempg1[5] = {37, 40, 46, 102, 104};
-          const size_t tempg5[8] = {37, 40, 46, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(20, nup_four_cg9)
-        } break;
-        case 27: {
-          const size_t tempg6[2] = {113, 81};
-          const size_t tempg1[5] = {37, 40, 46, 102, 104};
-          const size_t tempg5[8] = {37, 40, 46, 0, 0, 0, 0, 0};
-          const size_t tempg7[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-          set_pool_3_m(20, nup_four_cg9)
-        } break;
-        default: {
-          full_quit_e();
-        }
-      }
+      pool_stair_3(chosen_event_p);
     } break;
     case 4: {
-      switch (chosen_event_p) {
-        case 1: {
-          const size_t nup_four_cg31[14] = {17, 19, 20, 21, 22, 23, 24,
-                                            25, 26, 27, 28, 29, 30, 31};
-          size_nup_four_c = 14;
-          for (size_t i = 0; i < 14; i++) {
-            nup_four_c[i] = nup_four_cg31[i];
-          }
-        } break;
-        case 2: {
-          const size_t nup_four_cg32[16] = {16, 17, 18, 19, 20, 21, 22, 23,
-                                            24, 25, 26, 27, 28, 29, 30, 31};
-          size_nup_four_c = 16;
-          for (size_t i = 0; i < 16; i++) {
-            nup_four_c[i] = nup_four_cg32[i];
-          }
-        } break;
-        case 3: {
-          const size_t nup_four_cg33[17] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                            24, 25, 26, 27, 28, 29, 30, 31};
-          size_nup_four_c = 17;
-          for (size_t i = 0; i < 17; i++) {
-            nup_four_c[i] = nup_four_cg33[i];
-          }
-        } break;
-        case 4: {
-          const size_t nup_four_cg34[18] = {15, 16, 17, 18, 19, 20, 21, 22, 23,
-                                            24, 25, 26, 27, 28, 29, 30, 31, 71};
-          size_nup_four_c = 18;
-          for (size_t i = 0; i < 18; i++) {
-            nup_four_c[i] = nup_four_cg34[i];
-          }
-        } break;
-        case 5: {
-          const size_t nup_four_cg35[19] = {15, 16, 17, 18, 19, 20, 21,
-                                            22, 23, 24, 25, 26, 27, 28,
-                                            29, 30, 31, 71, 91};
-          size_nup_four_c = 19;
-          for (size_t i = 0; i < 19; i++) {
-            nup_four_c[i] = nup_four_cg35[i];
-          }
-        } break;
-        case 6: {
-          const size_t nup_four_cg36[20] = {15, 16, 17, 18, 19, 20, 21,
-                                            22, 23, 24, 25, 26, 27, 28,
-                                            29, 30, 31, 71, 91, 95};
-          size_nup_four_c = 20;
-          for (size_t i = 0; i < 20; i++) {
-            nup_four_c[i] = nup_four_cg36[i];
-          }
-        } break;
-        case 7: {
-          const size_t nup_four_cg37[21] = {15, 16, 17, 18, 19, 20, 21,
-                                            22, 23, 24, 25, 26, 27, 28,
-                                            29, 30, 31, 71, 91, 95, 100};
-          size_nup_four_c = 21;
-          for (size_t i = 0; i < 21; i++) {
-            nup_four_c[i] = nup_four_cg37[i];
-          }
-        } break;
-        case 8: {
-          const size_t nup_four_cg38[22] = {15, 16, 17, 18, 19,  20, 21, 22,
-                                            23, 24, 25, 26, 27,  28, 29, 30,
-                                            31, 71, 91, 95, 100, 106};
-          size_nup_four_c = 22;
-          for (size_t i = 0; i < 22; i++) {
-            nup_four_c[i] = nup_four_cg38[i];
-          }
-        } break;
-        case 9: {
-          const size_t nup_four_cg39[23] = {15, 16, 17, 18, 19,  20,  21, 22,
-                                            23, 24, 25, 26, 27,  28,  29, 30,
-                                            31, 71, 91, 95, 100, 106, 108};
-          size_nup_four_c = 22;
-          for (size_t i = 0; i < 23; i++) {
-            nup_four_c[i] = nup_four_cg39[i];
-          }
-        } break;
-        default: {
-          full_quit_e();
-        }
-      }
+      pool_stair_4(chosen_event_p);
     } break;
     case 5: {
       ini_ams(nup_four_c, 11, nup_four_cg1);
