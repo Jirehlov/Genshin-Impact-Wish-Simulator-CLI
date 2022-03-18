@@ -1,5 +1,5 @@
 #ifndef GIWSCLI_H
-#define GIWSCLI_H
+#define GIWSCLI_H 1
 #include <chrono>
 #include <cstddef>
 #include <iostream>
@@ -14,7 +14,7 @@ extern bool quit, is_noelle, five_star_guarantee_number,
 extern size_t kind, temp1, fate_points, up_five, size_nup_four_c, countx,
     five_count, five_count_c, five_count_w, four_count, four_count_c,
     four_count_w, max_fivesth, min_fivesth, max_fivecount, min_fivecount,
-    size_nup_four_w, kind_r_ach_11, kind_r_ach_8, up_five_g[2], up_four_g[16],
+    size_nup_four_w, kind_r_ach_11, kind_r_ach_8, up_five_g[2], up_four_g[5],
     nup_four_c[32], five_check[2], four_check[5], pcount[128], four_pity[11],
     five_pity[90], five_pity_w[80];
 extern const size_t nup_five_c[5], nup_five_w[10], nup_four_w[32], three_g[13],

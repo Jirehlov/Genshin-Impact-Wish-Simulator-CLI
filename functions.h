@@ -1,5 +1,5 @@
 #ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#define FUNCTIONS_H 1
 #include <iomanip>
 #include <string>
 #include <thread>

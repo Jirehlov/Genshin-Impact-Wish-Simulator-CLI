@@ -1,5 +1,5 @@
 #ifndef EN_H
-#define EN_H
+#define EN_H 1
 #define EN_S_0 "Placeholder"
 #define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.16"
 #define EN_S_2 "by Jirehlov Research"

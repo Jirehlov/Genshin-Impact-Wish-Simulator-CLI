@@ -1,5 +1,5 @@
 #ifndef MACRO_F_H
-#define MACRO_F_H
+#define MACRO_F_H 1
 
 #define slash_n() \
   { std::cout << '\n'; }

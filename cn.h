@@ -1,5 +1,5 @@
 #ifndef CN_H
-#define CN_H
+#define CN_H 1
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
 #define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.16"
