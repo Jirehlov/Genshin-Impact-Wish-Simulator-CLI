@@ -127,7 +127,7 @@ const size_t giwscli::tempga2[30][3] = {
 };
 const size_t giwscli::tempga3[30] = {
     MAX_ITEMS, 63, 64, 65, 66, 67, 68, 69, 0,   70,  63, 65, 66, 72,  64,
-    86,        89, 90, 96, 94, 65, 70, 67, 105, 109, 66, 99, 96, 111, 96};
+    86,        89, 90, 96, 94, 65, 70, 67, 105, 109, 66, 99, 96, 111, 89};
 
 const size_t giwscli::tempgb1[6][3] = {
     {0, 0, 0},      // 0
@@ -362,7 +362,7 @@ void giwscli::pool_stair_1(ptrdiff_t chosen_event_p) {
     set_pool_1(chosen_event_p, 18, nup_four_cg7);
   } else if (chosen_event_p < 26) {
     set_pool_1(chosen_event_p, 19, nup_four_cg8);
-  } else if (chosen_event_p < 28) {
+  } else if (chosen_event_p < 30) {
     set_pool_1(chosen_event_p, 20, nup_four_cg9);
   } else {
     error_code = 5;
@@ -400,7 +400,7 @@ void giwscli::pool_stair_3(ptrdiff_t chosen_event_p) {
     set_pool_3(chosen_event_p, 18, nup_four_cg7);
   } else if (chosen_event_p < 25) {
     set_pool_3(chosen_event_p, 19, nup_four_cg8);
-  } else if (chosen_event_p < 29) {
+  } else if (chosen_event_p < 28) {
     set_pool_3(chosen_event_p, 20, nup_four_cg9);
   } else {
     error_code = 5;
