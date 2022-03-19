@@ -3,7 +3,9 @@
 #define EN_S_0 "Placeholder"
 #define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.16"
 #define EN_S_2 "by Jirehlov Research"
-#define EN_S_3 "Source code available on GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
+#define EN_S_3                        \
+  "Source code available on GitHub: " \
+  "Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define EN_S_4 "GPL-3.0 License"
 #define EN_S_5 "Choose Your Wishes (Banners):"
 #define EN_S_6 "-1: Quit;"
@@ -14,42 +16,115 @@
 #define EN_S_11 "Character(s) cannot be read!"
 #define EN_S_12 "Choose Your Events:"
 #define EN_S_13 "-1: Re-choose Wishes (Banners) (Records will be reset!)"
-#define EN_S_14 "1: Ballad in Goblets_20200928-20201018 (Venti, Barbara, Fischl, Xiangling)"
-#define EN_S_15 "2: Sparkling Steps_20201020-20201110 (Klee, Xingqiu, Noelle, Sucrose)"
-#define EN_S_16 "3: Farewell of Snezhnaya_20201111-20201201 (Tartaglia, Diona, Beidou, Ningguang)"
-#define EN_S_17 "4: Gentry of Hermitage_20201201-20201222 (Zhongli, Xinyan, Razor, Chongyun)"
-#define EN_S_18 "5: Secretum Secretorum_20201223-20210112 (Albedo, Fischl, Sucrose, Bennett)"
-#define EN_S_19 "6: Adrift in the Harbor_20210112-20210202 (Ganyu, Xiangling, Xingqiu, Noelle)"
-#define EN_S_20 "7: Invitation to Mundane Life_20210203-20210217 (Xiao, Diona, Beidou, Xinyan)"
-#define EN_S_21 "8: Dance of Lanterns_20210217-20210302 (Keqing, Ningguang, Bennett, Barbara)"
-#define EN_S_22 "9: Moment of Bloom_20210302-20210316 (Hu Tao, Xingqiu, Xiangling, Chongyun)"
-#define EN_S_23 "10: Ballad in Goblets_20210317-20210406 (Venti, Sucrose, Razor, Noelle)"
-#define EN_S_24 "11: Farewell of Snezhnaya_20210406-20210427 (Tartaglia, Rosaria, Barbara, Fischl)"
-#define EN_S_25 "12: Gentry of Hermitage_20210428-20210518 (Zhongli, Yanfei, Noelle, Diona)"
-#define EN_S_26 "13: Born of Ocean Swell_20210518-20210608 (Eula, Xinyan, Xingqiu, Beidou)"
-#define EN_S_27 "14: Sparkling Steps_20210609-20210629 (Klee, Sucrose, Fischl, Barbara)"
-#define EN_S_28 "15: Leaves in the Wind_20210629-20210720 (Kaedehara Kazuha, Rosaria, Bennett, Razor)"
-#define EN_S_29 "16: The Heron's Court_20210721-20210810 (Kamisato Ayaka, Yanfei, Ningguang, Chongyun)"
-#define EN_S_30 "17: Tapestry of Golden Flames_20210810-20210831 (Yoimiya, Sayu, Diona, Xinyan)"
+#define EN_S_14 \
+  "1: Ballad in Goblets_20200928-20201018 (Venti, Barbara, Fischl, Xiangling)"
+#define EN_S_15 \
+  "2: Sparkling Steps_20201020-20201110 (Klee, Xingqiu, Noelle, Sucrose)"
+#define EN_S_16                                                            \
+  "3: Farewell of Snezhnaya_20201111-20201201 (Tartaglia, Diona, Beidou, " \
+  "Ningguang)"
+#define EN_S_17                                                        \
+  "4: Gentry of Hermitage_20201201-20201222 (Zhongli, Xinyan, Razor, " \
+  "Chongyun)"
+#define EN_S_18                                                         \
+  "5: Secretum Secretorum_20201223-20210112 (Albedo, Fischl, Sucrose, " \
+  "Bennett)"
+#define EN_S_19                                                            \
+  "6: Adrift in the Harbor_20210112-20210202 (Ganyu, Xiangling, Xingqiu, " \
+  "Noelle)"
+#define EN_S_20                                                            \
+  "7: Invitation to Mundane Life_20210203-20210217 (Xiao, Diona, Beidou, " \
+  "Xinyan)"
+#define EN_S_21                                                          \
+  "8: Dance of Lanterns_20210217-20210302 (Keqing, Ningguang, Bennett, " \
+  "Barbara)"
+#define EN_S_22                                                        \
+  "9: Moment of Bloom_20210302-20210316 (Hu Tao, Xingqiu, Xiangling, " \
+  "Chongyun)"
+#define EN_S_23 \
+  "10: Ballad in Goblets_20210317-20210406 (Venti, Sucrose, Razor, Noelle)"
+#define EN_S_24                                                                \
+  "11: Farewell of Snezhnaya_20210406-20210427 (Tartaglia, Rosaria, Barbara, " \
+  "Fischl)"
+#define EN_S_25 \
+  "12: Gentry of Hermitage_20210428-20210518 (Zhongli, Yanfei, Noelle, Diona)"
+#define EN_S_26 \
+  "13: Born of Ocean Swell_20210518-20210608 (Eula, Xinyan, Xingqiu, Beidou)"
+#define EN_S_27 \
+  "14: Sparkling Steps_20210609-20210629 (Klee, Sucrose, Fischl, Barbara)"
+#define EN_S_28                                                           \
+  "15: Leaves in the Wind_20210629-20210720 (Kaedehara Kazuha, Rosaria, " \
+  "Bennett, Razor)"
+#define EN_S_29                                                       \
+  "16: The Heron's Court_20210721-20210810 (Kamisato Ayaka, Yanfei, " \
+  "Ningguang, Chongyun)"
+#define EN_S_30                                                             \
+  "17: Tapestry of Golden Flames_20210810-20210831 (Yoimiya, Sayu, Diona, " \
+  "Xinyan)"
 #define EN_S_31 "Invalid event!"
-#define EN_S_32 "1: Epitome Invocation_20200928-20201018 (Aquila Favonia, Amos' Bow, The Flute, The Bell, The Widsith, The Stringless, Favonius Lance)"
-#define EN_S_33 "2: Epitome Invocation_20201020-20201109 (Lost Prayer to the Sacred Winds, Wolf's Gravestone, Sacrificial Sword, Sacrificial Bow, Sacrificial Greatsword, Sacrificial Fragments, Dragon's Bane)"
-#define EN_S_34 "3: Epitome Invocation_20201111-20201201 (Memory of Dust, Skyward Harp, Rainslasher, Eye of Perception, Rust, Favonius Lance, The Flute)"
-#define EN_S_35 "4: Epitome Invocation_20201201-20201222 (Vortex Vanquisher, The Unforged, Lion's Roar, The Bell, Favonius Codex, Favonius Warbow, Dragon's Bane)"
-#define EN_S_36 "5: Epitome Invocation_20201223-20210112 (Summit Shaper, Skyward Atlas, Favonius Sword, Favonius Greatsword, Favonius Lance, Sacrificial Fragments, The Stringless)"
-#define EN_S_37 "6: Epitome Invocation_20210112-20210202 (Skyward Pride, Amos' Bow, Sacrificial Sword, The Bell, Dragon's Bane, Eye of Perception, Favonius Warbow)"
-#define EN_S_38 "7: Epitome Invocation_20210203-20210223 (Primordial Jade Cutter, Primordial Jade Winged-Spear, Rust, Eye of Perception, Favonius Lance, Sacrificial Greatsword, The Flute)"
-#define EN_S_39 "8: Epitome Invocation_20210223-20210316 (Staff of Homa, Wolf's Gravestone, Lithic Blade, Lithic Spear, Sacrificial Bow, The Widsith, Lion's Roar)"
-#define EN_S_40 "9: Epitome Invocation_20210317-20210406 (Elegy for the End, Skyward Blade, The Alley Flash, Wine and Song, Favonius Greatsword, Favonius Warbow, Dragon's Bane)"
-#define EN_S_41 "10: Epitome Invocation_20210406-20210427 (Skyward Harp, Lost Prayer to the Sacred Winds, Alley Hunter, Favonius Sword, Sacrificial Greatsword, Favonius Codex, Favonius Lance)"
-#define EN_S_42 "11: Epitome Invocation_20210428-20210518 (Summit Shaper, Memory of Dust, The Flute, Lithic Blade, Lithic Spear, Eye of Perception, Sacrificial Bow)"
-#define EN_S_43 "12: Epitome Invocation_20210518-20210608 (Song of Broken Pines, Aquila Favonia, Sacrificial Sword, Rainslasher, Dragon's Bane, Sacrificial Fragments, Rust)"
-#define EN_S_44 "13: Epitome Invocation_20210609-20210629 (Skyward Pride, Lost Prayer to the Sacred Winds, Mitternachts Waltz, Lion's Roar, The Bell, Favonius Lance, The Widsith)"
-#define EN_S_45 "14: Epitome Invocation_20210629-20210720 (Freedom-Sworn, Skyward Atlas, The Alley Flash, Wine and Song, Alley Hunter, Favonius Greatsword, Dragon's Bane)"
-#define EN_S_46 "15: Epitome Invocation_20210721-20210810 (Mistsplitter Reforged, Skyward Spine, The Stringless, Favonius Sword, Favonius Lance, Favonius Codex, Sacrificial Greatsword)"
-#define EN_S_47 "16: Epitome Invocation_20210810-20210831 (Thundering Pulse, Skyward Blade, Favonius Warbow, Sacrificial Sword, Dragon's Bane, Rainslasher, Sacrificial Fragments)"
+#define EN_S_32                                                              \
+  "1: Epitome Invocation_20200928-20201018 (Aquila Favonia, Amos' Bow, The " \
+  "Flute, The Bell, The Widsith, The Stringless, Favonius Lance)"
+#define EN_S_33                                                                \
+  "2: Epitome Invocation_20201020-20201109 (Lost Prayer to the Sacred Winds, " \
+  "Wolf's Gravestone, Sacrificial Sword, Sacrificial Bow, Sacrificial "        \
+  "Greatsword, Sacrificial Fragments, Dragon's Bane)"
+#define EN_S_34                                                             \
+  "3: Epitome Invocation_20201111-20201201 (Memory of Dust, Skyward Harp, " \
+  "Rainslasher, Eye of Perception, Rust, Favonius Lance, The Flute)"
+#define EN_S_35                                                                \
+  "4: Epitome Invocation_20201201-20201222 (Vortex Vanquisher, The Unforged, " \
+  "Lion's Roar, The Bell, Favonius Codex, Favonius Warbow, Dragon's Bane)"
+#define EN_S_36                                                             \
+  "5: Epitome Invocation_20201223-20210112 (Summit Shaper, Skyward Atlas, " \
+  "Favonius Sword, Favonius Greatsword, Favonius Lance, Sacrificial "       \
+  "Fragments, The Stringless)"
+#define EN_S_37                                                              \
+  "6: Epitome Invocation_20210112-20210202 (Skyward Pride, Amos' Bow, "      \
+  "Sacrificial Sword, The Bell, Dragon's Bane, Eye of Perception, Favonius " \
+  "Warbow)"
+#define EN_S_38                                                             \
+  "7: Epitome Invocation_20210203-20210223 (Primordial Jade Cutter, "       \
+  "Primordial Jade Winged-Spear, Rust, Eye of Perception, Favonius Lance, " \
+  "Sacrificial Greatsword, The Flute)"
+#define EN_S_39                                                            \
+  "8: Epitome Invocation_20210223-20210316 (Staff of Homa, Wolf's "        \
+  "Gravestone, Lithic Blade, Lithic Spear, Sacrificial Bow, The Widsith, " \
+  "Lion's Roar)"
+#define EN_S_40                                                           \
+  "9: Epitome Invocation_20210317-20210406 (Elegy for the End, Skyward "  \
+  "Blade, The Alley Flash, Wine and Song, Favonius Greatsword, Favonius " \
+  "Warbow, Dragon's Bane)"
+#define EN_S_41                                                              \
+  "10: Epitome Invocation_20210406-20210427 (Skyward Harp, Lost Prayer to "  \
+  "the Sacred Winds, Alley Hunter, Favonius Sword, Sacrificial Greatsword, " \
+  "Favonius Codex, Favonius Lance)"
+#define EN_S_42                                                               \
+  "11: Epitome Invocation_20210428-20210518 (Summit Shaper, Memory of Dust, " \
+  "The Flute, Lithic Blade, Lithic Spear, Eye of Perception, Sacrificial Bow)"
+#define EN_S_43                                                             \
+  "12: Epitome Invocation_20210518-20210608 (Song of Broken Pines, Aquila " \
+  "Favonia, Sacrificial Sword, Rainslasher, Dragon's Bane, Sacrificial "    \
+  "Fragments, Rust)"
+#define EN_S_44                                                              \
+  "13: Epitome Invocation_20210609-20210629 (Skyward Pride, Lost Prayer to " \
+  "the Sacred Winds, Mitternachts Waltz, Lion's Roar, The Bell, Favonius "   \
+  "Lance, The Widsith)"
+#define EN_S_45                                                              \
+  "14: Epitome Invocation_20210629-20210720 (Freedom-Sworn, Skyward Atlas, " \
+  "The Alley Flash, Wine and Song, Alley Hunter, Favonius Greatsword, "      \
+  "Dragon's Bane)"
+#define EN_S_46                                                               \
+  "15: Epitome Invocation_20210721-20210810 (Mistsplitter Reforged, Skyward " \
+  "Spine, The Stringless, Favonius Sword, Favonius Lance, Favonius Codex, "   \
+  "Sacrificial Greatsword)"
+#define EN_S_47                                                             \
+  "16: Epitome Invocation_20210810-20210831 (Thundering Pulse, Skyward "    \
+  "Blade, Favonius Warbow, Sacrificial Sword, Dragon's Bane, Rainslasher, " \
+  "Sacrificial Fragments)"
 #define EN_S_48 "1: Wanderlust Invocation_20200928-20201222 (Released)"
-#define EN_S_49 "2: Wanderlust Invocation_20201223-20210427 (Adds Diona and Xinyan)"
+#define EN_S_49 \
+  "2: Wanderlust Invocation_20201223-20210427 (Adds Diona and Xinyan)"
 #define EN_S_50 "3: Wanderlust Invocation_20210428-20210608 (Adds Rosaria)"
 #define EN_S_51 "4: Wanderlust Invocation_20210609-20210831 (Adds Yanfei)"
 #define EN_S_52 "1: Beginners' wish"
@@ -76,8 +151,9 @@
 #define EN_S_73 "In total, You have pulled "
 #define EN_S_74 " wishes."
 #define EN_S_75 "5-stars:   "
-#define EN_S_76 "4-stars:   " 
-#define EN_S_77 "5-star-characters : 5-star-weapons : 4-star-characters : 4-star-weapons   "
+#define EN_S_76 "4-stars:   "
+#define EN_S_77 \
+  "5-star-characters : 5-star-weapons : 4-star-characters : 4-star-weapons   "
 #define EN_S_78 "max 5-star pity:   "
 #define EN_S_79 " initially at "
 #define EN_S_80 "-th non-5-star  "
@@ -94,24 +170,50 @@
 #define EN_S_91 "confirm resttting records?"
 #define EN_S_92 "-1: cancel and return"
 #define EN_S_93 "1: reset"
-#define EN_S_94 "18: Reign of Serenity_20210901-20210921 (Raiden Shogun, Kujo Sara, Xiangling, Sucrose)"
-#define EN_S_95 "19: Drifting Luminescence_20210921-20211012 (Sangonomiya Kokomi, Rosaria, Beidou, Xingqiu)"
-#define EN_S_96 "17: Epitome Invocation_20210901-20210921 (Engulfing Lightning, The Unforged, Sacrificial Bow, Lion's Roar, The Widsith, Favonius Lance, The Bell)"
-#define EN_S_97 "18: Epitome Invocation_20210921-20211012 (Everlasting Moonglow, Primordial Jade Cutter, The Flute, Favonius Greatsword, Dragon's Bane, Favonius Codex, The Stringless)"
+#define EN_S_94                                                         \
+  "18: Reign of Serenity_20210901-20210921 (Raiden Shogun, Kujo Sara, " \
+  "Xiangling, Sucrose)"
+#define EN_S_95                                                                \
+  "19: Drifting Luminescence_20210921-20211012 (Sangonomiya Kokomi, Rosaria, " \
+  "Beidou, Xingqiu)"
+#define EN_S_96                                                               \
+  "17: Epitome Invocation_20210901-20210921 (Engulfing Lightning, The "       \
+  "Unforged, Sacrificial Bow, Lion's Roar, The Widsith, Favonius Lance, The " \
+  "Bell)"
+#define EN_S_97                                                             \
+  "18: Epitome Invocation_20210921-20211012 (Everlasting Moonglow, "        \
+  "Primordial Jade Cutter, The Flute, Favonius Greatsword, Dragon's Bane, " \
+  "Favonius Codex, The Stringless)"
 #define EN_S_98 "5: Wanderlust Invocation_20210901-20211012 (Adds Sayu)"
 #define EN_S_99 "6: Wanderlust Invocation_20211013-20211123 (Adds Kujo Sara)"
-#define EN_S_100 "20: Farewell of Snezhnaya_20211013-20211102 (Tartaglia, Ningguang, Chongyun, Yanfei)"
-#define EN_S_101 "21: Moment of Bloom_20211102-20211123 (Hu Tao, Thoma, Diona, Sayu)"
-#define EN_S_102 "22: Secretum Secretorum_20211124-20211214 (Albedo, Rosaria, Noelle, Bennett)"
-#define EN_S_103 "23: Oni's Royale_20211214-20220104 (Arataki Itto, Gorou, Xiangling, Barbara)"
-#define EN_S_104 "19: Epitome Invocation_20211013-20211102 (Polar Star, Memory of Dust, Akuoumaru, Favonius Sword, Favonius Lance, Eye of Perception, Rust)"
-#define EN_S_105 "20: Epitome Invocation_20211102-20211123 (Staff of Homa, Elegy for the End, Wavebreaker's Fin, Mouun's Moon, Sacrificial Sword, Rainslasher, The Widsith)"
+#define EN_S_100                                                        \
+  "20: Farewell of Snezhnaya_20211013-20211102 (Tartaglia, Ningguang, " \
+  "Chongyun, Yanfei)"
+#define EN_S_101 \
+  "21: Moment of Bloom_20211102-20211123 (Hu Tao, Thoma, Diona, Sayu)"
+#define EN_S_102                                                         \
+  "22: Secretum Secretorum_20211124-20211214 (Albedo, Rosaria, Noelle, " \
+  "Bennett)"
+#define EN_S_103                                                         \
+  "23: Oni's Royale_20211214-20220104 (Arataki Itto, Gorou, Xiangling, " \
+  "Barbara)"
+#define EN_S_104                                                           \
+  "19: Epitome Invocation_20211013-20211102 (Polar Star, Memory of Dust, " \
+  "Akuoumaru, Favonius Sword, Favonius Lance, Eye of Perception, Rust)"
+#define EN_S_105                                                               \
+  "20: Epitome Invocation_20211102-20211123 (Staff of Homa, Elegy for the "    \
+  "End, Wavebreaker's Fin, Mouun's Moon, Sacrificial Sword, Rainslasher, The " \
+  "Widsith)"
 #define EN_S_106 "7: Wanderlust Invocation_20211124-20220104 (Adds Thoma)"
-#define EN_S_107 "1: Born of Ocean Swell_20211124-20211214 (Eula, Rosaria, Noelle, Bennett)"
+#define EN_S_107 \
+  "1: Born of Ocean Swell_20211124-20211214 (Eula, Rosaria, Noelle, Bennett)"
 #define EN_S_108 "2: Character Event Wish-2;"
 #define EN_S_109 "-2: Re-choose Wishes (Banners) (Records will NOT be reset!)"
 #define EN_S_110 "8: Wanderlust Invocation_20220105-20220215 (Adds Gorou)"
-#define EN_S_111 "21: Epitome Invocation_20211124-20211214 (Freedom Sworn, Song of Broken Pines, Alley Hunter, Lion's Roar, Dragon's Bane, Wine and Song, Sacrificial Greatsword)"
+#define EN_S_111                                                             \
+  "21: Epitome Invocation_20211124-20211214 (Freedom Sworn, Song of Broken " \
+  "Pines, Alley Hunter, Lion's Roar, Dragon's Bane, Wine and Song, "         \
+  "Sacrificial Greatsword)"
 #define EN_S_112 "-127: Debug Options"
 #define EN_S_113 "-63: Specific Output Mode;"
 #define EN_S_114 "Specific Item (No.)"
@@ -126,7 +228,10 @@
 #define EN_S_123 "-2: Quit setting and give up;"
 #define EN_S_124 ") ?"
 #define EN_S_125 "You didn't made any specific-ing!"
-#define EN_S_126 "22: Epitome Invocation_20211214-20210104 (Redhorn Stonethresher, Skyward Harp, The Alley Flash, Mitternachts Waltz, Favonius Lance, Sacrificial Fragments, The Bell)"
+#define EN_S_126                                                              \
+  "22: Epitome Invocation_20211214-20210104 (Redhorn Stonethresher, Skyward " \
+  "Harp, The Alley Flash, Mitternachts Waltz, Favonius Lance, Sacrificial "   \
+  "Fragments, The Bell)"
 #define EN_S_127 "This go, You have pulled "
 #define EN_S_128 "-31: Set pity profile"
 #define EN_S_129 "Should the next 5-star guaranteed to be up-ped? 1: Yes; 0: No"
@@ -144,18 +249,42 @@
 #define EN_S_141 "Checking profile validity..."
 #define EN_S_142 "Checking profile passed!"
 #define EN_S_143 "Checking profile failed! Changes undone!"
-#define EN_S_144 "24: The Transcendent One Returns_20220105-20220125 (Shenhe, Yun Jin, Ningguang, Chongyun)"
-#define EN_S_145 "25: Gentry of Hermitage_20220125-20220215 (Zhongli, Yanfei, Xingqiu, Beidou)"
-#define EN_S_146 "2: Invitation to Mundane Life_20220105-20220125 (Xiao, Yun Jin, Ningguang, Chongyun)"
-#define EN_S_147 "3: Adrift in the Harbor_20220125-20220215 (Ganyu, Yanfei, Xingqiu, Beidou)"
-#define EN_S_148 "23: Epitome Invocation_20220105-20220125 (Calamity Queller, Primordial Jade Winged-Spear, Lithic Spear, The Flute, Favonius Warbow, The Widsith, Favonius Greatsword)"
-#define EN_S_149 "24: Epitome Invocation_20220125-20220215 (Vortex Vanquisher, Amos' Bow, Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial Bow)"
+#define EN_S_144                                                          \
+  "24: The Transcendent One Returns_20220105-20220125 (Shenhe, Yun Jin, " \
+  "Ningguang, Chongyun)"
+#define EN_S_145                                                          \
+  "25: Gentry of Hermitage_20220125-20220215 (Zhongli, Yanfei, Xingqiu, " \
+  "Beidou)"
+#define EN_S_146                                                     \
+  "2: Invitation to Mundane Life_20220105-20220125 (Xiao, Yun Jin, " \
+  "Ningguang, Chongyun)"
+#define EN_S_147 \
+  "3: Adrift in the Harbor_20220125-20220215 (Ganyu, Yanfei, Xingqiu, Beidou)"
+#define EN_S_148                                                               \
+  "23: Epitome Invocation_20220105-20220125 (Calamity Queller, Primordial "    \
+  "Jade Winged-Spear, Lithic Spear, The Flute, Favonius Warbow, The Widsith, " \
+  "Favonius Greatsword)"
+#define EN_S_149                                                              \
+  "24: Epitome Invocation_20220125-20220215 (Vortex Vanquisher, Amos' Bow, "  \
+  "Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial " \
+  "Bow)"
 #define EN_S_150 "9: Wanderlust Invocation_20220216- (Adds Yun Jin)"
-#define EN_S_151 "26: Everbloom Violet_20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)"
-#define EN_S_152 "25: Epitome Invocation_20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)"
-#define EN_S_153 "27: Reign of Serenity_20220308-20220329 (Raiden Shogun, Bennett, Xinyan, Kujo Sara)"
-#define EN_S_154 "4: Drifting Luminescence_20220308-20220329 (Sangonomiya Kokomi, Bennett, Xinyan, Kujo Sara)"
-#define EN_S_155 "26: Epitome Invocation_20220308-20220329 (Engulfing Lightning, Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius Lance, Sacrificial Fragments)"
+#define EN_S_151 \
+  "26: Everbloom Violet_20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)"
+#define EN_S_152                                                           \
+  "25: Epitome Invocation_20220216-20220308 (Kagura's Verity, Primordial " \
+  "Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of " \
+  "Perception, Rainslasher)"
+#define EN_S_153                                                              \
+  "27: Reign of Serenity_20220308-20220329 (Raiden Shogun, Bennett, Xinyan, " \
+  "Kujo Sara)"
+#define EN_S_154                                                              \
+  "4: Drifting Luminescence_20220308-20220329 (Sangonomiya Kokomi, Bennett, " \
+  "Xinyan, Kujo Sara)"
+#define EN_S_155                                                            \
+  "26: Epitome Invocation_20220308-20220329 (Engulfing Lightning, "         \
+  "Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius " \
+  "Lance, Sacrificial Fragments)"
 #define EN_S_156 "Luckiness recording is disabled!"
 #define EN_S_157 "Luckiness recording is enabled!"
 #define EN_S_158 "-7: Luckiness recording or not"
@@ -171,22 +300,27 @@
 #define EN_S_168 "Progress printing is enabled!"
 #define EN_S_169 "Progress printing is not supported with current Mode enabled!"
 #define EN_S_170 "-9: Marathon Mode"
-#define EN_S_171 "Pull untill ... how many 5-stars in 10 pulls (a succession of)?"
+#define EN_S_171 \
+  "Pull untill ... how many 5-stars in 10 pulls (a succession of)?"
 #define EN_S_172 "Luckiness recording is forcely enabled through Marathon Mode!"
 #define EN_S_173 "It's true according to current recording!"
 #define EN_S_174 "-10: Animation or not"
 #define EN_S_175 "Animation is disabled!"
 #define EN_S_176 "Animation is enabled!"
-#define EN_S_177 "Animation is only available for 1 or 10 pulls in non-specific-mode!"
+#define EN_S_177 \
+  "Animation is only available for 1 or 10 pulls in non-specific-mode!"
 #define EN_S_178 "-11: Return current pity status code"
 #define EN_S_179 "Enter pity status code if you have one:"
 #define EN_S_180 "Pity status code is as follows (& is start-to-end char):"
 #define EN_S_181 "Pity status code is incorrect!"
 #define EN_S_182 "-1: I don't have a pity status code."
 #define EN_S_183 "28: Azure Excursion_20220330-20220419 (Kamisato Ayato, , , )"
-#define EN_S_184 "(test) 29: The Heron's Court_20220419-20220510 (Kamisato Ayaka, , , )"
+#define EN_S_184 \
+  "(test) 29: The Heron's Court_20220419-20220510 (Kamisato Ayaka, , , )"
 #define EN_S_185 "5: Ballad in Goblets_20220330-20220419 (Venti, , , )"
-#define EN_S_186 "27: Epitome Invocation_20220330-20220419 (Haran Tsukishiro Futsu, Elegy of the End, , , , , )"
+#define EN_S_186                                                             \
+  "27: Epitome Invocation_20220330-20220419 (Haran Tsukishiro Futsu, Elegy " \
+  "of the End, , , , , )"
 #define EN_S_187 "Placeholder"
 #define EN_S_188 "Placeholder"
 #define EN_S_189 "Placeholder"
@@ -364,7 +498,7 @@
 #define EN_C_105 "\"Hanamizaka Heroics\" Arataki Itto (Geo)"
 #define EN_C_106 "\"Canine Warrior\" Gorou (Geo)"
 #define EN_C_107 "Redhorn Stonethresher (Claymore)"
-#define EN_C_108 "\"Stage Lucida\" Yun Jin (Geo)"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+#define EN_C_108 "\"Stage Lucida\" Yun Jin (Geo)"
 #define EN_C_109 "\"Lonesome Transcendence\" Shenhe (Cryo)"
 #define EN_C_110 "Calamity Queller (Polearm)"
 #define EN_C_111 "\"Pillar of Fortitude\" Kamisato Ayato (Hydro)"
@@ -523,7 +657,8 @@
 #define EN_E_8 "Unexpected five_count! Error code: 8"
 #define EN_E_9 "Unexpected ij! Error code: 9"
 #define EN_E_10 "Unexpected d_item_n[kind]! Error code: 10"
-#define EN_E_11 "Arguments error! Usage: chosen_banner chosen_event wishes_number language"
+#define EN_E_11 \
+  "Arguments error! Usage: chosen_banner chosen_event wishes_number language"
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
 #define EN_E_14 "An error occurred in prog! Error code: 14"
@@ -605,119 +740,374 @@
 #define EN_A_24 "\"Legacy Endures\""
 #define EN_A_25 "Seven same 4-stars in a row!"
 #define EN_A_26 "\"Big Dipper\""
-#define EN_D_0 "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis' unilateral approach to policymaking in Liyue — but in truth, gods admire skeptics such as her quite a lot."
-#define EN_D_1 "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful."
-#define EN_D_2 "An apprentice and herb gatherer at Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion."
-#define EN_D_3 "The tycoon of a winery empire in Mondstadt, unmatched in every possible way."
-#define EN_D_4 "The righteous and rigorous Dandelion Knight, and Acting Grand Master of Mondstadt's Knights of Favonius."
-#define EN_D_5 "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is."
-#define EN_D_6 "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within."
-#define EN_D_7 "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia."
-#define EN_D_8 "A cloud atlas symbolizing Dvalin and his former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind."
-#define EN_D_9 "A jade polearm made by the archons, capable of slaying ancient beasts."
-#define EN_D_10 "A polearm that symbolizes Dvalin's firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind."
-#define EN_D_11 "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves."
-#define EN_D_12 "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin's command of the sky and the wind is unleashed."
-#define EN_D_13 "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind."
-#define EN_D_14 "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil — just like the last heroine who wielded it."
-#define EN_D_15 "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone."
-#define EN_D_16 "Liyue's sole rock 'n' roll musician. She rebels against ossified prejudices using her music and passionate singing."
-#define EN_D_17 "An alchemist filled with curiosity about all things. She researches bio-alchemy."
-#define EN_D_18 "A young lady who has inherited trace amounts of non-human blood. She is the incredibly popular bartender of the Cat's Tail tavern."
-#define EN_D_19 "A young exorcist from a family of exorcists. He does everything he can to suppress his abundance of yang energy."
-#define EN_D_20 "A maid who faithfully serves the Knights of Favonius. She dreams of joining their ranks someday."
-#define EN_D_21 "A good-natured adventurer from Mondstadt who's unfortunately extremely unlucky."
-#define EN_D_22 "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz."
-#define EN_D_23 "The Tianquan of the Liyue Qixing. Her wealth is unsurpassed in all of Teyvat."
-#define EN_D_24 "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all."
-#define EN_D_25 "Captain of her crew, The Crux. She's quite an unbound and forthright woman."
-#define EN_D_26 "A renowned chef from Liyue. She's extremely passionate about cooking and excels at making her signature hot and spicy dishes."
-#define EN_D_27 "Always energetic and full of life, Amber's the best — albeit only — Outrider of the Knights of Favonius."
-#define EN_D_28 "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning."
-#define EN_D_29 "An accomplished swordsman and a strategic thinker in the Knights of Favonius, rumored to hail from beyond Mondstadt."
-#define EN_D_30 "Every citizen of Mondstadt adores Barbara. She learned the word \"idol\" from a magazine."
-#define EN_D_31 "The languid but knowledgeable Librarian of the Knights of Favonius, deemed by Sumeru Academia to be their most distinguished graduate in the past two centuries."
-#define EN_D_32 "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it."
-#define EN_D_33 "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time."
-#define EN_D_34 "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing."
-#define EN_D_35 "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential."
-#define EN_D_36 "A dim black glaze pearl that is said to have the power to read the purity of one's heart."
-#define EN_D_37 "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time."
-#define EN_D_38 "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within."
-#define EN_D_39 "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter."
-#define EN_D_40 "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind."
-#define EN_D_41 "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease."
-#define EN_D_42 "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power."
-#define EN_D_43 "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time."
-#define EN_D_44 "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged."
-#define EN_D_45 "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive."
-#define EN_D_46 "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air."
-#define EN_D_47 "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time."
-#define EN_D_48 "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind."
-#define EN_D_49 "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!"
-#define EN_D_50 "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow."
-#define EN_D_51 "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting."
-#define EN_D_52 "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target."
-#define EN_D_53 "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. Small, light, and durable, it is known more colloquially as the \"jade ball.\""
-#define EN_D_54 "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure."
-#define EN_D_55 "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments."
-#define EN_D_56 "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel."
-#define EN_D_57 "A handy club made of fine steel. The most persuasive line of reasoning in any debater's arsenal."
-#define EN_D_58 "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however."
-#define EN_D_59 "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat."
-#define EN_D_60 "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword..."
-#define EN_D_61 "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off."
-#define EN_D_62 "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master."
-#define EN_D_63 "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys."
-#define EN_D_64 "An explosives expert and a regular at the Knights of Favonius' confinement room. Also known as Fleeing Sunlight."
-#define EN_D_65 "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield."
-#define EN_D_66 "A mysterious expert contracted by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things."
-#define EN_D_67 "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius."
-#define EN_D_68 "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins."
-#define EN_D_69 "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" and \"Vigilant Yaksha.\""
-#define EN_D_70 "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age."
-#define EN_D_71 "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast."
-#define EN_D_72 "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day."
-#define EN_D_73 "A stone dumbbell containing distant memories. Its endless transformations reveal the power within."
-#define EN_D_74 "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air."
-#define EN_D_75 "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might."
-#define EN_D_76 "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain."
-#define EN_D_77 "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung."
-#define EN_D_78 "A \"firewood staff\" that was once used in ancient and long-lost rituals."
-#define EN_D_79 "A greatsword carved and chiseled from the very bedrock of Liyue."
-#define EN_D_80 "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal."
-#define EN_D_81 "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh."
-#define EN_D_82 "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets."
-#define EN_D_83 "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw."
-#define EN_D_84 "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught."
-#define EN_D_85 "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon."
-#define EN_D_86 "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past."
-#define EN_D_87 "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind."
-#define EN_D_88 "A bow painted the color of transgression and nights of illusion."
-#define EN_D_89 "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong."
-#define EN_D_90 "Owner of Naganohara Fireworks. Known as the \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams."
-#define EN_D_91 "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived."
-#define EN_D_92 "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before."
-#define EN_D_93 "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it."
-#define EN_D_94 "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips."
-#define EN_D_95 "A general of the Tenryou Commission. Bold, decisive, and skilled in battle."
-#define EN_D_96 "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity."
-#define EN_D_97 "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down..."
-#define EN_D_98 "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant."
-#define EN_D_99 "Lady Guuji of the Grand Narukami Shrine also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance."
-#define EN_D_100 "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma."
-#define EN_D_101 "A pristine bow that is as sharp as the glaciers of the far north."
-#define EN_D_102 "A lovely warbow made from seashells and coral. A mournful brilliance flows along its moonlight-colored arms."
-#define EN_D_103 "A naginata forged from luminescent material deep in the ocean depths. It was once the possession of the tengu race."
-#define EN_D_104 "The beloved sword of the legendary \"Akuou.\" The blade is huge and majestic, but is surprisingly easy to wield."
-#define EN_D_105 "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?"
-#define EN_D_106 "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates."
-#define EN_D_107 "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs."
-#define EN_D_108 "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-#define EN_D_109 "An adepti disciple with a most unusual air about her. Having spent much time cultivating in isolation in Liyue's mountains, she has become every bit as cool and distant as the adepti themselves."
-#define EN_D_110 " keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past."
-#define EN_D_111 "The young but highly accomplished head of the Yashiro Commission's Kamisato Clan. Cultured and polite, he is a man of many ways and means."
-#define EN_D_112 "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it."
+#define EN_D_0                                                                  \
+  "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis' "    \
+  "unilateral approach to policymaking in Liyue — but in truth, gods admire " \
+  "skeptics such as her quite a lot."
+#define EN_D_1                                                                 \
+  "A mysterious young astrologer who proclaims herself to be \"Astrologist "   \
+  "Mona Megistus,\" and who possesses abilities to match the title. Erudite, " \
+  "but prideful."
+#define EN_D_2                                                          \
+  "An apprentice and herb gatherer at Bubu Pharmacy. An undead with a " \
+  "bone-white complexion, she seldom has much in the way of words or emotion."
+#define EN_D_3                                                               \
+  "The tycoon of a winery empire in Mondstadt, unmatched in every possible " \
+  "way."
+#define EN_D_4                                                               \
+  "The righteous and rigorous Dandelion Knight, and Acting Grand Master of " \
+  "Mondstadt's Knights of Favonius."
+#define EN_D_5                                                                 \
+  "An extremely ancient bow that has retained its power despite its original " \
+  "master being long gone. It draws power from everyone and everything in "    \
+  "the world, and the further away you are from that which your heart "        \
+  "desires, the more powerful it is."
+#define EN_D_6                                                              \
+  "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. " \
+  "The sound of the bow firing is music to the Anemo Archon's ears. It "    \
+  "contains the power of the sky and wind within."
+#define EN_D_7                                                                \
+  "An educational tome written by anonymous early inhabitants who worshiped " \
+  "the wind. It has been blessed by the wind for its faithfulness and "       \
+  "influence over the millennia."
+#define EN_D_8                                                                 \
+  "A cloud atlas symbolizing Dvalin and his former master, the Anemo Archon. " \
+  "It details the winds and clouds of the northern regions and contains the "  \
+  "powers of the sky and wind."
+#define EN_D_9 \
+  "A jade polearm made by the archons, capable of slaying ancient beasts."
+#define EN_D_10                                                            \
+  "A polearm that symbolizes Dvalin's firm resolve. The upright shaft of " \
+  "this weapon points towards the heavens, clad in the might of sky and wind."
+#define EN_D_11                                                                \
+  "A longsword used by the Wolf Knight. Originally just a heavy sheet of "     \
+  "iron given to the knight by a blacksmith from the city, it became endowed " \
+  "with legendary power owing to his friendship with the wolves."
+#define EN_D_12                                                                \
+  "A claymore that symbolizes the pride of Dvalin soaring through the skies. " \
+  "When swung, it emits a deep hum as the full force of Dvalin's command of "  \
+  "the sky and the wind is unleashed."
+#define EN_D_13                                                              \
+  "The sword of a knight that symbolizes the restored honor of Dvalin. The " \
+  "blessings of the Anemo Archon rest on the fuller of the blade, imbuing "  \
+  "the sword with the powers of the sky and the wind."
+#define EN_D_14                                                              \
+  "The soul of the Knights of Favonius. Millennia later, it still calls on " \
+  "the winds of swift justice to vanquish all evil — just like the last "  \
+  "heroine who wielded it."
+#define EN_D_15                                                                \
+  "A sister of the church, though you wouldn't know it if it weren't for her " \
+  "attire. Known for her sharp, cold words and manner, she often works alone."
+#define EN_D_16                                                       \
+  "Liyue's sole rock 'n' roll musician. She rebels against ossified " \
+  "prejudices using her music and passionate singing."
+#define EN_D_17                                                          \
+  "An alchemist filled with curiosity about all things. She researches " \
+  "bio-alchemy."
+#define EN_D_18                                                              \
+  "A young lady who has inherited trace amounts of non-human blood. She is " \
+  "the incredibly popular bartender of the Cat's Tail tavern."
+#define EN_D_19                                                                \
+  "A young exorcist from a family of exorcists. He does everything he can to " \
+  "suppress his abundance of yang energy."
+#define EN_D_20                                                          \
+  "A maid who faithfully serves the Knights of Favonius. She dreams of " \
+  "joining their ranks someday."
+#define EN_D_21                                                             \
+  "A good-natured adventurer from Mondstadt who's unfortunately extremely " \
+  "unlucky."
+#define EN_D_22                                                              \
+  "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and " \
+  "travels with a night raven named Oz."
+#define EN_D_23                                                            \
+  "The Tianquan of the Liyue Qixing. Her wealth is unsurpassed in all of " \
+  "Teyvat."
+#define EN_D_24                                                              \
+  "A young man carrying a longsword who is frequently seen at book booths. " \
+  "He has a chivalrous heart and yearns for justice and fairness for all."
+#define EN_D_25                                                           \
+  "Captain of her crew, The Crux. She's quite an unbound and forthright " \
+  "woman."
+#define EN_D_26                                                               \
+  "A renowned chef from Liyue. She's extremely passionate about cooking and " \
+  "excels at making her signature hot and spicy dishes."
+#define EN_D_27                                                              \
+  "Always energetic and full of life, Amber's the best — albeit only — " \
+  "Outrider of the Knights of Favonius."
+#define EN_D_28                                                            \
+  "A boy who lives among the wolves in Wolvendom of Mondstadt, away from " \
+  "human civilization. As agile as lightning."
+#define EN_D_29                                                          \
+  "An accomplished swordsman and a strategic thinker in the Knights of " \
+  "Favonius, rumored to hail from beyond Mondstadt."
+#define EN_D_30                                                               \
+  "Every citizen of Mondstadt adores Barbara. She learned the word \"idol\" " \
+  "from a magazine."
+#define EN_D_31                                                               \
+  "The languid but knowledgeable Librarian of the Knights of Favonius, "      \
+  "deemed by Sumeru Academia to be their most distinguished graduate in the " \
+  "past two centuries."
+#define EN_D_32                                                           \
+  "A completely rusted iron greatbow. The average person would lack the " \
+  "strength to even lift it, let alone fire it."
+#define EN_D_33                                                           \
+  "A ceremonial hunting bow that has become petrified over time. The "    \
+  "trinkets on it are still visible. It grants the wielder the power to " \
+  "withstand the winds of time."
+#define EN_D_34                                                             \
+  "A bow that once served as an extraordinary instrument. It is no longer " \
+  "capable of getting people up and dancing."
+#define EN_D_35                                                             \
+  "A standard-issue recurve bow of the Knights of Favonius. Only the best " \
+  "archers can unleash its full potential."
+#define EN_D_36                                                                \
+  "A dim black glaze pearl that is said to have the power to read the purity " \
+  "of one's heart."
+#define EN_D_37                                                                \
+  "A weathered script, the text of which is no longer legible. A cursed item " \
+  "eroded by the winds of time."
+#define EN_D_38                                                              \
+  "A heavy notebook filled with musical scores. Though suffering from moth " \
+  "damage and heavy wear-and-tear, there is still much power to be found "   \
+  "among the hand-written words within."
+#define EN_D_39                                                              \
+  "A secret tome that belonged to the scholars of the Knights of Favonius. " \
+  "It describes the logic and power of elements and matter."
+#define EN_D_40                                                           \
+  "A polearm made in the style of the Knights of Favonius. Its shaft is " \
+  "straight, and its tip flows lightly like the wind."
+#define EN_D_41                                                            \
+  "A polearm decorated with an entwining golden dragon. Light and sharp, " \
+  "this weapon may very well kill dragons with ease."
+#define EN_D_42                                                            \
+  "A fluorescent greatsword with no sharp edge that crushes enemies with " \
+  "brute force and raw power."
+#define EN_D_43                                                                \
+  "A ceremonial greatsword that has become petrified over time. The trinkets " \
+  "on it are still visible. It grants the wielder the power to withstand the " \
+  "winds of time."
+#define EN_D_44                                                             \
+  "A heavy greatsword. A clock is embedded within it, though its internal " \
+  "mechanisms have long been damaged."
+#define EN_D_45                                                       \
+  "A heavy ceremonial sword of the Knights of Favonius. It channels " \
+  "elemental power easily and is highly destructive."
+#define EN_D_46                                                               \
+  "A sharp blade with extravagant carvings that somehow does not compromise " \
+  "on durability and sharpness. It roars like a lion as it cuts through the " \
+  "air."
+#define EN_D_47                                                              \
+  "A ceremonial sword that has become petrified over time. The trinkets on " \
+  "it are still visible. It grants the wielder the power to withstand the "  \
+  "winds of time."
+#define EN_D_48                                                               \
+  "Beneath its rusty exterior is a lavishly decorated thin blade. It swings " \
+  "as swiftly as the wind."
+#define EN_D_49                                                               \
+  "A standard-issue longsword of the Knights of Favonius. When you're armed " \
+  "with this agile and sharp weapon, channeling the power of the elements "   \
+  "has never been so easy!"
+#define EN_D_50                                                               \
+  "A bow, despite the name. After countless experiments and improvements to " \
+  "the design, the creator of the ultimate slingshot found himself to have "  \
+  "made what was actually a bow."
+#define EN_D_51                                                                \
+  "This superior bow once belonged to a master archer. However, it gives off " \
+  "a strong scent, thus making it unsuitable for hunting."
+#define EN_D_52                                                              \
+  "Ravens are known to be the ferrymen of the dead. This bow's limb is "     \
+  "decorated with raven feathers, which forebode the imminent death of its " \
+  "target."
+#define EN_D_53                                                               \
+  "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. " \
+  "Small, light, and durable, it is known more colloquially as the \"jade "   \
+  "ball.\""
+#define EN_D_54                                                              \
+  "A fictional story of a band of five heroes who go off on a dragon hunt. " \
+  "It is poorly written and structurally incoherent. Its value lies in the " \
+  "many lessons that can be learned from failure."
+#define EN_D_55                                                              \
+  "Version 12. A reprint featuring corrections to Version 11 and brand-new " \
+  "additions based on recent developments."
+#define EN_D_56                                                              \
+  "An exceptionally powerful polearm that also offers a simple but elegant " \
+  "solution to the issue of the easily stained white tassel."
+#define EN_D_57                                                                \
+  "A handy club made of fine steel. The most persuasive line of reasoning in " \
+  "any debater's arsenal."
+#define EN_D_58                                                              \
+  "A steel sword that is said to have been coated with dragon blood, "       \
+  "rendering it invulnerable to damage. This effect is not extended to its " \
+  "wielder, however."
+#define EN_D_59                                                               \
+  "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the "   \
+  "power of a legendary hero as you hold this sword in your hand! Imagine "   \
+  "yourself as the great warrior himself! Note: Daydreaming not recommended " \
+  "in live combat."
+#define EN_D_60                                                                \
+  "A reliable steel sword. The legendary Skyrider once tried to ride it as a " \
+  "flying sword..."
+#define EN_D_61                                                              \
+  "A sword that once shone like the sun. The wielder of this sword will be " \
+  "blessed with a \"feel-good\" buff. The reflective material on the blade " \
+  "has long worn off."
+#define EN_D_62                                                             \
+  "A reliable steel-forged weapon that serves as a testament to the great " \
+  "adventures of its old master."
+#define EN_D_63                                                                \
+  "One of the many bards of Mondstadt, who freely wanders the city's streets " \
+  "and alleys."
+#define EN_D_64                                                     \
+  "An explosives expert and a regular at the Knights of Favonius' " \
+  "confinement room. Also known as Fleeing Sunlight."
+#define EN_D_65                                                             \
+  "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly " \
+  "feared on the battlefield."
+#define EN_D_66                                                                \
+  "A mysterious expert contracted by the Wangsheng Funeral Parlor. Extremely " \
+  "knowledgeable in all things."
+#define EN_D_67                                                               \
+  "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain " \
+  "of the Investigation Team of the Knights of Favonius."
+#define EN_D_68                                                               \
+  "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated " \
+  "beast, flows within her veins."
+#define EN_D_69                                                              \
+  "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of " \
+  "Demons\" and \"Vigilant Yaksha.\""
+#define EN_D_70                                                           \
+  "The 77th Director of the Wangsheng Funeral Parlor. She took over the " \
+  "business at a rather young age."
+#define EN_D_71                                                                \
+  "A well-known legal adviser active in Liyue Harbor. A brilliant young lady " \
+  "in whose veins runs the blood of an illuminated beast."
+#define EN_D_72                                                               \
+  "The Spindrift Knight, a scion of the old aristocracy, and the Captain of " \
+  "the Knights of Favonius Reconnaissance Company. The reason for which a "   \
+  "descendant of the ancient nobles might join the Knights remains a great "  \
+  "mystery in Mondstadt to this very day."
+#define EN_D_73                                                                \
+  "A stone dumbbell containing distant memories. Its endless transformations " \
+  "reveal the power within."
+#define EN_D_74                                                                \
+  "This sharp polearm can seemingly pierce through anything. When swung, one " \
+  "can almost see the rift it tears in the air."
+#define EN_D_75                                                         \
+  "Capable of driving away evil spirits and wicked people alike, this " \
+  "edgeless claymore seems to possess divine might."
+#define EN_D_76                                                                \
+  "A symbol of a legendary pact, this sharp blade once cut off the peak of a " \
+  "mountain."
+#define EN_D_77                                                               \
+  "A ceremonial sword masterfully carved from pure jade. There almost seems " \
+  "to be an audible sigh in the wind as it is swung."
+#define EN_D_78 \
+  "A \"firewood staff\" that was once used in ancient and long-lost rituals."
+#define EN_D_79 \
+  "A greatsword carved and chiseled from the very bedrock of Liyue."
+#define EN_D_80                                                            \
+  "A spear forged from the rocks of the Guyun Stone Forest. Its hardness " \
+  "knows no equal."
+#define EN_D_81                                                             \
+  "A bow as lovely as any bard's lyre, its arrows pierce the heart like a " \
+  "lamenting sigh."
+#define EN_D_82                                                              \
+  "A straight sword as black as the night. It once belonged to a thief who " \
+  "roamed the benighted streets."
+#define EN_D_83                                                             \
+  "A songbook from the bygone aristocratic era, whose composer has become " \
+  "forgotten. It chronicles the tale of a certain heroic outlaw."
+#define EN_D_84                                                               \
+  "An intricate, opulent longbow. It once belonged to a gentleman thief who " \
+  "was never caught."
+#define EN_D_85                                                       \
+  "A greatsword as light as the sigh of grass in the breeze, yet as " \
+  "merciless to the corrupt as a typhoon."
+#define EN_D_86                                                               \
+  "A wandering samurai from Inazuma who is currently with Liyue's Crux "      \
+  "Fleet. A gentle and carefree soul whose heart hides a great many burdens " \
+  "from the past."
+#define EN_D_87                                                                \
+  "A straight sword, azure as antediluvian song, and as keen as the oaths of " \
+  "freedom taken in the Land of Wind."
+#define EN_D_88 \
+  "A bow painted the color of transgression and nights of illusion."
+#define EN_D_89                                                        \
+  "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and " \
+  "elegant, as well as wise and strong."
+#define EN_D_90                                                               \
+  "Owner of Naganohara Fireworks. Known as the \"Queen of the Summer "        \
+  "Festival,\" she excels in her craft of creating fireworks that symbolize " \
+  "people's hopes and dreams."
+#define EN_D_91                                                        \
+  "A pint-sized ninja attached to the Shuumatsuban, who always seems " \
+  "sleep-deprived."
+#define EN_D_92                                                            \
+  "A sword that blazes with a fierce violet light. The name \"Reforged\" " \
+  "comes from it having been broken once before."
+#define EN_D_93                                                                \
+  "A longbow that was a gift from the Shogun. Eternal lightning crackles all " \
+  "around it."
+#define EN_D_94                                                                \
+  "The Divine Priestess of Watatsumi Island. All of the island's affairs are " \
+  "at this young lady's fingertips."
+#define EN_D_95                                                          \
+  "A general of the Tenryou Commission. Bold, decisive, and skilled in " \
+  "battle."
+#define EN_D_96                                                               \
+  "Her Excellency, the Almighty Narukami Ogosho, who promised the people of " \
+  "Inazuma an unchanging Eternity."
+#define EN_D_97                                                                \
+  "A naginata used to \"cut grass.\" Any army that stands before this weapon " \
+  "will probably be likewise cut down..."
+#define EN_D_98                                                         \
+  "A string of lovely jasper from the deep sea. It shines with a pure " \
+  "radiance like that of the moon, and just as ever-distant."
+#define EN_D_99                                                             \
+  "Lady Guuji of the Grand Narukami Shrine also serves as the "             \
+  "editor-in-chief of Yae Publishing House. Unimaginable intelligence and " \
+  "cunning are hidden under her beautiful appearance."
+#define EN_D_100 \
+  "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma."
+#define EN_D_101 \
+  "A pristine bow that is as sharp as the glaciers of the far north."
+#define EN_D_102                                                          \
+  "A lovely warbow made from seashells and coral. A mournful brilliance " \
+  "flows along its moonlight-colored arms."
+#define EN_D_103                                                              \
+  "A naginata forged from luminescent material deep in the ocean depths. It " \
+  "was once the possession of the tengu race."
+#define EN_D_104                                                         \
+  "The beloved sword of the legendary \"Akuou.\" The blade is huge and " \
+  "majestic, but is surprisingly easy to wield."
+#define EN_D_105                                                               \
+  "The first and greatest head of the Arataki Gang, famed throughout Inazuma " \
+  "City's Hanamizaka... Wait, what? You've never heard of them? Are you "      \
+  "trying to be funny here?"
+#define EN_D_106                                                             \
+  "The great general of Watatsumi Island's forces. He is deeply trusted by " \
+  "his subordinates."
+#define EN_D_107                                                            \
+  "According to its previous owner, this weapon is the \"Mighty Redhorn "   \
+  "Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any " \
+  "monster packing with its tail between its legs."
+#define EN_D_108                                                            \
+  "A renowned Liyue opera singer who is skilled in both playwriting and "   \
+  "singing. Her style is one-of-a-kind, exquisite and delicate, much like " \
+  "the person herself."
+#define EN_D_109                                                              \
+  "An adepti disciple with a most unusual air about her. Having spent much "  \
+  "time cultivating in isolation in Liyue's mountains, she has become every " \
+  "bit as cool and distant as the adepti themselves."
+#define EN_D_110                                                           \
+  " keenly honed weapon forged from some strange crystal. Its faint blue " \
+  "light seems to whisper of countless matters now past."
+#define EN_D_111                                                        \
+  "The young but highly accomplished head of the Yashiro Commission's " \
+  "Kamisato Clan. Cultured and polite, he is a man of many ways and means."
+#define EN_D_112                                                           \
+  "The bells used when performing the Kagura Dance, blessed by the Guuji " \
+  "herself. The scent of the Sacred Sakura tree lingers on it."
 #define EN_D_113 "Haran Tsukishiro Futsu"
 #define EN_D_114 "Yelan"
 #define EN_D_115 "Kuki Shinobu"
@@ -736,97 +1126,123 @@
 #endif
 
 static const char* s_pstring_en[256] = {
-				EN_S_0, EN_S_1, EN_S_2, EN_S_3, EN_S_4, EN_S_5, EN_S_6, EN_S_7, EN_S_8, EN_S_9, EN_S_10,
-				EN_S_11, EN_S_12, EN_S_13, EN_S_14, EN_S_15, EN_S_16, EN_S_17, EN_S_18, EN_S_19, EN_S_20,
-				EN_S_21, EN_S_22, EN_S_23, EN_S_24, EN_S_25, EN_S_26, EN_S_27, EN_S_28, EN_S_29, EN_S_30,
-				EN_S_31, EN_S_32, EN_S_33, EN_S_34, EN_S_35, EN_S_36, EN_S_37, EN_S_38, EN_S_39, EN_S_40,
-				EN_S_41, EN_S_42, EN_S_43, EN_S_44, EN_S_45, EN_S_46, EN_S_47, EN_S_48, EN_S_49, EN_S_50,
-				EN_S_51, EN_S_52, EN_S_53, EN_S_54, EN_S_55, EN_S_56, EN_S_57, EN_S_58, EN_S_59, EN_S_60,
-				EN_S_61, EN_S_62, EN_S_63, EN_S_64, EN_S_65, EN_S_66, EN_S_67, EN_S_68, EN_S_69, EN_S_70,
-				EN_S_71, EN_S_72, EN_S_73, EN_S_74, EN_S_75, EN_S_76, EN_S_77, EN_S_78, EN_S_79, EN_S_80,
-				EN_S_81, EN_S_82, EN_S_83, EN_S_84, EN_S_85, EN_S_86, EN_S_87, EN_S_88, EN_S_89, EN_S_90,
-				EN_S_91, EN_S_92, EN_S_93, EN_S_94, EN_S_95, EN_S_96, EN_S_97, EN_S_98, EN_S_99, EN_S_100,
-				EN_S_101, EN_S_102, EN_S_103, EN_S_104, EN_S_105, EN_S_106, EN_S_107, EN_S_108, EN_S_109, EN_S_110,
-				EN_S_111, EN_S_112, EN_S_113, EN_S_114, EN_S_115, EN_S_116, EN_S_117, EN_S_118, EN_S_119, EN_S_120,
-				EN_S_121, EN_S_122, EN_S_123, EN_S_124, EN_S_125, EN_S_126, EN_S_127, EN_S_128, EN_S_129, EN_S_130,
-				EN_S_131, EN_S_132, EN_S_133, EN_S_134, EN_S_135, EN_S_136, EN_S_137, EN_S_138, EN_S_139, EN_S_140,
-				EN_S_141, EN_S_142, EN_S_143, EN_S_144, EN_S_145, EN_S_146, EN_S_147, EN_S_148, EN_S_149, EN_S_150,
-				EN_S_151, EN_S_152, EN_S_153, EN_S_154, EN_S_155, EN_S_156, EN_S_157, EN_S_158, EN_S_159, EN_S_160,
-				EN_S_161, EN_S_162, EN_S_163, EN_S_164, EN_S_165, EN_S_166, EN_S_167, EN_S_168, EN_S_169, EN_S_170,
-				EN_S_171, EN_S_172, EN_S_173, EN_S_174, EN_S_175, EN_S_176, EN_S_177, EN_S_178, EN_S_179, EN_S_180,
-				EN_S_181, EN_S_182, EN_S_183, EN_S_184, EN_S_185, EN_S_186, EN_S_187, EN_S_188, EN_S_189, EN_S_190,
-				EN_S_191, EN_S_192, EN_S_193, EN_S_194, EN_S_195, EN_S_196, EN_S_197, EN_S_198, EN_S_199, EN_S_200,
-				EN_S_201, EN_S_202, EN_S_203, EN_S_204, EN_S_205, EN_S_206, EN_S_207, EN_S_208, EN_S_209, EN_S_210,
-				EN_S_211, EN_S_212, EN_S_213, EN_S_214, EN_S_215, EN_S_216, EN_S_217, EN_S_218, EN_S_219, EN_S_220,
-				EN_S_221, EN_S_222, EN_S_223, EN_S_224, EN_S_225, EN_S_226, EN_S_227, EN_S_228, EN_S_229, EN_S_230,
-				EN_S_231, EN_S_232, EN_S_233, EN_S_234, EN_S_235, EN_S_236, EN_S_237, EN_S_238, EN_S_239, EN_S_240,
-				EN_S_241, EN_S_242, EN_S_243, EN_S_244, EN_S_245, EN_S_246, EN_S_247, EN_S_248, EN_S_249, EN_S_250,
-				EN_S_251, EN_S_252, EN_S_253, EN_S_254, EN_S_255
-};
+    EN_S_0,   EN_S_1,   EN_S_2,   EN_S_3,   EN_S_4,   EN_S_5,   EN_S_6,
+    EN_S_7,   EN_S_8,   EN_S_9,   EN_S_10,  EN_S_11,  EN_S_12,  EN_S_13,
+    EN_S_14,  EN_S_15,  EN_S_16,  EN_S_17,  EN_S_18,  EN_S_19,  EN_S_20,
+    EN_S_21,  EN_S_22,  EN_S_23,  EN_S_24,  EN_S_25,  EN_S_26,  EN_S_27,
+    EN_S_28,  EN_S_29,  EN_S_30,  EN_S_31,  EN_S_32,  EN_S_33,  EN_S_34,
+    EN_S_35,  EN_S_36,  EN_S_37,  EN_S_38,  EN_S_39,  EN_S_40,  EN_S_41,
+    EN_S_42,  EN_S_43,  EN_S_44,  EN_S_45,  EN_S_46,  EN_S_47,  EN_S_48,
+    EN_S_49,  EN_S_50,  EN_S_51,  EN_S_52,  EN_S_53,  EN_S_54,  EN_S_55,
+    EN_S_56,  EN_S_57,  EN_S_58,  EN_S_59,  EN_S_60,  EN_S_61,  EN_S_62,
+    EN_S_63,  EN_S_64,  EN_S_65,  EN_S_66,  EN_S_67,  EN_S_68,  EN_S_69,
+    EN_S_70,  EN_S_71,  EN_S_72,  EN_S_73,  EN_S_74,  EN_S_75,  EN_S_76,
+    EN_S_77,  EN_S_78,  EN_S_79,  EN_S_80,  EN_S_81,  EN_S_82,  EN_S_83,
+    EN_S_84,  EN_S_85,  EN_S_86,  EN_S_87,  EN_S_88,  EN_S_89,  EN_S_90,
+    EN_S_91,  EN_S_92,  EN_S_93,  EN_S_94,  EN_S_95,  EN_S_96,  EN_S_97,
+    EN_S_98,  EN_S_99,  EN_S_100, EN_S_101, EN_S_102, EN_S_103, EN_S_104,
+    EN_S_105, EN_S_106, EN_S_107, EN_S_108, EN_S_109, EN_S_110, EN_S_111,
+    EN_S_112, EN_S_113, EN_S_114, EN_S_115, EN_S_116, EN_S_117, EN_S_118,
+    EN_S_119, EN_S_120, EN_S_121, EN_S_122, EN_S_123, EN_S_124, EN_S_125,
+    EN_S_126, EN_S_127, EN_S_128, EN_S_129, EN_S_130, EN_S_131, EN_S_132,
+    EN_S_133, EN_S_134, EN_S_135, EN_S_136, EN_S_137, EN_S_138, EN_S_139,
+    EN_S_140, EN_S_141, EN_S_142, EN_S_143, EN_S_144, EN_S_145, EN_S_146,
+    EN_S_147, EN_S_148, EN_S_149, EN_S_150, EN_S_151, EN_S_152, EN_S_153,
+    EN_S_154, EN_S_155, EN_S_156, EN_S_157, EN_S_158, EN_S_159, EN_S_160,
+    EN_S_161, EN_S_162, EN_S_163, EN_S_164, EN_S_165, EN_S_166, EN_S_167,
+    EN_S_168, EN_S_169, EN_S_170, EN_S_171, EN_S_172, EN_S_173, EN_S_174,
+    EN_S_175, EN_S_176, EN_S_177, EN_S_178, EN_S_179, EN_S_180, EN_S_181,
+    EN_S_182, EN_S_183, EN_S_184, EN_S_185, EN_S_186, EN_S_187, EN_S_188,
+    EN_S_189, EN_S_190, EN_S_191, EN_S_192, EN_S_193, EN_S_194, EN_S_195,
+    EN_S_196, EN_S_197, EN_S_198, EN_S_199, EN_S_200, EN_S_201, EN_S_202,
+    EN_S_203, EN_S_204, EN_S_205, EN_S_206, EN_S_207, EN_S_208, EN_S_209,
+    EN_S_210, EN_S_211, EN_S_212, EN_S_213, EN_S_214, EN_S_215, EN_S_216,
+    EN_S_217, EN_S_218, EN_S_219, EN_S_220, EN_S_221, EN_S_222, EN_S_223,
+    EN_S_224, EN_S_225, EN_S_226, EN_S_227, EN_S_228, EN_S_229, EN_S_230,
+    EN_S_231, EN_S_232, EN_S_233, EN_S_234, EN_S_235, EN_S_236, EN_S_237,
+    EN_S_238, EN_S_239, EN_S_240, EN_S_241, EN_S_242, EN_S_243, EN_S_244,
+    EN_S_245, EN_S_246, EN_S_247, EN_S_248, EN_S_249, EN_S_250, EN_S_251,
+    EN_S_252, EN_S_253, EN_S_254, EN_S_255};
 
 static const char* s_pname_en[128] = {
-				EN_C_0, EN_C_1, EN_C_2, EN_C_3, EN_C_4, EN_C_5, EN_C_6, EN_C_7, EN_C_8, EN_C_9, EN_C_10,
-				EN_C_11, EN_C_12, EN_C_13, EN_C_14, EN_C_15, EN_C_16, EN_C_17, EN_C_18, EN_C_19, EN_C_20,
-				EN_C_21, EN_C_22, EN_C_23, EN_C_24, EN_C_25, EN_C_26, EN_C_27, EN_C_28, EN_C_29, EN_C_30,
-				EN_C_31, EN_C_32, EN_C_33, EN_C_34, EN_C_35, EN_C_36, EN_C_37, EN_C_38, EN_C_39, EN_C_40,
-				EN_C_41, EN_C_42, EN_C_43, EN_C_44, EN_C_45, EN_C_46, EN_C_47, EN_C_48, EN_C_49, EN_C_50,
-				EN_C_51, EN_C_52, EN_C_53, EN_C_54, EN_C_55, EN_C_56, EN_C_57, EN_C_58, EN_C_59, EN_C_60,
-				EN_C_61, EN_C_62, EN_C_63, EN_C_64, EN_C_65, EN_C_66, EN_C_67, EN_C_68, EN_C_69, EN_C_70,
-				EN_C_71, EN_C_72, EN_C_73, EN_C_74, EN_C_75, EN_C_76, EN_C_77, EN_C_78, EN_C_79, EN_C_80,
-				EN_C_81, EN_C_82, EN_C_83, EN_C_84, EN_C_85, EN_C_86, EN_C_87, EN_C_88, EN_C_89, EN_C_90,
-				EN_C_91, EN_C_92, EN_C_93, EN_C_94, EN_C_95, EN_C_96, EN_C_97, EN_C_98, EN_C_99, EN_C_100,
-				EN_C_101, EN_C_102, EN_C_103, EN_C_104, EN_C_105, EN_C_106, EN_C_107, EN_C_108, EN_C_109,
-				EN_C_110, EN_C_111, EN_C_112, EN_C_113, EN_C_114, EN_C_115, EN_C_116, EN_C_117, EN_C_118,
-				EN_C_119, EN_C_120, EN_C_121, EN_C_122, EN_C_123, EN_C_124, EN_C_125, EN_C_126, EN_C_127
-};
+    EN_C_0,   EN_C_1,   EN_C_2,   EN_C_3,   EN_C_4,   EN_C_5,   EN_C_6,
+    EN_C_7,   EN_C_8,   EN_C_9,   EN_C_10,  EN_C_11,  EN_C_12,  EN_C_13,
+    EN_C_14,  EN_C_15,  EN_C_16,  EN_C_17,  EN_C_18,  EN_C_19,  EN_C_20,
+    EN_C_21,  EN_C_22,  EN_C_23,  EN_C_24,  EN_C_25,  EN_C_26,  EN_C_27,
+    EN_C_28,  EN_C_29,  EN_C_30,  EN_C_31,  EN_C_32,  EN_C_33,  EN_C_34,
+    EN_C_35,  EN_C_36,  EN_C_37,  EN_C_38,  EN_C_39,  EN_C_40,  EN_C_41,
+    EN_C_42,  EN_C_43,  EN_C_44,  EN_C_45,  EN_C_46,  EN_C_47,  EN_C_48,
+    EN_C_49,  EN_C_50,  EN_C_51,  EN_C_52,  EN_C_53,  EN_C_54,  EN_C_55,
+    EN_C_56,  EN_C_57,  EN_C_58,  EN_C_59,  EN_C_60,  EN_C_61,  EN_C_62,
+    EN_C_63,  EN_C_64,  EN_C_65,  EN_C_66,  EN_C_67,  EN_C_68,  EN_C_69,
+    EN_C_70,  EN_C_71,  EN_C_72,  EN_C_73,  EN_C_74,  EN_C_75,  EN_C_76,
+    EN_C_77,  EN_C_78,  EN_C_79,  EN_C_80,  EN_C_81,  EN_C_82,  EN_C_83,
+    EN_C_84,  EN_C_85,  EN_C_86,  EN_C_87,  EN_C_88,  EN_C_89,  EN_C_90,
+    EN_C_91,  EN_C_92,  EN_C_93,  EN_C_94,  EN_C_95,  EN_C_96,  EN_C_97,
+    EN_C_98,  EN_C_99,  EN_C_100, EN_C_101, EN_C_102, EN_C_103, EN_C_104,
+    EN_C_105, EN_C_106, EN_C_107, EN_C_108, EN_C_109, EN_C_110, EN_C_111,
+    EN_C_112, EN_C_113, EN_C_114, EN_C_115, EN_C_116, EN_C_117, EN_C_118,
+    EN_C_119, EN_C_120, EN_C_121, EN_C_122, EN_C_123, EN_C_124, EN_C_125,
+    EN_C_126, EN_C_127};
 
 static const char* s_pnameshort_en[128] = {
-				EN_X_0, EN_X_1, EN_X_2, EN_X_3, EN_X_4, EN_X_5, EN_X_6, EN_X_7, EN_X_8, EN_X_9, EN_X_10,
-				EN_X_11, EN_X_12, EN_X_13, EN_X_14, EN_X_15, EN_X_16, EN_X_17, EN_X_18, EN_X_19, EN_X_20,
-				EN_X_21, EN_X_22, EN_X_23, EN_X_24, EN_X_25, EN_X_26, EN_X_27, EN_X_28, EN_X_29, EN_X_30,
-				EN_X_31, EN_X_32, EN_X_33, EN_X_34, EN_X_35, EN_X_36, EN_X_37, EN_X_38, EN_X_39, EN_X_40,
-				EN_X_41, EN_X_42, EN_X_43, EN_X_44, EN_X_45, EN_X_46, EN_X_47, EN_X_48, EN_X_49, EN_X_50,
-				EN_X_51, EN_X_52, EN_X_53, EN_X_54, EN_X_55, EN_X_56, EN_X_57, EN_X_58, EN_X_59, EN_X_60,
-				EN_X_61, EN_X_62, EN_X_63, EN_X_64, EN_X_65, EN_X_66, EN_X_67, EN_X_68, EN_X_69, EN_X_70,
-				EN_X_71, EN_X_72, EN_X_73, EN_X_74, EN_X_75, EN_X_76, EN_X_77, EN_X_78, EN_X_79, EN_X_80,
-				EN_X_81, EN_X_82, EN_X_83, EN_X_84, EN_X_85, EN_X_86, EN_X_87, EN_X_88, EN_X_89, EN_X_90,
-				EN_X_91, EN_X_92, EN_X_93, EN_X_94, EN_X_95, EN_X_96, EN_X_97, EN_X_98, EN_X_99, EN_X_100,
-				EN_X_101, EN_X_102, EN_X_103, EN_X_104, EN_X_105, EN_X_106, EN_X_107, EN_X_108, EN_X_109,
-				EN_X_110, EN_X_111, EN_X_112, EN_X_113, EN_X_114, EN_X_115, EN_X_116, EN_X_117, EN_X_118,
-				EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125, EN_X_126, EN_X_127
-};
+    EN_X_0,   EN_X_1,   EN_X_2,   EN_X_3,   EN_X_4,   EN_X_5,   EN_X_6,
+    EN_X_7,   EN_X_8,   EN_X_9,   EN_X_10,  EN_X_11,  EN_X_12,  EN_X_13,
+    EN_X_14,  EN_X_15,  EN_X_16,  EN_X_17,  EN_X_18,  EN_X_19,  EN_X_20,
+    EN_X_21,  EN_X_22,  EN_X_23,  EN_X_24,  EN_X_25,  EN_X_26,  EN_X_27,
+    EN_X_28,  EN_X_29,  EN_X_30,  EN_X_31,  EN_X_32,  EN_X_33,  EN_X_34,
+    EN_X_35,  EN_X_36,  EN_X_37,  EN_X_38,  EN_X_39,  EN_X_40,  EN_X_41,
+    EN_X_42,  EN_X_43,  EN_X_44,  EN_X_45,  EN_X_46,  EN_X_47,  EN_X_48,
+    EN_X_49,  EN_X_50,  EN_X_51,  EN_X_52,  EN_X_53,  EN_X_54,  EN_X_55,
+    EN_X_56,  EN_X_57,  EN_X_58,  EN_X_59,  EN_X_60,  EN_X_61,  EN_X_62,
+    EN_X_63,  EN_X_64,  EN_X_65,  EN_X_66,  EN_X_67,  EN_X_68,  EN_X_69,
+    EN_X_70,  EN_X_71,  EN_X_72,  EN_X_73,  EN_X_74,  EN_X_75,  EN_X_76,
+    EN_X_77,  EN_X_78,  EN_X_79,  EN_X_80,  EN_X_81,  EN_X_82,  EN_X_83,
+    EN_X_84,  EN_X_85,  EN_X_86,  EN_X_87,  EN_X_88,  EN_X_89,  EN_X_90,
+    EN_X_91,  EN_X_92,  EN_X_93,  EN_X_94,  EN_X_95,  EN_X_96,  EN_X_97,
+    EN_X_98,  EN_X_99,  EN_X_100, EN_X_101, EN_X_102, EN_X_103, EN_X_104,
+    EN_X_105, EN_X_106, EN_X_107, EN_X_108, EN_X_109, EN_X_110, EN_X_111,
+    EN_X_112, EN_X_113, EN_X_114, EN_X_115, EN_X_116, EN_X_117, EN_X_118,
+    EN_X_119, EN_X_120, EN_X_121, EN_X_122, EN_X_123, EN_X_124, EN_X_125,
+    EN_X_126, EN_X_127};
 
 static const char* s_perror_en[17] = {
-				EN_E_0, EN_E_1, EN_E_2, EN_E_3, EN_E_4, EN_E_5, EN_E_6, EN_E_7, EN_E_8, EN_E_9, EN_E_10,
-				EN_E_11, EN_E_12, EN_E_13, EN_E_14, EN_E_15, EN_E_16
-};
+    EN_E_0,  EN_E_1,  EN_E_2,  EN_E_3,  EN_E_4,  EN_E_5,
+    EN_E_6,  EN_E_7,  EN_E_8,  EN_E_9,  EN_E_10, EN_E_11,
+    EN_E_12, EN_E_13, EN_E_14, EN_E_15, EN_E_16};
 
 static const char* s_pvalue_en[49] = {
-				EN_V_0, EN_V_1, EN_V_2, EN_V_3, EN_V_4, EN_V_5, EN_V_6, EN_V_7, EN_V_8, EN_V_9, EN_V_10,
-				EN_V_11, EN_V_12, EN_V_13, EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
-				EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27, EN_V_28, EN_V_29, EN_V_30,
-				EN_V_31, EN_V_32, EN_V_33, EN_V_34, EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40,
-				EN_V_41, EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47, EN_V_48
-};
+    EN_V_0,  EN_V_1,  EN_V_2,  EN_V_3,  EN_V_4,  EN_V_5,  EN_V_6,
+    EN_V_7,  EN_V_8,  EN_V_9,  EN_V_10, EN_V_11, EN_V_12, EN_V_13,
+    EN_V_14, EN_V_15, EN_V_16, EN_V_17, EN_V_18, EN_V_19, EN_V_20,
+    EN_V_21, EN_V_22, EN_V_23, EN_V_24, EN_V_25, EN_V_26, EN_V_27,
+    EN_V_28, EN_V_29, EN_V_30, EN_V_31, EN_V_32, EN_V_33, EN_V_34,
+    EN_V_35, EN_V_36, EN_V_37, EN_V_38, EN_V_39, EN_V_40, EN_V_41,
+    EN_V_42, EN_V_43, EN_V_44, EN_V_45, EN_V_46, EN_V_47, EN_V_48};
 
 static const char* s_pachieve_en[27] = {
-				EN_A_0, EN_A_1, EN_A_2, EN_A_3, EN_A_4, EN_A_5, EN_A_6, EN_A_7, EN_A_8, EN_A_9, EN_A_10,
-				EN_A_11, EN_A_12, EN_A_13, EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
-				EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26
-};
+    EN_A_0,  EN_A_1,  EN_A_2,  EN_A_3,  EN_A_4,  EN_A_5,  EN_A_6,
+    EN_A_7,  EN_A_8,  EN_A_9,  EN_A_10, EN_A_11, EN_A_12, EN_A_13,
+    EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
+    EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26};
 
 static const char* s_pdetails_en[128] = {
-				EN_D_0, EN_D_1, EN_D_2, EN_D_3, EN_D_4, EN_D_5, EN_D_6, EN_D_7, EN_D_8, EN_D_9, EN_D_10,
-				EN_D_11, EN_D_12, EN_D_13, EN_D_14, EN_D_15, EN_D_16, EN_D_17, EN_D_18, EN_D_19, EN_D_20,
-				EN_D_21, EN_D_22, EN_D_23, EN_D_24, EN_D_25, EN_D_26, EN_D_27, EN_D_28, EN_D_29, EN_D_30,
-				EN_D_31, EN_D_32, EN_D_33, EN_D_34, EN_D_35, EN_D_36, EN_D_37, EN_D_38, EN_D_39, EN_D_40,
-				EN_D_41, EN_D_42, EN_D_43, EN_D_44, EN_D_45, EN_D_46, EN_D_47, EN_D_48, EN_D_49, EN_D_50,
-				EN_D_51, EN_D_52, EN_D_53, EN_D_54, EN_D_55, EN_D_56, EN_D_57, EN_D_58, EN_D_59, EN_D_60,
-				EN_D_61, EN_D_62, EN_D_63, EN_D_64, EN_D_65, EN_D_66, EN_D_67, EN_D_68, EN_D_69, EN_D_70,
-				EN_D_71, EN_D_72, EN_D_73, EN_D_74, EN_D_75, EN_D_76, EN_D_77, EN_D_78, EN_D_79, EN_D_80,
-				EN_D_81, EN_D_82, EN_D_83, EN_D_84, EN_D_85, EN_D_86, EN_D_87, EN_D_88, EN_D_89, EN_D_90,
-				EN_D_91, EN_D_92, EN_D_93, EN_D_94, EN_D_95, EN_D_96, EN_D_97, EN_D_98, EN_D_99, EN_D_100,
-				EN_D_101, EN_D_102, EN_D_103, EN_D_104, EN_D_105, EN_D_106, EN_D_107, EN_D_108, EN_D_109,
-				EN_D_110, EN_D_111, EN_D_112, EN_D_113, EN_D_114, EN_D_115, EN_D_116, EN_D_117, EN_D_118,
-				EN_D_119, EN_D_120, EN_D_121, EN_D_122, EN_D_123, EN_D_124, EN_D_125, EN_D_126, EN_D_127
-};
+    EN_D_0,   EN_D_1,   EN_D_2,   EN_D_3,   EN_D_4,   EN_D_5,   EN_D_6,
+    EN_D_7,   EN_D_8,   EN_D_9,   EN_D_10,  EN_D_11,  EN_D_12,  EN_D_13,
+    EN_D_14,  EN_D_15,  EN_D_16,  EN_D_17,  EN_D_18,  EN_D_19,  EN_D_20,
+    EN_D_21,  EN_D_22,  EN_D_23,  EN_D_24,  EN_D_25,  EN_D_26,  EN_D_27,
+    EN_D_28,  EN_D_29,  EN_D_30,  EN_D_31,  EN_D_32,  EN_D_33,  EN_D_34,
+    EN_D_35,  EN_D_36,  EN_D_37,  EN_D_38,  EN_D_39,  EN_D_40,  EN_D_41,
+    EN_D_42,  EN_D_43,  EN_D_44,  EN_D_45,  EN_D_46,  EN_D_47,  EN_D_48,
+    EN_D_49,  EN_D_50,  EN_D_51,  EN_D_52,  EN_D_53,  EN_D_54,  EN_D_55,
+    EN_D_56,  EN_D_57,  EN_D_58,  EN_D_59,  EN_D_60,  EN_D_61,  EN_D_62,
+    EN_D_63,  EN_D_64,  EN_D_65,  EN_D_66,  EN_D_67,  EN_D_68,  EN_D_69,
+    EN_D_70,  EN_D_71,  EN_D_72,  EN_D_73,  EN_D_74,  EN_D_75,  EN_D_76,
+    EN_D_77,  EN_D_78,  EN_D_79,  EN_D_80,  EN_D_81,  EN_D_82,  EN_D_83,
+    EN_D_84,  EN_D_85,  EN_D_86,  EN_D_87,  EN_D_88,  EN_D_89,  EN_D_90,
+    EN_D_91,  EN_D_92,  EN_D_93,  EN_D_94,  EN_D_95,  EN_D_96,  EN_D_97,
+    EN_D_98,  EN_D_99,  EN_D_100, EN_D_101, EN_D_102, EN_D_103, EN_D_104,
+    EN_D_105, EN_D_106, EN_D_107, EN_D_108, EN_D_109, EN_D_110, EN_D_111,
+    EN_D_112, EN_D_113, EN_D_114, EN_D_115, EN_D_116, EN_D_117, EN_D_118,
+    EN_D_119, EN_D_120, EN_D_121, EN_D_122, EN_D_123, EN_D_124, EN_D_125,
+    EN_D_126, EN_D_127};

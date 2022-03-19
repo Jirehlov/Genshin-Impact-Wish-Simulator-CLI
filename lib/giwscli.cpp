@@ -1277,7 +1277,7 @@ void giwscli::set_banner_f(ptrdiff_t chosen_banner_p,
         switch_e_should_be = 0;
       } else {
         switch_e_sav = switch_e_should_be;
-        switch_e_should_be = tempga4[chosen_event_p];
+        switch_e_should_be = tempga4[chosen_event_p - 22];
       }
     } break;
     case 2: {

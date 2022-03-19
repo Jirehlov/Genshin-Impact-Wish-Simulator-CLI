@@ -25,7 +25,7 @@ extern const size_t nup_five_c[5], nup_five_w[10], nup_four_w[32], three_g[13],
     tempgc3[28][5], tempgc4[28][2], nup_four_cg31[14], nup_four_cg32[16],
     nup_four_cg33[17], nup_four_cg34[18], nup_four_cg35[19], nup_four_cg36[20],
     nup_four_cg37[21], nup_four_cg38[22], nup_four_cg39[23];
-extern const ptrdiff_t  tempga4[9], tempgb4[6];
+extern const ptrdiff_t tempga4[9], tempgb4[6];
 extern unsigned int resultt, resultu, lang_status, star, type;
 extern ptrdiff_t chosen_event, chosen_banner, unmet4_c, unmet4_w, unmet5_c,
     unmet5_w, switch_b_should_be, switch_e_should_be, switch_b_sav,

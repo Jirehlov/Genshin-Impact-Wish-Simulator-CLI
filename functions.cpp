@@ -223,7 +223,7 @@ void enter_chosen_banner_f() {
   ini_all(d_item, MAX_ITEMS + 1, 0);
   ini_all(d_item_n, MAX_ITEMS + 1, 0);
   ini_all(up_five_g, 2, 0);
-  ini_all(up_four_g, 16, 0);
+  ini_all(up_four_g, 5, 0);
   ini_all(nup_four_c, 32, 0);
   ini_all(luckkind, 10, MAX_ITEMS);
   for (size_t i = 0; i < 10; i++) {
