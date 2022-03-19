@@ -1,6 +1,9 @@
-﻿## Genshin-Impact-Wish-Simulator-CLI
+﻿# Genshin-Impact-Wish-Simulator-CLI
 
 [![License](https://img.shields.io/badge/Licence-GPL-blue.svg)](https://github.com/Jirehlov/GenshinImpactWishSimulatorCLI/blob/master/LICENSE)
+
+## Library
+[libgiwscli](https://github.com/Jirehlov/libgiwscli)
 
 ## Other versions
 
