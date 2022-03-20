@@ -21,7 +21,6 @@ void casesx(size_t& kind_p) {
     lang_cout(4, 1);
     std::cout << "  ";
     error_code = 1;
-    full_quit_e();
   }
 }  // cout stars prefix
 
@@ -84,7 +83,6 @@ void animation_gen(const unsigned int star_p) {
       lang_cout(4, 15);
       std::cout << "  ";
       error_code = 15;
-      full_quit_e();
     }
   } else if (anim_number == 1) {
     if (star_p == 3) {
@@ -130,13 +128,11 @@ void animation_gen(const unsigned int star_p) {
       lang_cout(4, 15);
       std::cout << "  ";
       error_code = 15;
-      full_quit_e();
     }
   } else {
     lang_cout(4, 16);
     std::cout << "  ";
     error_code = 16;
-    full_quit_e();
   }
   slash_n()
 }
@@ -405,7 +401,6 @@ void clean_f() {
   } else {
     lang_cout(4, 7);
     slash_n() error_code = 7;
-    full_quit_e();
   }
   max_fivesth = 1;
   min_fivesth = 1;
@@ -1179,7 +1174,6 @@ void lang_cout(unsigned int sq, size_t sw) {
         std::cout << EN_E_13 << '\n' << CN_E_13 << '\n';
         error_code = 13;
         quit = true;
-        full_quit_e();
       }
     }
   } else if (lang_status == 1) {
@@ -1209,7 +1203,6 @@ void lang_cout(unsigned int sq, size_t sw) {
         std::cout << EN_E_13 << '\n' << CN_E_13 << '\n';
         error_code = 13;
         quit = true;
-        full_quit_e();
       }
     }
   } else {
