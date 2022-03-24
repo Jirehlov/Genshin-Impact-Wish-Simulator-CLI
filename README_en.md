@@ -60,13 +60,15 @@ I Character Event Wish\
 24: The Transcendent One Returns/20220105-20220125 (Shenhe, Yun Jin, Ningguang, Chongyun)\
 25: Gentry of Hermitage/20220125-20220215 (Zhongli, Yanfei, Xingqiu, Beidou)\
 26: Everbloom Violet/20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)\
-27: Reign of Serenity/20220308-20220329 (Raiden Shogun, Bennett, Xinyan, Kujo Sara)
+27: Reign of Serenity/20220308-20220329 (Raiden Shogun, Bennett, Xinyan, Kujo Sara)\
+28: Azure Excursion/20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, Xiangling)
 
 II Character Event Wish-2\
 1: Born of Ocean Swell/20211124-20211214 (Eula, Rosaria, Noelle, Bennett)\
 2: Invitation to Mundane Life/20220105-20220125 (Xiao, Yun Jin, Ningguang, Chongyun)\
 3: Adrift in the Harbor/20220125-20220215 (Ganyu, Yanfei, Xingqiu, Beidou)\
-4: Drifting Luminescence/20220308-20220329 (Sangonomiya Kokomi, Bennett, Xinyan, Kujo Sara)
+4: Drifting Luminescence/20220308-20220329 (Sangonomiya Kokomi, Bennett, Xinyan, Kujo Sara)\
+5: Ballad in Goblets/20220330-20220419 (Venti, Yun Jin, Sucrose, Xiangling)
 
 III Weapon Event Wish\
 1: Epitome Invocation/20200928-20201018 (Aquila Favonia, Amos' Bow, The Flute, The Bell, The Widsith, The Stringless, Favonius Lance)\
@@ -94,7 +96,8 @@ III Weapon Event Wish\
 23: Epitome Invocation/20220105-20220125 (Calamity Queller, Primordial Jade Winged-Spear, Lithic Spear, The Flute, Favonius Warbow, The Widsith, Favonius Greatsword)\
 24: Epitome Invocation/20220125-20220215 (Vortex Vanquisher, Amos' Bow, Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial Bow)\
 25: Epitome Invocation/20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)\
-26: Epitome Invocation/20220308-20220329 (Engulfing Lightning, Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius Lance, Sacrificial Fragments)
+26: Epitome Invocation/20220308-20220329 (Engulfing Lightning, Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius Lance, Sacrificial Fragments)\
+27: Epitome Invocation/20220330-20220419 (Haran Tsukishiro Futsu, Elegy of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial Greatsword)
 
 IV Permanent Wish\
 1: Wanderlust Invocation/20200928-20201222 (Released)\
@@ -120,38 +123,3 @@ V Novice Wish\
 ### About Hidden Possibilities
 
 This simulator includes no hidden possibilities.
-
-
-### Library and the usage
-
-A library of our core features are available under the "lib" folder. You can used the lib by simply include the "giwscli.h" file.
-
-Functions defined in namespace giwscli are:
-```
-giwscli::set_pool_1    // set an I banner
-giwscli::set_pool_3    // set an III banner
-giwscli::rspick        // Reservoir sampling
-giwscli::WRSpick       // Weighted sampling
-giwscli::tri           // Pull a 3 star
-giwscli::core_f_1      // Pull in an I banner or II banner
-giwscli::core_f_3      // Pull in an III banner
-giwscli::core_f_4      // Pull in an IV banner
-giwscli::core_f_5      // Pull in an V banner
-giwscli::set_banner_f  // Quickly set a banner
-giwscli::gipull        // Pull a specific banner
-```
-etc.
-
-Here is an example of using giwscli::gipull
-```
-#include <iostream>
-#include "lib/giwscli.h"
-
-int main(){
-    for (size_t i = 0; i < 100; i++ ){
-        giwscli::gipull(1, 27); 
-        std::cout << "Rarity: " << giwscli::star << " ItemID: " << giwscli::kind << std::endl;
-    }// pull Raiden Shogun's the first re-run banner 100 times
-    return 0;
-}
-```
