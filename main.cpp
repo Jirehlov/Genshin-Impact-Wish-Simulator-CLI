@@ -73,9 +73,9 @@ enter_chosen_event : {
     if (enter_chosen_event_f_r == 1) {
       goto enter_chosen_event;
     } else if (enter_chosen_event_f_r == 2) {
-      goto enter_chosen_banner;
-    } else if (enter_chosen_event_f_r == 3) {
       goto pre_announcement;
+    } else if (enter_chosen_event_f_r == 3) {
+      goto enter_chosen_banner;
     } else if (enter_chosen_event_f_r == 0) {
       goto set_banner;
     } else {

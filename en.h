@@ -1,7 +1,7 @@
 #ifndef EN_H
 #define EN_H 1
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.5.16"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.1"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3                        \
   "Source code available on GitHub: " \
@@ -314,13 +314,18 @@
 #define EN_S_180 "Pity status code is as follows (& is start-to-end char):"
 #define EN_S_181 "Pity status code is incorrect!"
 #define EN_S_182 "-1: I don't have a pity status code."
-#define EN_S_183 "28: Azure Excursion_20220330-20220419 (Kamisato Ayato, , , )"
+#define EN_S_183                                                              \
+  "28: Azure Excursion_20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, " \
+  "Xiangling)"
 #define EN_S_184 \
   "(test) 29: The Heron's Court_20220419-20220510 (Kamisato Ayaka, , , )"
-#define EN_S_185 "5: Ballad in Goblets_20220330-20220419 (Venti, , , )"
+#define EN_S_185                                                      \
+  "5: Ballad in Goblets_20220330-20220419 (Venti, Yun Jin, Sucrose, " \
+  "Xiangling)"
 #define EN_S_186                                                             \
   "27: Epitome Invocation_20220330-20220419 (Haran Tsukishiro Futsu, Elegy " \
-  "of the End, , , , , )"
+  "of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial "    \
+  "Greatsword)"
 #define EN_S_187 "Placeholder"
 #define EN_S_188 "Placeholder"
 #define EN_S_189 "Placeholder"

@@ -2,7 +2,7 @@
 #define CN_H 1
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.5.16"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.1"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -245,11 +245,12 @@
 #define CN_S_180 "保底状态码如下(&为起始终止标识符):"
 #define CN_S_181 "保底状态码错误!"
 #define CN_S_182 "-1: 我没有保底状态码。"
-#define CN_S_183 "28: 苍流踏花_20220330-20220419 (神里绫人, , , )"
+#define CN_S_183 "28: 苍流踏花_20220330-20220419 (神里绫人, 云堇, 砂糖, 香菱)"
 #define CN_S_184 "(测试) 29: 白鹭之庭_20220419-20220510 (神里绫华, , , )"
-#define CN_S_185 "5: 杯装之诗_20220330-20220419 (温迪, , , )"
-#define CN_S_186 \
-  "27: 神铸赋形_20220330-20220419 (波乱月白经津, 终末嗟叹之诗, , , , , )"
+#define CN_S_185 "5: 杯装之诗_20220330-20220419 (温迪, 云堇, 砂糖, 香菱)"
+#define CN_S_186                                                                                 \
+  "27: 神铸赋形_20220330-20220419 (波乱月白经津, 终末嗟叹之诗, 弓藏, 笛剑, " \
+  "流浪乐章, 匣里灭辰, 祭礼大剑)"
 #define CN_S_187 "Placeholder"
 #define CN_S_188 "Placeholder"
 #define CN_S_189 "Placeholder"
@@ -414,8 +415,6 @@
 #define CN_A_25 "连续7个四星一模一样!"
 #define CN_A_26 "\"魁杓\""
 
-
-
 static const char* s_pstring_cn[256] = {
     CN_S_0,   CN_S_1,   CN_S_2,   CN_S_3,   CN_S_4,   CN_S_5,   CN_S_6,
     CN_S_7,   CN_S_8,   CN_S_9,   CN_S_10,  CN_S_11,  CN_S_12,  CN_S_13,
@@ -475,7 +474,5 @@ static const char* s_pachieve_cn[27] = {
     CN_A_7,  CN_A_8,  CN_A_9,  CN_A_10, CN_A_11, CN_A_12, CN_A_13,
     CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
     CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26};
-
-
 
 #endif
