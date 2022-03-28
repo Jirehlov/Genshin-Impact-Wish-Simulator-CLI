@@ -1,7 +1,7 @@
 #ifndef EN_H
 #define EN_H 1
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.1"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.2"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3                        \
   "Source code available on GitHub: " \

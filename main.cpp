@@ -17,13 +17,15 @@ int main(int argc, char *argv[]) {
 
   // arg_proc:
   {
-    int arg_proc_r = arg_proc(argc, argv);
-    if (arg_proc_r == 1) {
-      goto set_banner;  // direct mode with lang provided
-    } else if (arg_proc_r == 2) {
-      goto language_setting;  // with lang not provided
-    } else {
-      return error_code;
+    switch (arg_proc(argc, argv)) {
+      case 1: {
+        goto set_banner;  // direct mode with lang provided
+      }
+      case 2: {
+        goto language_setting;  // with lang not provided
+      }
+      default:
+        return error_code;
     }
   }
 
@@ -69,17 +71,21 @@ enter_chosen_banner : {
 enter_chosen_event : {
   e_sav = chosen_event;
   {
-    int enter_chosen_event_f_r = enter_chosen_event_f();
-    if (enter_chosen_event_f_r == 1) {
-      goto enter_chosen_event;
-    } else if (enter_chosen_event_f_r == 2) {
-      goto pre_announcement;
-    } else if (enter_chosen_event_f_r == 3) {
-      goto enter_chosen_banner;
-    } else if (enter_chosen_event_f_r == 0) {
-      goto set_banner;
-    } else {
-      return error_code;
+    switch (enter_chosen_event_f()) {
+      case 1: {
+        goto enter_chosen_event;
+      }
+      case 2: {
+        goto pre_announcement;
+      }
+      case 3: {
+        goto enter_chosen_banner;
+      }
+      case 0: {
+        goto set_banner;
+      }
+      default:
+        return error_code;
     }
   }
 }  // which event? seriously, it's a pretty long list
@@ -90,34 +96,33 @@ set_banner : {
     goto core_core_loop;
   }
   // set banner
-  if (!is_cross) {
-    goto switch_check;
-  } else if (chosen_banner == 3) {
-    min_fives = 80;
-  } else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
-    min_fives = 90;
-  } else {
-    min_fives = PTRDIFF_MAX;
+  if (is_cross) {
+    if (chosen_banner == 3) {
+      min_fives = 80;
+    } else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
+      min_fives = 90;
+    } else {
+      min_fives = PTRDIFF_MAX;
+    }
   }
   // set min_fives since they vary
 }
 
-switch_check : {
-  if ((switch_b_sav == chosen_banner && switch_e_sav == chosen_event) ||
-      e_sav == chosen_event) {
-    is_dualcross = true;
-  } else {
-    is_dualcross = false;
+  // switch_check:
+  {
+    if ((switch_b_sav == chosen_banner && switch_e_sav == chosen_event) ||
+        e_sav == chosen_event) {
+      is_dualcross = true;
+    } else {
+      is_dualcross = false;
+    }
+    if (!is_dualcross) {
+      unmet4_c = 0;
+      unmet4_w = 0;
+      unmet5_c = 0;
+      unmet5_w = 0;
+    }
   }
-  if (is_dualcross) {
-    goto enter_wishes_number;
-  } else {
-    unmet4_c = 0;
-    unmet4_w = 0;
-    unmet5_c = 0;
-    unmet5_w = 0;
-  }
-}
   // seriously, why mihoyo want dual banners
 
 enter_wishes_number : {  // this is a pretty long symbol
@@ -137,16 +142,20 @@ enter_wishes_number : {  // this is a pretty long symbol
     slash_n()
   }
   // enter wishes number
-  int e_wishes_r = e_wishes();
-  if (e_wishes_r == 1) {
-    goto enter_wishes_number;
-  } else if (e_wishes_r == 2) {
-    goto enter_chosen_event;
-  } else if (e_wishes_r == 3) {
-    goto core_core_loop;
-  } else {
-    error_code = 101;
-    return error_code;
+  switch (e_wishes()) {
+    case 1: {
+      goto enter_wishes_number;
+    }
+    case 2: {
+      goto enter_chosen_event;
+    }
+    case 3: {
+      goto core_core_loop;
+    }
+    default: {
+      error_code = 101;
+      return error_code;
+    }
   }
 }
 
