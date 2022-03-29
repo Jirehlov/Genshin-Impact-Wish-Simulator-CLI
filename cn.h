@@ -335,8 +335,9 @@
 #define CN_E_8 "five_count 不合理! 错误码: 8"
 #define CN_E_9 "ij 不合理! 错误码: 9"
 #define CN_E_10 "d_item_n[kind] 不合理! 错误码: 10"
-#define CN_E_11 \
-  "arguments错误! 正确格式为: 卡池类型编号 活动类型编号 祈愿数量 语言"
+#define CN_E_11                                                                                  \
+  "arguments错误! 正确格式为: 卡池类型编号 活动类型编号 祈愿数量 语言 " \
+  "文件输出选项"
 #define CN_E_12 "lang_status不合理! 错误码: 12"
 #define CN_E_13 "lang_cout错误! 错误码: 13"
 #define CN_E_14 "prog 发生错误! 错误码: 14"

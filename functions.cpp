@@ -3,7 +3,6 @@
 #include <climits>
 
 using namespace giwscli;
-static char fn[26] = "sav_0000000000.giwsclisav";
 
 void casesx(const size_t& kind_p) {
   if (kind_p < 15) {
@@ -151,9 +150,8 @@ void hash_gen() {
   hash_out[8] = fate_weapon;
 }
 
-void hash_p()
-{
-	lang_cout(1, 180);
+void hash_p() {
+  lang_cout(1, 180);
   slash_n() std::cout << "\n&" << hash_out[0];
   for (size_t i = 1; i < 9; i++) {
     std::cout << "*" << hash_out[i];
@@ -162,8 +160,7 @@ void hash_p()
 }
 
 void enter_chosen_banner_f() {
-  fnhash() 
-  d_item_c = true;
+  fnhash() d_item_c = true;
   is_s_mode = false;
   quit = true;
   is_noelle = true;
@@ -382,8 +379,7 @@ void wishes_127() {
 }
 
 void clean_f() {
-  fnhash() 
-  wishes_number = 0;
+  fnhash() wishes_number = 0;
   four_star_assurance_number = 1;
   five_star_assurance_number = 1;
   five_star_guarantee_number = false;
@@ -481,6 +477,58 @@ void clean_f() {
 }
 
 int arg_proc(int argc, char* argv[]) {
+  if (argc == 6) {
+    int test0;
+    int test1;
+    signed long long int test2;
+    unsigned long int test3;
+    int test4;
+    try {
+      test0 = std::stoi(argv[1]);
+      test1 = std::stoi(argv[2]);
+      test2 = std::stoll(argv[3]);
+      test3 = std::stoul(argv[4]);
+      test4 = std::stoi(argv[5]);
+    } catch (...) {
+      lang_cout(4, 11);
+      slash_n() error_code = 11;
+      y_arg = true;
+      full_quit_f()
+    }
+    drump5 = static_cast<size_t>(test0) ==
+             static_cast<size_t>(test1) + static_cast<size_t>(test2) ==
+             static_cast<size_t>(test3) + static_cast<size_t>(test4);
+    test0 = std::stoi(argv[1]);
+    test1 = std::stoi(argv[2]);
+    test2 = std::stoll(argv[3]);
+    test3 = std::stoul(argv[4]);
+    test4 = std::stoi(argv[5]);
+    chosen_banner = static_cast<ptrdiff_t>(test0);
+    chosen_event = static_cast<ptrdiff_t>(test1);
+    if (test2 < 1) {
+      lang_cout(1, 72);
+      slash_n() y_arg = true;
+      full_quit_f()
+    }
+    { wishes_number = test2; }  // else
+    if (test3 != 0 && test3 != 1) {
+      lang_cout(4, 12);
+      slash_n() error_code = 12;
+      y_arg = true;
+      full_quit_f()
+    }
+    { lang_status = static_cast<unsigned int>(test3); }  // else
+    if (test4 != 0 && test4 != 1) {
+      lang_cout(4, 11);
+      slash_n() error_code = 453;
+      y_arg = true;
+      full_quit_f()
+    }
+    { y_savtof = static_cast<bool>(test4); }  // else
+    quit = false;
+    y_arg = true;
+    return 1;
+  }
   if (argc == 5) {
     int test0;
     int test1;
@@ -510,21 +558,20 @@ int arg_proc(int argc, char* argv[]) {
       lang_cout(1, 72);
       slash_n() y_arg = true;
       full_quit_f()
-    } else {
-      wishes_number = test2;
     }
+    { wishes_number = test2; }  // else
     if (test3 != 0 && test3 != 1) {
       lang_cout(4, 12);
       slash_n() error_code = 12;
       y_arg = true;
       full_quit_f()
-    } else {
-      lang_status = static_cast<unsigned int>(test3);
     }
+    { lang_status = static_cast<unsigned int>(test3); }  // else
     quit = false;
     y_arg = true;
     return 1;
-  } else if (argc == 4) {
+  }
+  if (argc == 4) {
     int test0;
     int test1;
     signed long long int test2;
@@ -549,20 +596,21 @@ int arg_proc(int argc, char* argv[]) {
       lang_cout(1, 72);
       slash_n() y_arg = true;
       full_quit_f()
-    } else {
-      wishes_number = test2;
     }
+    { wishes_number = test2; }  // else
     quit = false;
     y_arg = true;
     return 2;
-  } else if (argc == 1) {
+  }
+  if (argc == 1) {
     return 2;
-  } else {
+  }
+  {
     lang_cout(4, 11);
     slash_n() error_code = 11;
     y_arg = true;
     full_quit_f()
-  }
+  }  // else
 }
 
 int enter_chosen_event_f() {
@@ -1964,10 +2012,10 @@ int ccloop() {
 
 int ccloop_of() {
   std::ofstream output_file(fn, std::ios::binary | std::ios::app);
-  if (output_file.is_open()){
+  if (output_file.is_open()) {
     unsigned char x[5] = {'\0'};
     x[0] = static_cast<unsigned char>(seed);
-	x[1] = static_cast<unsigned char>(0xFF);
+    x[1] = static_cast<unsigned char>(0xFF);
     x[2] = static_cast<unsigned char>(chosen_banner);
     x[3] = static_cast<unsigned char>(chosen_event);
     x[4] = static_cast<unsigned char>(0xFF);

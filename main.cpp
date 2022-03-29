@@ -97,6 +97,7 @@ enter_chosen_event : {
 set_banner : {
   set_banner_f(chosen_banner, chosen_event);
   if (y_arg) {
+    fnhash()
     goto core_core_loop;
   }
   // set banner

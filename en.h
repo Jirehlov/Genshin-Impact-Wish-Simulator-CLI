@@ -411,8 +411,9 @@
 #define EN_E_8 "Unexpected five_count! Error code: 8"
 #define EN_E_9 "Unexpected ij! Error code: 9"
 #define EN_E_10 "Unexpected d_item_n[kind]! Error code: 10"
-#define EN_E_11 \
-  "Arguments error! Usage: chosen_banner chosen_event wishes_number language"
+#define EN_E_11                                                             \
+  "Arguments error! Usage: <chosen_banner> <chosen_event> <wishes_number> " \
+  "<language> <file-output option>"
 #define EN_E_12 "Unexpected lang_status! Error code: 12"
 #define EN_E_13 "Unexpected lang_cout! Error code: 13"
 #define EN_E_14 "An error occurred in prog! Error code: 14"
