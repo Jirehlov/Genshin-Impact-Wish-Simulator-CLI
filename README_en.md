@@ -21,14 +21,16 @@ Or Visual Studio, etc.
 ### How to use:
 
 ```
-giwscli <chosen_banner> <chosen_event> <wishes_number> <language>
+giwscli <chosen_banner> <chosen_event> <wishes_number> <language> <file-output option>
 ```
-For exmaple, if you want to pull 100 wishes in Sparkling Steps/20201020-20201110 which is a Character Event Wish and the exported text to be in English, type:
+For exmaple, if you want to pull 100 wishes in Sparkling Steps/20201020-20201110 which is a Character Event Wish and the exported text to be in English, and at the same time generate a binary file with results, type:
 ```
-giwscli 1 2 100 0
+giwscli 1 2 100 0 1
 ```
-where 0 for English and 1 for Chinese.\
+For languange option, 0 for English and 1 for Chinese.\
+For file-output option, 0 for no file-output and 1 for yes.\
 If language option is not provided, the program will ask the user about the language.\
+File-output option is valid iff language option is provided.\
 If no argument is provided, the program will enter interactive mode.
 
 No. of banners and events seen as follows:
