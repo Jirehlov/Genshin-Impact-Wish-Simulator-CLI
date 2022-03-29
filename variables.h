@@ -21,7 +21,7 @@ extern std::time_t t_start;
 extern std::time_t t_end;
 extern size_t four_stars_c[23], four_stars_w[27], five_stars_c[23],
     five_stars_w[28];
-extern ptrdiff_t e_sav, switch_b_should_be, switch_b_sav;
+extern ptrdiff_t e_sav, switch_b_should_be, switch_b_sav, hash_out[9];
 extern unsigned int lang_status, delay_r, star_max, anim_number, luckstar[10];
 extern signed long long int wishes_number, wishes_number_r, delay_prog,
     wishes_number_r_t, elapsed_time;

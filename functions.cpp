@@ -140,7 +140,6 @@ void animation_gen(const unsigned int star_p) {
 }
 
 void hash_gen() {
-  ptrdiff_t hash_out[9] = {0};
   hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
   hash_out[1] = five_star_assurance_number;
   hash_out[2] = static_cast<ptrdiff_t>(four_star_guarantee_number);
@@ -150,7 +149,11 @@ void hash_gen() {
   hash_out[6] = unmet4_c + 1;
   hash_out[7] = unmet4_w + 1;
   hash_out[8] = fate_weapon;
-  lang_cout(1, 180);
+}
+
+void hash_p()
+{
+	lang_cout(1, 180);
   slash_n() std::cout << "\n&" << hash_out[0];
   for (size_t i = 1; i < 9; i++) {
     std::cout << "*" << hash_out[i];
@@ -1752,6 +1755,7 @@ int e_wishes() {
       slash_n() return 1;
     }
     hash_gen();
+    hash_p();
     wishes_number = 0;
     return 1;
   }  // hash generator
@@ -1960,7 +1964,15 @@ int ccloop() {
 
 int ccloop_of() {
   std::ofstream output_file(fn, std::ios::binary | std::ios::app);
-  if (!output_file.is_open()) {
+  if (output_file.is_open()){
+    unsigned char x[5] = {'\0'};
+    x[0] = static_cast<unsigned char>(seed);
+	x[1] = static_cast<unsigned char>(0xFF);
+    x[2] = static_cast<unsigned char>(chosen_banner);
+    x[3] = static_cast<unsigned char>(chosen_event);
+    x[4] = static_cast<unsigned char>(0xFF);
+    output_file.write(reinterpret_cast<const char*>(x), sizeof(x));
+  } else {
     error_code = 377;
   }
   if (chosen_banner == 1 || chosen_banner == 2) {

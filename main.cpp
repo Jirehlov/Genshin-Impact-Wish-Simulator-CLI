@@ -201,6 +201,7 @@ core_core_loop : {
   wishes_number_r = 0;
   if (y_arg || error_code != 0) {
     hash_gen();
+    hash_p();
     full_quit_f()
   }
   goto enter_wishes_number;

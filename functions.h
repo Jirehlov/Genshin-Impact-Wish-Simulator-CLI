@@ -16,6 +16,7 @@ extern void ini_all(size_t* in, size_t ins, size_t nu);
 extern void head_print();
 extern void animation_gen(const unsigned int star_p);
 extern void hash_gen();
+extern void hash_p();
 extern void enter_chosen_banner_f();
 extern void output_string();
 extern void wishes_127();

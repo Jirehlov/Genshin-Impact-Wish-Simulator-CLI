@@ -106,16 +106,16 @@
     full_q = std::cin.get();                                            \
     return error_code;                                                  \
   }
-#define fileout()                                                          \
-  {                                                                        \
-    {                                                                      \
-      const unsigned char x[1] = {static_cast<const unsigned char>(kind)}; \
-      if (output_file.is_open()) {                                         \
-        output_file.write(reinterpret_cast<const char*>(x), sizeof(x));    \
-      } else {                                                             \
-        error_code = 377;                                                  \
-      }                                                                    \
-    }                                                                      \
+#define fileout()                                                            \
+  {                                                                          \
+    {                                                                        \
+      if (output_file.is_open()) {                                           \
+        const unsigned char x[1] = {static_cast<const unsigned char>(kind)}; \
+        output_file.write(reinterpret_cast<const char*>(x), sizeof(x));      \
+      } else {                                                               \
+        error_code = 377;                                                    \
+      }                                                                      \
+    }                                                                        \
   }
 #define fnhash()                                                      \
   {                                                                   \
