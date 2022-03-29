@@ -1,5 +1,6 @@
 #ifndef CN_H
 #define CN_H 1
+#if CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
 #define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.2"
@@ -251,10 +252,13 @@
 #define CN_S_186                                                                                 \
   "27: 神铸赋形_20220330-20220419 (波乱月白经津, 终末嗟叹之诗, 弓藏, 笛剑, " \
   "流浪乐章, 匣里灭辰, 祭礼大剑)"
-#define CN_S_187 "Placeholder"
-#define CN_S_188 "Placeholder"
-#define CN_S_189 "Placeholder"
-#define CN_S_190 "Placeholder"
+#define CN_S_187 "-511: 输出所有结果记录到文件功能开关"
+#define CN_S_188                                                                          \
+  "注意: \n输出文件以8位即1字节储存对象编号, 无文件头等标识符, " \
+  "请勿擅自修改!\n处于安全考虑, 本程序不提供读入功能, "             \
+  "您可以使用各种二进制查看器读取记录文件"
+#define CN_S_189 "输出所有结果记录到文件功能已关闭!"
+#define CN_S_190 "输出所有结果记录到文件功能已开启!"
 #define CN_S_191 "Placeholder"
 #define CN_S_192 "Placeholder"
 #define CN_S_193 "Placeholder"
@@ -474,5 +478,7 @@ static const char* s_pachieve_cn[27] = {
     CN_A_7,  CN_A_8,  CN_A_9,  CN_A_10, CN_A_11, CN_A_12, CN_A_13,
     CN_A_14, CN_A_15, CN_A_16, CN_A_17, CN_A_18, CN_A_19, CN_A_20,
     CN_A_21, CN_A_22, CN_A_23, CN_A_24, CN_A_25, CN_A_26};
+
+#endif
 
 #endif

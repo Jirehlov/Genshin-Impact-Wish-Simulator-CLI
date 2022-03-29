@@ -1,5 +1,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H 1
+#include <fstream>
 #include <iomanip>
 #include <string>
 #include <thread>
@@ -10,7 +11,7 @@
 #include "macro_f.h"
 #include "variables.h"
 
-extern void casesx(size_t& kind_p);
+extern void casesx(const size_t& kind_p);
 extern void ini_all(size_t* in, size_t ins, size_t nu);
 extern void head_print();
 extern void animation_gen(const unsigned int star_p);
@@ -33,8 +34,10 @@ extern int wishes_5();
 extern int e_wishes();
 extern void anim_p();
 extern int ccloop();
+extern int ccloop_of();
 extern int post_ccloop_1(size_t& anim_loop);
 extern int post_ccloop_3(size_t& anim_loop);
 extern int post_ccloop_4(size_t& anim_loop);
 extern int post_ccloop_5(size_t& anim_loop);
+extern void cin_error_by3();
 #endif

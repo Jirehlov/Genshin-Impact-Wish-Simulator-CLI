@@ -43,12 +43,6 @@
     std::cin.clear();                                                   \
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); \
   }
-#define cin_error_by3()                                                 \
-  {                                                                     \
-    std::cout << '\n' << EN_S_72 << '\n' << CN_S_72 << "\n\n";          \
-    std::cin.clear();                                                   \
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); \
-  }
 #define prog_p()                         \
   {                                      \
     std::cout << "\r";                   \
@@ -111,5 +105,27 @@
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); \
     full_q = std::cin.get();                                            \
     return error_code;                                                  \
+  }
+#define fileout()                                                          \
+  {                                                                        \
+    {                                                                      \
+      const unsigned char x[1] = {static_cast<const unsigned char>(kind)}; \
+      if (output_file.is_open()) {                                         \
+        output_file.write(reinterpret_cast<const char*>(x), sizeof(x));    \
+      } else {                                                             \
+        error_code = 377;                                                  \
+      }                                                                    \
+    }                                                                      \
+  }
+#define fnhash()                                                      \
+  {                                                                   \
+    char letters_p[] = {'a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2',  \
+                        '3', '4', '5', '6', '7', '8', '9', '!', 'z'}; \
+    unsigned int seed_r_t = seed_gen() % 10000000;                    \
+    std::shuffle(std::begin(letters_p), std::end(letters_p),          \
+                 std::mt19937_64(seed_r_t));                          \
+    for (size_t i = 5; i < 16; i++) {                                 \
+      fn[i] = letters_p[i - 5];                                       \
+    }                                                                 \
   }
 #endif

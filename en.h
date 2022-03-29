@@ -1,5 +1,6 @@
 #ifndef EN_H
 #define EN_H 1
+#if EN_H
 #define EN_S_0 "Placeholder"
 #define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.2"
 #define EN_S_2 "by Jirehlov Research"
@@ -326,10 +327,14 @@
   "27: Epitome Invocation_20220330-20220419 (Haran Tsukishiro Futsu, Elegy " \
   "of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial "    \
   "Greatsword)"
-#define EN_S_187 "Placeholder"
-#define EN_S_188 "Placeholder"
-#define EN_S_189 "Placeholder"
-#define EN_S_190 "Placeholder"
+#define EN_S_187 "-511: Output to file or not"
+#define EN_S_188                                                           \
+  "ATTENTION: \nData contained in the output file is stored per byte "     \
+  "Please do not edit it by yourself!\nFor security's sake, this program " \
+  "cannot read these files "                                               \
+  "You can view the files with any hex viewer."
+#define EN_S_189 "Output to file mode is disabled!"
+#define EN_S_190 "Output to file mode is enabled!"
 #define EN_S_191 "Placeholder"
 #define EN_S_192 "Placeholder"
 #define EN_S_193 "Placeholder"
@@ -548,5 +553,7 @@ static const char* s_pachieve_en[27] = {
     EN_A_7,  EN_A_8,  EN_A_9,  EN_A_10, EN_A_11, EN_A_12, EN_A_13,
     EN_A_14, EN_A_15, EN_A_16, EN_A_17, EN_A_18, EN_A_19, EN_A_20,
     EN_A_21, EN_A_22, EN_A_23, EN_A_24, EN_A_25, EN_A_26};
+
+#endif
 
 #endif

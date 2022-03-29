@@ -1,6 +1,7 @@
 #include "functions.h"
 
 using namespace giwscli;
+
 int main(int argc, char *argv[]) {
   static char default_argv0[] = "giwscli";
   argv[0] = default_argv0;
@@ -30,11 +31,14 @@ int main(int argc, char *argv[]) {
   }
 
 language_setting : {
+#if CN_H
   std::cout << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
   std::cin >> lang_status;
   slash_n() if (std::cin.fail() || lang_status > 1) {
     lang_status = 0;
-    cin_error_by3() goto language_setting;
+    cin_error_by3();
+    goto language_setting;
   }
   if (argc == 4) {
     goto set_banner;
@@ -164,7 +168,12 @@ core_core_loop : {
   starty = std::chrono::system_clock::now();
   // ikuzo
 
-  int ccloop_r = ccloop();
+  int ccloop_r;
+  if (y_savtof) {
+    ccloop_r = ccloop_of();
+  } else {
+    ccloop_r = ccloop();
+  }
   if (ccloop_r != 0) {
     return error_code;
   }

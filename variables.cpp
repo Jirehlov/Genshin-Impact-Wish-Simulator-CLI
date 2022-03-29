@@ -3,7 +3,7 @@
 bool d_item_c = true, is_s_mode = false, is_cross = false, is_dualcross = false,
      y_print = true, y_luck = true, y_arg = false, y_prog = false,
      y_track_luck = false, y_track_luck_mode = false, y_anim = false,
-     y_anim_del = false, iacheck = false, achp_check = false,
+     y_anim_del = false, y_savtof = false, iacheck = false, achp_check = false,
      achp_check_again = false,
      ach_q[12] = {false, false, false, false, false, false,
                   false, false, false, false, false, false};

@@ -3,6 +3,8 @@
 #include <climits>
 
 using namespace giwscli;
+static char fn[26] = "sav_0000000000.giwsclisav";
+
 void casesx(const size_t& kind_p) {
   if (kind_p < 15) {
     std::cout << "!!!!!***** ";
@@ -157,6 +159,7 @@ void hash_gen() {
 }
 
 void enter_chosen_banner_f() {
+  fnhash() 
   d_item_c = true;
   is_s_mode = false;
   quit = true;
@@ -376,6 +379,7 @@ void wishes_127() {
 }
 
 void clean_f() {
+  fnhash() 
   wishes_number = 0;
   four_star_assurance_number = 1;
   five_star_assurance_number = 1;
@@ -594,12 +598,15 @@ int enter_chosen_event_f() {
         }
         if (chosen_event == -120) {
         language_setting_local:
+#if CN_H
           std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
           std::cin >> lang_status;
           slash_n() {
             if (std::cin.fail() || lang_status > 1) {
               lang_status = 0;
-              cin_error_by3() goto language_setting_local;
+              cin_error_by3();
+              goto language_setting_local;
             }
             {
               chosen_event = 0;
@@ -644,12 +651,15 @@ int enter_chosen_event_f() {
       }
       if (chosen_event == -120) {
       language_setting_local_1:
+#if CN_H
         std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
         std::cin >> lang_status;
         slash_n() {
           if (std::cin.fail() || lang_status > 1) {
             lang_status = 0;
-            cin_error_by3() goto language_setting_local_1;
+            cin_error_by3();
+            goto language_setting_local_1;
           }
           {
             chosen_event = 0;
@@ -693,12 +703,15 @@ int enter_chosen_event_f() {
       }
       if (chosen_event == -120) {
       language_setting_local_2:
+#if CN_H
         std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
         std::cin >> lang_status;
         slash_n() {
           if (std::cin.fail() || lang_status > 1) {
             lang_status = 0;
-            cin_error_by3() goto language_setting_local_2;
+            cin_error_by3();
+            goto language_setting_local_2;
           }
           {
             chosen_event = 0;
@@ -740,12 +753,15 @@ int enter_chosen_event_f() {
       }
       if (chosen_event == -120) {
       language_setting_local_3:
+#if CN_H
         std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
         std::cin >> lang_status;
         slash_n() {
           if (std::cin.fail() || lang_status > 1) {
             lang_status = 0;
-            cin_error_by3() goto language_setting_local_3;
+            cin_error_by3();
+            goto language_setting_local_3;
           }
           {
             chosen_event = 0;
@@ -786,12 +802,15 @@ int enter_chosen_event_f() {
       }
       if (chosen_event == -120) {
       language_setting_local_4:
+#if CN_H
         std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
         std::cin >> lang_status;
         slash_n() {
           if (std::cin.fail() || lang_status > 1) {
             lang_status = 0;
-            cin_error_by3() goto language_setting_local_4;
+            cin_error_by3();
+            goto language_setting_local_4;
           }
           {
             chosen_event = 0;
@@ -808,12 +827,15 @@ int enter_chosen_event_f() {
     } break;
     case -120: {
     language_setting_local_5:
+#if CN_H
       std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
       std::cin >> lang_status;
       slash_n() {
         if (std::cin.fail() || lang_status > 1) {
           lang_status = 0;
-          cin_error_by3() goto language_setting_local_5;
+          cin_error_by3();
+          goto language_setting_local_5;
         }
         {
           chosen_event = 0;
@@ -888,6 +910,8 @@ void pre_wishes() {
   if (achp_check) {
     slash_n() lang_cout(1, 162);
   }
+  std::cout << ";\n";
+  lang_cout(1, 187);
   slash_nn()
 }
 
@@ -1183,28 +1207,44 @@ void lang_cout(unsigned int sq, size_t sw) {
   if (lang_status == 0) {
     switch (sq) {
       case 1:
+#if EN_H
         std::cout << s_pstring_en[sw];
+#endif
         break;
       case 2:
+#if EN_ITEM_H
         std::cout << s_pname_en[sw];
+#endif
         break;
       case 3:
+#if EN_ITEM_H
         std::cout << s_pnameshort_en[sw];
+#endif
         break;
       case 4:
+#if EN_H
         std::cout << s_perror_en[sw];
+#endif
         break;
       case 5:
+#if EN_H
         std::cout << s_pvalue_en[sw];
+#endif
         break;
       case 6:
+#if EN_H
         std::cout << s_pachieve_en[sw];
+#endif
         break;
       case 7:
+#if EN_ITEM_H
         std::cout << s_pdetails_en[sw];
+#endif
         break;
       default: {
+#if CN_H
         std::cout << EN_E_13 << '\n' << CN_E_13 << '\n';
+#endif
         error_code = 13;
         quit = true;
       }
@@ -1212,34 +1252,52 @@ void lang_cout(unsigned int sq, size_t sw) {
   } else if (lang_status == 1) {
     switch (sq) {
       case 1:
+#if CN_H
         std::cout << s_pstring_cn[sw];
+#endif
         break;
       case 2:
+#if CN_ITEM_H
         std::cout << s_pname_cn[sw];
+#endif
         break;
       case 3:
+#if CN_ITEM_H
         std::cout << s_pnameshort_cn[sw];
+#endif
         break;
       case 4:
+#if CN_H
         std::cout << s_perror_cn[sw];
+#endif
         break;
       case 5:
+#if CN_H
         std::cout << s_pvalue_cn[sw];
+#endif
         break;
       case 6:
+#if CN_H
         std::cout << s_pachieve_cn[sw];
+#endif
         break;
       case 7:
+#if CN_ITEM_H
         std::cout << s_pdetails_cn[sw];
+#endif
         break;
       default: {
+#if CN_H
         std::cout << EN_E_13 << '\n' << CN_E_13 << '\n';
+#endif
         error_code = 13;
         quit = true;
       }
     }
   } else {
+#if CN_H
     std::cout << EN_E_12 << '\n' << CN_E_12 << '\n';
+#endif
     error_code = 12;
     quit = true;
   }
@@ -1406,7 +1464,7 @@ int wishes_5() {
     slash_n() return 1;
   }  // no novice
 
-  else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
+  if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
     lang_cout(1, 88);
     slash_nn() std::cout << std::fixed << std::setprecision(8);
     for (size_t iout = 0; iout < 10; iout++) {
@@ -1431,7 +1489,7 @@ int wishes_5() {
     return 1;
   }  // for chars
 
-  else if (chosen_banner == 3) {
+  if (chosen_banner == 3) {
     lang_cout(1, 88);
     slash_nn() std::cout << std::fixed << std::setprecision(8);
     for (size_t iout = 0; iout < 10; iout++) {
@@ -1456,7 +1514,7 @@ int wishes_5() {
     return 1;
   }  // for weapons
 
-  else {
+  {
     wishes_number = 0;
     lang_cout(4, 7);
     slash_n() error_code = 7;
@@ -1611,6 +1669,7 @@ int e_wishes() {
     wishes_number = 0;
     return 1;
   }  // luck switch
+
   if (wishes_number == -8) {
     if (y_prog) {
       y_prog = false;
@@ -1734,11 +1793,14 @@ int e_wishes() {
 
   if (wishes_number == -120) {
   language_setting_local_6:
+#if CN_H
     std::cout << '\n' << EN_S_160 << '\n' << CN_S_160 << UNI_S_0;
+#endif
     std::cin >> lang_status;
     slash_n() if (std::cin.fail() || lang_status > 1) {
       lang_status = 0;
-      cin_error_by3() goto language_setting_local_6;
+      cin_error_by3();
+      goto language_setting_local_6;
     }
     {
       wishes_number = 0;
@@ -1767,6 +1829,22 @@ int e_wishes() {
     }
     slash_n() return 1;
   }  // what? achievements
+
+  if (wishes_number == -511) {
+    lang_cout(1, 188);
+    slash_nn() if (y_savtof) {
+      y_savtof = false;
+      lang_cout(1, 189);
+      slash_n()
+    }
+    else {
+      y_savtof = true;
+      lang_cout(1, 190);
+      slash_n()
+    }
+    wishes_number = 0;
+    return 1;
+  }  // sav to file
 
   if (wishes_number < 1) {
     wishes_number = 0;
@@ -1877,7 +1955,77 @@ int ccloop() {
     slash_n() error_code = 7;
     full_quit_f()
   }
+  return 0;
+}
 
+int ccloop_of() {
+  std::ofstream output_file(fn, std::ios::binary | std::ios::app);
+  if (!output_file.is_open()) {
+    error_code = 377;
+  }
+  if (chosen_banner == 1 || chosen_banner == 2) {
+    size_t anim_loop = 0;
+    while (wishes_number > 0 || d_item_c || y_track_luck) {
+      temp1 = generatorz() % 2;
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;  // which exactly
+      core_f_1();
+      output_string();
+      fileout() post_add();
+      error_code = post_ccloop_1(anim_loop);
+    }
+  }
+  // chars up
+
+  else if (chosen_banner == 3) {
+    size_t anim_loop = 0;
+    while (wishes_number > 0 || d_item_c || y_track_luck) {
+      temp1 = generatorz() % 4;
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;  // which exactly
+      core_f_3();
+      output_string();
+      fileout() post_add();
+      error_code = post_ccloop_3(anim_loop);
+    }
+  }
+  // weapons up
+
+  else if (chosen_banner == 4) {
+    size_t anim_loop = 0;
+    while (wishes_number > 0 || d_item_c || y_track_luck) {
+      star = 0;  // 4-star or 5-star
+      type = 0;  // Up or non-up, character or weapon
+      kind = 0;  // which exactly
+      core_f_4();
+      output_string();
+      fileout() post_add();
+      error_code = post_ccloop_4(anim_loop);
+    }
+  }
+  // no up
+
+  else if (chosen_banner == 5) {
+    size_t anim_loop = 0;
+    while (wishes_number > 0 || d_item_c || y_track_luck) {
+      temp1 = generatorz() % 1000;
+      star = 0;  // 4-star or 5-star
+      kind = 0;  // which exactly
+      core_f_5();
+      output_string();
+      fileout() post_add();
+      error_code = post_ccloop_5(anim_loop);
+    }
+  }  // novice
+
+  else {
+    lang_cout(4, 7);
+    slash_n() error_code = 7;
+    full_quit_f()
+  }
+  output_file.close();
   return 0;
 }
 
@@ -2111,4 +2259,12 @@ int post_ccloop_5(size_t& anim_loop) {
     }
   }
   return 0;
+}
+
+void cin_error_by3() {
+#if CN_H
+  std::cout << '\n' << EN_S_72 << '\n' << CN_S_72 << "\n\n";
+#endif
+  std::cin.clear();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

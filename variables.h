@@ -2,12 +2,13 @@
 #define VARIABLES_H 1
 #include <chrono>
 #include <cstddef>
+#include <string>
 
 extern bool d_item_c, is_s_mode, is_cross, is_dualcross, y_print, y_luck, y_arg,
-    y_prog, y_track_luck, y_track_luck_mode, y_anim, y_anim_del, iacheck,
-    achp_check, achp_check_again, ach_q[12];
-extern size_t luck, luckiest, countx_r, countx_l, drump5, drump4, d_item[128],
-    d_item_n[128], anim_kind, anim_location, anim_sublocation,
+    y_prog, y_track_luck, y_track_luck_mode, y_anim, y_anim_del, y_savtof,
+    iacheck, achp_check, achp_check_again, ach_q[12];
+extern size_t luck, luckiest, countx_r, countx_l, drump5, drump4,
+    d_item[128], d_item_n[128], anim_kind, anim_location, anim_sublocation,
     anim_subsublocation, luckkind[10], luckiestkind[10], animkind[10],
     lucklocation[10], lucksublocation[10], lucksubsublocation[10],
     luckiestlocation[10], luckiestsublocation[10], luckiestsubsublocation[10],
