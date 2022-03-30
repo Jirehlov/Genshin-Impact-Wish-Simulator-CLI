@@ -929,29 +929,20 @@ void pre_wishes() {
   lang_cout(1, 60);
   if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 3 ||
       chosen_banner == 4) {
-    std::cout << ";\n";
-    lang_cout(1, 90);
+    slash_dn() lang_cout(1, 90);
   }
   if (chosen_banner == 3 && chosen_event > 14) {
-    std::cout << ";\n";
-    lang_cout(1, 61);
+    slash_dn() lang_cout(1, 61);
   }
-  std::cout << ";\n";
-  lang_cout(1, 158);
-  std::cout << ";\n";
-  lang_cout(1, 165);
-  std::cout << ";\n";
-  lang_cout(1, 170);
-  std::cout << ";\n";
-  lang_cout(1, 174);
+  slash_dn() lang_cout(1, 158);
+  slash_dn() lang_cout(1, 165);
+  slash_dn() lang_cout(1, 170);
+  slash_dn() lang_cout(1, 174);
   if (chosen_banner != 5) {
-    std::cout << ";\n";
-    lang_cout(1, 178);
-    std::cout << ";\n";
-    lang_cout(1, 128);
+    slash_dn() lang_cout(1, 178);
+    slash_dn() lang_cout(1, 128);
   }
-  std::cout << ";\n";
-  lang_cout(1, 113);
+  slash_dn() lang_cout(1, 113);
   slash_n() lang_cout(1, 161);
   for (size_t i = 0; i < 9; i++) {
     if (ach_q[i]) {
@@ -961,8 +952,8 @@ void pre_wishes() {
   if (achp_check) {
     slash_n() lang_cout(1, 162);
   }
-  std::cout << ";\n";
-  lang_cout(1, 187);
+  slash_dn() lang_cout(1, 191);
+  slash_dn() lang_cout(1, 187);
   slash_nn()
 }
 
@@ -1882,6 +1873,12 @@ int e_wishes() {
     slash_n() return 1;
   }  // what? achievements
 
+  if (wishes_number == -384) {
+    wishes_number = 0;
+    wishes_384();
+    return 1;
+  }
+
   if (wishes_number == -511) {
     lang_cout(1, 188);
     slash_nn() if (y_savtof) {
@@ -2327,4 +2324,14 @@ void cin_error_by3() {
 #endif
   std::cin.clear();
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+void wishes_384() {
+  for (size_t i = 0; i < MAX_ITEMS; i++) {
+    std::cout << i << " ";
+    lang_cout(2, i);
+    std::cout << " || ";
+    lang_cout(7, i);
+    slash_n()
+  }
 }

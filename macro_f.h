@@ -7,6 +7,9 @@
 #define slash_nn() \
   { std::cout << "\n\n"; }
 
+#define slash_dn() \
+  { std::cout << ";\n"; }
+
 #define is_mode()                                  \
   {                                                \
     bool check = false;                            \
@@ -117,15 +120,25 @@
       }                                                                      \
     }                                                                        \
   }
-#define fnhash()                                                      \
-  {                                                                   \
-    char letters_p[] = {'a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2',  \
-                        '3', '4', '5', '6', '7', '8', '9', '!', 'z'}; \
-    unsigned int seed_r_t = seed_gen() % 10000000;                    \
-    std::shuffle(std::begin(letters_p), std::end(letters_p),          \
-                 std::mt19937_64(seed_r_t));                          \
-    for (size_t i = 4; i < 14; i++) {                                 \
-      fn[i] = letters_p[i - 4];                                       \
-    }                                                                 \
+#define fnhash()                                                         \
+  {                                                                      \
+    char letters_p[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j',     \
+                        'k', 'm', 'n', 'p', 'q', 's', 't', 'u', 'w',     \
+                        'x', 'y', 'z', '!', '$', '0', '1', '2', '3',     \
+                        '4', '5', '6', '7', '8', '9', '!'};              \
+    unsigned int seed_r_t = seed_gen() % 10000000;                       \
+    unsigned long long int seed_t_t_t =                                  \
+        static_cast<unsigned long long int>(                             \
+            std::chrono::high_resolution_clock::now()                    \
+                .time_since_epoch()                                      \
+                .count()) *                                              \
+        static_cast<unsigned long long int>(100000);                     \
+    size_t seed_t_t =                                                    \
+        static_cast<size_t>(seed_t_t_t) + static_cast<size_t>(seed_r_t); \
+    std::mt19937_64 ran_gen_fn(seed_t_t);                                \
+    for (size_t i = 4; i < 20; i++) {                                    \
+      size_t t = ran_gen_fn() % 34;                                      \
+      fn[i] = letters_p[t];                                              \
+    }                                                                    \
   }
 #endif

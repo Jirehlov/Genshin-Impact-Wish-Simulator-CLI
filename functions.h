@@ -41,4 +41,5 @@ extern int post_ccloop_3(size_t& anim_loop);
 extern int post_ccloop_4(size_t& anim_loop);
 extern int post_ccloop_5(size_t& anim_loop);
 extern void cin_error_by3();
+extern void wishes_384();
 #endif

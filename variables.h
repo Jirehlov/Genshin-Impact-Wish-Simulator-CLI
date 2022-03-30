@@ -26,6 +26,6 @@ extern unsigned int lang_status, delay_r, star_max, anim_number, luckstar[10];
 extern signed long long int wishes_number, wishes_number_r, delay_prog,
     wishes_number_r_t, elapsed_time;
 extern signed int tuck, full_q;
-extern char fn[26];
+extern char fn[32];
 
 #endif

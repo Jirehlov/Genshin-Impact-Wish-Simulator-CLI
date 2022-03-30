@@ -2,7 +2,7 @@
 #define EN_H 1
 #if EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.3"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.4"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3                        \
   "Source code available on GitHub: " \
@@ -335,7 +335,7 @@
   "You can view the files with any hex viewer."
 #define EN_S_189 "Output to file mode is disabled!"
 #define EN_S_190 "Output to file mode is enabled!"
-#define EN_S_191 "Placeholder"
+#define EN_S_191 "-384: View full list of all items in all banners"
 #define EN_S_192 "Placeholder"
 #define EN_S_193 "Placeholder"
 #define EN_S_194 "Placeholder"

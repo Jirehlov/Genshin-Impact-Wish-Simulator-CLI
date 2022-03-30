@@ -3,7 +3,7 @@
 #if CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.3"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.4"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -259,7 +259,7 @@
   "您可以使用各种二进制查看器读取记录文件"
 #define CN_S_189 "输出所有结果记录到文件功能已关闭!"
 #define CN_S_190 "输出所有结果记录到文件功能已开启!"
-#define CN_S_191 "Placeholder"
+#define CN_S_191 "-384: 查看对象总列表"
 #define CN_S_192 "Placeholder"
 #define CN_S_193 "Placeholder"
 #define CN_S_194 "Placeholder"
