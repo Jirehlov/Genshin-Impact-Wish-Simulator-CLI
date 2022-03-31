@@ -620,11 +620,12 @@ int enter_chosen_event_f() {
       full_quit_f()  // to diminish conflicts
           case 1 : {
         chosen_event = 0;
-        static const size_t banner_1[33] = {
-            12, 13,  109, 161, 14,  15,  16,  17,  18,  19,  20,
-            21, 22,  23,  24,  25,  26,  27,  28,  29,  30,  94,
-            95, 100, 101, 102, 103, 144, 145, 151, 153, 183, 184};
-        slash_n() for (size_t i = 0; i < 33; i++) {
+        static const size_t banner_1[47] = {
+            12,  13,  109, 161, 192, 14,  15,  193, 16,  17,  194, 18,
+            19,  195, 20,  21,  22,  196, 23,  24,  197, 25,  26,  198,
+            27,  28,  199, 29,  30,  200, 94,  95,  201, 100, 101, 202,
+            102, 103, 203, 144, 145, 204, 151, 153, 205, 183, 184};
+        slash_n() for (size_t i = 0; i < 47; i++) {
           lang_cout(1, banner_1[i]);
           slash_n()
         }
@@ -675,9 +676,9 @@ int enter_chosen_event_f() {
       break;
     case 2: {
       chosen_event = 0;
-      static const size_t banner_2[9] = {12,  13,  109, 161, 107,
-                                         146, 147, 154, 185};
-      slash_n() for (size_t i = 0; i < 9; i++) {
+      static const size_t banner_2[13] = {12,  13,  109, 161, 202, 107, 203,
+                                          146, 147, 204, 154, 205, 185};
+      slash_n() for (size_t i = 0; i < 13; i++) {
         lang_cout(1, banner_2[i]);
         slash_n()
       }
@@ -727,11 +728,12 @@ int enter_chosen_event_f() {
     } break;
     case 3: {
       chosen_event = 0;
-      static const size_t banner_3[31] = {
-          12,  13,  109, 161, 32,  33,  34,  35,  36, 37, 38,
-          39,  40,  41,  42,  43,  44,  45,  46,  47, 96, 97,
-          104, 105, 111, 126, 148, 149, 152, 155, 186};
-      slash_n() for (size_t i = 0; i < 31; i++) {
+      static const size_t banner_3[45] = {
+          12,  13,  109, 161, 192, 32,  33,  193, 34,  35,  194, 36,
+          37,  195, 38,  39,  196, 40,  41,  197, 42,  43,  198, 44,
+          45,  199, 46,  47,  200, 96,  97,  201, 104, 105, 202, 111,
+          203, 126, 148, 204, 149, 152, 205, 155, 186};
+      slash_n() for (size_t i = 0; i < 45; i++) {
         lang_cout(1, banner_3[i]);
         slash_n()
       }
@@ -779,9 +781,10 @@ int enter_chosen_event_f() {
     } break;
     case 4: {
       chosen_event = 0;
-      static const size_t banner_4[13] = {12, 13, 109, 161, 48,  49, 50,
-                                          51, 98, 99,  106, 110, 150};
-      slash_n() for (size_t i = 0; i < 13; i++) {
+      static const size_t banner_4[22] = {12,  13,  109, 161, 192, 48, 194, 49,
+                                          197, 50,  198, 51,  200, 98, 201, 99,
+                                          202, 106, 203, 110, 204, 150};
+      slash_n() for (size_t i = 0; i < 22; i++) {
         lang_cout(1, banner_4[i]);
         slash_n()
       }
@@ -829,8 +832,8 @@ int enter_chosen_event_f() {
     } break;
     case 5: {
       chosen_event = 0;
-      static const size_t banner_5[5] = {12, 13, 109, 161, 52};
-      slash_n() for (size_t i = 0; i < 5; i++) {
+      static const size_t banner_5[6] = {12, 13, 109, 161, 192, 52};
+      slash_n() for (size_t i = 0; i < 6; i++) {
         lang_cout(1, banner_5[i]);
         slash_n()
       }

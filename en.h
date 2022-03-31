@@ -2,7 +2,7 @@
 #define EN_H 1
 #if EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.4"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.5"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3                        \
   "Source code available on GitHub: " \
@@ -328,28 +328,30 @@
   "of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial "    \
   "Greatsword)"
 #define EN_S_187 "-511: Output to file or not"
-#define EN_S_188                                                           \
-  "ATTENTION: \nData contained in the output file is stored per byte "     \
-  "Please do not edit it by yourself!\nFor security's sake, this program " \
-  "cannot read these files "                                               \
+#define EN_S_188                                                               \
+  "ATTENTION: \nData contained in the output file is stored per byte "         \
+  "Please do not edit it by yourself!\nPlease be aware of the size of the "    \
+  "output files. 100 million pulls = 95.3 MB, approximately.\nFor security's " \
+  "sake, this program "                                                        \
+  "cannot read these files "                                                   \
   "You can view the files with any hex viewer."
 #define EN_S_189 "Output to file mode is disabled!"
 #define EN_S_190 "Output to file mode is enabled!"
 #define EN_S_191 "-384: View full list of all items in all banners"
-#define EN_S_192 "Placeholder"
-#define EN_S_193 "Placeholder"
-#define EN_S_194 "Placeholder"
-#define EN_S_195 "Placeholder"
-#define EN_S_196 "Placeholder"
-#define EN_S_197 "Placeholder"
-#define EN_S_198 "Placeholder"
-#define EN_S_199 "Placeholder"
-#define EN_S_200 "Placeholder"
-#define EN_S_201 "Placeholder"
-#define EN_S_202 "Placeholder"
-#define EN_S_203 "Placeholder"
-#define EN_S_204 "Placeholder"
-#define EN_S_205 "Placeholder"
+#define EN_S_192 "\nVersion 1.0 Official Launch"
+#define EN_S_193 "\nVersion 1.1 \"A New Star Approaches\""
+#define EN_S_194 "\nVersion 1.2 \"The Chalk Prince and the Dragon\""
+#define EN_S_195 "\nVersion 1.3 \"All That Glitters\""
+#define EN_S_196 "\nVersion 1.4 \"Invitation of Windblume\""
+#define EN_S_197 "\nVersion 1.5 \"Beneath the Light of Jadeite\""
+#define EN_S_198 "\nVersion 1.6 \"Midsummer Island Adventure\""
+#define EN_S_199 "\nVersion 2.0 \"The Immovable God and the Eternal Euthymia\""
+#define EN_S_200 "\nVersion 2.1 \"Floating World Under the Moonlight\""
+#define EN_S_201 "\nVersion 2.2 \"Into the Perilous Labyrinth of Fog\""
+#define EN_S_202 "\nVersion 2.3 \"hadows Amidst Snowstorms\""
+#define EN_S_203 "\nVersion 2.4 \"Fleeting Colors in Flight\""
+#define EN_S_204 "\nVersion 2.5 \"When the Sakura Bloom\""
+#define EN_S_205 "\nVersion 2.6 \"Zephyr of the Violet Garden\""
 #define EN_S_206 "Placeholder"
 #define EN_S_207 "Placeholder"
 #define EN_S_208 "Placeholder"

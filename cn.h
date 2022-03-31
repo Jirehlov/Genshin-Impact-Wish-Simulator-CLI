@@ -3,7 +3,7 @@
 #if CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.4"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.5"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -253,27 +253,28 @@
   "27: 神铸赋形_20220330-20220419 (波乱月白经津, 终末嗟叹之诗, 弓藏, 笛剑, " \
   "流浪乐章, 匣里灭辰, 祭礼大剑)"
 #define CN_S_187 "-511: 输出所有结果记录到文件功能开关"
-#define CN_S_188                                                              \
-  "注意: \n输出文件以8位即1字节储存对象编号, "               \
-  "请勿擅自修改!\n出于安全考虑, 本程序不提供读入功能, " \
+#define CN_S_188                                                                                 \
+  "注意: \n输出文件以8位即1字节储存对象编号, "                                  \
+  "请勿擅自修改!\n请留意文件大小。参考值: 1亿抽输出文件大小约为95.3 " \
+  "MB\n出于安全考虑, 本程序不提供读入功能, "                                     \
   "您可以使用各种二进制查看器读取记录文件"
 #define CN_S_189 "输出所有结果记录到文件功能已关闭!"
 #define CN_S_190 "输出所有结果记录到文件功能已开启!"
 #define CN_S_191 "-384: 查看对象总列表"
-#define CN_S_192 "Placeholder"
-#define CN_S_193 "Placeholder"
-#define CN_S_194 "Placeholder"
-#define CN_S_195 "Placeholder"
-#define CN_S_196 "Placeholder"
-#define CN_S_197 "Placeholder"
-#define CN_S_198 "Placeholder"
-#define CN_S_199 "Placeholder"
-#define CN_S_200 "Placeholder"
-#define CN_S_201 "Placeholder"
-#define CN_S_202 "Placeholder"
-#define CN_S_203 "Placeholder"
-#define CN_S_204 "Placeholder"
-#define CN_S_205 "Placeholder"
+#define CN_S_192 "\n1.0版本 全球同步公测"
+#define CN_S_193 "\n1.1版本 「迫近的客星」"
+#define CN_S_194 "\n1.2版本 「白垩与黑龙」"
+#define CN_S_195 "\n1.3版本 「明霄升海平」"
+#define CN_S_196 "\n1.4版本 「风花的邀约」"
+#define CN_S_197 "\n1.5版本 「玉扉绕尘歌」"
+#define CN_S_198 "\n1.6版本 「盛夏！海岛？大冒险！」"
+#define CN_S_199 "\n2.0版本 「不动鸣神，泡影断灭」"
+#define CN_S_200 "\n2.1版本 「韶光抚月，天下人间」"
+#define CN_S_201 "\n2.2版本 「雾海悬谜境」"
+#define CN_S_202 "\n2.3版本 「皑尘与雪影」"
+#define CN_S_203 "\n2.4版本 「飞彩镌流年」"
+#define CN_S_204 "\n2.5版本 「薄樱初绽时」"
+#define CN_S_205 "\n2.6版本 「流风眷堇庭」"
 #define CN_S_206 "Placeholder"
 #define CN_S_207 "Placeholder"
 #define CN_S_208 "Placeholder"
