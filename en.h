@@ -329,11 +329,11 @@
   "Greatsword)"
 #define EN_S_187 "-511: Output to file or not"
 #define EN_S_188                                                               \
-  "ATTENTION: \nData contained in the output file is stored per byte "         \
+  "ATTENTION: \nData contained in the output file is stored per byte. "        \
   "Please do not edit it by yourself!\nPlease be aware of the size of the "    \
   "output files. 100 million pulls = 95.3 MB, approximately.\nFor security's " \
   "sake, this program "                                                        \
-  "cannot read these files "                                                   \
+  "cannot read these files. "                                                  \
   "You can view the files with any hex viewer."
 #define EN_S_189 "Output to file mode is disabled!"
 #define EN_S_190 "Output to file mode is enabled!"
