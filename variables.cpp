@@ -38,8 +38,7 @@ size_t four_stars_c[23] = {15, 16, 17, 18, 19, 20, 21, 22, 23,  24,  25, 26,
        five_stars_w[28] = {5,  6,  7,  8,   9,   10,  11,  12, 13, 14,
                            73, 74, 75, 76,  77,  78,  81,  85, 87, 92,
                            93, 97, 98, 101, 107, 110, 112, 113};
-ptrdiff_t e_sav = 0, switch_b_should_be = 0, switch_b_sav = 0,
-          hash_out[9] = {0};
+ptrdiff_t e_sav = 0, switch_b_should_be = 0, switch_b_sav = 0;
 unsigned int lang_status = 0, delay_r = 0, star_max = 0, anim_number = 0,
              luckstar[10] = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
 signed long long int

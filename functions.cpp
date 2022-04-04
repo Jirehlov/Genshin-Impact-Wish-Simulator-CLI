@@ -138,18 +138,6 @@ void animation_gen(const unsigned int star_p) {
   slash_n()
 }
 
-void hash_gen() {
-  hash_out[0] = static_cast<ptrdiff_t>(five_star_guarantee_number);
-  hash_out[1] = five_star_assurance_number;
-  hash_out[2] = static_cast<ptrdiff_t>(four_star_guarantee_number);
-  hash_out[3] = four_star_assurance_number;
-  hash_out[4] = unmet5_c + 1;
-  hash_out[5] = unmet5_w + 1;
-  hash_out[6] = unmet4_c + 1;
-  hash_out[7] = unmet4_w + 1;
-  hash_out[8] = fate_weapon;
-}
-
 void hash_p() {
   lang_cout(1, 180);
   slash_n() std::cout << "\n&" << hash_out[0];
@@ -379,44 +367,9 @@ void wishes_127() {
 }
 
 void clean_f() {
+  clear_all();
   fnhash() wishes_number = 0;
-  four_star_assurance_number = 1;
-  five_star_assurance_number = 1;
-  five_star_guarantee_number = false;
-  four_star_guarantee_number = false;
-  countx = 0;
   countx_r = 0;
-  five_count = 0;
-  five_count_c = 0;
-  five_count_w = 0;
-  four_count = 0;
-  four_count_c = 0;
-  four_count_w = 0;
-  is_noelle = true;
-  ave_fives = 0;
-  max_fives = 1;
-  if (chosen_banner == 3) {
-    min_fives = 80;
-  } else if (chosen_banner == 1 || chosen_banner == 2 || chosen_banner == 4) {
-    min_fives = 90;
-  } else if (chosen_banner == 5) {
-    min_fives = PTRDIFF_MAX;
-  } else {
-    lang_cout(4, 7);
-    slash_n() error_code = 7;
-  }
-  max_fivesth = 1;
-  min_fivesth = 1;
-  max_fivecount = 1;
-  min_fivecount = 1;
-  unmet4_c = 0;
-  unmet4_w = 0;
-  unmet5_c = 0;
-  unmet5_w = 0;
-  fate_points = 0;
-  for (size_t& ini : pcount) {
-    ini = 0;
-  }
   luck = 0;
   for (size_t ini = 0; ini < 10; ini++) {
     lucklocation[ini] = ini + 1;
@@ -440,15 +393,6 @@ void clean_f() {
   for (size_t& ini : luckiestkind) {
     ini = 127;
   }
-  for (size_t ini = 0; ini < 10; ini++) {
-    four_pity[ini] = 0;
-  }
-  for (size_t& ini : five_pity) {
-    ini = 0;
-  }
-  for (size_t& ini : five_pity_w) {
-    ini = 0;
-  }
   for (size_t ini = 0; ini < 127; ini++) {
     d_item[ini] = 0;
   }
@@ -456,16 +400,8 @@ void clean_f() {
     d_item_n[ini] = 0;
   }
   for (size_t ini = 0; ini < 12; ini++) {
-    ach_count[ini] = 0;
-  }
-  for (size_t ini = 0; ini < 12; ini++) {
-    ach[ini] = false;
-  }
-  for (size_t ini = 0; ini < 12; ini++) {
     ach_q[ini] = false;
   }
-  kind_r_ach_8 = 0;
-  kind_r_ach_11 = 0;
   countx_l = 0;
   achp_check_again = false;
   d_item_c = true;
@@ -1007,43 +943,9 @@ apply_hash:
   for (size_t i = 0; i < 9; i++) {
     sav[i] = std::stoll(hash_dump[i]);
   }
-  slash_n() lang_cout(1, 141);
-  slash_n() if (((four_count > 0 || five_count > 0) && sav[1] == sav[3]) ||
-                (chosen_banner == 4 && sav[4] != sav[1] && sav[5] != sav[1]) ||
-                (sav[6] != sav[3] && sav[7] != sav[3]) ||
-                (chosen_banner != 3 && sav[4] > 89 && sav[5] > 89) ||
-                (chosen_banner == 3 && sav[4] > 79 && sav[5] > 79) ||
-                (sav[8] > 2)) {
-    lang_cout(1, 143);
-    slash_n() wishes_number = 0;
+  if (hash_apply(sav) == 2) {
     return 1;
   }
-  slash_n() lang_cout(1, 142);
-  slash_n() five_star_guarantee_number = static_cast<bool>(sav[0]);
-  five_star_assurance_number = sav[1];
-  four_star_guarantee_number = static_cast<bool>(sav[2]);
-  four_star_assurance_number = sav[3];
-  if (sav[4] > 0) {
-    unmet5_c = sav[4] - 1;
-  } else {
-    unmet5_c = 0;
-  }
-  if (sav[5] > 0) {
-    unmet5_w = sav[5] - 1;
-  } else {
-    unmet5_w = 0;
-  }
-  if (sav[6] > 0) {
-    unmet4_c = sav[6] - 1;
-  } else {
-    unmet4_c = 0;
-  }
-  if (sav[7] > 0) {
-    unmet4_w = sav[7] - 1;
-  } else {
-    unmet4_w = 0;
-  }
-  fate_weapon = sav[8];
   return 0;
 }
 

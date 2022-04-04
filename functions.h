@@ -1,6 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H 1
 #include <fstream>
+#include <iostream>
 #include <iomanip>
 #include <string>
 #include <thread>
@@ -15,7 +16,6 @@ extern void casesx(const size_t& kind_p);
 extern void ini_all(size_t* in, size_t ins, size_t nu);
 extern void head_print();
 extern void animation_gen(const unsigned int star_p);
-extern void hash_gen();
 extern void hash_p();
 extern void enter_chosen_banner_f();
 extern void output_string();
