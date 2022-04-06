@@ -28,16 +28,16 @@ std::chrono::system_clock::time_point endy = std::chrono::system_clock::now();
 std::chrono::nanoseconds elapsed = starty - endy;
 std::time_t t_start = std::chrono::system_clock::to_time_t(starty);
 std::time_t t_end = std::chrono::system_clock::to_time_t(endy);
-size_t four_stars_c[23] = {15, 16, 17, 18, 19, 20, 21, 22, 23,  24,  25, 26,
-                           27, 28, 29, 30, 31, 71, 91, 95, 100, 106, 108},
+size_t four_stars_c[24] = {15, 16, 17, 18, 19, 20, 21, 22, 23,  24,  25, 26,
+                           27, 28, 29, 30, 31, 71, 91, 95, 100, 106, 108, 115},
        four_stars_w[27] = {32, 33, 34, 35, 36, 37, 38,  39,  40,
                            41, 42, 43, 44, 45, 46, 47,  48,  49,
                            79, 80, 82, 83, 84, 88, 102, 103, 104},
-       five_stars_c[23] = {0,  1,  2,  3,  4,  63, 64, 65, 66,  67,  68, 69,
-                           70, 72, 86, 89, 90, 94, 96, 99, 105, 109, 111},
-       five_stars_w[28] = {5,  6,  7,  8,   9,   10,  11,  12, 13, 14,
+       five_stars_c[25] = {0,  1,  2,  3,  4,  63, 64, 65, 66,  67,  68, 69,
+                           70, 72, 86, 89, 90, 94, 96, 99, 105, 109, 111, 114, 116},
+       five_stars_w[29] = {5,  6,  7,  8,   9,   10,  11,  12, 13, 14,
                            73, 74, 75, 76,  77,  78,  81,  85, 87, 92,
-                           93, 97, 98, 101, 107, 110, 112, 113};
+                           93, 97, 98, 101, 107, 110, 112, 113, 117};
 ptrdiff_t e_sav = 0, switch_b_should_be = 0, switch_b_sav = 0;
 unsigned int lang_status = 0, delay_r = 0, star_max = 0, anim_number = 0,
              luckstar[10] = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
