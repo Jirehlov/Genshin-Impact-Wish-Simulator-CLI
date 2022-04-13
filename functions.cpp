@@ -664,12 +664,12 @@ int enter_chosen_event_f() {
     } break;
     case 3: {
       chosen_event = 0;
-      static const size_t banner_3[45] = {
+      static const size_t banner_3[46] = {
           12,  13,  109, 161, 192, 32,  33,  193, 34,  35,  194, 36,
           37,  195, 38,  39,  196, 40,  41,  197, 42,  43,  198, 44,
           45,  199, 46,  47,  200, 96,  97,  201, 104, 105, 202, 111,
-          203, 126, 148, 204, 149, 152, 205, 155, 186};
-      slash_n() for (size_t i = 0; i < 45; i++) {
+          126, 203, 148, 149, 204, 152, 155, 205, 186, 206};  // MID_MOD
+      slash_n() for (size_t i = 0; i < 46; i++) {             // MID_MOD
         lang_cout(1, banner_3[i]);
         slash_n()
       }
@@ -708,7 +708,7 @@ int enter_chosen_event_f() {
           }  // else
         }
       }
-      if (chosen_event > 0 && chosen_event < 28) {
+      if (chosen_event > 0 && chosen_event < 29) {  // MID_MOD
         quit = false;
       } else {
         slash_n() lang_cout(1, 31);

@@ -63,7 +63,8 @@ I Character Event Wish\
 25: Gentry of Hermitage/20220125-20220215 (Zhongli, Yanfei, Xingqiu, Beidou)\
 26: Everbloom Violet/20220216-20220308 (Yae Miko, Fischl, Diona, Thoma)\
 27: Reign of Serenity/20220308-20220329 (Raiden Shogun, Bennett, Xinyan, Kujo Sara)\
-28: Azure Excursion/20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, Xiangling)
+28: Azure Excursion/20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, Xiangling)\
+29: The Heron's Court/20220419-20220510 (Kamisato Ayaka, Sayu, Razor, Rosaria)
 
 II Character Event Wish-2\
 1: Born of Ocean Swell/20211124-20211214 (Eula, Rosaria, Noelle, Bennett)\
@@ -99,7 +100,8 @@ III Weapon Event Wish\
 24: Epitome Invocation/20220125-20220215 (Vortex Vanquisher, Amos' Bow, Lithic Blade, Favonius Sword, Dragon's Bane, Favonius Codex, Sacrificial Bow)\
 25: Epitome Invocation/20220216-20220308 (Kagura's Verity, Primordial Jade Cutter, Wavebreaker's Fin, Stringless, Sacrificial Sword, Eye of Perception, Rainslasher)\
 26: Epitome Invocation/20220308-20220329 (Engulfing Lightning, Everlasting Moonglow, Akuoumaru, Mouun's Moon, Dragon's Bane, Favonius Lance, Sacrificial Fragments)\
-27: Epitome Invocation/20220330-20220419 (Haran Tsukishiro Futsu, Elegy of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial Greatsword)
+27: Epitome Invocation/20220330-20220419 (Haran Tsukishiro Futsu, Elegy of the End, Rust, The Flute, The Widsith, Dragon's Bane, Sacrificial Greatsword)\
+28: Epitome Invocation/20220419-20220510 (Mistsplitter Reforged, The Unforged, Favonius Warbow, Favonius Sword, Favonius Lance, Favonius Codex, The Bell)
 
 IV Permanent Wish\
 1: Wanderlust Invocation/20200928-20201222 (Released)\

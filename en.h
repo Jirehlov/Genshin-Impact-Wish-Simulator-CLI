@@ -2,7 +2,7 @@
 #define EN_H 1
 #if EN_H
 #define EN_S_0 "Placeholder"
-#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.6"
+#define EN_S_1 "WELCOME TO GENSHIN IMPACT WISH SIMULATOR CLI V2.6.7"
 #define EN_S_2 "by Jirehlov Research"
 #define EN_S_3                        \
   "Source code available on GitHub: " \
@@ -318,8 +318,9 @@
 #define EN_S_183                                                              \
   "28: Azure Excursion_20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, " \
   "Xiangling)"
-#define EN_S_184 \
-  "(test) 29: The Heron's Court_20220419-20220510 (Kamisato Ayaka, , , )"
+#define EN_S_184                                                           \
+  "29: The Heron's Court_20220419-20220510 (Kamisato Ayaka, Sayu, Razor, " \
+  "Rosaria)"
 #define EN_S_185                                                      \
   "5: Ballad in Goblets_20220330-20220419 (Venti, Yun Jin, Sucrose, " \
   "Xiangling)"
@@ -352,7 +353,10 @@
 #define EN_S_203 "\nVersion 2.4 \"Fleeting Colors in Flight\""
 #define EN_S_204 "\nVersion 2.5 \"When the Sakura Bloom\""
 #define EN_S_205 "\nVersion 2.6 \"Zephyr of the Violet Garden\""
-#define EN_S_206 "Placeholder"
+#define EN_S_206                                                          \
+  "28: Epitome Invocation_20220419-20220510 (Mistsplitter Reforged, The " \
+  "Unforged, Favonius Warbow, Favonius Sword, "                           \
+  "Favonius Lance, Favonius Codex, The Bell)"
 #define EN_S_207 "Placeholder"
 #define EN_S_208 "Placeholder"
 #define EN_S_209 "Placeholder"

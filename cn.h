@@ -3,7 +3,7 @@
 #if CN_H
 #define UNI_S_0 "\n\n0: English\n1: 中文\n\n"
 #define CN_S_0 "Placeholder"
-#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.6"
+#define CN_S_1 "命令行界面的原神祈愿模拟器 V2.6.7"
 #define CN_S_2 "作者: Jirehlov Research"
 #define CN_S_3 "开源于GitHub: Jirehlov_Genshin-Impact-Wish-Simulator-CLI"
 #define CN_S_4 "GPL-3.0 License"
@@ -247,7 +247,8 @@
 #define CN_S_181 "保底状态码错误!"
 #define CN_S_182 "-1: 我没有保底状态码。"
 #define CN_S_183 "28: 苍流踏花_20220330-20220419 (神里绫人, 云堇, 砂糖, 香菱)"
-#define CN_S_184 "(测试) 29: 白鹭之庭_20220419-20220510 (神里绫华, , , )"
+#define CN_S_184 \
+  "29: 白鹭之庭_20220419-20220510 (神里绫华, 早柚, 雷泽, 罗莎莉亚)"
 #define CN_S_185 "5: 杯装之诗_20220330-20220419 (温迪, 云堇, 砂糖, 香菱)"
 #define CN_S_186                                                                                 \
   "27: 神铸赋形_20220330-20220419 (波乱月白经津, 终末嗟叹之诗, 弓藏, 笛剑, " \
@@ -275,7 +276,9 @@
 #define CN_S_203 "\n2.4版本 「飞彩镌流年」"
 #define CN_S_204 "\n2.5版本 「薄樱初绽时」"
 #define CN_S_205 "\n2.6版本 「流风眷堇庭」"
-#define CN_S_206 "Placeholder"
+#define CN_S_206                                                                                 \
+  "28: 神铸赋形_20220419-20220510 (雾切之回光, 无工之剑, 西风猎弓, 西风剑, " \
+  "西风长枪, 西风秘典, 钟剑)"
 #define CN_S_207 "Placeholder"
 #define CN_S_208 "Placeholder"
 #define CN_S_209 "Placeholder"
