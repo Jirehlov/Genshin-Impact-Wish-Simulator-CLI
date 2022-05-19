@@ -203,7 +203,6 @@ void enter_chosen_banner_f() {
   min_fivesth = 1;
   max_fivecount = 1;
   min_fivecount = 1;
-  kind_r_ach_8 = 0;
   wishes_number_r_t = 0;
   delay_prog = 0;
   delay_r = 0;
@@ -233,9 +232,6 @@ void enter_chosen_banner_f() {
   ini_ams(animlocation, 10, one_to_ten);
   ini_ams(animsublocation, 10, one_to_ten);
   ini_ams(animsubsublocation, 10, one_to_ten);
-  for (size_t i = 0; i < 12; i++) {
-    ach_count[i] = 0;
-  }
 }
 
 void output_string() {
@@ -344,26 +340,7 @@ void wishes_127() {
   lang_cout(5, 41);
   std::cout << "is_s_mode = " << is_s_mode << '\n';
   lang_cout(5, 43);
-  std::cout << "countx_l = " << countx_l << '\n';
-  lang_cout(5, 44);
-  std::cout << "ach_cout[] = ";
-  for (size_t i = 0; i < 12; i++) {
-    std::cout << ach_count[i] << " ";
-  }
-  slash_n() lang_cout(5, 45);
-  std::cout << "ach[] = ";
-  for (size_t i = 0; i < 12; i++) {
-    std::cout << ach[i] << " ";
-  }
-  slash_n() lang_cout(5, 46);
-  std::cout << "ach_q[] = ";
-  for (size_t i = 0; i < 12; i++) {
-    std::cout << ach_q[i] << " ";
-  }
-  slash_n() lang_cout(5, 47);
-  std::cout << "kind_r_ach_8 = " << kind_r_ach_8 << '\n';
-  lang_cout(5, 48);
-  std::cout << "kind_r_ach_11 = " << kind_r_ach_11 << "\n\n";
+  std::cout << "countx_l = " << countx_l << "\n\n";
 }
 
 void clean_f() {
@@ -399,11 +376,7 @@ void clean_f() {
   for (size_t ini = 0; ini < 127; ini++) {
     d_item_n[ini] = 0;
   }
-  for (size_t ini = 0; ini < 12; ini++) {
-    ach_q[ini] = false;
-  }
   countx_l = 0;
-  achp_check_again = false;
   d_item_c = true;
   is_s_mode = false;
   y_track_luck = false;
@@ -883,14 +856,6 @@ void pre_wishes() {
   }
   slash_dn() lang_cout(1, 113);
   slash_n() lang_cout(1, 161);
-  for (size_t i = 0; i < 9; i++) {
-    if (ach_q[i]) {
-      achp_check = true;
-    }
-  }
-  if (achp_check) {
-    slash_n() lang_cout(1, 162);
-  }
   slash_dn() lang_cout(1, 191);
   slash_dn() lang_cout(1, 187);
   slash_nn()
@@ -1298,8 +1263,7 @@ void stat_out() {
   std::cout << t_end << '\n';
   std::cout << static_cast<double>(elapsed_time) * 1.0 / 1000000.0;
   lang_cout(1, 84);
-  slash_n() if (max_fives > 86 && chosen_banner != 5) { ach[3] = true; }
-  if (five_count == 0) {
+  slash_n() if (five_count == 0) {
     slash_n() lang_cout(1, 127);
     std::cout << countx - countx_r;
     lang_cout(1, 74);
@@ -1319,7 +1283,8 @@ void stat_out() {
     lang_cout(1, 77);
     std::cout << five_count_c << " : " << five_count_w << " : " << four_count_c
               << " : " << four_count_w << "\n\n";
-  } else {
+  }
+  else {
     slash_n() lang_cout(1, 127);
     std::cout << countx - countx_r;
     lang_cout(1, 74);
@@ -1385,23 +1350,7 @@ void stat_out() {
       std::cout << "(" << pcount[iout] << ") ";
     }
   }
-  slash_nn() iacheck = false;
-  for (size_t iach = 0; iach < 12; iach++) {
-    if (ach[iach] && !ach_q[iach]) {
-      const size_t achdis = iach + iach + 3;
-      const size_t achname = iach + iach + 4;
-      lang_cout(6, 0);
-      lang_cout(6, achdis);
-      lang_cout(6, 1);
-      lang_cout(6, achname);
-      lang_cout(6, 2);
-      ach_q[iach] = true;
-      iacheck = true;
-    }
-  }
-  if (iacheck) {
-    slash_n()
-  }
+  slash_nn()
 }
 
 int wishes_5() {
@@ -1756,28 +1705,6 @@ int e_wishes() {
     }  // else
   }    // language just-in-time
 
-  if (wishes_number == -270) {
-    wishes_number = 0;
-    if (!achp_check) {
-      lang_cout(1, 163);
-    } else {
-      for (size_t i = 0; i < 12; i++) {
-        if (ach_q[i]) {
-          const size_t achdis = i + i + 3;
-          const size_t achname = i + i + 4;
-          lang_cout(6, achname);
-          std::cout << " --- ";
-          lang_cout(6, achdis);
-          slash_n() achp_check_again = true;
-        }
-      }
-      if (!achp_check_again) {
-        lang_cout(1, 164);
-      }
-    }
-    slash_n() return 1;
-  }  // what? achievements
-
   if (wishes_number == -384) {
     wishes_number = 0;
     wishes_384();
@@ -1992,30 +1919,6 @@ int ccloop_of() {
 }
 
 int post_ccloop_1(size_t& anim_loop) {
-  if (star != 4 || type == 3) {
-    unmet4_c++;
-  }
-  if (star != 4 || type != 3) {
-    unmet4_w++;
-  }
-  if (ach_count[0] > 7) {
-    ach[0] = true;
-  }
-  if (ach_count[1] > 7) {
-    ach[1] = true;
-  }
-  if (ach_count[8] > 6) {
-    ach[8] = true;
-  }
-  if (ach_count[6] < 11) {
-    ach_count[6]++;
-    if (star == 5) {
-      ach[6] = true;
-    }
-  }
-  if (ach_count[11] > 6) {
-    ach[11] = true;
-  }
   if (!y_arg) {
     if (is_s_mode) {
       is_mode()
@@ -2053,30 +1956,6 @@ int post_ccloop_1(size_t& anim_loop) {
 }
 
 int post_ccloop_3(size_t& anim_loop) {
-  if (star != 4 || type == 3) {
-    unmet4_c++;
-  }
-  if (star != 4 || type != 3) {
-    unmet4_w++;
-  }
-  if (ach_count[4] > 6) {
-    ach[4] = true;
-  }
-  if (ach_count[5] > 6) {
-    ach[5] = true;
-  }
-  if (ach_count[8] > 6) {
-    ach[8] = true;
-  }
-  if (ach_count[6] < 11) {
-    ach_count[6]++;
-    if (star == 5) {
-      ach[6] = true;
-    }
-  }
-  if (ach_count[11] > 6) {
-    ach[11] = true;
-  }
   if (!y_arg) {
     if (is_s_mode) {
       is_mode()
@@ -2114,30 +1993,6 @@ int post_ccloop_3(size_t& anim_loop) {
 }
 
 int post_ccloop_4(size_t& anim_loop) {
-  if (!(star == 5 && type == 1)) {
-    unmet5_c++;
-  }
-  if (!(star == 5 && type == 2)) {
-    unmet5_w++;
-  }
-  if (!(star == 4 && type == 1)) {
-    unmet4_c++;
-  }
-  if (!(star == 4 && type == 2)) {
-    unmet4_w++;
-  }
-  if (ach_count[8] > 6) {
-    ach[8] = true;
-  }
-  if (ach_count[6] < 11) {
-    ach_count[6]++;
-    if (star == 5) {
-      ach[6] = true;
-    }
-  }
-  if (ach_count[11] > 6) {
-    ach[11] = true;
-  }
   if (!y_arg) {
     if (is_s_mode) {
       is_mode()
@@ -2175,18 +2030,6 @@ int post_ccloop_4(size_t& anim_loop) {
 }
 
 int post_ccloop_5(size_t& anim_loop) {
-  if (ach_count[8] > 6) {
-    ach[8] = true;
-  }
-  if (ach_count[6] < 11) {
-    ach_count[6]++;
-    if (star == 5) {
-      ach[6] = true;
-    }
-  }
-  if (ach_count[11] > 6) {
-    ach[11] = true;
-  }
   if (!y_arg) {
     if (is_s_mode) {
       is_mode()

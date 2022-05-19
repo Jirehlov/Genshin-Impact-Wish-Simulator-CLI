@@ -3,10 +3,7 @@
 bool d_item_c = true, is_s_mode = false, is_cross = false, is_dualcross = false,
      y_print = true, y_luck = true, y_arg = false, y_prog = false,
      y_track_luck = false, y_track_luck_mode = false, y_anim = false,
-     y_anim_del = false, y_savtof = false, iacheck = false, achp_check = false,
-     achp_check_again = false,
-     ach_q[12] = {false, false, false, false, false, false,
-                  false, false, false, false, false, false};
+     y_anim_del = false, y_savtof = false;
 size_t luck = 0, luckiest = 0, countx_r = 0, countx_l = 0, drump5 = 0,
        drump4 = 0, d_item[128] = {0}, d_item_n[128] = {0}, anim_kind = 127,
        anim_location = 0, anim_sublocation = 0, anim_subsublocation = 0,
