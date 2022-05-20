@@ -319,7 +319,7 @@
   "28: Azure Excursion_20220330-20220419 (Kamisato Ayato, Yun Jin, Sucrose, " \
   "Xiangling)"
 #define EN_S_184                                                           \
-  "29: The Heron's Court_20220419-20220531 (Kamisato Ayaka, Sayu, Razor, " \
+  "29: The Heron's Court_20220419-20220530 (Kamisato Ayaka, Sayu, Razor, " \
   "Rosaria)"
 #define EN_S_185                                                      \
   "5: Ballad in Goblets_20220330-20220419 (Venti, Yun Jin, Sucrose, " \
@@ -354,14 +354,19 @@
 #define EN_S_204 "\nVersion 2.5 \"When the Sakura Bloom\""
 #define EN_S_205 "\nVersion 2.6 \"Zephyr of the Violet Garden\""
 #define EN_S_206                                                          \
-  "28: Epitome Invocation_20220419-20220531 (Mistsplitter Reforged, The " \
+  "28: Epitome Invocation_20220419-20220530 (Mistsplitter Reforged, The " \
   "Unforged, Favonius Warbow, Favonius Sword, "                           \
   "Favonius Lance, Favonius Codex, The Bell)"
 #define EN_S_207 "\nVersion 2.7 \"Hidden Dreams in the Depths\""
-#define EN_S_208 "Placeholder"
-#define EN_S_209 "Placeholder"
-#define EN_S_210 "Placeholder"
-#define EN_S_211 "Placeholder"
+#define EN_S_208                                                         \
+  "30: Discerner of Enigmas_20220531-20220621 (Yelan, Barbara, Yanfei, " \
+  "Noelle)"
+#define EN_S_209                                                             \
+  "6: Invitation to Mundane Life_20220531-20220621 (Xiao, Barbara, Yanfei, " \
+  "Noelle)"
+#define EN_S_210 \
+  "31: Oni's Royale_20220621-20220712 (Arataki Itto, Kuki Shinobu, , )"
+#define EN_S_211 "29: Epitome Invocation_20220531-20220621 (Aqua Simulacra, , , , , , )"
 #define EN_S_212 "Placeholder"
 #define EN_S_213 "Placeholder"
 #define EN_S_214 "Placeholder"
